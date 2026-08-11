@@ -1,0 +1,997 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap");
+
+/* =========================================================
+   CTA SECTION
+========================================================= */
+
+.section {
+  --cta-blue: #1268c4;
+  --cta-blue-dark: #0d57a6;
+  --cta-cyan: #18a9ca;
+  --cta-green: #1fa878;
+
+  --cta-heading: #1b3043;
+  --cta-text: #526878;
+  --cta-muted: #7c8e9b;
+
+  --cta-border: #d7e3ea;
+
+  position: relative;
+
+  width: 100%;
+
+  padding:
+    35px
+    0
+    90px;
+
+  overflow: hidden;
+
+  background:
+    #ffffff;
+
+  color:
+    var(--cta-heading);
+
+  font-family:
+    "DM Sans",
+    "Segoe UI",
+    Arial,
+    sans-serif;
+}
+
+/* =========================================================
+   LOCAL RESET
+========================================================= */
+
+.section *,
+.section *::before,
+.section *::after {
+  box-sizing: border-box;
+}
+
+.section a {
+  text-decoration: none;
+
+  color: inherit;
+}
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.container {
+  position: relative;
+
+  z-index: 2;
+
+  width:
+    min(
+      1240px,
+      calc(100% - 40px)
+    );
+
+  min-height: 275px;
+
+  margin:
+    0 auto;
+
+  padding:
+    38px
+    42px;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.45fr)
+    minmax(280px, 0.75fr);
+
+  align-items: center;
+
+  gap: 50px;
+
+  overflow: hidden;
+
+  border:
+    1px solid
+    var(--cta-border);
+
+  border-radius: 17px;
+
+  background:
+    linear-gradient(
+      110deg,
+      #f3fafc 0%,
+      #f8fbfd 52%,
+      #f0f6ff 100%
+    );
+
+  box-shadow:
+    0 10px 35px
+    rgba(
+      26,
+      65,
+      86,
+      0.045
+    );
+}
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.content {
+  position: relative;
+
+  z-index: 3;
+
+  min-width: 0;
+}
+
+.eyebrow {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  color:
+    var(--cta-blue);
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  line-height: 1;
+
+  letter-spacing:
+    0.11em;
+
+  text-transform:
+    uppercase;
+}
+
+.dot {
+  width: 7px;
+
+  height: 7px;
+
+  flex: 0 0 auto;
+
+  border-radius: 50%;
+
+  background:
+    var(--cta-cyan);
+
+  box-shadow:
+    0 0 0 4px
+    rgba(
+      24,
+      169,
+      202,
+      0.1
+    );
+
+  animation:
+    pulseDot
+    2s
+    ease-in-out
+    infinite;
+}
+
+.content h2 {
+  max-width: 650px;
+
+  margin:
+    14px
+    0
+    10px;
+
+  color:
+    var(--cta-heading);
+
+  font-family:
+    "Manrope",
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  font-size:
+    clamp(
+      28px,
+      3.5vw,
+      43px
+    );
+
+  font-weight: 800;
+
+  line-height: 1.08;
+
+  letter-spacing:
+    -0.045em;
+}
+
+.content h2 span {
+  color:
+    var(--cta-blue);
+}
+
+.content > p {
+  max-width: 625px;
+
+  margin: 0;
+
+  color:
+    var(--cta-text);
+
+  font-size: 11px;
+
+  font-weight: 500;
+
+  line-height: 1.7;
+}
+
+/* =========================================================
+   HIGHLIGHTS
+========================================================= */
+
+.highlights {
+  display: flex;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap:
+    8px
+    18px;
+
+  margin-top: 20px;
+}
+
+.highlights span {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  color:
+    #718490;
+
+  font-size: 8px;
+
+  font-weight: 700;
+}
+
+.highlights svg {
+  color:
+    var(--cta-blue);
+}
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.actions {
+  position: relative;
+
+  z-index: 4;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 9px;
+
+  width: 100%;
+
+  max-width: 310px;
+
+  justify-self: end;
+}
+
+/* =========================================================
+   PRIMARY BUTTON
+========================================================= */
+
+.primary,
+.secondary {
+  min-height: 66px;
+
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+  padding:
+    11px
+    14px;
+
+  border-radius: 10px;
+
+  transition:
+    transform 200ms ease,
+    box-shadow 200ms ease,
+    border-color 200ms ease,
+    background 200ms ease;
+}
+
+.primary {
+  color:
+    #ffffff;
+
+  background:
+    var(--cta-blue);
+
+  box-shadow:
+    0 8px 20px
+    rgba(
+      18,
+      104,
+      196,
+      0.16
+    );
+}
+
+.primary:hover {
+  transform:
+    translateY(-3px);
+
+  background:
+    var(--cta-blue-dark);
+
+  box-shadow:
+    0 12px 26px
+    rgba(
+      18,
+      104,
+      196,
+      0.22
+    );
+}
+
+.primary > span:first-child,
+.secondary > span:last-child {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  min-width: 0;
+}
+
+.primary {
+  font-size: 11px;
+
+  font-weight: 800;
+}
+
+.primary small,
+.secondary small {
+  display: block;
+
+  margin-top: 3px;
+
+  font-size: 7.5px;
+
+  font-weight: 500;
+
+  line-height: 1.35;
+
+  opacity: 0.72;
+}
+
+.primary svg {
+  flex: 0 0 auto;
+
+  transition:
+    transform 200ms ease;
+}
+
+.primary:hover svg {
+  transform:
+    translateX(4px);
+}
+
+/* =========================================================
+   SECONDARY BUTTON
+========================================================= */
+
+.secondary {
+  border:
+    1px solid
+    #d3e0e7;
+
+  color:
+    var(--cta-heading);
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.88
+    );
+}
+
+.secondary:hover {
+  transform:
+    translateY(-3px);
+
+  border-color:
+    #b9d0dc;
+
+  background:
+    #ffffff;
+
+  box-shadow:
+    0 9px 22px
+    rgba(
+      26,
+      65,
+      86,
+      0.08
+    );
+}
+
+.secondaryIcon {
+  width: 37px;
+
+  height: 37px;
+
+  flex: 0 0 auto;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 8px;
+
+  color:
+    var(--cta-green);
+
+  background:
+    #eef9f5;
+
+  transition:
+    color 180ms ease,
+    background 180ms ease,
+    transform 180ms ease;
+}
+
+.secondary:hover .secondaryIcon {
+  color:
+    #ffffff;
+
+  background:
+    var(--cta-green);
+
+  transform:
+    rotate(-5deg);
+}
+
+.secondary > span:last-child {
+  flex: 1;
+}
+
+.secondary {
+  font-size: 10px;
+
+  font-weight: 800;
+}
+
+/* =========================================================
+   ELECTRICAL BACKGROUND
+========================================================= */
+
+.background {
+  position: absolute;
+
+  z-index: 1;
+
+  right: -5px;
+
+  top: 0;
+
+  width: 410px;
+
+  height: 100%;
+
+  opacity: 0.55;
+
+  pointer-events: none;
+}
+
+/* horizontal circuit */
+.line1 {
+  position: absolute;
+
+  top: 30%;
+
+  right: 0;
+
+  width: 310px;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #c7dce6
+    );
+}
+
+/* vertical circuit */
+.line2 {
+  position: absolute;
+
+  top: 10%;
+
+  right: 120px;
+
+  width: 1px;
+
+  height: 65%;
+
+  background:
+    #d2e2e9;
+}
+
+/* secondary circuit */
+.line3 {
+  position: absolute;
+
+  top: 65%;
+
+  right: 30px;
+
+  width: 210px;
+
+  height: 1px;
+
+  background:
+    #d0e0e7;
+}
+
+/* =========================================================
+   ELECTRICAL NODES
+========================================================= */
+
+.background i {
+  position: absolute;
+
+  width: 7px;
+
+  height: 7px;
+
+  border:
+    1px solid
+    #8db1c0;
+
+  border-radius: 50%;
+
+  background:
+    #f3fafc;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(
+      24,
+      169,
+      202,
+      0.06
+    );
+}
+
+.node1 {
+  right: 305px;
+
+  top: calc(30% - 3px);
+}
+
+.node2 {
+  right: 117px;
+
+  top: calc(65% - 3px);
+}
+
+.node3 {
+  right: 30px;
+
+  top: calc(65% - 3px);
+}
+
+/* =========================================================
+   ELECTRICAL FLOW
+========================================================= */
+
+.line1::after,
+.line2::after,
+.line3::after {
+  content: "";
+
+  position: absolute;
+
+  width: 5px;
+
+  height: 5px;
+
+  border-radius: 50%;
+
+  background:
+    var(--cta-cyan);
+
+  box-shadow:
+    0 0 8px
+    rgba(
+      24,
+      169,
+      202,
+      0.4
+    );
+}
+
+.line1::after {
+  top: -2px;
+
+  left: 0;
+
+  animation:
+    flowHorizontal
+    3.2s
+    linear
+    infinite;
+}
+
+.line2::after {
+  left: -2px;
+
+  top: 0;
+
+  animation:
+    flowVertical
+    3s
+    linear
+    infinite;
+}
+
+.line3::after {
+  top: -2px;
+
+  left: 0;
+
+  animation:
+    flowHorizontalReverse
+    2.8s
+    linear
+    infinite;
+}
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes pulseDot {
+  0%,
+  100% {
+    opacity: 0.55;
+
+    transform:
+      scale(0.85);
+  }
+
+  50% {
+    opacity: 1;
+
+    transform:
+      scale(1.15);
+  }
+}
+
+@keyframes flowHorizontal {
+  0% {
+    transform:
+      translateX(0);
+
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  85% {
+    opacity: 1;
+  }
+
+  100% {
+    transform:
+      translateX(300px);
+
+    opacity: 0;
+  }
+}
+
+@keyframes flowHorizontalReverse {
+  0% {
+    transform:
+      translateX(0);
+
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  85% {
+    opacity: 1;
+  }
+
+  100% {
+    transform:
+      translateX(200px);
+
+    opacity: 0;
+  }
+}
+
+@keyframes flowVertical {
+  0% {
+    transform:
+      translateY(0);
+
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  85% {
+    opacity: 1;
+  }
+
+  100% {
+    transform:
+      translateY(180px);
+
+    opacity: 0;
+  }
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+  .section {
+    padding:
+      30px
+      0
+      75px;
+  }
+
+  .container {
+    width:
+      min(
+        calc(100% - 32px),
+        760px
+      );
+
+    grid-template-columns:
+      1fr;
+
+    gap: 27px;
+
+    padding:
+      32px;
+  }
+
+  .content h2 {
+    max-width: 600px;
+  }
+
+  .content > p {
+    max-width: 650px;
+  }
+
+  .actions {
+    width: 100%;
+
+    max-width: 560px;
+
+    display: grid;
+
+    grid-template-columns:
+      1fr
+      1fr;
+
+    justify-self: start;
+  }
+
+  .background {
+    right: -180px;
+
+    opacity: 0.3;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+  .section {
+    padding:
+      20px
+      0
+      58px;
+  }
+
+  .container {
+    width:
+      calc(100% - 28px);
+
+    min-height: 0;
+
+    padding:
+      25px
+      20px;
+
+    border-radius: 14px;
+
+    gap: 22px;
+  }
+
+  .eyebrow {
+    font-size: 7px;
+  }
+
+  .content h2 {
+    margin-top: 12px;
+
+    font-size: 25px;
+
+    line-height: 1.12;
+  }
+
+  .content > p {
+    font-size: 9.5px;
+
+    line-height: 1.65;
+  }
+
+  .highlights {
+    display: grid;
+
+    grid-template-columns:
+      1fr;
+
+    gap: 7px;
+
+    margin-top: 16px;
+  }
+
+  .highlights span {
+    font-size: 7.5px;
+  }
+
+  .actions {
+    max-width: none;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+  }
+
+  .primary,
+  .secondary {
+    min-height: 60px;
+
+    padding:
+      10px
+      12px;
+  }
+
+  .primary {
+    font-size: 10px;
+  }
+
+  .secondary {
+    font-size: 9.5px;
+  }
+
+  .primary small,
+  .secondary small {
+    font-size: 7px;
+  }
+
+  .secondaryIcon {
+    width: 34px;
+
+    height: 34px;
+  }
+
+  .background {
+    right: -220px;
+
+    top: 80px;
+
+    width: 350px;
+
+    opacity: 0.2;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+  .section {
+    padding:
+      15px
+      0
+      50px;
+  }
+
+  .container {
+    width:
+      calc(100% - 22px);
+
+    padding:
+      22px
+      16px;
+  }
+
+  .content h2 {
+    font-size: 22px;
+  }
+
+  .content > p {
+    font-size: 9px;
+  }
+
+  .highlights span {
+    font-size: 7px;
+  }
+
+  .primary,
+  .secondary {
+    min-height: 57px;
+  }
+
+  .background {
+    display: none;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .section *,
+  .section *::before,
+  .section *::after {
+    animation-duration:
+      0.01ms !important;
+
+    animation-iteration-count:
+      1 !important;
+
+    transition-duration:
+      0.01ms !important;
+  }
+}

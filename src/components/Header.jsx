@@ -29,7 +29,7 @@ export default function Header({ cartCount, onCart }) {
               to={to}
               end={to === "/"}
               onClick={() => setOpen(false)}
-              className={({ isActive }) => isActive ? "active" : ""}
+              className={({ isActive }) => (isActive ? "active" : "")}
             >
               {label}
             </NavLink>
@@ -37,19 +37,34 @@ export default function Header({ cartCount, onCart }) {
         </nav>
 
         <div className="nav-actions">
-          <button className="icon-btn cart-btn" onClick={onCart} aria-label="Open enquiry cart">
+          <button
+            className="icon-btn cart-btn"
+            onClick={onCart}
+            aria-label="Open enquiry cart"
+          >
             <ShoppingBag size={19} />
             {cartCount > 0 && <span>{cartCount}</span>}
           </button>
-          <Link className="nav-cta" to="/contact">Get a Quote</Link>
-          <button className="menu-btn" onClick={() => setOpen(!open)} aria-label="Toggle navigation">
+          <Link className="nav-cta" to="/contact">
+            Get a Quote
+          </Link>
+          <button
+            className="menu-btn"
+            onClick={() => setOpen(!open)}
+            aria-label="Toggle navigation"
+          >
             {open ? <X /> : <Menu />}
           </button>
         </div>
       </div>
       <div className={`mobile-nav ${open ? "show" : ""}`}>
         {links.map(([to, label]) => (
-          <NavLink key={to} to={to} end={to === "/"} onClick={() => setOpen(false)}>
+          <NavLink
+            key={to}
+            to={to}
+            end={to === "/"}
+            onClick={() => setOpen(false)}
+          >
             {label}
           </NavLink>
         ))}

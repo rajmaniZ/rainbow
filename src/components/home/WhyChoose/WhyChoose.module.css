@@ -1,0 +1,1025 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap");
+
+/* =========================================================
+   WHY CHOOSE
+   Completely self-contained.
+   No global CSS variables required.
+========================================================= */
+
+.section {
+  --wc-blue: #1268c4;
+  --wc-blue-dark: #0d57a6;
+  --wc-cyan: #16a8ce;
+  --wc-green: #1fa878;
+
+  --wc-heading: #1b3043;
+  --wc-text: #40576a;
+  --wc-muted: #718494;
+
+  --wc-border: #dce6ed;
+  --wc-border-light: #e8eef2;
+
+  width: 100%;
+
+  padding:
+    96px
+    0;
+
+  background:
+    linear-gradient(
+      180deg,
+      #f7f9fb 0%,
+      #f3f6f8 100%
+    );
+
+  color: var(--wc-heading);
+
+  font-family:
+    "DM Sans",
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  overflow: hidden;
+}
+
+/* =========================================================
+   LOCAL RESET
+========================================================= */
+
+.section *,
+.section *::before,
+.section *::after {
+  box-sizing: border-box;
+}
+
+.section a {
+  color: inherit;
+
+  text-decoration: none;
+}
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.container {
+  width:
+    min(
+      1240px,
+      calc(100% - 40px)
+    );
+
+  margin: 0 auto;
+}
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      3,
+      minmax(0, 1fr)
+    );
+
+  gap: 14px;
+
+  margin-top: 42px;
+}
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.card {
+  position: relative;
+
+  min-width: 0;
+
+  min-height: 245px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  padding: 21px;
+
+  overflow: hidden;
+
+  border:
+    1px solid
+    var(--wc-border);
+
+  border-radius: 14px;
+
+  background:
+    rgba(255, 255, 255, 0.96);
+
+  box-shadow:
+    0 3px 12px
+    rgba(29, 59, 80, 0.025);
+
+  transition:
+    transform 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease,
+    background 220ms ease;
+}
+
+/* =========================================================
+   TOP BLUE LINE
+========================================================= */
+
+.card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+
+  left: 0;
+
+  width: 0;
+
+  height: 2px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--wc-blue),
+      var(--wc-cyan)
+    );
+
+  transition:
+    width 300ms ease;
+}
+
+.card:hover {
+  transform:
+    translateY(-5px);
+
+  border-color:
+    #b9cedc;
+
+  background:
+    #ffffff;
+
+  box-shadow:
+    0 18px 38px
+    rgba(29, 59, 80, 0.085);
+}
+
+.card:hover::before {
+  width: 100%;
+}
+
+/* =========================================================
+   CARD TOP
+========================================================= */
+
+.cardTop {
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+}
+
+.number {
+  color:
+    #a3b0ba;
+
+  font-family:
+    "Manrope",
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  line-height: 1;
+}
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.icon {
+  width: 45px;
+
+  height: 45px;
+
+  display: grid;
+
+  place-items: center;
+
+  border:
+    1px solid
+    #d5e4ed;
+
+  border-radius: 11px;
+
+  color:
+    var(--wc-blue);
+
+  background:
+    #eef7fc;
+
+  transition:
+    color 200ms ease,
+    background 200ms ease,
+    border-color 200ms ease,
+    transform 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.card:hover .icon {
+  color: #ffffff;
+
+  border-color:
+    var(--wc-blue);
+
+  background:
+    var(--wc-blue);
+
+  transform:
+    rotate(-4deg)
+    translateY(-2px);
+
+  box-shadow:
+    0 8px 18px
+    rgba(18, 104, 196, 0.16);
+}
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.cardContent {
+  position: relative;
+
+  z-index: 2;
+
+  margin-top: 24px;
+}
+
+.cardContent h3 {
+  margin: 0;
+
+  color:
+    var(--wc-heading);
+
+  font-family:
+    "Manrope",
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  font-size: 16px;
+
+  font-weight: 800;
+
+  line-height: 1.3;
+
+  letter-spacing:
+    -0.025em;
+
+  transition:
+    color 180ms ease;
+}
+
+.card:hover .cardContent h3 {
+  color:
+    var(--wc-blue);
+}
+
+.cardContent p {
+  max-width: 310px;
+
+  margin:
+    8px
+    0
+    0;
+
+  color:
+    var(--wc-muted);
+
+  font-family:
+    "DM Sans",
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 500;
+
+  line-height: 1.68;
+}
+
+/* =========================================================
+   CARD FOOTER
+========================================================= */
+
+.cardFooter {
+  position: relative;
+
+  z-index: 3;
+
+  margin-top: auto;
+
+  padding-top: 18px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 10px;
+
+  color:
+    #96a3ae;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.04em;
+}
+
+.status {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+  color:
+    #8294a2;
+}
+
+.status i {
+  width: 5px;
+
+  height: 5px;
+
+  display: block;
+
+  border-radius: 50%;
+
+  background:
+    var(--wc-green);
+
+  box-shadow:
+    0 0 0 3px
+    rgba(31, 168, 120, 0.08);
+
+  animation:
+    statusPulse
+    2.2s
+    ease-in-out
+    infinite;
+}
+
+/* =========================================================
+   ELECTRICAL CIRCUIT DECORATION
+========================================================= */
+
+.circuit {
+  position: absolute;
+
+  right: -10px;
+
+  bottom: 32px;
+
+  width: 130px;
+
+  height: 85px;
+
+  opacity: 0.38;
+
+  pointer-events: none;
+
+  transition:
+    opacity 220ms ease;
+}
+
+.circuit::before {
+  content: "";
+
+  position: absolute;
+
+  top: 44px;
+
+  left: 0;
+
+  width: 100px;
+
+  height: 1px;
+
+  background:
+    #cfdee7;
+}
+
+.circuit::after {
+  content: "";
+
+  position: absolute;
+
+  top: 18px;
+
+  left: 55px;
+
+  width: 1px;
+
+  height: 27px;
+
+  background:
+    #cfdee7;
+}
+
+.circuit span {
+  position: absolute;
+
+  width: 6px;
+
+  height: 6px;
+
+  border:
+    1px solid
+    #89b5c9;
+
+  border-radius: 50%;
+
+  background:
+    #ffffff;
+}
+
+.circuit span:nth-child(1) {
+  top: 41px;
+
+  left: -1px;
+}
+
+.circuit span:nth-child(2) {
+  top: 41px;
+
+  left: 52px;
+}
+
+.circuit span:nth-child(3) {
+  top: 41px;
+
+  right: 20px;
+}
+
+.card:hover .circuit {
+  opacity: 0.8;
+}
+
+.card:hover .circuit span {
+  animation:
+    circuitCurrent
+    1.4s
+    ease-in-out
+    infinite;
+}
+
+.card:hover .circuit span:nth-child(2) {
+  animation-delay:
+    0.35s;
+}
+
+.card:hover .circuit span:nth-child(3) {
+  animation-delay:
+    0.7s;
+}
+
+/* =========================================================
+   CONTACT STRIP
+========================================================= */
+
+.strip {
+  min-height: 82px;
+
+  margin-top: 18px;
+
+  padding:
+    15px
+    18px
+    15px
+    16px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  border:
+    1px solid
+    #17334b;
+
+  border-radius: 13px;
+
+  background:
+    linear-gradient(
+      105deg,
+      #102a40,
+      #0c2235
+    );
+
+  color: #ffffff;
+
+  box-shadow:
+    0 12px 30px
+    rgba(12, 34, 53, 0.08);
+
+  overflow: hidden;
+
+  position: relative;
+}
+
+.strip::after {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+
+  right: -40px;
+
+  width: 220px;
+
+  height: 100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(22, 168, 206, 0.08)
+    );
+
+  transform:
+    skewX(-22deg);
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   STRIP CONTENT
+========================================================= */
+
+.stripContent {
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  min-width: 0;
+}
+
+.stripIcon {
+  width: 42px;
+
+  height: 42px;
+
+  flex: 0 0 auto;
+
+  display: grid;
+
+  place-items: center;
+
+  border:
+    1px solid
+    rgba(91, 212, 231, 0.22);
+
+  border-radius: 10px;
+
+  color:
+    #5bd4e7;
+
+  background:
+    rgba(91, 212, 231, 0.07);
+}
+
+.stripLabel {
+  display: block;
+
+  color:
+    #8297aa;
+
+  font-size: 9px;
+
+  font-weight: 600;
+
+  line-height: 1.3;
+}
+
+.strip strong {
+  display: block;
+
+  margin-top: 4px;
+
+  color:
+    #ffffff;
+
+  font-family:
+    "Manrope",
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  line-height: 1.3;
+}
+
+/* =========================================================
+   STRIP BUTTON
+========================================================= */
+
+.stripButton {
+  position: relative;
+
+  z-index: 3;
+
+  min-height: 40px;
+
+  flex: 0 0 auto;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 7px;
+
+  padding:
+    0
+    14px;
+
+  border:
+    1px solid
+    rgba(91, 212, 231, 0.28);
+
+  border-radius: 8px;
+
+  color:
+    #5bd4e7 !important;
+
+  background:
+    rgba(91, 212, 231, 0.05);
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  transition:
+    color 180ms ease,
+    background 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease;
+}
+
+.stripButton svg {
+  transition:
+    transform 180ms ease;
+}
+
+.stripButton:hover {
+  color:
+    #ffffff !important;
+
+  background:
+    var(--wc-blue);
+
+  border-color:
+    var(--wc-blue);
+
+  transform:
+    translateY(-2px);
+}
+
+.stripButton:hover svg {
+  transform:
+    translateX(3px);
+}
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes statusPulse {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes circuitCurrent {
+  0%,
+  100% {
+    background: #ffffff;
+
+    box-shadow:
+      0 0 0
+      rgba(22, 168, 206, 0);
+  }
+
+  50% {
+    background:
+      #62c8df;
+
+    box-shadow:
+      0 0 9px
+      rgba(22, 168, 206, 0.5);
+  }
+}
+
+/* =========================================================
+   LARGE TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+  .section {
+    padding:
+      84px
+      0;
+  }
+
+  .grid {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0, 1fr)
+      );
+
+    gap: 13px;
+
+    margin-top: 36px;
+  }
+
+  .card {
+    min-height: 235px;
+  }
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+  .section {
+    padding:
+      72px
+      0;
+  }
+
+  .container {
+    width:
+      min(
+        calc(100% - 32px),
+        720px
+      );
+  }
+
+  .grid {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0, 1fr)
+      );
+
+    margin-top: 32px;
+  }
+
+  .card {
+    min-height: 225px;
+
+    padding: 19px;
+  }
+
+  .cardContent {
+    margin-top: 20px;
+  }
+
+  .cardContent h3 {
+    font-size: 15px;
+  }
+
+  .cardContent p {
+    font-size: 10.5px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+  .section {
+    padding:
+      58px
+      0;
+  }
+
+  .container {
+    width:
+      calc(100% - 28px);
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+
+    margin-top: 27px;
+  }
+
+  .card {
+    min-height: 0;
+
+    padding: 17px;
+
+    border-radius: 12px;
+  }
+
+  .icon {
+    width: 42px;
+
+    height: 42px;
+
+    border-radius: 10px;
+  }
+
+  .cardContent {
+    margin-top: 17px;
+  }
+
+  .cardContent h3 {
+    font-size: 15px;
+  }
+
+  .cardContent p {
+    max-width: 90%;
+
+    font-size: 10.5px;
+
+    line-height: 1.58;
+  }
+
+  .cardFooter {
+    padding-top: 16px;
+
+    font-size: 7.5px;
+  }
+
+  .circuit {
+    right: -2px;
+
+    bottom: 30px;
+
+    transform:
+      scale(0.78);
+
+    transform-origin:
+      right center;
+  }
+
+  .strip {
+    min-height: 0;
+
+    padding:
+      15px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 13px;
+  }
+
+  .stripContent {
+    align-items: flex-start;
+  }
+
+  .stripIcon {
+    width: 38px;
+
+    height: 38px;
+  }
+
+  .strip strong {
+    font-size: 11px;
+
+    line-height: 1.45;
+  }
+
+  .stripLabel {
+    font-size: 8px;
+  }
+
+  .stripButton {
+    width: 100%;
+
+    min-height: 42px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+  .section {
+    padding:
+      50px
+      0;
+  }
+
+  .container {
+    width:
+      calc(100% - 22px);
+  }
+
+  .card {
+    padding: 15px;
+  }
+
+  .number {
+    font-size: 9px;
+  }
+
+  .cardContent h3 {
+    font-size: 14px;
+  }
+
+  .cardContent p {
+    font-size: 10px;
+  }
+
+  .cardFooter {
+    font-size: 7px;
+  }
+
+  .circuit {
+    opacity: 0.3;
+  }
+
+  .strip {
+    padding: 13px;
+  }
+
+  .strip strong {
+    font-size: 10.5px;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .section *,
+  .section *::before,
+  .section *::after {
+    animation-duration:
+      0.01ms !important;
+
+    animation-iteration-count:
+      1 !important;
+
+    transition-duration:
+      0.01ms !important;
+  }
+}

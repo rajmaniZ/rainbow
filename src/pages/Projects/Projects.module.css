@@ -1,0 +1,1983 @@
+/* ============================================================
+   PROJECTS PAGE
+============================================================ */
+
+.page {
+  --ink: #10283d;
+  --blue: #1468d5;
+  --blue-dark: #0b55b5;
+  --cyan: #55d4e6;
+  --muted: #60788e;
+  --border: #d9e5ed;
+  --green: #16a879;
+
+  min-height: 100%;
+  background: #ffffff;
+  color: var(--ink);
+}
+
+/* ============================================================
+   COMMON
+============================================================ */
+
+.container {
+  width: min(1240px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* ============================================================
+   HERO
+============================================================ */
+
+.hero {
+  --header-height: 84px;
+
+  position: relative;
+
+  width: 100%;
+
+  height: calc(100vh - var(--header-height));
+  height: calc(100svh - var(--header-height));
+
+  min-height: 620px;
+
+  overflow: hidden;
+
+  isolation: isolate;
+
+  background:
+    radial-gradient(
+      circle at 78% 60%,
+      rgba(65, 196, 225, 0.18),
+      transparent 34%
+    ),
+    linear-gradient(115deg, #ffffff 0%, #f9fcfd 52%, #e9f7fa 100%);
+
+  border-bottom: 1px solid #dce7ed;
+}
+
+/* ============================================================
+   HERO BACKGROUND
+============================================================ */
+
+.heroBackground {
+  position: absolute;
+
+  inset: 0;
+
+  overflow: hidden;
+
+  z-index: 0;
+
+  pointer-events: none;
+}
+
+/* ============================================================
+   BACKGROUND GRID
+============================================================ */
+
+.grid {
+  position: absolute;
+
+  inset: 0;
+
+  opacity: 0.65;
+
+  background-image:
+    linear-gradient(rgba(38, 122, 163, 0.065) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(38, 122, 163, 0.065) 1px, transparent 1px);
+
+  background-size: 44px 44px;
+
+  mask-image: linear-gradient(90deg, transparent 0%, #000 18%, #000 100%);
+
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    #000 18%,
+    #000 100%
+  );
+}
+
+/* ============================================================
+   BACKGROUND GLOW
+============================================================ */
+
+.glow {
+  position: absolute;
+
+  width: 720px;
+  height: 520px;
+
+  right: -180px;
+  bottom: 60px;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(71, 204, 229, 0.18) 0%,
+    rgba(71, 204, 229, 0.08) 35%,
+    transparent 72%
+  );
+
+  filter: blur(18px);
+}
+
+/* ============================================================
+   DECORATIVE NODES
+============================================================ */
+
+.nodes {
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+}
+
+.nodes span {
+  position: absolute;
+
+  width: 7px;
+  height: 7px;
+
+  border: 2px solid #63cfdf;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 0 0 5px rgba(99, 207, 223, 0.08),
+    0 0 14px rgba(99, 207, 223, 0.25);
+
+  animation: nodePulse 3.5s ease-in-out infinite;
+}
+
+.node1 {
+  top: 25%;
+  right: 42%;
+}
+
+.node2 {
+  top: 32%;
+  right: 13%;
+
+  animation-delay: 0.7s;
+}
+
+.node3 {
+  top: 55%;
+  right: 29%;
+
+  animation-delay: 1.2s;
+}
+
+.node4 {
+  top: 67%;
+  right: 49%;
+
+  animation-delay: 1.8s;
+}
+
+@keyframes nodePulse {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.35);
+  }
+}
+
+/* ============================================================
+   HERO CONTENT
+============================================================ */
+
+.heroContent {
+  position: relative;
+
+  z-index: 30;
+
+  width: min(1240px, calc(100% - 40px));
+
+  height: 100%;
+
+  margin: 0 auto;
+
+  padding-top: clamp(55px, 9vh, 95px);
+
+  padding-right: 51%;
+
+  pointer-events: none;
+}
+
+.heroContent a {
+  pointer-events: auto;
+}
+
+/* ============================================================
+   EYEBROW
+============================================================ */
+
+.eyebrow {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 8px 13px;
+
+  border: 1px solid #d3e1e9;
+
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.88);
+
+  color: #5d768a;
+
+  font-size: 0.67rem;
+
+  font-weight: 800;
+
+  line-height: 1;
+
+  letter-spacing: 0.12em;
+
+  box-shadow: 0 7px 20px rgba(26, 70, 95, 0.06);
+}
+
+.eyebrow i {
+  width: 8px;
+  height: 8px;
+
+  flex: 0 0 8px;
+
+  border-radius: 50%;
+
+  background: #20b789;
+
+  box-shadow: 0 0 0 5px rgba(32, 183, 137, 0.1);
+}
+
+/* ============================================================
+   HERO HEADING
+============================================================ */
+
+.heroContent h1 {
+  max-width: 650px;
+
+  margin: 23px 0 16px;
+
+  color: var(--ink);
+
+  font-family: var(--head, "Manrope", sans-serif);
+
+  font-size: clamp(2.7rem, 5vw, 4.7rem);
+
+  font-weight: 800;
+
+  line-height: 0.98;
+
+  letter-spacing: -0.055em;
+}
+
+.heroContent h1 strong {
+  color: var(--blue);
+
+  font-weight: 800;
+}
+
+/* ============================================================
+   HERO TEXT
+============================================================ */
+
+.heroContent > p {
+  max-width: 610px;
+
+  margin: 0;
+
+  color: #5e758a;
+
+  font-family: var(--body, "DM Sans", sans-serif);
+
+  font-size: 0.88rem;
+
+  font-weight: 500;
+
+  line-height: 1.7;
+}
+
+/* ============================================================
+   ACTIONS
+============================================================ */
+
+.actions {
+  display: flex;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  margin-top: 23px;
+}
+
+.primaryButton,
+.secondaryButton {
+  min-height: 45px;
+
+  padding: 0 16px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  border-radius: 8px;
+
+  font-size: 0.71rem;
+
+  font-weight: 800;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.primaryButton {
+  background: var(--blue);
+
+  color: #ffffff;
+
+  box-shadow: 0 9px 23px rgba(20, 104, 213, 0.2);
+}
+
+.primaryButton:hover {
+  transform: translateY(-2px);
+
+  background: var(--blue-dark);
+
+  box-shadow: 0 14px 30px rgba(20, 104, 213, 0.25);
+}
+
+.secondaryButton {
+  border: 1px solid #cddde7;
+
+  background: rgba(255, 255, 255, 0.9);
+
+  color: var(--ink);
+}
+
+.secondaryButton:hover {
+  transform: translateY(-2px);
+
+  background: #ffffff;
+
+  border-color: #a9c0cf;
+}
+
+/* ============================================================
+   HERO STATS
+============================================================ */
+
+.stats {
+  display: flex;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 18px;
+
+  margin-top: 23px;
+}
+
+.stat {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+}
+
+.statIcon {
+  width: 34px;
+  height: 34px;
+
+  display: grid;
+
+  place-items: center;
+
+  border: 1px solid #d7e7ef;
+
+  border-radius: 9px;
+
+  background: #eef8fb;
+
+  color: var(--blue);
+}
+
+.stat > div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+.stat strong {
+  color: #19354e;
+
+  font-size: 0.75rem;
+
+  font-weight: 800;
+
+  line-height: 1.1;
+}
+
+.stat small {
+  color: #72889a;
+
+  font-size: 0.55rem;
+
+  font-weight: 600;
+
+  line-height: 1.2;
+
+  white-space: nowrap;
+}
+
+/* ============================================================
+   RAILWAY SCENE
+============================================================ */
+
+.railwayScene {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 10;
+
+  overflow: hidden;
+
+  pointer-events: none;
+}
+
+/* ============================================================
+   TRACK
+
+   Absolutely horizontal.
+============================================================ */
+
+.track {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  bottom: 48px;
+
+  width: 100%;
+
+  height: 65px;
+
+  z-index: 10;
+}
+
+/* ============================================================
+   SLEEPERS
+============================================================ */
+
+.sleepers {
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 0 8px;
+
+  overflow: hidden;
+}
+
+.sleepers span {
+  width: 5px;
+  height: 53px;
+
+  flex: 0 0 5px;
+
+  border-radius: 2px;
+
+  background: linear-gradient(90deg, #7d969f, #dce7ea 45%, #80979f);
+
+  opacity: 0.72;
+
+  box-shadow: 0 1px 2px rgba(42, 67, 78, 0.15);
+}
+
+/* ============================================================
+   RAILS
+============================================================ */
+
+.rail {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  height: 4px;
+
+  border-radius: 999px;
+
+  background: linear-gradient(
+    90deg,
+    #647e88,
+    #cbd6da 20%,
+    #718992 45%,
+    #c8d3d8 70%,
+    #657e88
+  );
+
+  box-shadow: 0 2px 3px rgba(40, 65, 76, 0.18);
+}
+
+.railTop {
+  top: 11px;
+}
+
+.railBottom {
+  top: 45px;
+}
+
+/* ============================================================
+   TRAIN VIEWPORT
+
+   Same bottom value as track.
+   Therefore train stays ON the track.
+============================================================ */
+
+.trainViewport {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  bottom: 48px;
+
+  height: 78px;
+
+  z-index: 20;
+
+  overflow: hidden;
+
+  mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    #000 5%,
+    #000 95%,
+    transparent 100%
+  );
+
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    #000 5%,
+    #000 95%,
+    transparent 100%
+  );
+}
+
+/* ============================================================
+   ELECTRIC LOCOMOTIVE
+============================================================ */
+
+.train {
+  position: absolute;
+
+  left: 0;
+
+  bottom: 5px;
+
+  width: 205px;
+  height: 72px;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  opacity: 0;
+
+  filter: drop-shadow(0 8px 7px rgba(18, 48, 62, 0.24));
+
+  animation: trainMove 10s linear infinite;
+
+  will-change: transform, opacity;
+}
+
+/* ============================================================
+   LOCOMOTIVE FRONT
+============================================================ */
+
+.trainFront {
+  position: relative;
+
+  width: 64px;
+  height: 66px;
+
+  flex: 0 0 64px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  overflow: hidden;
+
+  border: 2px solid #0755a7;
+
+  border-right: 0;
+
+  border-radius: 17px 3px 3px 8px;
+
+  background: linear-gradient(155deg, #1c84e7, #0964c4 48%, #064b99);
+
+  box-shadow:
+    inset -7px 0 rgba(0, 0, 0, 0.08),
+    inset 0 5px rgba(255, 255, 255, 0.12);
+}
+
+/* ============================================================
+   LOCOMOTIVE NOSE
+============================================================ */
+
+.trainFront::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  width: 26px;
+
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.18), transparent);
+
+  clip-path: polygon(0 0, 100% 8%, 100% 92%, 0 100%);
+}
+
+/* ============================================================
+   FRONT BUMPER
+============================================================ */
+
+.trainFront::after {
+  content: "";
+
+  position: absolute;
+
+  left: 4px;
+  right: 4px;
+
+  bottom: 4px;
+
+  height: 8px;
+
+  border-radius: 3px;
+
+  background: #063d7d;
+}
+
+/* ============================================================
+   DRIVER WINDOW
+============================================================ */
+
+.trainWindow {
+  position: relative;
+
+  z-index: 3;
+
+  width: 38px;
+  height: 27px;
+
+  margin-top: -12px;
+
+  display: grid;
+
+  place-items: center;
+
+  border: 2px solid #5d91a2;
+
+  border-radius: 7px 4px 4px 5px;
+
+  background: linear-gradient(135deg, #e4faff, #75b6c6 55%, #467b8c);
+
+  color: #ffffff;
+
+  box-shadow:
+    inset 0 2px rgba(255, 255, 255, 0.3),
+    0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.trainWindow::after {
+  content: "";
+
+  position: absolute;
+
+  top: 2px;
+  bottom: 2px;
+  left: 50%;
+
+  width: 2px;
+
+  transform: translateX(-50%);
+
+  background: rgba(46, 97, 113, 0.55);
+}
+
+/* ============================================================
+   HEADLIGHT
+============================================================ */
+
+.headlight {
+  position: absolute;
+
+  left: 5px;
+  bottom: 15px;
+
+  z-index: 5;
+
+  width: 8px;
+  height: 8px;
+
+  border: 2px solid #dcfbff;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 0 6px #ffffff,
+    0 0 14px #59d9ed,
+    0 0 25px rgba(89, 217, 237, 0.5);
+}
+
+/* ============================================================
+   LOCOMOTIVE BODY
+============================================================ */
+
+.trainBody {
+  position: relative;
+
+  width: 141px;
+  height: 65px;
+
+  flex: 0 0 141px;
+
+  overflow: visible;
+
+  border: 2px solid #8faab5;
+
+  border-left: 0;
+
+  border-radius: 0 10px 8px 0;
+
+  background: linear-gradient(180deg, #f9fcfd, #d9e9ed 45%, #c1d5dc);
+
+  box-shadow:
+    inset 0 5px rgba(255, 255, 255, 0.8),
+    inset 0 -13px rgba(41, 68, 79, 0.08);
+}
+
+/* ============================================================
+   LOCOMOTIVE ROOF
+============================================================ */
+
+.trainBody::before {
+  content: "";
+
+  position: absolute;
+
+  left: -5px;
+  right: 2px;
+
+  top: -7px;
+
+  height: 11px;
+
+  border-radius: 8px 8px 2px 2px;
+
+  background: linear-gradient(180deg, #607b87, #a4b8bf);
+
+  box-shadow: 0 2px rgba(28, 59, 71, 0.2);
+}
+
+/* ============================================================
+   LOCOMOTIVE CHASSIS
+============================================================ */
+
+.trainBody::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  bottom: 0;
+
+  height: 11px;
+
+  border-top: 2px solid #718a95;
+
+  border-radius: 0 0 7px 0;
+
+  background: linear-gradient(180deg, #526a75, #293f48);
+}
+
+/* ============================================================
+   TRAIN WINDOWS
+============================================================ */
+
+.trainWindows {
+  position: absolute;
+
+  top: 10px;
+  left: 12px;
+
+  display: flex;
+
+  gap: 6px;
+}
+
+.trainWindows span {
+  position: relative;
+
+  width: 30px;
+  height: 24px;
+
+  border: 2px solid #638c9c;
+
+  border-radius: 5px;
+
+  background: linear-gradient(135deg, #e6faff, #88bfca 50%, #4b8292);
+
+  box-shadow: inset 0 2px rgba(255, 255, 255, 0.35);
+}
+
+.trainWindows span::after {
+  content: "";
+
+  position: absolute;
+
+  top: 2px;
+  bottom: 2px;
+
+  left: 50%;
+
+  width: 1px;
+
+  background: rgba(50, 97, 113, 0.5);
+}
+
+/* ============================================================
+   ELECTRIC BLUE STRIPE
+============================================================ */
+
+.trainStripe {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  top: 42px;
+
+  height: 6px;
+
+  background: linear-gradient(90deg, #0753aa, #1586e8, #0753aa);
+}
+
+/* ============================================================
+   ELECTRIC SYMBOL
+============================================================ */
+
+.trainPower {
+  position: absolute;
+
+  right: 8px;
+  top: 40px;
+
+  z-index: 5;
+
+  width: 23px;
+  height: 23px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 5px;
+
+  background: linear-gradient(145deg, #147de0, #0755ae);
+
+  color: #ffffff;
+
+  box-shadow: 0 2px 4px rgba(9, 74, 142, 0.25);
+}
+
+/* ============================================================
+   TRAIN WHEELS
+============================================================ */
+
+.wheel {
+  position: absolute;
+
+  z-index: 10;
+
+  bottom: -9px;
+
+  width: 23px;
+  height: 23px;
+
+  border: 4px solid #7b919a;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    #dce7ea 0 18%,
+    #526872 20% 40%,
+    #263d47 43% 100%
+  );
+
+  box-shadow:
+    0 0 0 2px #ffffff,
+    0 2px 4px rgba(17, 37, 47, 0.25);
+}
+
+.wheelOne {
+  left: 17px;
+}
+
+.wheelTwo {
+  left: 87px;
+}
+
+.wheelThree {
+  left: 157px;
+}
+
+/* ============================================================
+   TRAIN MOVEMENT
+
+   RIGHT → LEFT ONLY
+
+   Train completely leaves viewport.
+   It never reverses.
+============================================================ */
+
+@keyframes trainMove {
+  0% {
+    transform: translateX(110vw);
+    opacity: 0;
+  }
+
+  4% {
+    transform: translateX(100vw);
+    opacity: 1;
+  }
+
+  76% {
+    transform: translateX(-205px);
+    opacity: 1;
+  }
+
+  83% {
+    transform: translateX(-245px);
+    opacity: 0.85;
+  }
+
+  87% {
+    transform: translateX(-300px);
+    opacity: 0;
+  }
+
+  92% {
+    transform: translateX(110vw);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(110vw);
+    opacity: 0;
+  }
+}
+
+/* ============================================================
+   PROJECT SECTION
+============================================================ */
+
+.projectSection {
+  padding: 95px 0;
+
+  background: #ffffff;
+}
+
+/* ============================================================
+   PROJECT CARD
+============================================================ */
+
+.projectCard {
+  display: grid;
+
+  grid-template-columns: 280px minmax(0, 1fr);
+
+  overflow: hidden;
+
+  border: 1px solid #263d50;
+
+  border-radius: 18px;
+
+  background: #091b2b;
+
+  color: #ffffff;
+
+  box-shadow: 0 20px 50px rgba(12, 31, 47, 0.12);
+}
+
+/* ============================================================
+   PROJECT VISUAL
+============================================================ */
+
+.projectVisual {
+  min-height: 430px;
+
+  padding: 30px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: flex-end;
+
+  background:
+    radial-gradient(
+      circle at 30% 20%,
+      rgba(50, 183, 219, 0.18),
+      transparent 32%
+    ),
+    linear-gradient(145deg, #0b2337, #10364d);
+}
+
+.projectIcon {
+  width: 58px;
+  height: 58px;
+
+  margin-bottom: auto;
+
+  display: grid;
+
+  place-items: center;
+
+  border: 1px solid rgba(91, 212, 230, 0.2);
+
+  border-radius: 14px;
+
+  background: rgba(91, 212, 230, 0.09);
+
+  color: #5bd4e6;
+}
+
+.projectVisual > span {
+  margin-bottom: 8px;
+
+  color: #5bd4e6;
+
+  font-size: 0.62rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.12em;
+}
+
+.projectVisual > strong {
+  font-family: var(--head, "Manrope", sans-serif);
+
+  font-size: 6rem;
+
+  font-weight: 800;
+
+  line-height: 0.8;
+
+  letter-spacing: -0.07em;
+}
+
+.projectVisual > small {
+  margin-top: 8px;
+
+  color: #879bac;
+
+  font-size: 0.62rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+}
+
+/* ============================================================
+   PROJECT BODY
+============================================================ */
+
+.projectBody {
+  min-width: 0;
+
+  padding: 38px;
+}
+
+.projectType {
+  color: #5bd4e6;
+
+  font-size: 0.62rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.12em;
+
+  text-transform: uppercase;
+}
+
+.projectBody h2 {
+  margin: 9px 0 12px;
+
+  font-family: var(--head, "Manrope", sans-serif);
+
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+
+  font-weight: 800;
+
+  line-height: 1.05;
+
+  letter-spacing: -0.045em;
+}
+
+.projectBody > p {
+  max-width: 760px;
+
+  margin: 0;
+
+  color: #96aabd;
+
+  font-size: 0.82rem;
+
+  line-height: 1.75;
+}
+
+.projectBody h3 {
+  margin: 27px 0 13px;
+
+  color: #b6c4cf;
+
+  font-size: 0.68rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.1em;
+
+  text-transform: uppercase;
+}
+
+/* ============================================================
+   SCOPE
+============================================================ */
+
+.scope {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 9px 22px;
+}
+
+.scope span {
+  min-width: 0;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 8px;
+
+  color: #c1ccd5;
+
+  font-size: 0.68rem;
+
+  line-height: 1.5;
+}
+
+.scope svg {
+  flex: 0 0 auto;
+
+  margin-top: 2px;
+
+  color: #4fd49a;
+}
+
+/* ============================================================
+   PROJECT ACTION
+============================================================ */
+
+.projectAction {
+  width: fit-content;
+
+  margin-top: 25px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 12px 15px;
+
+  border-radius: 8px;
+
+  background: var(--blue);
+
+  color: #ffffff;
+
+  font-size: 0.7rem;
+
+  font-weight: 800;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.projectAction:hover {
+  transform: translateY(-2px);
+
+  background: var(--blue-dark);
+}
+
+/* ============================================================
+   CLIENTS
+============================================================ */
+
+.clientsSection {
+  padding: 95px 0;
+
+  background: #f5f8fa;
+}
+
+.clientsGrid {
+  display: grid;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 14px;
+}
+
+.clientCard {
+  min-width: 0;
+
+  padding: 24px;
+
+  border: 1px solid var(--border);
+
+  border-radius: 15px;
+
+  background: #ffffff;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.clientCard:hover {
+  transform: translateY(-3px);
+
+  border-color: #bfd3e1;
+
+  box-shadow: 0 14px 35px rgba(23, 55, 76, 0.08);
+}
+
+.clientHeader {
+  padding-bottom: 14px;
+
+  border-bottom: 1px solid #e7eef3;
+}
+
+.clientHeader span {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: var(--blue);
+
+  font-size: 0.58rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.1em;
+
+  text-transform: uppercase;
+}
+
+.clientHeader strong {
+  display: block;
+
+  color: var(--ink);
+
+  font-family: var(--head, "Manrope", sans-serif);
+
+  font-size: 0.98rem;
+
+  font-weight: 800;
+
+  text-transform: capitalize;
+}
+
+.clientList {
+  margin-top: 8px;
+}
+
+.clientList > div {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 8px;
+
+  padding: 10px 0;
+
+  border-bottom: 1px solid #edf2f5;
+}
+
+.clientList > div:last-child {
+  border-bottom: 0;
+}
+
+.clientList svg {
+  flex: 0 0 auto;
+
+  margin-top: 2px;
+
+  color: var(--green);
+}
+
+.clientList span {
+  color: #526b82;
+
+  font-size: 0.7rem;
+
+  font-weight: 600;
+
+  line-height: 1.45;
+}
+
+/* ============================================================
+   CTA
+============================================================ */
+
+.ctaSection {
+  padding: 25px 0 90px;
+
+  background: #f5f8fa;
+}
+
+.cta {
+  padding: 34px 36px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 30px;
+
+  border: 1px solid #d7e4eb;
+
+  border-radius: 16px;
+
+  background: linear-gradient(135deg, #eef9fb, #f0f5ff);
+}
+
+.cta span {
+  color: var(--blue);
+
+  font-size: 0.6rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.1em;
+
+  text-transform: uppercase;
+}
+
+.cta h2 {
+  margin: 7px 0 6px;
+
+  color: var(--ink);
+
+  font-family: var(--head, "Manrope", sans-serif);
+
+  font-size: clamp(1.5rem, 3vw, 2rem);
+
+  font-weight: 800;
+
+  line-height: 1.1;
+
+  letter-spacing: -0.04em;
+}
+
+.cta p {
+  max-width: 650px;
+
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: 0.74rem;
+
+  line-height: 1.6;
+}
+
+.cta > a {
+  flex: 0 0 auto;
+
+  min-height: 45px;
+
+  padding: 0 17px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  border-radius: 8px;
+
+  background: var(--blue);
+
+  color: #ffffff;
+
+  font-size: 0.7rem;
+
+  font-weight: 800;
+
+  white-space: nowrap;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.cta > a:hover {
+  transform: translateY(-2px);
+
+  background: var(--blue-dark);
+}
+
+/* ============================================================
+   TABLET
+============================================================ */
+
+@media (max-width: 1050px) {
+  .heroContent {
+    padding-right: 44%;
+  }
+
+  .heroContent h1 {
+    font-size: clamp(2.5rem, 5vw, 1.5rem);
+  }
+
+  .projectCard {
+    grid-template-columns: 235px minmax(0, 1fr);
+  }
+
+  .projectVisual {
+    min-height: 390px;
+  }
+
+  .projectVisual > strong {
+    font-size: 5rem;
+  }
+
+  .clientsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ============================================================
+   SMALL LAPTOP / TABLET
+============================================================ */
+
+@media (max-width: 850px) {
+  .hero {
+    --header-height: 76px;
+  }
+
+  .heroContent {
+    width: calc(100% - 32px);
+
+    padding-top: 50px;
+
+    padding-right: 40%;
+  }
+
+  .heroContent h1 {
+    font-size: clamp(1.5rem, 3vw, 1.5rem);
+  }
+
+  .heroContent > p {
+    font-size: 0.8rem;
+  }
+
+  .track,
+  .trainViewport {
+    bottom: 38px;
+  }
+
+  .projectCard {
+    grid-template-columns: 1fr;
+  }
+
+  .projectVisual {
+    min-height: 220px;
+  }
+
+  .projectIcon {
+    margin-bottom: 30px;
+  }
+
+  .projectVisual > strong {
+    font-size: 4.4rem;
+  }
+
+  .projectBody {
+    padding: 30px;
+  }
+
+  .cta {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+}
+
+/* ============================================================
+   MOBILE
+============================================================ */
+
+@media (max-width: 650px) {
+  .container {
+    width: calc(100% - 28px);
+  }
+
+  .hero {
+    --header-height: 72px;
+
+    min-height: calc(100svh - var(--header-height));
+
+    height: calc(100svh - var(--header-height));
+
+    min-height: 560px;
+  }
+
+  .heroContent {
+    width: calc(100% - 28px);
+
+    padding-top: 30px;
+
+    padding-right: 0;
+
+    padding-bottom: 170px;
+  }
+
+  .eyebrow {
+    padding: 7px 10px;
+
+    font-size: 0.55rem;
+
+    letter-spacing: 0.08em;
+  }
+
+  .heroContent h1 {
+    max-width: 390px;
+
+    margin: 17px 0 12px;
+
+    font-size: clamp(1.95rem, 9vw, 2.75rem);
+
+    line-height: 0.99;
+  }
+
+  .heroContent > p {
+    max-width: 420px;
+
+    font-size: 0.72rem;
+
+    line-height: 1.6;
+  }
+
+  .actions {
+    margin-top: 17px;
+
+    gap: 7px;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    min-height: 40px;
+
+    padding: 0 12px;
+
+    font-size: 0.62rem;
+  }
+
+  .stats {
+    gap: 10px;
+
+    margin-top: 17px;
+  }
+
+  .stat {
+    gap: 6px;
+  }
+
+  .statIcon {
+    width: 29px;
+    height: 29px;
+  }
+
+  .statIcon svg {
+    width: 13px;
+    height: 13px;
+  }
+
+  .stat strong {
+    font-size: 0.64rem;
+  }
+
+  .stat small {
+    font-size: 0.48rem;
+  }
+
+  /* ==========================================================
+     MOBILE RAILWAY
+  ========================================================== */
+
+  .track,
+  .trainViewport {
+    bottom: 24px;
+  }
+
+  .track {
+    height: 54px;
+  }
+
+  .sleepers {
+    padding-inline: 5px;
+  }
+
+  .sleepers span {
+    width: 4px;
+    height: 42px;
+
+    flex-basis: 4px;
+  }
+
+  .rail {
+    height: 3px;
+  }
+
+  .railTop {
+    top: 9px;
+  }
+
+  .railBottom {
+    top: 37px;
+  }
+
+  .trainViewport {
+    height: 66px;
+  }
+
+  .train {
+    width: 155px;
+    height: 58px;
+  }
+
+  .trainFront {
+    width: 49px;
+    height: 55px;
+
+    flex-basis: 49px;
+  }
+
+  .trainWindow {
+    width: 30px;
+    height: 22px;
+  }
+
+  .trainBody {
+    width: 106px;
+    height: 54px;
+
+    flex-basis: 106px;
+  }
+
+  .trainWindows {
+    top: 9px;
+    left: 9px;
+
+    gap: 4px;
+  }
+
+  .trainWindows span {
+    width: 22px;
+    height: 19px;
+  }
+
+  .trainStripe {
+    top: 37px;
+
+    height: 5px;
+  }
+
+  .trainPower {
+    top: 36px;
+
+    width: 19px;
+    height: 19px;
+  }
+
+  .wheel {
+    width: 18px;
+    height: 18px;
+
+    bottom: -7px;
+
+    border-width: 3px;
+  }
+
+  .wheelOne {
+    left: 12px;
+  }
+
+  .wheelTwo {
+    left: 61px;
+  }
+
+  .wheelThree {
+    left: 117px;
+  }
+
+  /* ==========================================================
+     PROJECT
+  ========================================================== */
+
+  .projectSection {
+    padding: 65px 0;
+  }
+
+  .projectVisual {
+    min-height: 190px;
+
+    padding: 22px;
+  }
+
+  .projectIcon {
+    width: 48px;
+    height: 48px;
+
+    margin-bottom: 24px;
+  }
+
+  .projectVisual > strong {
+    font-size: 4rem;
+  }
+
+  .projectVisual > span {
+    font-size: 0.55rem;
+  }
+
+  .projectVisual > small {
+    font-size: 0.54rem;
+  }
+
+  .projectBody {
+    padding: 23px;
+  }
+
+  .projectBody h2 {
+    font-size: 1.5rem;
+  }
+
+  .projectBody > p {
+    font-size: 0.71rem;
+  }
+
+  .scope {
+    grid-template-columns: 1fr;
+
+    gap: 8px;
+  }
+
+  .scope span {
+    font-size: 0.64rem;
+  }
+
+  /* ==========================================================
+     CLIENTS
+  ========================================================== */
+
+  .clientsSection {
+    padding: 65px 0;
+  }
+
+  .clientsGrid {
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+  }
+
+  .clientCard {
+    padding: 20px;
+  }
+
+  .clientList span {
+    font-size: 0.66rem;
+  }
+
+  /* ==========================================================
+     CTA
+  ========================================================== */
+
+  .ctaSection {
+    padding: 20px 0 65px;
+  }
+
+  .cta {
+    padding: 24px 20px;
+
+    gap: 18px;
+  }
+
+  .cta h2 {
+    font-size: 1.4rem;
+  }
+
+  .cta p {
+    font-size: 0.68rem;
+  }
+
+  .cta > a {
+    width: 100%;
+  }
+}
+
+/* ============================================================
+   VERY SMALL PHONES
+============================================================ */
+
+@media (max-width: 400px) {
+  .hero {
+    --header-height: 68px;
+
+    min-height: 540px;
+  }
+
+  .heroContent {
+    padding-top: 24px;
+  }
+
+  .heroContent h1 {
+    font-size: 1.82rem;
+  }
+
+  .heroContent > p {
+    font-size: 0.68rem;
+  }
+
+  .actions {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+  }
+
+  .stats {
+    gap: 7px;
+  }
+
+  .stat small {
+    white-space: normal;
+  }
+
+  .track,
+  .trainViewport {
+    bottom: 18px;
+  }
+
+  .projectBody {
+    padding: 20px;
+  }
+
+  .projectBody h2 {
+    font-size: 1.35rem;
+  }
+}
+
+/* ============================================================
+   REDUCED MOTION
+============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .train,
+  .nodes span {
+    animation: none;
+  }
+
+  .train {
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    opacity: 1;
+  }
+
+  .primaryButton,
+  .secondaryButton,
+  .projectAction,
+  .clientCard,
+  .cta > a {
+    transition: none;
+  }
+}

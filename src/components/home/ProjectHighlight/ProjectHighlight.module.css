@@ -1,0 +1,1348 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap");
+
+/* =========================================================
+   PROJECT HIGHLIGHT
+   Fully self-contained CSS.
+========================================================= */
+
+.section {
+  --ph-blue: #1268c4;
+  --ph-blue-dark: #0d57a6;
+  --ph-cyan: #16a8ce;
+  --ph-green: #1fa878;
+
+  --ph-heading: #1b3043;
+  --ph-text: #40576a;
+  --ph-muted: #718494;
+
+  --ph-border: #dce6ed;
+  --ph-border-light: #e8eef2;
+
+  position: relative;
+
+  width: 100%;
+
+  padding: 96px 0;
+
+  overflow: hidden;
+
+  background:
+    #ffffff;
+
+  color:
+    var(--ph-heading);
+
+  font-family:
+    "DM Sans",
+    "Segoe UI",
+    Arial,
+    sans-serif;
+}
+
+/* =========================================================
+   LOCAL RESET
+========================================================= */
+
+.section *,
+.section *::before,
+.section *::after {
+  box-sizing: border-box;
+}
+
+.section a {
+  color: inherit;
+
+  text-decoration: none;
+}
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.container {
+  position: relative;
+
+  z-index: 2;
+
+  width:
+    min(
+      1240px,
+      calc(100% - 40px)
+    );
+
+  margin: 0 auto;
+}
+
+/* =========================================================
+   BACKGROUND ELECTRICAL DECORATION
+========================================================= */
+
+.background {
+  position: absolute;
+
+  top: 70px;
+
+  right: -80px;
+
+  width: 380px;
+
+  height: 380px;
+
+  opacity: 0.45;
+
+  pointer-events: none;
+}
+
+.background::before {
+  content: "";
+
+  position: absolute;
+
+  top: 50%;
+
+  left: 0;
+
+  width: 100%;
+
+  height: 1px;
+
+  background:
+    #dce8ee;
+}
+
+.background::after {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+
+  left: 50%;
+
+  width: 1px;
+
+  height: 100%;
+
+  background:
+    #dce8ee;
+}
+
+.background span {
+  position: absolute;
+
+  width: 8px;
+
+  height: 8px;
+
+  border:
+    1px solid
+    #9db9c7;
+
+  border-radius: 50%;
+
+  background:
+    #ffffff;
+}
+
+.background span:nth-child(1) {
+  top: 50%;
+
+  left: 0;
+}
+
+.background span:nth-child(2) {
+  top: 0;
+
+  left: 50%;
+}
+
+.background span:nth-child(3) {
+  right: 0;
+
+  top: 50%;
+}
+
+/* =========================================================
+   PROJECT CARD
+========================================================= */
+
+.project {
+  display: grid;
+
+  grid-template-columns:
+    minmax(300px, 0.75fr)
+    minmax(0, 1.45fr);
+
+  margin-top: 42px;
+
+  overflow: hidden;
+
+  border:
+    1px solid
+    var(--ph-border);
+
+  border-radius: 16px;
+
+  background:
+    #ffffff;
+
+  box-shadow:
+    0 8px 28px
+    rgba(28, 61, 82, 0.055);
+}
+
+/* =========================================================
+   VISUAL PANEL
+========================================================= */
+
+.visual {
+  position: relative;
+
+  min-height: 430px;
+
+  padding:
+    23px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      145deg,
+      #f2f8fb 0%,
+      #e6f2f7 100%
+    );
+
+  border-right:
+    1px solid
+    var(--ph-border);
+}
+
+/* =========================================================
+   VISUAL TOP
+========================================================= */
+
+.visualTop {
+  position: relative;
+
+  z-index: 3;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 10px;
+}
+
+.projectNo {
+  color:
+    #8a9ba7;
+
+  font-family:
+    "Manrope",
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  letter-spacing:
+    0.08em;
+}
+
+.live {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+  color:
+    #708592;
+
+  font-size: 7px;
+
+  font-weight: 800;
+
+  letter-spacing:
+    0.06em;
+}
+
+.live i {
+  width: 5px;
+
+  height: 5px;
+
+  border-radius: 50%;
+
+  background:
+    var(--ph-green);
+
+  box-shadow:
+    0 0 0 3px
+    rgba(31, 168, 120, 0.08);
+
+  animation:
+    livePulse
+    2s
+    ease-in-out
+    infinite;
+}
+
+/* =========================================================
+   RAILWAY GRAPHIC
+========================================================= */
+
+.railwayGraphic {
+  position: relative;
+
+  flex: 1;
+
+  min-height: 235px;
+
+  margin-top: 10px;
+}
+
+/* =========================================================
+   TRACK
+========================================================= */
+
+.track {
+  position: absolute;
+
+  left: 50%;
+
+  top: 50%;
+
+  width: 230px;
+
+  height: 100px;
+
+  transform:
+    translate(
+      -50%,
+      -50%
+    );
+}
+
+.track::before,
+.track::after {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+
+  bottom: 0;
+
+  width: 2px;
+
+  background:
+    #b5cdd8;
+}
+
+.track::before {
+  left: 25px;
+
+  transform:
+    rotate(
+      -16deg
+    );
+}
+
+.track::after {
+  right: 25px;
+
+  transform:
+    rotate(
+      16deg
+    );
+}
+
+.track span {
+  position: absolute;
+
+  left: 50%;
+
+  width: 185px;
+
+  height: 1px;
+
+  background:
+    #c3d6df;
+
+  transform:
+    translateX(-50%);
+}
+
+.track span:nth-child(1) {
+  top: 8px;
+}
+
+.track span:nth-child(2) {
+  top: 32px;
+}
+
+.track span:nth-child(3) {
+  top: 56px;
+}
+
+.track span:nth-child(4) {
+  top: 80px;
+}
+
+/* =========================================================
+   TRAIN ICON
+========================================================= */
+
+.train {
+  position: absolute;
+
+  top: 50%;
+
+  left: 50%;
+
+  width: 74px;
+
+  height: 74px;
+
+  display: grid;
+
+  place-items: center;
+
+  transform:
+    translate(
+      -50%,
+      -50%
+    );
+
+  border:
+    1px solid
+    #b9d4df;
+
+  border-radius: 18px;
+
+  color:
+    var(--ph-blue);
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.85
+    );
+
+  box-shadow:
+    0 12px 28px
+    rgba(18, 104, 196, 0.1);
+
+  transition:
+    transform 250ms ease,
+    box-shadow 250ms ease;
+}
+
+.project:hover .train {
+  transform:
+    translate(
+      -50%,
+      -50%
+    )
+    scale(1.06);
+
+  box-shadow:
+    0 16px 32px
+    rgba(18, 104, 196, 0.15);
+}
+
+/* =========================================================
+   POWER NODE
+========================================================= */
+
+.powerNode {
+  position: absolute;
+
+  top: 20%;
+
+  right: 18%;
+
+  width: 34px;
+
+  height: 34px;
+
+  display: grid;
+
+  place-items: center;
+
+  border:
+    1px solid
+    #c0dbe5;
+
+  border-radius: 9px;
+
+  color:
+    var(--ph-cyan);
+
+  background:
+    #ffffff;
+
+  box-shadow:
+    0 5px 15px
+    rgba(25, 70, 90, 0.06);
+
+  animation:
+    powerPulse
+    2.4s
+    ease-in-out
+    infinite;
+}
+
+/* =========================================================
+   STATION COUNT
+========================================================= */
+
+.stationCount {
+  position: relative;
+
+  z-index: 3;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  gap: 12px;
+
+  margin-top: auto;
+}
+
+.stationCount strong {
+  color:
+    var(--ph-heading);
+
+  font-family:
+    "Manrope",
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  font-size: 78px;
+
+  font-weight: 800;
+
+  line-height: 0.75;
+
+  letter-spacing:
+    -0.07em;
+}
+
+.stationCount div {
+  padding-bottom: 4px;
+}
+
+.stationCount span,
+.stationCount b {
+  display: block;
+}
+
+.stationCount span {
+  color:
+    #7b909d;
+
+  font-size: 8px;
+
+  font-weight: 600;
+}
+
+.stationCount b {
+  margin-top: 2px;
+
+  color:
+    var(--ph-blue);
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  text-transform:
+    uppercase;
+
+  letter-spacing:
+    0.04em;
+}
+
+/* =========================================================
+   VISUAL FOOTER
+========================================================= */
+
+.visualFooter {
+  position: relative;
+
+  z-index: 3;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  margin-top: 21px;
+
+  padding-top: 14px;
+
+  border-top:
+    1px solid
+    #d4e2e9;
+
+  color:
+    #7d919d;
+
+  font-size: 8px;
+
+  font-weight: 700;
+}
+
+.visualFooter svg {
+  color:
+    var(--ph-blue);
+}
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.content {
+  min-width: 0;
+
+  padding:
+    34px;
+}
+
+.projectType {
+  color:
+    var(--ph-blue);
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  text-transform:
+    uppercase;
+
+  letter-spacing:
+    0.1em;
+}
+
+.content h3 {
+  margin:
+    9px
+    0
+    10px;
+
+  color:
+    var(--ph-heading);
+
+  font-family:
+    "Manrope",
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  font-size: 28px;
+
+  font-weight: 800;
+
+  line-height: 1.2;
+
+  letter-spacing:
+    -0.04em;
+}
+
+.description {
+  max-width: 680px;
+
+  margin: 0;
+
+  color:
+    var(--ph-muted);
+
+  font-size: 11.5px;
+
+  font-weight: 500;
+
+  line-height: 1.7;
+}
+
+/* =========================================================
+   DIVIDER
+========================================================= */
+
+.divider {
+  width: 100%;
+
+  height: 1px;
+
+  margin:
+    25px
+    0
+    20px;
+
+  background:
+    var(--ph-border);
+}
+
+/* =========================================================
+   SCOPE HEADER
+========================================================= */
+
+.scopeHeader {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+  margin-bottom: 12px;
+}
+
+.scopeHeader > span {
+  color:
+    var(--ph-heading);
+
+  font-family:
+    "Manrope",
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 800;
+}
+
+.scopeHeader small {
+  color:
+    #8a9aa5;
+
+  font-size: 8px;
+
+  font-weight: 700;
+}
+
+/* =========================================================
+   SCOPE
+========================================================= */
+
+.scope {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      2,
+      minmax(0, 1fr)
+    );
+
+  gap:
+    9px
+    10px;
+}
+
+.scopeItem {
+  min-width: 0;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 7px;
+
+  padding:
+    9px
+    10px;
+
+  border:
+    1px solid
+    var(--ph-border-light);
+
+  border-radius: 7px;
+
+  background:
+    #fafcfd;
+
+  color:
+    #536a79;
+
+  font-size: 9px;
+
+  font-weight: 600;
+
+  line-height: 1.4;
+
+  transition:
+    background 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease;
+}
+
+.scopeItem:hover {
+  border-color:
+    #cbdde6;
+
+  background:
+    #f3f9fc;
+
+  transform:
+    translateX(2px);
+}
+
+.scopeItem svg {
+  flex: 0 0 auto;
+
+  margin-top: 1px;
+
+  color:
+    var(--ph-green);
+}
+
+/* =========================================================
+   CONTENT FOOTER
+========================================================= */
+
+.contentFooter {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  margin-top: 25px;
+}
+
+.primaryButton,
+.secondaryButton {
+  min-height: 40px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 7px;
+
+  border-radius: 7px;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  transition:
+    color 180ms ease,
+    background 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.primaryButton {
+  padding:
+    0
+    13px;
+
+  color:
+    #ffffff !important;
+
+  background:
+    var(--ph-blue);
+
+  border:
+    1px solid
+    var(--ph-blue);
+}
+
+.primaryButton svg {
+  transition:
+    transform 180ms ease;
+}
+
+.primaryButton:hover {
+  background:
+    var(--ph-blue-dark);
+
+  border-color:
+    var(--ph-blue-dark);
+
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    0 8px 18px
+    rgba(18, 104, 196, 0.17);
+}
+
+.primaryButton:hover svg {
+  transform:
+    translateX(3px);
+}
+
+.secondaryButton {
+  padding:
+    0
+    12px;
+
+  color:
+    var(--ph-blue) !important;
+
+  background:
+    #ffffff;
+
+  border:
+    1px solid
+    var(--ph-border);
+}
+
+.secondaryButton:hover {
+  color:
+    #ffffff !important;
+
+  background:
+    var(--ph-blue);
+
+  border-color:
+    var(--ph-blue);
+
+  transform:
+    translateY(-2px);
+}
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes livePulse {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes powerPulse {
+  0%,
+  100% {
+    transform:
+      scale(1);
+
+    box-shadow:
+      0 5px 15px
+      rgba(25, 70, 90, 0.06);
+  }
+
+  50% {
+    transform:
+      scale(1.06);
+
+    box-shadow:
+      0 0 18px
+      rgba(22, 168, 206, 0.2);
+  }
+}
+
+/* =========================================================
+   LARGE TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+  .section {
+    padding:
+      84px
+      0;
+  }
+
+  .project {
+    grid-template-columns:
+      minmax(270px, 0.7fr)
+      minmax(0, 1.3fr);
+  }
+
+  .content {
+    padding:
+      28px;
+  }
+
+  .content h3 {
+    font-size: 24px;
+  }
+
+  .scope {
+    gap: 7px;
+  }
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+  .section {
+    padding:
+      72px
+      0;
+  }
+
+  .container {
+    width:
+      min(
+        calc(100% - 32px),
+        720px
+      );
+  }
+
+  .project {
+    grid-template-columns:
+      1fr;
+  }
+
+  .visual {
+    min-height: 330px;
+
+    border-right: 0;
+
+    border-bottom:
+      1px solid
+      var(--ph-border);
+  }
+
+  .railwayGraphic {
+    min-height: 175px;
+  }
+
+  .stationCount strong {
+    font-size: 65px;
+  }
+
+  .content {
+    padding:
+      25px;
+  }
+
+  .content h3 {
+    font-size: 23px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+  .section {
+    padding:
+      58px
+      0;
+  }
+
+  .container {
+    width:
+      calc(100% - 28px);
+  }
+
+  .project {
+    margin-top: 27px;
+
+    border-radius: 13px;
+  }
+
+  .visual {
+    min-height: 285px;
+
+    padding:
+      17px;
+  }
+
+  .railwayGraphic {
+    min-height: 145px;
+  }
+
+  .track {
+    width: 190px;
+
+    height: 85px;
+  }
+
+  .track span {
+    width: 150px;
+  }
+
+  .train {
+    width: 62px;
+
+    height: 62px;
+  }
+
+  .train svg {
+    width: 25px;
+
+    height: 25px;
+  }
+
+  .powerNode {
+    top: 18%;
+
+    right: 10%;
+
+    width: 30px;
+
+    height: 30px;
+  }
+
+  .stationCount strong {
+    font-size: 55px;
+  }
+
+  .stationCount span {
+    font-size: 7px;
+  }
+
+  .stationCount b {
+    font-size: 9px;
+  }
+
+  .visualFooter {
+    margin-top: 15px;
+
+    padding-top: 11px;
+  }
+
+  .content {
+    padding:
+      20px
+      17px;
+  }
+
+  .projectType {
+    font-size: 7px;
+  }
+
+  .content h3 {
+    margin-top: 7px;
+
+    font-size: 20px;
+
+    line-height: 1.25;
+  }
+
+  .description {
+    font-size: 10px;
+
+    line-height: 1.6;
+  }
+
+  .divider {
+    margin:
+      19px
+      0
+      16px;
+  }
+
+  .scope {
+    grid-template-columns: 1fr;
+
+    gap: 7px;
+  }
+
+  .scopeItem {
+    padding:
+      8px;
+
+    font-size: 8.5px;
+  }
+
+  .contentFooter {
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 8px;
+
+    margin-top: 20px;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+
+    min-height: 41px;
+  }
+
+  .background {
+    right: -180px;
+
+    top: 170px;
+
+    transform:
+      scale(0.65);
+
+    opacity: 0.25;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+  .section {
+    padding:
+      50px
+      0;
+  }
+
+  .container {
+    width:
+      calc(100% - 22px);
+  }
+
+  .visual {
+    min-height: 260px;
+
+    padding:
+      15px;
+  }
+
+  .visualTop {
+    gap: 5px;
+  }
+
+  .projectNo,
+  .live {
+    font-size: 6px;
+  }
+
+  .stationCount strong {
+    font-size: 48px;
+  }
+
+  .content {
+    padding:
+      18px
+      14px;
+  }
+
+  .content h3 {
+    font-size: 18px;
+  }
+
+  .description {
+    font-size: 9.5px;
+  }
+
+  .scopeHeader > span {
+    font-size: 11px;
+  }
+
+  .scopeHeader small {
+    font-size: 7px;
+  }
+
+  .scopeItem {
+    font-size: 8px;
+  }
+
+  .background {
+    display: none;
+  }
+}
+
+/* =========================================================
+   VERY SMALL DEVICES
+========================================================= */
+
+@media (max-width: 350px) {
+  .section {
+    padding:
+      44px
+      0;
+  }
+
+  .container {
+    width:
+      calc(100% - 18px);
+  }
+
+  .visual {
+    min-height: 240px;
+  }
+
+  .railwayGraphic {
+    min-height: 125px;
+  }
+
+  .track {
+    width: 165px;
+  }
+
+  .track span {
+    width: 130px;
+  }
+
+  .train {
+    width: 55px;
+
+    height: 55px;
+  }
+
+  .stationCount strong {
+    font-size: 43px;
+  }
+
+  .stationCount span {
+    font-size: 6.5px;
+  }
+
+  .stationCount b {
+    font-size: 8px;
+  }
+
+  .content h3 {
+    font-size: 17px;
+  }
+
+  .description {
+    font-size: 9px;
+  }
+
+  .scopeItem {
+    font-size: 7.8px;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .section *,
+  .section *::before,
+  .section *::after {
+    animation-duration:
+      0.01ms !important;
+
+    animation-iteration-count:
+      1 !important;
+
+    transition-duration:
+      0.01ms !important;
+  }
+}

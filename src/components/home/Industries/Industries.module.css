@@ -1,0 +1,860 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap");
+
+/* =========================================================
+   INDUSTRIES
+   Completely self-contained CSS.
+========================================================= */
+
+.section {
+  --ind-blue: #1268c4;
+  --ind-blue-dark: #0d57a6;
+  --ind-cyan: #16a8ce;
+  --ind-green: #1fa878;
+
+  --ind-heading: #1b3043;
+  --ind-text: #40576a;
+  --ind-muted: #718494;
+
+  --ind-border: #dce6ed;
+  --ind-border-light: #e8eef2;
+
+  width: 100%;
+
+  padding: 96px 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      #ffffff 0%,
+      #fbfcfd 100%
+    );
+
+  color: var(--ind-heading);
+
+  font-family:
+    "DM Sans",
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  overflow: hidden;
+}
+
+/* =========================================================
+   LOCAL RESET
+========================================================= */
+
+.section *,
+.section *::before,
+.section *::after {
+  box-sizing: border-box;
+}
+
+.section a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.container {
+  width:
+    min(
+      1240px,
+      calc(100% - 40px)
+    );
+
+  margin: 0 auto;
+}
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      4,
+      minmax(0, 1fr)
+    );
+
+  margin-top: 42px;
+
+  overflow: hidden;
+
+  border:
+    1px solid
+    var(--ind-border);
+
+  border-radius: 15px;
+
+  background:
+    #ffffff;
+
+  box-shadow:
+    0 4px 18px
+    rgba(29, 59, 80, 0.025);
+}
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.card {
+  position: relative;
+
+  min-width: 0;
+
+  min-height: 275px;
+
+  padding: 23px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  overflow: hidden;
+
+  border-right:
+    1px solid
+    var(--ind-border);
+
+  background:
+    #ffffff;
+
+  transition:
+    background 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.card:last-child {
+  border-right: 0;
+}
+
+.card:hover {
+  z-index: 2;
+
+  background:
+    #f9fcfe;
+
+  box-shadow:
+    inset 0 0 0 1px
+    rgba(18, 104, 196, 0.08);
+}
+
+/* =========================================================
+   TOP
+========================================================= */
+
+.top {
+  position: relative;
+
+  z-index: 3;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+}
+
+.number {
+  color:
+    #a2afb9;
+
+  font-family:
+    "Manrope",
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  line-height: 1;
+}
+
+.arrow {
+  color:
+    #9aabb8;
+
+  transition:
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.card:hover .arrow {
+  color:
+    var(--ind-blue);
+
+  transform:
+    translate(
+      3px,
+      -3px
+    );
+}
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.iconWrap {
+  position: relative;
+
+  width: 52px;
+
+  height: 52px;
+
+  margin:
+    27px
+    0
+    21px;
+
+  display: grid;
+
+  place-items: center;
+}
+
+.icon {
+  position: relative;
+
+  z-index: 2;
+
+  width: 50px;
+
+  height: 50px;
+
+  display: grid;
+
+  place-items: center;
+
+  border:
+    1px solid
+    #d4e3ec;
+
+  border-radius: 13px;
+
+  color:
+    var(--ind-blue);
+
+  background:
+    #eef7fc;
+
+  transition:
+    color 200ms ease,
+    background 200ms ease,
+    border-color 200ms ease,
+    transform 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.card:hover .icon {
+  color:
+    #ffffff;
+
+  background:
+    var(--ind-blue);
+
+  border-color:
+    var(--ind-blue);
+
+  transform:
+    translateY(-2px)
+    rotate(-3deg);
+
+  box-shadow:
+    0 9px 20px
+    rgba(18, 104, 196, 0.17);
+}
+
+.iconPulse {
+  position: absolute;
+
+  width: 52px;
+
+  height: 52px;
+
+  border:
+    1px solid
+    rgba(22, 168, 206, 0.18);
+
+  border-radius: 14px;
+
+  opacity: 0;
+}
+
+.card:hover .iconPulse {
+  animation:
+    iconPulse
+    1.2s
+    ease-out
+    infinite;
+}
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.content {
+  position: relative;
+
+  z-index: 3;
+}
+
+.content h3 {
+  margin: 0;
+
+  color:
+    var(--ind-heading);
+
+  font-family:
+    "Manrope",
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  font-size: 17px;
+
+  font-weight: 800;
+
+  line-height: 1.3;
+
+  letter-spacing:
+    -0.025em;
+
+  transition:
+    color 180ms ease;
+}
+
+.card:hover .content h3 {
+  color:
+    var(--ind-blue);
+}
+
+.content p {
+  max-width: 255px;
+
+  margin:
+    8px
+    0
+    0;
+
+  color:
+    var(--ind-muted);
+
+  font-size: 11px;
+
+  font-weight: 500;
+
+  line-height: 1.65;
+}
+
+/* =========================================================
+   BOTTOM
+========================================================= */
+
+.bottom {
+  position: relative;
+
+  z-index: 3;
+
+  margin-top: auto;
+
+  padding-top: 20px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 8px;
+
+  color:
+    #94a2ad;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing:
+    0.035em;
+
+  text-transform: uppercase;
+}
+
+.indicator {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+  color:
+    #8495a2;
+}
+
+.indicator i {
+  width: 5px;
+
+  height: 5px;
+
+  display: block;
+
+  border-radius: 50%;
+
+  background:
+    var(--ind-green);
+
+  box-shadow:
+    0 0 0 3px
+    rgba(31, 168, 120, 0.08);
+
+  animation:
+    indicatorPulse
+    2.3s
+    ease-in-out
+    infinite;
+}
+
+/* =========================================================
+   ELECTRICAL CIRCUIT
+========================================================= */
+
+.circuit {
+  position: absolute;
+
+  right: -10px;
+
+  bottom: 35px;
+
+  width: 125px;
+
+  height: 80px;
+
+  opacity: 0.4;
+
+  pointer-events: none;
+
+  transition:
+    opacity 220ms ease;
+}
+
+.circuit::before {
+  content: "";
+
+  position: absolute;
+
+  top: 42px;
+
+  left: 0;
+
+  width: 100px;
+
+  height: 1px;
+
+  background:
+    #cfdee7;
+}
+
+.circuit::after {
+  content: "";
+
+  position: absolute;
+
+  top: 17px;
+
+  left: 53px;
+
+  width: 1px;
+
+  height: 26px;
+
+  background:
+    #cfdee7;
+}
+
+.circuit span {
+  position: absolute;
+
+  width: 6px;
+
+  height: 6px;
+
+  border:
+    1px solid
+    #87b4c8;
+
+  border-radius: 50%;
+
+  background:
+    #ffffff;
+}
+
+.circuit span:nth-child(1) {
+  top: 39px;
+
+  left: -1px;
+}
+
+.circuit span:nth-child(2) {
+  top: 39px;
+
+  left: 50px;
+}
+
+.circuit span:nth-child(3) {
+  top: 39px;
+
+  right: 20px;
+}
+
+.card:hover .circuit {
+  opacity: 0.85;
+}
+
+.card:hover .circuit span {
+  animation:
+    circuitCurrent
+    1.5s
+    ease-in-out
+    infinite;
+}
+
+.card:hover .circuit span:nth-child(2) {
+  animation-delay: 0.35s;
+}
+
+.card:hover .circuit span:nth-child(3) {
+  animation-delay: 0.7s;
+}
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes iconPulse {
+  0% {
+    opacity: 0.55;
+
+    transform:
+      scale(0.82);
+  }
+
+  100% {
+    opacity: 0;
+
+    transform:
+      scale(1.35);
+  }
+}
+
+@keyframes circuitCurrent {
+  0%,
+  100% {
+    background: #ffffff;
+
+    box-shadow:
+      0 0 0
+      rgba(22, 168, 206, 0);
+  }
+
+  50% {
+    background:
+      #62c8df;
+
+    box-shadow:
+      0 0 9px
+      rgba(22, 168, 206, 0.5);
+  }
+}
+
+@keyframes indicatorPulse {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+/* =========================================================
+   LARGE TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+  .section {
+    padding:
+      84px
+      0;
+  }
+
+  .grid {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0, 1fr)
+      );
+  }
+
+  .card {
+    min-height: 245px;
+  }
+
+  /*
+    2 × 2 layout:
+    right border only on odd cards
+  */
+
+  .card:nth-child(2n) {
+    border-right: 0;
+  }
+
+  .card:nth-child(-n + 2) {
+    border-bottom:
+      1px solid
+      var(--ind-border);
+  }
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+  .section {
+    padding:
+      72px
+      0;
+  }
+
+  .container {
+    width:
+      min(
+        calc(100% - 32px),
+        720px
+      );
+  }
+
+  .grid {
+    margin-top: 32px;
+  }
+
+  .card {
+    min-height: 235px;
+
+    padding: 20px;
+  }
+
+  .content h3 {
+    font-size: 16px;
+  }
+
+  .content p {
+    font-size: 10.5px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+  .section {
+    padding:
+      58px
+      0;
+  }
+
+  .container {
+    width:
+      calc(100% - 28px);
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+
+    margin-top: 27px;
+
+    border-radius: 12px;
+  }
+
+  .card {
+    min-height: 225px;
+
+    padding: 18px;
+
+    border-right: 0 !important;
+
+    border-bottom:
+      1px solid
+      var(--ind-border);
+  }
+
+  .card:last-child {
+    border-bottom: 0;
+  }
+
+  .iconWrap {
+    width: 46px;
+
+    height: 46px;
+
+    margin:
+      20px
+      0
+      17px;
+  }
+
+  .icon {
+    width: 44px;
+
+    height: 44px;
+
+    border-radius: 11px;
+  }
+
+  .iconPulse {
+    width: 46px;
+
+    height: 46px;
+  }
+
+  .content h3 {
+    font-size: 15px;
+  }
+
+  .content p {
+    max-width: 90%;
+
+    font-size: 10.5px;
+
+    line-height: 1.6;
+  }
+
+  .bottom {
+    padding-top: 17px;
+
+    font-size: 7.5px;
+  }
+
+  .circuit {
+    right: -5px;
+
+    bottom: 30px;
+
+    transform:
+      scale(0.78);
+
+    transform-origin:
+      right center;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+  .section {
+    padding:
+      50px
+      0;
+  }
+
+  .container {
+    width:
+      calc(100% - 22px);
+  }
+
+  .card {
+    min-height: 215px;
+
+    padding: 16px;
+  }
+
+  .number {
+    font-size: 9px;
+  }
+
+  .content h3 {
+    font-size: 14px;
+  }
+
+  .content p {
+    font-size: 10px;
+  }
+
+  .bottom {
+    font-size: 7px;
+  }
+
+  .circuit {
+    opacity: 0.3;
+  }
+}
+
+/* =========================================================
+   VERY SMALL DEVICES
+========================================================= */
+
+@media (max-width: 350px) {
+  .section {
+    padding:
+      44px
+      0;
+  }
+
+  .container {
+    width:
+      calc(100% - 18px);
+  }
+
+  .card {
+    min-height: 205px;
+
+    padding: 14px;
+  }
+
+  .iconWrap {
+    margin-top: 17px;
+  }
+
+  .content h3 {
+    font-size: 13.5px;
+  }
+
+  .content p {
+    font-size: 9.5px;
+  }
+
+  .circuit {
+    display: none;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .section *,
+  .section *::before,
+  .section *::after {
+    animation-duration:
+      0.01ms !important;
+
+    animation-iteration-count:
+      1 !important;
+
+    transition-duration:
+      0.01ms !important;
+  }
+}

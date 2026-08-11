@@ -1,0 +1,1264 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap");
+
+/* =========================================================
+   CLIENTS
+   Fully self-contained CSS.
+========================================================= */
+
+.section {
+  --cl-blue: #1268c4;
+  --cl-blue-dark: #0d57a6;
+  --cl-cyan: #16a8ce;
+  --cl-green: #1fa878;
+
+  --cl-heading: #1b3043;
+  --cl-text: #40576a;
+  --cl-muted: #718494;
+
+  --cl-border: #dce6ed;
+  --cl-border-light: #e8eef2;
+
+  position: relative;
+
+  width: 100%;
+
+  padding: 90px 0;
+
+  overflow: hidden;
+
+  background:
+    #f5f8fa;
+
+  color:
+    var(--cl-heading);
+
+  font-family:
+    "DM Sans",
+    "Segoe UI",
+    Arial,
+    sans-serif;
+}
+
+/* =========================================================
+   LOCAL RESET
+========================================================= */
+
+.section *,
+.section *::before,
+.section *::after {
+  box-sizing: border-box;
+}
+
+.section a {
+  color: inherit;
+
+  text-decoration: none;
+}
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.container {
+  position: relative;
+
+  z-index: 2;
+
+  width:
+    min(
+      1240px,
+      calc(100% - 40px)
+    );
+
+  margin:
+    0 auto;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header {
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap: 30px;
+}
+
+.trustMark {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin-bottom: 4px;
+
+  color:
+    #8a9ba6;
+
+  font-size: 7px;
+
+  font-weight: 800;
+
+  line-height: 1.35;
+
+  letter-spacing:
+    0.08em;
+}
+
+.trustMark > div {
+  width: 36px;
+
+  height: 36px;
+
+  display: grid;
+
+  place-items: center;
+
+  border:
+    1px solid
+    #d4e2e9;
+
+  border-radius: 9px;
+
+  color:
+    var(--cl-blue);
+
+  background:
+    #ffffff;
+
+  box-shadow:
+    0 4px 12px
+    rgba(26, 60, 80, 0.04);
+
+  transition:
+    color 180ms ease,
+    background 180ms ease,
+    transform 180ms ease;
+}
+
+.trustMark:hover > div {
+  color:
+    #ffffff;
+
+  background:
+    var(--cl-blue);
+
+  transform:
+    rotate(-5deg);
+}
+
+/* =========================================================
+   CLIENT GRID
+========================================================= */
+
+.grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      4,
+      minmax(0, 1fr)
+    );
+
+  gap: 13px;
+
+  margin-top: 42px;
+}
+
+/* =========================================================
+   CLIENT CARD
+========================================================= */
+
+.card {
+  position: relative;
+
+  min-width: 0;
+
+  min-height: 300px;
+
+  padding: 21px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  overflow: hidden;
+
+  border:
+    1px solid
+    var(--cl-border);
+
+  border-radius: 14px;
+
+  background:
+    #ffffff;
+
+  box-shadow:
+    0 4px 15px
+    rgba(26, 59, 79, 0.025);
+
+  transition:
+    transform 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease,
+    background 220ms ease;
+}
+
+.card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+
+  left: 0;
+
+  width: 0;
+
+  height: 2px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--cl-blue),
+      var(--cl-cyan)
+    );
+
+  transition:
+    width 300ms ease;
+}
+
+.card:hover {
+  transform:
+    translateY(-5px);
+
+  border-color:
+    #bfd3df;
+
+  box-shadow:
+    0 17px 34px
+    rgba(26, 59, 79, 0.08);
+}
+
+.card:hover::before {
+  width: 100%;
+}
+
+/* =========================================================
+   CARD TOP
+========================================================= */
+
+.cardTop {
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+}
+
+.number {
+  color:
+    #a2afb9;
+
+  font-family:
+    "Manrope",
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  font-size: 9px;
+
+  font-weight: 800;
+}
+
+.arrow {
+  color:
+    #9babb6;
+
+  transition:
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.card:hover .arrow {
+  color:
+    var(--cl-blue);
+
+  transform:
+    translate(
+      3px,
+      -3px
+    );
+}
+
+/* =========================================================
+   SECTOR ICON
+========================================================= */
+
+.icon {
+  position: relative;
+
+  z-index: 2;
+
+  width: 47px;
+
+  height: 47px;
+
+  margin:
+    23px
+    0
+    17px;
+
+  display: grid;
+
+  place-items: center;
+
+  border:
+    1px solid
+    #d4e4eb;
+
+  border-radius: 11px;
+
+  color:
+    var(--cl-blue);
+
+  background:
+    #eef7fb;
+
+  transition:
+    color 200ms ease,
+    background 200ms ease,
+    border-color 200ms ease,
+    transform 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.card:hover .icon {
+  color:
+    #ffffff;
+
+  background:
+    var(--cl-blue);
+
+  border-color:
+    var(--cl-blue);
+
+  transform:
+    rotate(-4deg);
+
+  box-shadow:
+    0 8px 18px
+    rgba(18, 104, 196, 0.16);
+}
+
+/* =========================================================
+   SECTOR
+========================================================= */
+
+.sector {
+  position: relative;
+
+  z-index: 2;
+}
+
+.sector > span {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color:
+    #93a2ad;
+
+  font-size: 7px;
+
+  font-weight: 800;
+
+  letter-spacing:
+    0.08em;
+}
+
+.sector h3 {
+  margin: 0;
+
+  color:
+    var(--cl-heading);
+
+  font-family:
+    "Manrope",
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  font-size: 15px;
+
+  font-weight: 800;
+
+  line-height: 1.3;
+
+  letter-spacing:
+    -0.02em;
+
+  transition:
+    color 180ms ease;
+}
+
+.card:hover .sector h3 {
+  color:
+    var(--cl-blue);
+}
+
+/* =========================================================
+   CLIENT LIST
+========================================================= */
+
+.clients {
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0;
+
+  margin-top: 15px;
+}
+
+.client {
+  min-width: 0;
+
+  min-height: 30px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  border-bottom:
+    1px solid
+    #edf1f4;
+}
+
+.client:last-child {
+  border-bottom: 0;
+}
+
+.clientDot {
+  width: 4px;
+
+  height: 4px;
+
+  flex: 0 0 auto;
+
+  border-radius: 50%;
+
+  background:
+    #a5bac5;
+
+  transition:
+    background 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.client strong {
+  min-width: 0;
+
+  overflow: hidden;
+
+  color:
+    #526675;
+
+  font-size: 9.5px;
+
+  font-weight: 700;
+
+  line-height: 1.35;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+
+  transition:
+    color 180ms ease;
+}
+
+.card:hover .clientDot {
+  background:
+    var(--cl-cyan);
+
+  box-shadow:
+    0 0 6px
+    rgba(22, 168, 206, 0.25);
+}
+
+.card:hover .client strong {
+  color:
+    var(--cl-heading);
+}
+
+/* =========================================================
+   CARD FOOTER
+========================================================= */
+
+.cardFooter {
+  position: relative;
+
+  z-index: 3;
+
+  margin-top: auto;
+
+  padding-top: 16px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 8px;
+
+  color:
+    #99a7b1;
+
+  font-size: 7px;
+
+  font-weight: 700;
+
+  text-transform:
+    uppercase;
+
+  letter-spacing:
+    0.04em;
+}
+
+.active {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+  color:
+    #8495a1;
+}
+
+.active i {
+  width: 5px;
+
+  height: 5px;
+
+  border-radius: 50%;
+
+  background:
+    var(--cl-green);
+
+  box-shadow:
+    0 0 0 3px
+    rgba(31, 168, 120, 0.08);
+
+  animation:
+    activePulse
+    2.2s
+    ease-in-out
+    infinite;
+}
+
+/* =========================================================
+   ELECTRICAL CIRCUIT
+========================================================= */
+
+.circuit {
+  position: absolute;
+
+  right: -8px;
+
+  bottom: 30px;
+
+  width: 110px;
+
+  height: 70px;
+
+  opacity: 0.32;
+
+  pointer-events: none;
+
+  transition:
+    opacity 220ms ease;
+}
+
+.circuit::before {
+  content: "";
+
+  position: absolute;
+
+  top: 38px;
+
+  left: 0;
+
+  width: 85px;
+
+  height: 1px;
+
+  background:
+    #c9dbe4;
+}
+
+.circuit::after {
+  content: "";
+
+  position: absolute;
+
+  top: 15px;
+
+  left: 44px;
+
+  width: 1px;
+
+  height: 24px;
+
+  background:
+    #c9dbe4;
+}
+
+.circuit span {
+  position: absolute;
+
+  width: 6px;
+
+  height: 6px;
+
+  border:
+    1px solid
+    #89afc0;
+
+  border-radius: 50%;
+
+  background:
+    #ffffff;
+}
+
+.circuit span:nth-child(1) {
+  top: 35px;
+
+  left: -1px;
+}
+
+.circuit span:nth-child(2) {
+  top: 35px;
+
+  left: 41px;
+}
+
+.circuit span:nth-child(3) {
+  top: 35px;
+
+  right: 15px;
+}
+
+.card:hover .circuit {
+  opacity: 0.8;
+}
+
+.card:hover .circuit span {
+  animation:
+    circuitCurrent
+    1.4s
+    ease-in-out
+    infinite;
+}
+
+.card:hover .circuit span:nth-child(2) {
+  animation-delay:
+    0.35s;
+}
+
+.card:hover .circuit span:nth-child(3) {
+  animation-delay:
+    0.7s;
+}
+
+/* =========================================================
+   TRUST STRIP
+========================================================= */
+
+.strip {
+  min-height: 70px;
+
+  margin-top: 15px;
+
+  padding:
+    13px
+    16px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  border:
+    1px solid
+    var(--cl-border);
+
+  border-radius: 12px;
+
+  background:
+    #ffffff;
+}
+
+.stripLeft {
+  display: flex;
+
+  align-items: center;
+
+  gap: 11px;
+
+  min-width: 0;
+}
+
+.stripIcon {
+  width: 38px;
+
+  height: 38px;
+
+  flex: 0 0 auto;
+
+  display: grid;
+
+  place-items: center;
+
+  border:
+    1px solid
+    #d4e3ea;
+
+  border-radius: 9px;
+
+  color:
+    var(--cl-blue);
+
+  background:
+    #eff7fb;
+}
+
+.stripLeft > div:last-child {
+  min-width: 0;
+}
+
+.stripLeft span {
+  display: block;
+
+  color:
+    #8b9aa5;
+
+  font-size: 7px;
+
+  font-weight: 700;
+
+  line-height: 1.4;
+}
+
+.stripLeft strong {
+  display: block;
+
+  margin-top: 3px;
+
+  color:
+    var(--cl-heading);
+
+  font-family:
+    "Manrope",
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  line-height: 1.4;
+}
+
+/* =========================================================
+   CONNECTION
+========================================================= */
+
+.connection {
+  display: flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+  flex: 0 0 auto;
+}
+
+.connection span {
+  width: 5px;
+
+  height: 5px;
+
+  border-radius: 50%;
+
+  background:
+    #a4b7c2;
+}
+
+.connection span:nth-child(2) {
+  width: 30px;
+
+  height: 1px;
+
+  border-radius: 0;
+
+  background:
+    #ccdbe3;
+}
+
+.connection span:nth-child(3) {
+  background:
+    var(--cl-cyan);
+
+  box-shadow:
+    0 0 7px
+    rgba(22, 168, 206, 0.3);
+
+  animation:
+    activePulse
+    1.8s
+    ease-in-out
+    infinite;
+}
+
+/* =========================================================
+   BACKGROUND CIRCUIT
+========================================================= */
+
+.background {
+  position: absolute;
+
+  right: -80px;
+
+  top: 80px;
+
+  width: 360px;
+
+  height: 360px;
+
+  opacity: 0.35;
+
+  pointer-events: none;
+}
+
+.background::before {
+  content: "";
+
+  position: absolute;
+
+  top: 50%;
+
+  left: 0;
+
+  width: 100%;
+
+  height: 1px;
+
+  background:
+    #d6e3e9;
+}
+
+.background::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+
+  top: 0;
+
+  width: 1px;
+
+  height: 100%;
+
+  background:
+    #d6e3e9;
+}
+
+.background span {
+  position: absolute;
+
+  width: 7px;
+
+  height: 7px;
+
+  border:
+    1px solid
+    #9db7c5;
+
+  border-radius: 50%;
+
+  background:
+    #f5f8fa;
+}
+
+.background span:nth-child(1) {
+  top: 50%;
+  left: 0;
+}
+
+.background span:nth-child(2) {
+  top: 0;
+  left: 50%;
+}
+
+.background span:nth-child(3) {
+  top: 50%;
+  right: 0;
+}
+
+.background span:nth-child(4) {
+  bottom: 0;
+  left: 50%;
+}
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes activePulse {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes circuitCurrent {
+  0%,
+  100% {
+    background:
+      #ffffff;
+
+    box-shadow:
+      0 0 0
+      rgba(22, 168, 206, 0);
+  }
+
+  50% {
+    background:
+      #62c8df;
+
+    box-shadow:
+      0 0 9px
+      rgba(22, 168, 206, 0.45);
+  }
+}
+
+/* =========================================================
+   LARGE TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+  .section {
+    padding:
+      82px
+      0;
+  }
+
+  .grid {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0, 1fr)
+      );
+  }
+
+  .card {
+    min-height: 285px;
+  }
+
+  .card:nth-child(2n) {
+    /* Keep grid clean on second column */
+  }
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+  .section {
+    padding:
+      72px
+      0;
+  }
+
+  .container {
+    width:
+      min(
+        calc(100% - 32px),
+        720px
+      );
+  }
+
+  .trustMark {
+    display: none;
+  }
+
+  .grid {
+    margin-top: 32px;
+  }
+
+  .card {
+    min-height: 275px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+  .section {
+    padding:
+      58px
+      0;
+  }
+
+  .container {
+    width:
+      calc(100% - 28px);
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+
+    margin-top: 27px;
+  }
+
+  .card {
+    min-height: 265px;
+
+    padding: 18px;
+
+    border-radius: 12px;
+  }
+
+  .icon {
+    width: 43px;
+
+    height: 43px;
+
+    margin:
+      20px
+      0
+      15px;
+  }
+
+  .sector h3 {
+    font-size: 14px;
+  }
+
+  .client {
+    min-height: 29px;
+  }
+
+  .client strong {
+    font-size: 9px;
+  }
+
+  .cardFooter {
+    font-size: 7px;
+  }
+
+  .circuit {
+    right: -4px;
+
+    bottom: 28px;
+
+    transform:
+      scale(0.8);
+
+    transform-origin:
+      right center;
+  }
+
+  .strip {
+    min-height: 0;
+
+    padding:
+      13px;
+
+    align-items: flex-start;
+  }
+
+  .stripLeft {
+    align-items: flex-start;
+  }
+
+  .stripIcon {
+    width: 35px;
+
+    height: 35px;
+  }
+
+  .stripLeft span {
+    font-size: 6.5px;
+  }
+
+  .stripLeft strong {
+    font-size: 10px;
+  }
+
+  .connection {
+    display: none;
+  }
+
+  .background {
+    right: -180px;
+
+    top: 170px;
+
+    transform:
+      scale(0.65);
+
+    opacity: 0.2;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+  .section {
+    padding:
+      50px
+      0;
+  }
+
+  .container {
+    width:
+      calc(100% - 22px);
+  }
+
+  .card {
+    min-height: 250px;
+
+    padding: 16px;
+  }
+
+  .sector h3 {
+    font-size: 13.5px;
+  }
+
+  .client strong {
+    font-size: 8.5px;
+  }
+
+  .cardFooter {
+    font-size: 6.5px;
+  }
+
+  .circuit {
+    opacity: 0.25;
+  }
+
+  .stripLeft strong {
+    font-size: 9.5px;
+  }
+
+  .background {
+    display: none;
+  }
+}
+
+/* =========================================================
+   VERY SMALL DEVICES
+========================================================= */
+
+@media (max-width: 350px) {
+  .section {
+    padding:
+      44px
+      0;
+  }
+
+  .container {
+    width:
+      calc(100% - 18px);
+  }
+
+  .card {
+    min-height: 235px;
+
+    padding: 14px;
+  }
+
+  .icon {
+    width: 40px;
+
+    height: 40px;
+  }
+
+  .sector h3 {
+    font-size: 13px;
+  }
+
+  .client {
+    min-height: 27px;
+  }
+
+  .client strong {
+    font-size: 8px;
+  }
+
+  .strip {
+    padding:
+      11px;
+  }
+
+  .stripLeft strong {
+    font-size: 9px;
+  }
+
+  .circuit {
+    display: none;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .section *,
+  .section *::before,
+  .section *::after {
+    animation-duration:
+      0.01ms !important;
+
+    animation-iteration-count:
+      1 !important;
+
+    transition-duration:
+      0.01ms !important;
+  }
+}

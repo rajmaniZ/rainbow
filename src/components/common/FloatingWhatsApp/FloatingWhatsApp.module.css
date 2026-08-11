@@ -1,0 +1,329 @@
+/* =========================================================
+   RAINBOW GLOBAL WHATSAPP BUTTON
+========================================================= */
+
+.whatsapp {
+  position: fixed;
+
+  right: 24px;
+  bottom: 24px;
+
+  z-index: 99999;
+
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 5px;
+
+  border-radius: 999px;
+
+  background: #ffffff;
+
+  border: 1px solid #d7e6ec;
+
+  color: #079b68;
+
+  text-decoration: none;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 8px 24px rgba(8, 35, 55, 0.12),
+    0 2px 7px rgba(8, 35, 55, 0.08);
+
+  transition:
+    width 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.icon {
+  position: relative;
+
+  z-index: 3;
+
+  width: 46px;
+  height: 46px;
+
+  min-width: 46px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  background: #08a66f;
+
+  color: #ffffff;
+
+  font-size: 25px;
+
+  box-shadow: 0 5px 13px rgba(8, 166, 111, 0.24);
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.label {
+  width: 0;
+
+  opacity: 0;
+
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+
+  gap: 3px;
+
+  margin-left: 0;
+
+  white-space: nowrap;
+
+  transition:
+    width 0.3s ease,
+    opacity 0.2s ease,
+    margin-left 0.3s ease;
+}
+
+.label strong {
+  color: #102c43;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  line-height: 1.2;
+}
+
+.label small {
+  color: #7c8d9c;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  line-height: 1.2;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.06em;
+}
+
+/* =========================================================
+   ARROW
+========================================================= */
+
+.arrow {
+  width: 0;
+
+  opacity: 0;
+
+  overflow: hidden;
+
+  color: #079b68;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  transition:
+    width 0.3s ease,
+    opacity 0.2s ease;
+}
+
+/* =========================================================
+   HOVER STATE
+========================================================= */
+
+.whatsapp:hover {
+  width: 196px;
+
+  color: #079b68;
+
+  border-color: #bde6d7;
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 14px 32px rgba(8, 35, 55, 0.14),
+    0 5px 14px rgba(8, 166, 111, 0.13);
+}
+
+.whatsapp:hover .icon {
+  transform: scale(1.04);
+
+  background: #079b68;
+}
+
+.whatsapp:hover .label {
+  width: 105px;
+
+  opacity: 1;
+
+  margin-left: 9px;
+}
+
+.whatsapp:hover .arrow {
+  width: 18px;
+
+  opacity: 1;
+
+  margin-left: auto;
+}
+
+/* =========================================================
+   PULSE
+========================================================= */
+
+.pulse {
+  position: absolute;
+
+  z-index: 1;
+
+  left: 5px;
+  top: 5px;
+
+  width: 46px;
+  height: 46px;
+
+  border-radius: 50%;
+
+  border: 2px solid rgba(8, 166, 111, 0.45);
+
+  pointer-events: none;
+
+  animation: whatsappPulse 2.6s ease-out infinite;
+}
+
+@keyframes whatsappPulse {
+  0% {
+    opacity: 0.65;
+
+    transform: scale(0.95);
+  }
+
+  70% {
+    opacity: 0;
+
+    transform: scale(1.5);
+  }
+
+  100% {
+    opacity: 0;
+
+    transform: scale(1.5);
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+  .whatsapp {
+    right: 17px;
+    bottom: 17px;
+
+    width: 54px;
+    height: 54px;
+
+    padding: 4px;
+  }
+
+  .icon {
+    width: 44px;
+    height: 44px;
+
+    min-width: 44px;
+
+    font-size: 23px;
+  }
+
+  .pulse {
+    left: 4px;
+    top: 4px;
+
+    width: 44px;
+    height: 44px;
+  }
+
+  /* Don't expand on mobile */
+  .whatsapp:hover {
+    width: 54px;
+
+    transform: translateY(-2px);
+  }
+
+  .whatsapp:hover .label {
+    width: 0;
+
+    opacity: 0;
+
+    margin-left: 0;
+  }
+
+  .whatsapp:hover .arrow {
+    width: 0;
+
+    opacity: 0;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+  .whatsapp {
+    right: 13px;
+    bottom: 13px;
+
+    width: 50px;
+    height: 50px;
+  }
+
+  .icon {
+    width: 42px;
+    height: 42px;
+
+    min-width: 42px;
+
+    font-size: 21px;
+  }
+
+  .pulse {
+    width: 42px;
+    height: 42px;
+  }
+}
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .whatsapp,
+  .icon,
+  .label,
+  .arrow,
+  .pulse {
+    animation: none;
+    transition: none;
+  }
+}

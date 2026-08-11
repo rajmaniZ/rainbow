@@ -1,0 +1,847 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap");
+
+/* =========================================================
+   PRODUCT SHOWCASE
+   Fully self-contained.
+========================================================= */
+
+.section {
+  --ps-blue: #1268c4;
+  --ps-blue-dark: #0d57a6;
+  --ps-cyan: #16a8ce;
+  --ps-green: #1fa878;
+
+  --ps-heading: #1a3043;
+  --ps-text: #40576a;
+  --ps-muted: #708393;
+
+  --ps-border: #dce6ed;
+  --ps-border-light: #e9eef2;
+
+  position: relative;
+
+  width: 100%;
+
+  padding:
+    96px
+    0;
+
+  overflow: hidden;
+
+  background:
+    #f5f8fa;
+
+  color:
+    var(--ps-heading);
+
+  font-family:
+    "DM Sans",
+    "Segoe UI",
+    Arial,
+    sans-serif;
+}
+
+/* =========================================================
+   LOCAL RESET
+========================================================= */
+
+.section *,
+.section *::before,
+.section *::after {
+  box-sizing: border-box;
+}
+
+.section a {
+  color: inherit;
+
+  text-decoration: none;
+}
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.container {
+  position: relative;
+
+  z-index: 2;
+
+  width:
+    min(
+      1240px,
+      calc(100% - 40px)
+    );
+
+  margin:
+    0 auto;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header {
+  position: relative;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap: 30px;
+}
+
+/* =========================================================
+   CATALOG LINK
+========================================================= */
+
+.catalogLink {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 7px;
+
+  min-height: 38px;
+
+  padding:
+    0
+    12px;
+
+  border:
+    1px solid
+    var(--ps-border);
+
+  border-radius: 7px;
+
+  background:
+    #ffffff;
+
+  color:
+    var(--ps-blue) !important;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  transition:
+    color 180ms ease,
+    background 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.catalogLink svg {
+  transition:
+    transform 180ms ease;
+}
+
+.catalogLink:hover {
+  color:
+    #ffffff !important;
+
+  background:
+    var(--ps-blue);
+
+  border-color:
+    var(--ps-blue);
+
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    0 7px 18px
+    rgba(18, 104, 196, 0.16);
+}
+
+.catalogLink:hover svg {
+  transform:
+    translateX(3px);
+}
+
+/* =========================================================
+   POWER MARK
+========================================================= */
+
+.powerMark {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin-bottom: 4px;
+
+  color:
+    #92a2ae;
+
+  font-size: 7px;
+
+  font-weight: 800;
+
+  line-height: 1.35;
+
+  letter-spacing:
+    0.08em;
+}
+
+.powerMark > div {
+  width: 35px;
+
+  height: 35px;
+
+  display: grid;
+
+  place-items: center;
+
+  border:
+    1px solid
+    #d5e4eb;
+
+  border-radius: 9px;
+
+  color:
+    var(--ps-blue);
+
+  background:
+    #ffffff;
+
+  box-shadow:
+    0 4px 12px
+    rgba(26, 62, 82, 0.05);
+
+  transition:
+    color 180ms ease,
+    background 180ms ease,
+    transform 180ms ease;
+}
+
+.powerMark:hover > div {
+  color:
+    #ffffff;
+
+  background:
+    var(--ps-blue);
+
+  transform:
+    rotate(-5deg);
+}
+
+/* =========================================================
+   PRODUCT GRID
+========================================================= */
+
+.grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      4,
+      minmax(0, 1fr)
+    );
+
+  gap: 14px;
+
+  margin-top: 42px;
+}
+
+/* =========================================================
+   PRODUCT WRAPPER
+========================================================= */
+
+.product {
+  position: relative;
+
+  min-width: 0;
+
+  min-height: 100%;
+
+  border-radius: 14px;
+
+  transition:
+    transform 220ms ease;
+}
+
+.product::after {
+  content: "";
+
+  position: absolute;
+
+  left: 14px;
+
+  right: 14px;
+
+  bottom: -4px;
+
+  height: 3px;
+
+  border-radius: 3px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--ps-blue),
+      var(--ps-cyan)
+    );
+
+  opacity: 0;
+
+  transform:
+    scaleX(0.35);
+
+  transition:
+    opacity 220ms ease,
+    transform 220ms ease;
+
+  pointer-events: none;
+}
+
+.product:hover {
+  transform:
+    translateY(-4px);
+}
+
+.product:hover::after {
+  opacity: 0.75;
+
+  transform:
+    scaleX(1);
+}
+
+/*
+  ProductCard owns the actual product visual.
+  This wrapper deliberately does not override
+  its internal design.
+*/
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.empty {
+  min-height: 190px;
+
+  margin-top: 28px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 9px;
+
+  border:
+    1px dashed
+    #cbd9e2;
+
+  border-radius: 13px;
+
+  background:
+    #ffffff;
+
+  color:
+    var(--ps-muted);
+
+  font-size: 11px;
+
+  font-weight: 600;
+}
+
+.empty svg {
+  color:
+    var(--ps-blue);
+}
+
+/* =========================================================
+   BOTTOM ENQUIRY
+========================================================= */
+
+.bottom {
+  position: relative;
+
+  min-height: 66px;
+
+  margin-top: 18px;
+
+  padding:
+    12px
+    15px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  border:
+    1px solid
+    var(--ps-border);
+
+  border-radius: 12px;
+
+  background:
+    #ffffff;
+}
+
+.bottom p {
+  margin: 0;
+
+  color:
+    var(--ps-muted);
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  line-height: 1.5;
+}
+
+/* =========================================================
+   ELECTRICAL LINE
+========================================================= */
+
+.bottomLine {
+  display: flex;
+
+  align-items: center;
+
+  gap: 4px;
+
+  flex: 0 0 auto;
+}
+
+.bottomLine span {
+  width: 5px;
+
+  height: 5px;
+
+  border-radius: 50%;
+
+  background:
+    #9eb6c4;
+}
+
+.bottomLine span:nth-child(2) {
+  width: 28px;
+
+  height: 1px;
+
+  border-radius: 0;
+
+  background:
+    #c7d8e1;
+}
+
+.bottomLine span:nth-child(3) {
+  width: 5px;
+
+  height: 5px;
+
+  background:
+    var(--ps-cyan);
+
+  box-shadow:
+    0 0 7px
+    rgba(22, 168, 206, 0.35);
+
+  animation:
+    electricalPulse
+    1.8s
+    ease-in-out
+    infinite;
+}
+
+/* =========================================================
+   ENQUIRY LINK
+========================================================= */
+
+.enquiry {
+  flex: 0 0 auto;
+
+  min-height: 36px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 7px;
+
+  padding:
+    0
+    12px;
+
+  border:
+    1px solid
+    #d3e2ea;
+
+  border-radius: 7px;
+
+  color:
+    var(--ps-blue) !important;
+
+  background:
+    #f7fbfd;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  transition:
+    color 180ms ease,
+    background 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease;
+}
+
+.enquiry svg {
+  transition:
+    transform 180ms ease;
+}
+
+.enquiry:hover {
+  color:
+    #ffffff !important;
+
+  background:
+    var(--ps-blue);
+
+  border-color:
+    var(--ps-blue);
+
+  transform:
+    translateY(-2px);
+}
+
+.enquiry:hover svg {
+  transform:
+    translateX(3px);
+}
+
+/* =========================================================
+   BACKGROUND CIRCUIT
+========================================================= */
+
+.backgroundCircuit {
+  position: absolute;
+
+  right: -30px;
+
+  top: 90px;
+
+  width: 300px;
+
+  height: 300px;
+
+  opacity: 0.3;
+
+  pointer-events: none;
+}
+
+.backgroundCircuit::before {
+  content: "";
+
+  position: absolute;
+
+  top: 50%;
+
+  left: 0;
+
+  width: 100%;
+
+  height: 1px;
+
+  background:
+    #d2e0e7;
+}
+
+.backgroundCircuit::after {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+
+  left: 50%;
+
+  width: 1px;
+
+  height: 100%;
+
+  background:
+    #d2e0e7;
+}
+
+.backgroundCircuit span {
+  position: absolute;
+
+  width: 8px;
+
+  height: 8px;
+
+  border:
+    1px solid
+    #8db4c7;
+
+  border-radius: 50%;
+
+  background:
+    #f5f8fa;
+}
+
+.backgroundCircuit span:nth-child(1) {
+  top: 50%;
+
+  left: 0;
+}
+
+.backgroundCircuit span:nth-child(2) {
+  top: 50%;
+
+  right: 0;
+}
+
+.backgroundCircuit span:nth-child(3) {
+  top: 0;
+
+  left: 50%;
+}
+
+.backgroundCircuit span:nth-child(4) {
+  bottom: 0;
+
+  left: 50%;
+}
+
+/* =========================================================
+   ANIMATION
+========================================================= */
+
+@keyframes electricalPulse {
+  0%,
+  100% {
+    opacity: 0.45;
+
+    box-shadow:
+      0 0 0
+      rgba(22, 168, 206, 0);
+  }
+
+  50% {
+    opacity: 1;
+
+    box-shadow:
+      0 0 9px
+      rgba(22, 168, 206, 0.45);
+  }
+}
+
+/* =========================================================
+   LARGE TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+  .section {
+    padding:
+      84px
+      0;
+  }
+
+  .grid {
+    grid-template-columns:
+      repeat(
+        3,
+        minmax(0, 1fr)
+      );
+
+    gap: 13px;
+
+    margin-top: 36px;
+  }
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+  .section {
+    padding:
+      72px
+      0;
+  }
+
+  .container {
+    width:
+      min(
+        calc(100% - 32px),
+        720px
+      );
+  }
+
+  .header {
+    align-items: flex-start;
+  }
+
+  .powerMark {
+    display: none;
+  }
+
+  .grid {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0, 1fr)
+      );
+
+    margin-top: 32px;
+  }
+
+  .bottom {
+    align-items: flex-start;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+  .section {
+    padding:
+      58px
+      0;
+  }
+
+  .container {
+    width:
+      calc(100% - 28px);
+  }
+
+  .header {
+    display: block;
+  }
+
+  .catalogLink {
+    min-height: 36px;
+
+    margin-top: 18px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+
+    margin-top: 27px;
+  }
+
+  .product {
+    border-radius: 12px;
+  }
+
+  .bottom {
+    min-height: 0;
+
+    padding:
+      14px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 13px;
+  }
+
+  .bottomLine {
+    display: none;
+  }
+
+  .bottom p {
+    font-size: 10px;
+  }
+
+  .enquiry {
+    width: 100%;
+
+    min-height: 40px;
+  }
+
+  .backgroundCircuit {
+    right: -110px;
+
+    top: 180px;
+
+    transform:
+      scale(0.75);
+
+    opacity: 0.2;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+  .section {
+    padding:
+      50px
+      0;
+  }
+
+  .container {
+    width:
+      calc(100% - 22px);
+  }
+
+  .grid {
+    margin-top: 24px;
+  }
+
+  .catalogLink {
+    font-size: 9px;
+  }
+
+  .bottom {
+    padding:
+      12px;
+  }
+
+  .bottom p {
+    font-size: 9.5px;
+  }
+
+  .backgroundCircuit {
+    display: none;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .section *,
+  .section *::before,
+  .section *::after {
+    animation-duration:
+      0.01ms !important;
+
+    animation-iteration-count:
+      1 !important;
+
+    transition-duration:
+      0.01ms !important;
+  }
+}
