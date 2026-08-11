@@ -43,10 +43,7 @@
   font: inherit;
 }
 
-
-/* =========================================================
-   CONTAINER
-========================================================= */
+/* CONTAINER */
 
 .container {
   width: min(1240px, calc(100% - 48px));
@@ -54,21 +51,17 @@
   margin-inline: auto;
 }
 
-
-/* =========================================================
-   HERO
-========================================================= */
+/* HERO */
 
 .hero {
   position: relative;
 
   /*
-    Desktop header = 106px
-
-    svh is used instead of vh because it behaves better
-    on mobile browsers where the browser address bar changes
-    viewport height.
-  */
+ *     Desktop header = 106px
+ *     svh is used instead of vh because it behaves better
+ *     on mobile browsers where the browser address bar changes
+ *     viewport height.
+ */
   min-height: calc(100svh - 106px);
 
   height: calc(100svh - 106px);
@@ -94,7 +87,6 @@
 
   border-bottom: 1px solid var(--border);
 }
-
 
 .heroGrid {
   position: absolute;
@@ -129,7 +121,6 @@
   pointer-events: none;
 }
 
-
 .heroGlow {
   position: absolute;
 
@@ -153,7 +144,6 @@
   pointer-events: none;
 }
 
-
 .heroCircuit {
   position: absolute;
 
@@ -170,7 +160,6 @@
 
   pointer-events: none;
 }
-
 
 .heroCircuit::before {
   content: "";
@@ -193,7 +182,6 @@
     );
 }
 
-
 .heroCircuit span {
   position: absolute;
 
@@ -206,7 +194,6 @@
 
   background: #fff;
 }
-
 
 .heroCircuit span:nth-child(1) {
   left: 18%;
@@ -228,10 +215,7 @@
   bottom: 20%;
 }
 
-
-/* =========================================================
-   HERO LAYOUT
-========================================================= */
+/* HERO LAYOUT */
 
 .heroLayout {
   position: relative;
@@ -251,17 +235,13 @@
   gap: clamp(45px, 7vw, 110px);
 }
 
-
-/* =========================================================
-   HERO CONTENT
-========================================================= */
+/* HERO CONTENT */
 
 .heroContent {
   min-width: 0;
 
   max-width: 720px;
 }
-
 
 .eyebrow {
   display: inline-flex;
@@ -281,7 +261,6 @@
   text-transform: uppercase;
 }
 
-
 .eyebrow i {
   width: 8px;
   height: 8px;
@@ -295,7 +274,6 @@
   box-shadow:
     0 0 0 5px rgba(22, 168, 120, 0.09);
 }
-
 
 .hero h1 {
   max-width: 760px;
@@ -323,7 +301,6 @@
   letter-spacing: -0.055em;
 }
 
-
 .hero h1 strong {
   display: block;
 
@@ -331,7 +308,6 @@
 
   font-weight: 800;
 }
-
 
 .heroContent > p {
   max-width: 680px;
@@ -345,10 +321,7 @@
   line-height: 1.75;
 }
 
-
-/* =========================================================
-   HERO BUTTONS
-========================================================= */
+/* HERO BUTTONS */
 
 .heroActions {
   display: flex;
@@ -359,7 +332,6 @@
 
   margin-top: 27px;
 }
-
 
 .heroPrimary,
 .heroSecondary {
@@ -386,7 +358,6 @@
   cursor: pointer;
 }
 
-
 .heroPrimary {
   border: 1px solid var(--blue);
 
@@ -400,7 +371,6 @@
     box-shadow 150ms ease;
 }
 
-
 .heroPrimary:hover {
   background: var(--blue-dark);
 
@@ -409,7 +379,6 @@
   box-shadow:
     0 9px 20px rgba(20, 104, 201, 0.2);
 }
-
 
 .heroSecondary {
   border: 1px solid #cddde6;
@@ -423,17 +392,13 @@
     background 150ms ease;
 }
 
-
 .heroSecondary:hover {
   border-color: #a9c6d7;
 
   background: #f5f9fb;
 }
 
-
-/* =========================================================
-   HERO META
-========================================================= */
+/* HERO META */
 
 .heroMeta {
   display: flex;
@@ -444,7 +409,6 @@
 
   margin-top: 24px;
 }
-
 
 .heroMeta span {
   display: inline-flex;
@@ -460,15 +424,11 @@
   font-weight: 700;
 }
 
-
 .heroMeta svg {
   color: var(--green);
 }
 
-
-/* =========================================================
-   RIGHT HERO PANEL
-========================================================= */
+/* RIGHT HERO PANEL */
 
 .heroPanel {
   position: relative;
@@ -498,7 +458,6 @@
   overflow: hidden;
 }
 
-
 .heroPanel::before {
   content: "";
 
@@ -520,7 +479,6 @@
     );
 }
 
-
 .panelTop {
   position: relative;
 
@@ -530,7 +488,6 @@
 
   gap: 11px;
 }
-
 
 .panelIcon {
   width: 48px;
@@ -546,7 +503,6 @@
   color: var(--blue);
 }
 
-
 .panelTop > span {
   color: #688094;
 
@@ -556,7 +512,6 @@
 
   letter-spacing: 0.1em;
 }
-
 
 .heroPanel h2 {
   position: relative;
@@ -579,7 +534,6 @@
   letter-spacing: -0.035em;
 }
 
-
 .heroPanel > p {
   position: relative;
 
@@ -592,10 +546,7 @@
   line-height: 1.65;
 }
 
-
-/* =========================================================
-   PANEL STATS
-========================================================= */
+/* PANEL STATS */
 
 .panelStats {
   display: grid;
@@ -610,7 +561,6 @@
   border-bottom: 1px solid #dce7ed;
 }
 
-
 .panelStats > div {
   min-width: 0;
 
@@ -619,11 +569,9 @@
   border-right: 1px solid #dce7ed;
 }
 
-
 .panelStats > div:last-child {
   border-right: 0;
 }
-
 
 .panelStats strong {
   display: block;
@@ -640,7 +588,6 @@
   font-weight: 800;
 }
 
-
 .panelStats span {
   display: block;
 
@@ -653,10 +600,7 @@
   line-height: 1.35;
 }
 
-
-/* =========================================================
-   PANEL LIST
-========================================================= */
+/* PANEL LIST */
 
 .panelList {
   display: grid;
@@ -667,7 +611,6 @@
 
   margin-top: 20px;
 }
-
 
 .panelList span {
   display: flex;
@@ -685,17 +628,13 @@
   line-height: 1.4;
 }
 
-
 .panelList svg {
   flex: 0 0 auto;
 
   color: var(--green);
 }
 
-
-/* =========================================================
-   PANEL BUTTON
-========================================================= */
+/* PANEL BUTTON */
 
 .panelButton {
   width: 100%;
@@ -731,22 +670,17 @@
     transform 150ms ease;
 }
 
-
 .panelButton:hover {
   background: #07875f;
 
   transform: translateY(-1px);
 }
 
-
 .panelButton svg:last-child {
   margin-left: auto;
 }
 
-
-/* =========================================================
-   PANEL DECORATION
-========================================================= */
+/* PANEL DECORATION */
 
 .panelLine {
   position: absolute;
@@ -763,7 +697,6 @@
   gap: 20px;
 }
 
-
 .panelLine::before {
   content: "";
 
@@ -778,7 +711,6 @@
 
   background: #d9e7ee;
 }
-
 
 .panelLine span {
   position: relative;
@@ -795,10 +727,7 @@
   background: #fff;
 }
 
-
-/* =========================================================
-   CONTENT
-========================================================= */
+/* CONTENT */
 
 .content {
   padding: 84px 0 100px;
@@ -806,10 +735,7 @@
   background: #fff;
 }
 
-
-/* =========================================================
-   SUMMARY
-========================================================= */
+/* SUMMARY */
 
 .summary {
   display: grid;
@@ -830,7 +756,6 @@
   background: #f5f9fb;
 }
 
-
 .summaryCard {
   min-height: 76px;
 
@@ -849,7 +774,6 @@
   background: #fff;
 }
 
-
 .summaryIcon {
   width: 42px;
   height: 42px;
@@ -866,7 +790,6 @@
   color: var(--blue);
 }
 
-
 .summaryCard strong {
   display: block;
 
@@ -880,7 +803,6 @@
   font-size: 18px;
 }
 
-
 .summaryCard span {
   display: block;
 
@@ -891,10 +813,7 @@
   font-size: 11px;
 }
 
-
-/* =========================================================
-   TOOLBAR
-========================================================= */
+/* TOOLBAR */
 
 .serviceToolbar {
   min-height: 58px;
@@ -910,7 +829,6 @@
   margin-top: 30px;
 }
 
-
 .serviceToolbar > div {
   display: flex;
 
@@ -919,20 +837,17 @@
   gap: 6px;
 }
 
-
 .serviceToolbar strong {
   color: var(--blue);
 
   font-size: 13px;
 }
 
-
 .serviceToolbar span {
   color: #607789;
 
   font-size: 12px;
 }
-
 
 .toolbarButton {
   min-height: 38px;
@@ -962,10 +877,7 @@
   cursor: pointer;
 }
 
-
-/* =========================================================
-   SERVICE COLUMNS
-========================================================= */
+/* SERVICE COLUMNS */
 
 .serviceColumns {
   display: grid;
@@ -981,7 +893,6 @@
   margin-top: 15px;
 }
 
-
 .serviceColumn {
   min-width: 0;
 
@@ -994,10 +905,7 @@
   align-items: stretch;
 }
 
-
-/* =========================================================
-   SERVICE CARD
-========================================================= */
+/* SERVICE CARD */
 
 .serviceCard {
   min-width: 0;
@@ -1015,7 +923,6 @@
     box-shadow 180ms ease;
 }
 
-
 .serviceCard:hover,
 .serviceCardOpen {
   border-color: #a9cbdc;
@@ -1024,10 +931,7 @@
     0 14px 38px rgba(22, 70, 95, 0.08);
 }
 
-
-/* =========================================================
-   CARD HEADER
-========================================================= */
+/* CARD HEADER */
 
 .cardHeader {
   width: 100%;
@@ -1060,7 +964,6 @@
   cursor: pointer;
 }
 
-
 .cardHeader::after {
   content: "";
 
@@ -1074,7 +977,6 @@
 
   background: #e2ebef;
 }
-
 
 .serviceIcon {
   position: relative;
@@ -1094,7 +996,6 @@
   color: var(--blue);
 }
 
-
 .cardTitle {
   min-width: 0;
 
@@ -1102,7 +1003,6 @@
 
   z-index: 2;
 }
-
 
 .number {
   display: block;
@@ -1115,7 +1015,6 @@
 
   font-weight: 800;
 }
-
 
 .cardTitle h2 {
   margin: 0;
@@ -1133,7 +1032,6 @@
 
   line-height: 1.2;
 }
-
 
 .expandButton {
   position: relative;
@@ -1155,17 +1053,13 @@
   color: var(--blue);
 }
 
-
-/* =========================================================
-   DESCRIPTION
-========================================================= */
+/* DESCRIPTION */
 
 .cardDescription {
   padding: 0 21px 19px;
 
   border-bottom: 1px solid #e5edf1;
 }
-
 
 .cardDescription p {
   margin: 0;
@@ -1177,15 +1071,11 @@
   line-height: 1.65;
 }
 
-
-/* =========================================================
-   EXPANDED
-========================================================= */
+/* EXPANDED */
 
 .expandedContent {
   padding: 14px 21px 21px;
 }
-
 
 .serviceItems {
   display: grid;
@@ -1202,7 +1092,6 @@
 
   background: #f7fafb;
 }
-
 
 .serviceItem {
   min-width: 0;
@@ -1225,7 +1114,6 @@
   border-radius: 8px;
 }
 
-
 .check {
   width: 24px;
   height: 24px;
@@ -1235,7 +1123,6 @@
 
   color: var(--green);
 }
-
 
 .serviceName {
   min-width: 0;
@@ -1259,11 +1146,9 @@
   cursor: pointer;
 }
 
-
 .serviceName:hover {
   color: var(--blue);
 }
-
 
 .whatsappButton {
   width: 34px;
@@ -1285,17 +1170,13 @@
   cursor: pointer;
 }
 
-
 .whatsappButton:hover {
   background: var(--green);
 
   color: #fff;
 }
 
-
-/* =========================================================
-   ACTIONS
-========================================================= */
+/* ACTIONS */
 
 .cardActions {
   display: flex;
@@ -1306,7 +1187,6 @@
 
   margin-top: 14px;
 }
-
 
 .primaryAction,
 .whatsappAction {
@@ -1331,7 +1211,6 @@
   cursor: pointer;
 }
 
-
 .primaryAction {
   border: 1px solid var(--blue);
 
@@ -1339,7 +1218,6 @@
 
   color: #fff;
 }
-
 
 .whatsappAction {
   border: 1px solid #b9dfd0;
@@ -1349,10 +1227,7 @@
   color: #078b63;
 }
 
-
-/* =========================================================
-   BOTTOM CTA
-========================================================= */
+/* BOTTOM CTA */
 
 .bottomCta {
   display: grid;
@@ -1382,7 +1257,6 @@
     );
 }
 
-
 .bottomIcon {
   width: 52px;
   height: 52px;
@@ -1397,7 +1271,6 @@
   color: var(--green);
 }
 
-
 .bottomCta span {
   display: block;
 
@@ -1409,7 +1282,6 @@
 
   text-transform: uppercase;
 }
-
 
 .bottomCta h2 {
   margin: 4px 0 5px;
@@ -1426,7 +1298,6 @@
   font-weight: 800;
 }
 
-
 .bottomCta p {
   margin: 0;
 
@@ -1436,7 +1307,6 @@
 
   line-height: 1.55;
 }
-
 
 .bottomButton {
   min-height: 42px;
@@ -1466,10 +1336,7 @@
   cursor: pointer;
 }
 
-
-/* =========================================================
-   TABLET
-========================================================= */
+/* TABLET */
 
 @media (max-width: 1000px) {
   .hero {
@@ -1498,19 +1365,14 @@
   }
 }
 
-
-/* =========================================================
-   MOBILE
-========================================================= */
+/* MOBILE */
 
 @media (max-width: 760px) {
   .container {
     width: calc(100% - 28px);
   }
 
-  /*
-    Mobile header approximately 72px.
-  */
+  /* Mobile header approximately 72px. */
   .hero {
     min-height: calc(100svh - 72px);
     height: auto;
@@ -1575,9 +1437,7 @@
     font-size: 10px;
   }
 
-  /*
-    Right panel stays visible but becomes compact.
-  */
+  /* Right panel stays visible but becomes compact. */
   .heroPanel {
     width: 100%;
 
@@ -1644,9 +1504,9 @@
   }
 
   /*
-    Desktop independent columns become one
-    normal vertical flow.
-  */
+ *     Desktop independent columns become one
+ *     normal vertical flow.
+ */
   .serviceColumns {
     grid-template-columns: 1fr;
 
@@ -1742,10 +1602,7 @@
   }
 }
 
-
-/* =========================================================
-   SMALL MOBILE
-========================================================= */
+/* SMALL MOBILE */
 
 @media (max-width: 420px) {
   .container {
@@ -1821,10 +1678,7 @@
   }
 }
 
-
-/* =========================================================
-   REDUCED MOTION
-========================================================= */
+/* REDUCED MOTION */
 
 @media (prefers-reduced-motion: reduce) {
   .page *,

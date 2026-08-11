@@ -13,9 +13,7 @@ import styles from "./CTA.module.css";
 export default function CTA() {
   return (
     <section className={styles.section}>
-      {/* =================================================
-          BACKGROUND ELECTRICAL DETAIL
-      ================================================= */}
+      {/* BACKGROUND ELECTRICAL DETAIL */}
 
       <div
         className={styles.background}
@@ -31,9 +29,7 @@ export default function CTA() {
       </div>
 
       <div className={styles.container}>
-        {/* =================================================
-            MAIN CONTENT
-        ================================================= */}
+        {/* MAIN CONTENT */}
 
         <div className={styles.content}>
           <div className={styles.eyebrow}>
@@ -71,9 +67,7 @@ export default function CTA() {
           </div>
         </div>
 
-        {/* =================================================
-            ACTION PANEL
-        ================================================= */}
+        {/* ACTION PANEL */}
 
         <div className={styles.actions}>
           <Link

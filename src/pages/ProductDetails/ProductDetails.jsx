@@ -53,20 +53,12 @@ export default function ProductDetails() {
     )
     .slice(0, 4);
 
-  /*
-   * ---------------------------------------------------------
-   * ADD PRODUCT TO ENQUIRY CART
-   * ---------------------------------------------------------
-   */
+  /* ADD PRODUCT TO ENQUIRY CART */
   const handleAddToCart = () => {
     addItem(product);
   };
 
-  /*
-   * ---------------------------------------------------------
-   * WHATSAPP ENQUIRY
-   * ---------------------------------------------------------
-   */
+  /* WHATSAPP ENQUIRY */
   const handleWhatsApp = () => {
     const message = `
 Hello Rainbow,
@@ -105,9 +97,9 @@ Thank you.
 `.trim();
 
     /*
-     * Replace this number with your actual WhatsApp number
-     * or import it from your company data if available.
-     */
+ * Replace this number with your actual WhatsApp number
+ * or import it from your company data if available.
+ */
     const whatsappNumber = "919876543210";
 
     const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
@@ -118,16 +110,12 @@ Thank you.
   };
 
   /*
-   * ---------------------------------------------------------
-   * EMAIL ENQUIRY
-   * ---------------------------------------------------------
-   *
-   * Sends the user to the contact page with product
-   * information stored in sessionStorage.
-   *
-   * Your Contact page can read:
-   * sessionStorage.getItem("rainbow_product_enquiry")
-   */
+ * EMAIL ENQUIRY
+ * Sends the user to the contact page with product
+ * information stored in sessionStorage.
+ * Your Contact page can read:
+ * sessionStorage.getItem("rainbow_product_enquiry")
+ */
   const handleEmailEnquiry = () => {
     const enquiryData = {
       productId: product.id,
@@ -149,9 +137,7 @@ Thank you.
   return (
     <main className={styles.page}>
       <div className={styles.container}>
-        {/* =====================================================
-            BREADCRUMB
-        ===================================================== */}
+        {/* BREADCRUMB */}
 
         <div className={styles.topBar}>
           <Link to="/products" className={styles.backLink}>
@@ -164,14 +150,10 @@ Thank you.
           </span>
         </div>
 
-        {/* =====================================================
-            PRODUCT HERO
-        ===================================================== */}
+        {/* PRODUCT HERO */}
 
         <section className={styles.productHero}>
-          {/* ===================================================
-              IMAGE
-          =================================================== */}
+          {/* IMAGE */}
 
           <div className={styles.mediaColumn}>
             <div className={styles.productImage}>
@@ -197,9 +179,7 @@ Thank you.
             </div>
           </div>
 
-          {/* ===================================================
-              PRODUCT CONTENT
-          =================================================== */}
+          {/* PRODUCT CONTENT */}
 
           <div className={styles.productContent}>
             <span className={styles.category}>
@@ -214,9 +194,7 @@ Thank you.
                 "Electrical product available through direct enquiry."}
             </p>
 
-            {/* =================================================
-                QUOTATION NOTICE
-            ================================================= */}
+            {/* QUOTATION NOTICE */}
 
             <div className={styles.notice}>
               <div className={styles.noticeIcon}>
@@ -234,9 +212,7 @@ Thank you.
               </div>
             </div>
 
-            {/* =================================================
-                SPECIFICATIONS
-            ================================================= */}
+            {/* SPECIFICATIONS */}
 
             {product.specs?.length > 0 && (
               <div className={styles.specifications}>
@@ -260,9 +236,7 @@ Thank you.
               </div>
             )}
 
-            {/* =================================================
-                ACTIONS
-            ================================================= */}
+            {/* ACTIONS */}
 
             <div className={styles.actionSection}>
               <span className={styles.actionEyebrow}>
@@ -270,9 +244,7 @@ Thank you.
               </span>
 
               <div className={styles.actionGrid}>
-                {/* ============================================
-                    ADD TO CART
-                ============================================ */}
+                {/* ADD TO CART */}
 
                 <button
                   type="button"
@@ -294,9 +266,7 @@ Thank you.
                   />
                 </button>
 
-                {/* ============================================
-                    EMAIL
-                ============================================ */}
+                {/* EMAIL */}
 
                 <button
                   type="button"
@@ -318,9 +288,7 @@ Thank you.
                   />
                 </button>
 
-                {/* ============================================
-                    WHATSAPP
-                ============================================ */}
+                {/* WHATSAPP */}
 
                 <button
                   type="button"
@@ -351,9 +319,7 @@ Thank you.
           </div>
         </section>
 
-        {/* =====================================================
-            PRODUCT INFORMATION
-        ===================================================== */}
+        {/* PRODUCT INFORMATION */}
 
         <section className={styles.information}>
           <div className={styles.informationHeading}>
@@ -382,9 +348,7 @@ Thank you.
           </div>
         </section>
 
-        {/* =====================================================
-            RELATED PRODUCTS
-        ===================================================== */}
+        {/* RELATED PRODUCTS */}
 
         {relatedProducts.length > 0 && (
           <section className={styles.relatedSection}>

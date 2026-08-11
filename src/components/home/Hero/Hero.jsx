@@ -14,9 +14,7 @@ import styles from "./Hero.module.css";
 export default function Hero() {
   return (
     <section className={styles.hero}>
-      {/* =====================================================
-          BACKGROUND
-      ===================================================== */}
+      {/* BACKGROUND */}
 
       <div className={styles.background} aria-hidden="true">
         <div className={styles.grid} />
@@ -30,14 +28,10 @@ export default function Hero() {
         <div className={styles.bgCurrent} />
       </div>
 
-      {/* =====================================================
-          HERO CONTENT
-      ===================================================== */}
+      {/* HERO CONTENT */}
 
       <div className={styles.container}>
-        {/* ===================================================
-            LEFT SIDE
-        =================================================== */}
+        {/* LEFT SIDE */}
 
         <div className={styles.content}>
           <div className={styles.eyebrow}>
@@ -91,9 +85,7 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* ===================================================
-            RIGHT SIDE — ELECTRICAL FLOW
-        =================================================== */}
+        {/* RIGHT SIDE — ELECTRICAL FLOW */}
 
         <div className={styles.visual}>
           <div className={styles.visualGlow} />
@@ -405,9 +397,7 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* =====================================================
-          BOTTOM SERVICES
-      ===================================================== */}
+      {/* BOTTOM SERVICES */}
 
       <div className={styles.bottomBar}>
         <div className={styles.bottomInner}>

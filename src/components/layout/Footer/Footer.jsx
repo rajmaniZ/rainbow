@@ -15,10 +15,10 @@ import { company, categories } from "../../../data.js";
 
 import styles from "./Footer.module.css";
 
-/* =========================================================
-   FALLBACK PRODUCT CATEGORIES
-   Used only if categories are not available in data.js
-========================================================= */
+/*
+ *    FALLBACK PRODUCT CATEGORIES
+ *    Used only if categories are not available in data.js
+ */
 
 const fallbackCategories = [
   {
@@ -55,9 +55,7 @@ const fallbackCategories = [
   },
 ];
 
-/* =========================================================
-   SERVICES
-========================================================= */
+/* SERVICES */
 
 const services = [
   "UPS Installation & Commissioning",
@@ -70,9 +68,7 @@ const services = [
   "Switchgear & Protection",
 ];
 
-/* =========================================================
-   COMPANY LINKS
-========================================================= */
+/* COMPANY LINKS */
 
 const companyLinks = [
   {
@@ -101,9 +97,7 @@ const companyLinks = [
   },
 ];
 
-/* =========================================================
-   INDUSTRIES
-========================================================= */
+/* INDUSTRIES */
 
 const industries = [
   "Railways",
@@ -114,9 +108,7 @@ const industries = [
   "Commercial",
 ];
 
-/* =========================================================
-   CATEGORY HELPERS
-========================================================= */
+/* CATEGORY HELPERS */
 
 function getCategoryName(category) {
   if (typeof category === "string") {
@@ -151,9 +143,7 @@ function getCategorySlug(category) {
   );
 }
 
-/* =========================================================
-   FOOTER
-========================================================= */
+/* FOOTER */
 
 export default function Footer() {
   const productList =
@@ -173,9 +163,7 @@ export default function Footer() {
 
   return (
     <footer className={styles.footer}>
-      {/* =====================================================
-          ELECTRICAL DECORATION
-      ====================================================== */}
+      {/* ELECTRICAL DECORATION */}
 
       <div
         className={`${styles.circuit} ${styles.circuitOne}`}
@@ -199,14 +187,10 @@ export default function Footer() {
         aria-hidden="true"
       />
 
-      {/* =====================================================
-          MAIN CONTAINER
-      ====================================================== */}
+      {/* MAIN CONTAINER */}
 
       <div className={styles.container}>
-        {/* ===================================================
-            COMPANY INTRO + PROJECT
-        ==================================================== */}
+        {/* COMPANY INTRO + PROJECT */}
 
         <section className={styles.topSection}>
           {/* COMPANY */}
@@ -296,9 +280,7 @@ export default function Footer() {
           </div>
         </section>
 
-        {/* ===================================================
-            FOOTER NAVIGATION
-        ==================================================== */}
+        {/* FOOTER NAVIGATION */}
 
         <section className={styles.mainGrid}>
           {/* PRODUCTS */}
@@ -546,9 +528,7 @@ export default function Footer() {
           </div>
         </section>
 
-        {/* ===================================================
-            CREDIBILITY
-        ==================================================== */}
+        {/* CREDIBILITY */}
 
         <section className={styles.credibility}>
           <div className={styles.credibilityItem}>
@@ -592,9 +572,7 @@ export default function Footer() {
           </div>
         </section>
 
-        {/* ===================================================
-            BOTTOM BAR
-        ==================================================== */}
+        {/* BOTTOM BAR */}
 
         <div className={styles.bottom}>
           <div className={styles.copyright}>

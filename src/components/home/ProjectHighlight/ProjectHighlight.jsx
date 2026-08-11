@@ -42,9 +42,7 @@ export default function ProjectHighlight() {
         />
 
         <article className={styles.project}>
-          {/* =================================================
-              PROJECT VISUAL
-          ================================================= */}
+          {/* PROJECT VISUAL */}
 
           <div className={styles.visual}>
             <div className={styles.visualTop}>
@@ -93,9 +91,7 @@ export default function ProjectHighlight() {
             </div>
           </div>
 
-          {/* =================================================
-              PROJECT CONTENT
-          ================================================= */}
+          {/* PROJECT CONTENT */}
 
           <div className={styles.content}>
             <div className={styles.projectType}>

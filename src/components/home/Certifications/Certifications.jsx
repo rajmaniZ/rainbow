@@ -31,9 +31,7 @@ export default function Certifications() {
       </div>
 
       <div className={styles.container}>
-        {/* =================================================
-            INTRO
-        ================================================= */}
+        {/* INTRO */}
 
         <div className={styles.intro}>
           <div className={styles.eyebrow}>

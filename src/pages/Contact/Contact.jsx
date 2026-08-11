@@ -29,17 +29,15 @@ export default function Contact() {
   };
 
   /*
-   * Normal form submission.
-   * EmailJS can be connected here later.
-   */
+ * Normal form submission.
+ * EmailJS can be connected here later.
+ */
   const submit = (e) => {
     e.preventDefault();
     setSent(true);
   };
 
-  /*
-   * Send complete form information to WhatsApp.
-   */
+  /* Send complete form information to WhatsApp. */
   const sendWhatsApp = () => {
     const form = document.getElementById(
       "rainbow-contact-form",
@@ -95,9 +93,7 @@ Thank you.`;
 
   return (
     <div className={styles.page}>
-      {/* =====================================================
-          HERO
-      ===================================================== */}
+      {/* HERO */}
 
       <section className={styles.hero}>
         <div className={styles.heroGrid} />
@@ -111,9 +107,7 @@ Thank you.`;
           <span className={styles.nodeFour} />
         </div>
 
-        {/* =================================================
-            HERO CONTENT
-        ================================================= */}
+        {/* HERO CONTENT */}
 
         <div className={styles.heroContainer}>
           <div className={styles.heroContent}>
@@ -186,9 +180,7 @@ Thank you.`;
             </div>
           </div>
 
-          {/* =================================================
-              HERO CONTACT VISUAL
-          ================================================= */}
+          {/* HERO CONTACT VISUAL */}
 
           <div className={styles.heroVisual}>
             <div className={styles.visualOrbit} />
@@ -282,15 +274,11 @@ Thank you.`;
         </div>
       </section>
 
-      {/* =====================================================
-          CONTACT CONTENT
-      ===================================================== */}
+      {/* CONTACT CONTENT */}
 
       <section className={styles.content}>
         <div className={styles.container}>
-          {/* =================================================
-              CONTACT INFORMATION
-          ================================================= */}
+          {/* CONTACT INFORMATION */}
 
           <div className={styles.info}>
             <a
@@ -350,9 +338,7 @@ Thank you.`;
             </a>
           </div>
 
-          {/* =================================================
-              FORM
-          ================================================= */}
+          {/* FORM */}
 
           <form
             id="rainbow-contact-form"

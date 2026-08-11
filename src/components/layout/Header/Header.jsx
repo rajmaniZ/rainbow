@@ -22,9 +22,7 @@ import { useCart } from "../../../context/CartContext";
 
 import styles from "./Header.module.css";
 
-/* =========================================================
-   MAIN NAVIGATION
-========================================================= */
+/* MAIN NAVIGATION */
 
 const links = [
   ["/", "Home", true],
@@ -35,9 +33,7 @@ const links = [
   ["/contact", "Contact"],
 ];
 
-/* =========================================================
-   DATA HELPERS
-========================================================= */
+/* DATA HELPERS */
 
 function getItemName(item) {
   if (typeof item === "string") {
@@ -74,22 +70,16 @@ function getItemPath(item, basePath) {
   return basePath;
 }
 
-/* =========================================================
-   HEADER
-========================================================= */
+/* HEADER */
 
 export default function Header() {
-  /* -------------------------------------------------------
-     DESKTOP DROPDOWNS
-  ------------------------------------------------------- */
+  /* DESKTOP DROPDOWNS */
 
   const [productsOpen, setProductsOpen] = useState(false);
 
   const [servicesOpen, setServicesOpen] = useState(false);
 
-  /* -------------------------------------------------------
-     MOBILE MENU
-  ------------------------------------------------------- */
+  /* MOBILE MENU */
 
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -99,23 +89,17 @@ export default function Header() {
   const [mobileServicesOpen, setMobileServicesOpen] =
     useState(false);
 
-  /* -------------------------------------------------------
-     REFS
-  ------------------------------------------------------- */
+  /* REFS */
 
   const productsRef = useRef(null);
 
   const servicesRef = useRef(null);
 
-  /* -------------------------------------------------------
-     CART
-  ------------------------------------------------------- */
+  /* CART */
 
   const { count } = useCart();
 
-  /* =======================================================
-     CLOSE DESKTOP DROPDOWNS WHEN CLICKING OUTSIDE
-  ======================================================= */
+  /* CLOSE DESKTOP DROPDOWNS WHEN CLICKING OUTSIDE */
 
   useEffect(() => {
     const handleOutsideClick = (event) => {
@@ -144,9 +128,7 @@ export default function Header() {
     };
   }, []);
 
-  /* =======================================================
-     ESCAPE KEY
-  ======================================================= */
+  /* ESCAPE KEY */
 
   useEffect(() => {
     const handleEscape = (event) => {
@@ -176,9 +158,7 @@ export default function Header() {
     };
   }, []);
 
-  /* =======================================================
-     BODY SCROLL LOCK ON MOBILE
-  ======================================================= */
+  /* BODY SCROLL LOCK ON MOBILE */
 
   useEffect(() => {
     if (mobileOpen) {
@@ -196,9 +176,7 @@ export default function Header() {
     };
   }, [mobileOpen]);
 
-  /* =======================================================
-     CLOSE ALL MENUS
-  ======================================================= */
+  /* CLOSE ALL MENUS */
 
   const closeMenus = () => {
     setProductsOpen(false);
@@ -210,9 +188,7 @@ export default function Header() {
     setMobileServicesOpen(false);
   };
 
-  /* =======================================================
-     MOBILE MENU TOGGLE
-  ======================================================= */
+  /* MOBILE MENU TOGGLE */
 
   const toggleMobileMenu = () => {
     setMobileOpen((current) => !current);
@@ -221,9 +197,7 @@ export default function Header() {
     setServicesOpen(false);
   };
 
-  /* =======================================================
-     PRODUCTS DESKTOP TOGGLE
-  ======================================================= */
+  /* PRODUCTS DESKTOP TOGGLE */
 
   const toggleProducts = (event) => {
     event.preventDefault();
@@ -234,9 +208,7 @@ export default function Header() {
     setServicesOpen(false);
   };
 
-  /* =======================================================
-     SERVICES DESKTOP TOGGLE
-  ======================================================= */
+  /* SERVICES DESKTOP TOGGLE */
 
   const toggleServices = (event) => {
     event.preventDefault();
@@ -247,9 +219,7 @@ export default function Header() {
     setProductsOpen(false);
   };
 
-  /* =======================================================
-     MOBILE PRODUCTS
-  ======================================================= */
+  /* MOBILE PRODUCTS */
 
   const toggleMobileProducts = (event) => {
     event.preventDefault();
@@ -262,9 +232,7 @@ export default function Header() {
     setMobileServicesOpen(false);
   };
 
-  /* =======================================================
-     MOBILE SERVICES
-  ======================================================= */
+  /* MOBILE SERVICES */
 
   const toggleMobileServices = (event) => {
     event.preventDefault();
@@ -280,9 +248,7 @@ export default function Header() {
   return (
     <header className={styles.header}>
 
-      {/* ===================================================
-          TOP BAR
-      =================================================== */}
+      {/* TOP BAR */}
 
       <div className={styles.topBar}>
         <div className={styles.topInner}>
@@ -314,16 +280,12 @@ export default function Header() {
         </div>
       </div>
 
-      {/* ===================================================
-          MAIN NAVIGATION
-      =================================================== */}
+      {/* MAIN NAVIGATION */}
 
       <div className={styles.navbar}>
         <div className={styles.inner}>
 
-          {/* =================================================
-              LOGO
-          ================================================= */}
+          {/* LOGO */}
 
           <Link
             to="/"
@@ -337,9 +299,7 @@ export default function Header() {
             />
           </Link>
 
-          {/* =================================================
-              DESKTOP NAV
-          ================================================= */}
+          {/* DESKTOP NAV */}
 
           <nav
             className={styles.desktopNav}
@@ -349,9 +309,7 @@ export default function Header() {
             {links.map(
               ([to, label, end]) => {
 
-                /* ===========================================
-                   PRODUCTS
-                ============================================ */
+                /* PRODUCTS */
 
                 if (label === "Products") {
                   return (
@@ -514,9 +472,7 @@ export default function Header() {
                   );
                 }
 
-                /* ===========================================
-                   SERVICES
-                ============================================ */
+                /* SERVICES */
 
                 if (label === "Services") {
                   return (
@@ -679,9 +635,7 @@ export default function Header() {
                   );
                 }
 
-                /* ===========================================
-                   NORMAL NAVIGATION LINK
-                ============================================ */
+                /* NORMAL NAVIGATION LINK */
 
                 return (
                   <NavLink
@@ -703,9 +657,7 @@ export default function Header() {
 
           </nav>
 
-          {/* =================================================
-              ACTIONS
-          ================================================= */}
+          {/* ACTIONS */}
 
           <div className={styles.actions}>
 
@@ -783,9 +735,7 @@ export default function Header() {
         </div>
       </div>
 
-      {/* ===================================================
-          MOBILE NAVIGATION
-      =================================================== */}
+      {/* MOBILE NAVIGATION */}
 
       <div
         className={
@@ -878,9 +828,7 @@ export default function Header() {
               />
             </NavLink>
 
-            {/* =================================================
-                MOBILE PRODUCTS
-            ================================================== */}
+            {/* MOBILE PRODUCTS */}
 
             <div
               className={
@@ -984,9 +932,7 @@ export default function Header() {
 
             </div>
 
-            {/* =================================================
-                MOBILE SERVICES
-            ================================================== */}
+            {/* MOBILE SERVICES */}
 
             <div
               className={
@@ -1132,9 +1078,7 @@ export default function Header() {
 
           </div>
 
-          {/* =================================================
-              MOBILE ACTIONS
-          ================================================== */}
+          {/* MOBILE ACTIONS */}
 
           <div
             className={

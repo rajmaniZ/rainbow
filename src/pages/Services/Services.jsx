@@ -20,9 +20,7 @@ const WHATSAPP_NUMBER = String(company?.whatsapp || "").replace(
   "",
 );
 
-/* =========================================================
-   WHATSAPP
-========================================================= */
+/* WHATSAPP */
 
 function sendWhatsApp(service, item = "") {
   const servicesUrl = `${window.location.origin}/services`;
@@ -49,10 +47,7 @@ function sendWhatsApp(service, item = "") {
   window.open(url, "_blank", "noopener,noreferrer");
 }
 
-
-/* =========================================================
-   SERVICE CARD
-========================================================= */
+/* SERVICE CARD */
 
 function ServiceCard({
   service,
@@ -165,10 +160,7 @@ function ServiceCard({
   );
 }
 
-
-/* =========================================================
-   SERVICES PAGE
-========================================================= */
+/* SERVICES PAGE */
 
 export default function Services() {
   const [openServices, setOpenServices] = useState(
@@ -189,9 +181,11 @@ export default function Services() {
     });
   };
 
-  /* Independent columns.
-     This prevents one opened card from moving
-     the card on the opposite side. */
+  /*
+ *  Independent columns.
+ *      This prevents one opened card from moving
+ *      the card on the opposite side.
+ */
   const columns = useMemo(() => {
     const left = [];
     const right = [];
@@ -238,9 +232,7 @@ export default function Services() {
 
   return (
     <div className={styles.page}>
-      {/* =====================================================
-          HERO
-      ===================================================== */}
+      {/* HERO */}
 
       <section className={styles.hero}>
         <div className={styles.heroGrid} />
@@ -413,9 +405,7 @@ export default function Services() {
         </div>
       </section>
 
-      {/* =====================================================
-          SERVICE CONTENT
-      ===================================================== */}
+      {/* SERVICE CONTENT */}
 
       <main
         className={styles.content}

@@ -1,9 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap");
 
-
-/* =========================================================
-   PAGE
-========================================================= */
+/* PAGE */
 
 .page {
   --blue: #1268c4;
@@ -34,10 +31,7 @@
     sans-serif;
 }
 
-
-/* =========================================================
-   RESET
-========================================================= */
+/* RESET */
 
 .page *,
 .page *::before,
@@ -65,10 +59,7 @@
   margin-top: 0;
 }
 
-
-/* =========================================================
-   CONTAINER
-========================================================= */
+/* CONTAINER */
 
 .container {
   width:
@@ -80,10 +71,7 @@
   margin: 0 auto;
 }
 
-
-/* =========================================================
-   HERO
-========================================================= */
+/* HERO */
 
 .hero {
   position: relative;
@@ -108,7 +96,6 @@
     1px solid var(--border);
 }
 
-
 .heroContent {
   position: relative;
 
@@ -118,7 +105,6 @@
 
   padding: 70px 0;
 }
-
 
 .eyebrow {
   display: flex;
@@ -136,7 +122,6 @@
   text-transform: uppercase;
 }
 
-
 .eyebrow i {
   width: 8px;
   height: 8px;
@@ -151,7 +136,6 @@
     0 0 0 5px
     rgba(21, 159, 190, 0.1);
 }
-
 
 .hero h1 {
   max-width: 720px;
@@ -182,11 +166,9 @@
   letter-spacing: -0.055em;
 }
 
-
 .hero h1 span {
   color: var(--blue);
 }
-
 
 .heroContent > p {
   max-width: 650px;
@@ -200,10 +182,7 @@
   line-height: 1.8;
 }
 
-
-/* =========================================================
-   HERO META
-========================================================= */
+/* HERO META */
 
 .heroMeta {
   display: flex;
@@ -218,14 +197,12 @@
     1px solid #d8e5ea;
 }
 
-
 .heroMeta div {
   display: flex;
   align-items: baseline;
 
   gap: 7px;
 }
-
 
 .heroMeta strong {
   color: var(--heading);
@@ -240,7 +217,6 @@
   font-weight: 800;
 }
 
-
 .heroMeta span {
   color: var(--muted);
 
@@ -248,10 +224,7 @@
   font-weight: 700;
 }
 
-
-/* =========================================================
-   HERO CIRCUIT
-========================================================= */
+/* HERO CIRCUIT */
 
 .heroCircuit {
   position: absolute;
@@ -267,7 +240,6 @@
   opacity: 0.42;
 }
 
-
 .heroCircuit::before {
   content: "";
 
@@ -281,7 +253,6 @@
 
   background: #cbdde4;
 }
-
 
 .heroCircuit::after {
   content: "";
@@ -297,7 +268,6 @@
   background: #cbdde4;
 }
 
-
 .heroCircuit span {
   position: absolute;
 
@@ -312,34 +282,27 @@
   background: #f6fbfc;
 }
 
-
 .heroCircuit span:nth-child(1) {
   top: calc(50% - 4px);
   left: 13%;
 }
-
 
 .heroCircuit span:nth-child(2) {
   top: 24%;
   right: calc(24% - 4px);
 }
 
-
 .heroCircuit span:nth-child(3) {
   bottom: 24%;
   right: calc(24% - 4px);
 }
-
 
 .heroCircuit span:nth-child(4) {
   top: calc(50% - 4px);
   right: 6%;
 }
 
-
-/* =========================================================
-   HERO VISUAL
-========================================================= */
+/* HERO VISUAL */
 
 .heroVisual {
   position: absolute;
@@ -380,7 +343,6 @@
     translateY(-50%);
 }
 
-
 .heroVisual::before,
 .heroVisual::after {
   content: "";
@@ -393,16 +355,13 @@
   border-radius: 50%;
 }
 
-
 .heroVisual::before {
   inset: 35px;
 }
 
-
 .heroVisual::after {
   inset: 75px;
 }
-
 
 .visualCircle {
   position: relative;
@@ -428,7 +387,6 @@
     rgba(18, 104, 196, 0.045);
 }
 
-
 .visualLine {
   position: relative;
   z-index: 3;
@@ -441,7 +399,6 @@
   margin-top: 19px;
 }
 
-
 .visualLine span {
   width: 7px;
   height: 7px;
@@ -451,7 +408,6 @@
   background: #9abdc9;
 }
 
-
 .visualLine span:nth-child(2) {
   width: 45px;
   height: 1px;
@@ -460,7 +416,6 @@
 
   background: #b5ccd5;
 }
-
 
 .heroVisual strong {
   position: relative;
@@ -482,7 +437,6 @@
   letter-spacing: 0.07em;
 }
 
-
 .heroVisual > span {
   position: relative;
   z-index: 3;
@@ -497,10 +451,7 @@
   letter-spacing: 0.1em;
 }
 
-
-/* =========================================================
-   CATALOG
-========================================================= */
+/* CATALOG */
 
 .catalog {
   padding:
@@ -510,10 +461,7 @@
   background: #ffffff;
 }
 
-
-/* =========================================================
-   TOOLBAR
-========================================================= */
+/* TOOLBAR */
 
 .toolbar {
   display: flex;
@@ -523,7 +471,6 @@
 
   margin-top: 42px;
 }
-
 
 .searchBox {
   position: relative;
@@ -551,7 +498,6 @@
     box-shadow 0.2s ease;
 }
 
-
 .searchBox:focus-within {
   border-color: #a9c9d5;
 
@@ -560,13 +506,11 @@
     rgba(18, 104, 196, 0.07);
 }
 
-
 .searchBox > svg {
   flex: 0 0 auto;
 
   color: #81959f;
 }
-
 
 .searchBox input {
   width: 100%;
@@ -582,11 +526,9 @@
   font-size: 12px;
 }
 
-
 .searchBox input::placeholder {
   color: #9aabb4;
 }
-
 
 .clearSearch {
   width: 29px;
@@ -606,10 +548,7 @@
   background: #f0f4f6;
 }
 
-
-/* =========================================================
-   FILTER BUTTON
-========================================================= */
+/* FILTER BUTTON */
 
 .filterToggle {
   display: none;
@@ -635,7 +574,6 @@
   font-weight: 800;
 }
 
-
 .filterToggle b {
   min-width: 18px;
   height: 18px;
@@ -652,10 +590,7 @@
   font-size: 8px;
 }
 
-
-/* =========================================================
-   RESULT BAR
-========================================================= */
+/* RESULT BAR */
 
 .catalogBar {
   min-height: 58px;
@@ -670,7 +605,6 @@
     1px solid var(--border);
 }
 
-
 .catalogBar > div {
   display: flex;
   align-items: baseline;
@@ -679,7 +613,6 @@
 
   gap: 4px;
 }
-
 
 .catalogBar strong {
   color: var(--heading);
@@ -694,20 +627,17 @@
   font-weight: 800;
 }
 
-
 .catalogBar span {
   color: var(--muted);
 
   font-size: 10px;
 }
 
-
 .catalogBar small {
   color: var(--blue);
 
   font-size: 9px;
 }
-
 
 .resetButton {
   display: inline-flex;
@@ -727,10 +657,7 @@
   font-weight: 800;
 }
 
-
-/* =========================================================
-   CATALOG LAYOUT
-========================================================= */
+/* CATALOG LAYOUT */
 
 .catalogLayout {
   display: grid;
@@ -744,10 +671,7 @@
   padding-top: 27px;
 }
 
-
-/* =========================================================
-   FILTERS
-========================================================= */
+/* FILTERS */
 
 .filters {
   position: sticky;
@@ -766,7 +690,6 @@
   background: #f8fafb;
 }
 
-
 .filtersHeader {
   min-height: 70px;
 
@@ -782,12 +705,10 @@
   background: #ffffff;
 }
 
-
 .filtersHeader span,
 .filtersHeader strong {
   display: block;
 }
-
 
 .filtersHeader span {
   color: var(--blue);
@@ -797,7 +718,6 @@
 
   letter-spacing: 0.09em;
 }
-
 
 .filtersHeader strong {
   margin-top: 4px;
@@ -814,16 +734,13 @@
   font-weight: 800;
 }
 
-
 .filtersHeader button {
   display: none;
 }
 
-
 .categoryList {
   padding: 8px;
 }
-
 
 .categoryList button {
   width: 100%;
@@ -856,13 +773,11 @@
     color 0.18s ease;
 }
 
-
 .categoryList button:hover {
   color: var(--blue);
 
   background: #edf5f8;
 }
-
 
 .categoryList button b {
   min-width: 22px;
@@ -880,7 +795,6 @@
   font-size: 7px;
 }
 
-
 .categoryList
   .categoryActive {
   color: #ffffff;
@@ -892,14 +806,12 @@
     rgba(18, 104, 196, 0.14);
 }
 
-
 .categoryList
   .categoryActive:hover {
   color: #ffffff;
 
   background: var(--blue-dark);
 }
-
 
 .categoryList
   .categoryActive
@@ -909,15 +821,11 @@
   background: #ffffff;
 }
 
-
-/* =========================================================
-   PRODUCT AREA
-========================================================= */
+/* PRODUCT AREA */
 
 .productsArea {
   min-width: 0;
 }
-
 
 .grid {
   display: grid;
@@ -931,7 +839,6 @@
   gap: 18px 14px;
 }
 
-
 .productWrapper {
   min-width: 0;
 
@@ -939,17 +846,13 @@
   flex-direction: column;
 }
 
-
 .cardArea {
   min-width: 0;
 
   flex: 1;
 }
 
-
-/* =========================================================
-   PRODUCT ACTIONS
-========================================================= */
+/* PRODUCT ACTIONS */
 
 .productActions {
   display: grid;
@@ -961,7 +864,6 @@
 
   margin-top: 8px;
 }
-
 
 .cartButton,
 .whatsappButton {
@@ -987,10 +889,7 @@
     box-shadow 0.18s ease;
 }
 
-
-/* =========================================================
-   CART BUTTON
-========================================================= */
+/* CART BUTTON */
 
 .cartButton {
   border:
@@ -1000,7 +899,6 @@
 
   background: var(--blue);
 }
-
 
 .cartButton:hover {
   transform:
@@ -1017,17 +915,13 @@
     rgba(18, 104, 196, 0.18);
 }
 
-
 .cartButtonAdded {
   border-color: #168d67;
 
   background: #168d67;
 }
 
-
-/* =========================================================
-   WHATSAPP BUTTON
-========================================================= */
+/* WHATSAPP BUTTON */
 
 .whatsappButton {
   border:
@@ -1037,7 +931,6 @@
 
   background: #f1faf6;
 }
-
 
 .whatsappButton:hover {
   transform:
@@ -1056,15 +949,11 @@
     rgba(22, 141, 103, 0.16);
 }
 
-
 .whatsappButton svg {
   flex: 0 0 auto;
 }
 
-
-/* =========================================================
-   VIEW MORE
-========================================================= */
+/* VIEW MORE */
 
 .viewMoreWrap {
   display: flex;
@@ -1082,18 +971,15 @@
     1px solid var(--border);
 }
 
-
 .viewMoreInfo {
   color: var(--muted);
 
   font-size: 9px;
 }
 
-
 .viewMoreInfo strong {
   color: var(--heading);
 }
-
 
 .viewMoreButton {
   min-height: 46px;
@@ -1127,7 +1013,6 @@
     box-shadow 0.18s ease;
 }
 
-
 .viewMoreButton:hover {
   transform:
     translateY(-2px);
@@ -1145,10 +1030,7 @@
     rgba(18, 104, 196, 0.16);
 }
 
-
-/* =========================================================
-   ALL LOADED
-========================================================= */
+/* ALL LOADED */
 
 .allLoaded {
   min-height: 55px;
@@ -1170,15 +1052,11 @@
   font-size: 9px;
 }
 
-
 .allLoaded svg {
   color: var(--green);
 }
 
-
-/* =========================================================
-   EMPTY
-========================================================= */
+/* EMPTY */
 
 .empty {
   min-height: 350px;
@@ -1201,7 +1079,6 @@
   text-align: center;
 }
 
-
 .emptyIcon {
   width: 60px;
   height: 60px;
@@ -1218,7 +1095,6 @@
 
   background: #ffffff;
 }
-
 
 .empty h3 {
   margin:
@@ -1237,7 +1113,6 @@
   font-weight: 800;
 }
 
-
 .empty p {
   max-width: 380px;
 
@@ -1249,7 +1124,6 @@
 
   line-height: 1.7;
 }
-
 
 .emptyButton {
   min-height: 40px;
@@ -1276,10 +1150,7 @@
   font-weight: 800;
 }
 
-
-/* =========================================================
-   LARGE TABLET
-========================================================= */
+/* LARGE TABLET */
 
 @media (max-width: 1100px) {
   .heroVisual {
@@ -1303,10 +1174,7 @@
   }
 }
 
-
-/* =========================================================
-   TABLET
-========================================================= */
+/* TABLET */
 
 @media (max-width: 950px) {
   .hero {
@@ -1336,10 +1204,7 @@
   }
 }
 
-
-/* =========================================================
-   MOBILE FILTER
-========================================================= */
+/* MOBILE FILTER */
 
 @media (max-width: 800px) {
   .container {
@@ -1367,13 +1232,11 @@
     display: flex;
   }
 
-
   .catalogLayout {
     display: block;
 
     padding-top: 16px;
   }
-
 
   .filters {
     position: fixed;
@@ -1410,13 +1273,11 @@
       transform 0.24s ease;
   }
 
-
   .mobileFiltersOpen
     .filters {
     transform:
       translateX(0);
   }
-
 
   .mobileFiltersOpen
     .filters::after {
@@ -1454,11 +1315,9 @@
       );
   }
 
-
   .filtersHeader {
     min-height: 70px;
   }
-
 
   .filtersHeader button {
     width: 34px;
@@ -1478,10 +1337,7 @@
   }
 }
 
-
-/* =========================================================
-   MOBILE
-========================================================= */
+/* MOBILE */
 
 @media (max-width: 600px) {
   .container {
@@ -1489,18 +1345,15 @@
       calc(100% - 28px);
   }
 
-
   .hero {
     min-height:
       calc(100vh - 67px);
   }
 
-
   .heroContent {
     padding:
       42px 0;
   }
-
 
   .hero h1 {
     margin:
@@ -1517,13 +1370,11 @@
     line-height: 1.05;
   }
 
-
   .heroContent > p {
     font-size: 10px;
 
     line-height: 1.75;
   }
-
 
   .heroMeta {
     gap: 18px;
@@ -1532,18 +1383,15 @@
     padding-top: 15px;
   }
 
-
   .heroMeta div {
     display: block;
   }
-
 
   .heroMeta strong {
     display: block;
 
     font-size: 13px;
   }
-
 
   .heroMeta span {
     display: block;
@@ -1553,18 +1401,15 @@
     font-size: 6px;
   }
 
-
   .catalog {
     padding:
       58px 0
       70px;
   }
 
-
   .toolbar {
     align-items: stretch;
   }
-
 
   .searchBox {
     min-height: 46px;
@@ -1573,11 +1418,9 @@
       0 11px;
   }
 
-
   .searchBox input {
     font-size: 9px;
   }
-
 
   .filterToggle {
     min-height: 46px;
@@ -1586,18 +1429,15 @@
       0 11px;
   }
 
-
   .catalogBar {
     min-height: 52px;
   }
-
 
   .catalogBar span,
   .catalogBar small,
   .resetButton {
     font-size: 7px;
   }
-
 
   .grid {
     grid-template-columns:
@@ -1609,7 +1449,6 @@
     gap: 13px 9px;
   }
 
-
   .productActions {
     grid-template-columns:
       1fr 1fr;
@@ -1618,7 +1457,6 @@
 
     margin-top: 6px;
   }
-
 
   .cartButton,
   .whatsappButton {
@@ -1632,18 +1470,15 @@
     font-size: 7px;
   }
 
-
   .cartButton svg,
   .whatsappButton svg {
     width: 14px;
     height: 14px;
   }
 
-
   .viewMoreWrap {
     margin-top: 32px;
   }
-
 
   .viewMoreButton {
     width: 100%;
@@ -1652,31 +1487,24 @@
   }
 }
 
-
-/* =========================================================
-   SMALL MOBILE
-========================================================= */
+/* SMALL MOBILE */
 
 @media (max-width: 450px) {
   .hero h1 {
     font-size: 32px;
   }
 
-
   .heroMeta {
     gap: 12px;
   }
-
 
   .heroMeta strong {
     font-size: 12px;
   }
 
-
   .heroMeta span {
     font-size: 5.5px;
   }
-
 
   .filters {
     width:
@@ -1687,47 +1515,36 @@
   }
 }
 
-
-/* =========================================================
-   VERY SMALL MOBILE
-========================================================= */
+/* VERY SMALL MOBILE */
 
 @media (max-width: 380px) {
   .grid {
     grid-template-columns: 1fr;
   }
 
-
   .productActions {
     grid-template-columns:
       1fr 1fr;
   }
 
-
   .hero h1 {
     font-size: 29px;
   }
-
 
   .heroMeta {
     gap: 9px;
   }
 
-
   .heroMeta strong {
     font-size: 11px;
   }
-
 
   .heroMeta span {
     font-size: 5px;
   }
 }
 
-
-/* =========================================================
-   REDUCED MOTION
-========================================================= */
+/* REDUCED MOTION */
 
 @media (prefers-reduced-motion: reduce) {
   .page *,

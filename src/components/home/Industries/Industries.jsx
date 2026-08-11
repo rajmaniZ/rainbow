@@ -40,9 +40,7 @@ export default function Industries() {
                 key={industry.id}
                 className={styles.card}
               >
-                {/* =================================================
-                    CARD HEADER
-                ================================================= */}
+                {/* CARD HEADER */}
 
                 <div className={styles.top}>
                   <span className={styles.number}>
@@ -55,9 +53,7 @@ export default function Industries() {
                   />
                 </div>
 
-                {/* =================================================
-                    ICON
-                ================================================= */}
+                {/* ICON */}
 
                 <div className={styles.iconWrap}>
                   <div className={styles.icon}>
@@ -67,9 +63,7 @@ export default function Industries() {
                   <span className={styles.iconPulse} />
                 </div>
 
-                {/* =================================================
-                    CONTENT
-                ================================================= */}
+                {/* CONTENT */}
 
                 <div className={styles.content}>
                   <h3>{industry.title}</h3>
@@ -77,9 +71,7 @@ export default function Industries() {
                   <p>{industry.description}</p>
                 </div>
 
-                {/* =================================================
-                    BOTTOM
-                ================================================= */}
+                {/* BOTTOM */}
 
                 <div className={styles.bottom}>
                   <span>Electrical solutions</span>
@@ -90,9 +82,7 @@ export default function Industries() {
                   </span>
                 </div>
 
-                {/* =================================================
-                    CIRCUIT DECORATION
-                ================================================= */}
+                {/* CIRCUIT DECORATION */}
 
                 <div
                   className={styles.circuit}

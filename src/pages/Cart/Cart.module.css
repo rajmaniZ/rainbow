@@ -1,6 +1,4 @@
-/* =========================================================
-   PAGE
-========================================================= */
+/* PAGE */
 
 .page {
   --blue: #1268c4;
@@ -30,10 +28,7 @@
   overflow: hidden;
 }
 
-
-/* =========================================================
-   RESET
-========================================================= */
+/* RESET */
 
 .page *,
 .page *::before,
@@ -66,10 +61,7 @@
   margin-top: 0;
 }
 
-
-/* =========================================================
-   CONTAINER
-========================================================= */
+/* CONTAINER */
 
 .container {
   width:
@@ -81,10 +73,7 @@
   margin: 0 auto;
 }
 
-
-/* =========================================================
-   HERO
-========================================================= */
+/* HERO */
 
 .hero {
   position: relative;
@@ -108,7 +97,6 @@
   border-bottom:
     1px solid var(--border);
 }
-
 
 .heroGrid {
   position: absolute;
@@ -136,7 +124,6 @@
   pointer-events: none;
 }
 
-
 .heroGlow {
   position: absolute;
 
@@ -162,7 +149,6 @@
   pointer-events: none;
 }
 
-
 .heroContent {
   position: relative;
 
@@ -173,7 +159,6 @@
   padding:
     70px 0;
 }
-
 
 .eyebrow {
   display: flex;
@@ -191,7 +176,6 @@
   text-transform: uppercase;
 }
 
-
 .eyebrow i {
   width: 8px;
   height: 8px;
@@ -204,7 +188,6 @@
     0 0 0 5px
     rgba(21, 159, 190, 0.1);
 }
-
 
 .hero h1 {
   max-width: 760px;
@@ -235,11 +218,9 @@
   letter-spacing: -0.055em;
 }
 
-
 .hero h1 span {
   color: var(--blue);
 }
-
 
 .heroContent > p {
   max-width: 640px;
@@ -253,10 +234,7 @@
   line-height: 1.8;
 }
 
-
-/* =========================================================
-   HERO STATS
-========================================================= */
+/* HERO STATS */
 
 .heroStats {
   display: flex;
@@ -271,14 +249,12 @@
     1px solid #d7e4e9;
 }
 
-
 .heroStats div {
   display: flex;
   flex-direction: column;
 
   gap: 3px;
 }
-
 
 .heroStats strong {
   color: var(--heading);
@@ -293,7 +269,6 @@
   font-weight: 800;
 }
 
-
 .heroStats span {
   color: var(--muted);
 
@@ -301,10 +276,7 @@
   font-weight: 700;
 }
 
-
-/* =========================================================
-   HERO VISUAL
-========================================================= */
+/* HERO VISUAL */
 
 .heroVisual {
   position: absolute;
@@ -345,7 +317,6 @@
     translateY(-50%);
 }
 
-
 .heroVisual::before,
 .heroVisual::after {
   content: "";
@@ -358,16 +329,13 @@
   border-radius: 50%;
 }
 
-
 .heroVisual::before {
   inset: 35px;
 }
 
-
 .heroVisual::after {
   inset: 70px;
 }
-
 
 .visualRing {
   position: relative;
@@ -392,7 +360,6 @@
     rgba(18, 104, 196, 0.04);
 }
 
-
 .visualIcon {
   width: 58px;
   height: 58px;
@@ -408,7 +375,6 @@
     #edf5ff;
 }
 
-
 .visualLabel {
   position: relative;
 
@@ -421,7 +387,6 @@
 
   margin-top: 20px;
 }
-
 
 .visualLabel strong {
   color: var(--heading);
@@ -438,7 +403,6 @@
   letter-spacing: 0.08em;
 }
 
-
 .visualLabel span {
   margin-top: 5px;
 
@@ -450,10 +414,7 @@
   letter-spacing: 0.1em;
 }
 
-
-/* =========================================================
-   CONTENT
-========================================================= */
+/* CONTENT */
 
 .content {
   padding:
@@ -463,10 +424,7 @@
   background: #ffffff;
 }
 
-
-/* =========================================================
-   TOP BAR
-========================================================= */
+/* TOP BAR */
 
 .topBar {
   display: flex;
@@ -481,7 +439,6 @@
     1px solid var(--border);
 }
 
-
 .back {
   display: inline-flex;
   align-items: center;
@@ -494,11 +451,9 @@
   font-weight: 800;
 }
 
-
 .back:hover {
   color: var(--blue-dark);
 }
-
 
 .productCount {
   display: flex;
@@ -511,11 +466,9 @@
   font-size: 9px;
 }
 
-
 .productCount svg {
   color: var(--blue);
 }
-
 
 .productCount strong {
   color: var(--heading);
@@ -523,10 +476,7 @@
   font-size: 12px;
 }
 
-
-/* =========================================================
-   MAIN LAYOUT
-========================================================= */
+/* MAIN LAYOUT */
 
 .layout {
   display: grid;
@@ -540,15 +490,11 @@
   align-items: start;
 }
 
-
-/* =========================================================
-   PRODUCTS
-========================================================= */
+/* PRODUCTS */
 
 .products {
   min-width: 0;
 }
-
 
 .sectionHeading {
   display: flex;
@@ -560,7 +506,6 @@
   margin-bottom: 20px;
 }
 
-
 .sectionHeading > div > span {
   color: var(--blue);
 
@@ -569,7 +514,6 @@
 
   letter-spacing: 0.12em;
 }
-
 
 .sectionHeading h2 {
   margin:
@@ -589,7 +533,6 @@
   letter-spacing: -0.035em;
 }
 
-
 .clearButton {
   border: 0;
 
@@ -601,15 +544,11 @@
   font-weight: 800;
 }
 
-
 .clearButton:hover {
   color: #8c414a;
 }
 
-
-/* =========================================================
-   ITEM
-========================================================= */
+/* ITEM */
 
 .itemList {
   display: flex;
@@ -618,7 +557,6 @@
   border-top:
     1px solid var(--border);
 }
-
 
 .item {
   display: grid;
@@ -636,7 +574,6 @@
     1px solid var(--border);
 }
 
-
 .itemImage {
   position: relative;
 
@@ -651,7 +588,6 @@
   background: #edf2f4;
 }
 
-
 .itemImage img {
   width: 100%;
   height: 100%;
@@ -664,11 +600,9 @@
     transform 0.3s ease;
 }
 
-
 .itemImage:hover img {
   transform: scale(1.035);
 }
-
 
 .itemImage span {
   position: absolute;
@@ -695,10 +629,7 @@
   font-weight: 800;
 }
 
-
-/* =========================================================
-   ITEM DETAILS
-========================================================= */
+/* ITEM DETAILS */
 
 .itemDetails {
   min-width: 0;
@@ -706,7 +637,6 @@
   display: flex;
   flex-direction: column;
 }
-
 
 .itemCategory {
   color: var(--blue);
@@ -718,7 +648,6 @@
 
   text-transform: uppercase;
 }
-
 
 .item h3 {
   margin:
@@ -739,16 +668,13 @@
   line-height: 1.2;
 }
 
-
 .item h3 a {
   color: inherit;
 }
 
-
 .item h3 a:hover {
   color: var(--blue);
 }
-
 
 .itemDetails > p {
   max-width: 680px;
@@ -762,10 +688,7 @@
   line-height: 1.7;
 }
 
-
-/* =========================================================
-   META
-========================================================= */
+/* META */
 
 .meta {
   display: flex;
@@ -775,7 +698,6 @@
 
   margin-top: 13px;
 }
-
 
 .meta span {
   display: inline-flex;
@@ -798,17 +720,13 @@
   font-size: 7px;
 }
 
-
 .meta b {
   color: var(--heading);
 
   font-size: 7px;
 }
 
-
-/* =========================================================
-   ITEM BOTTOM
-========================================================= */
+/* ITEM BOTTOM */
 
 .itemBottom {
   display: flex;
@@ -821,14 +739,12 @@
   padding-top: 18px;
 }
 
-
 .quantity {
   display: flex;
   flex-direction: column;
 
   gap: 6px;
 }
-
 
 .quantity > span {
   color: var(--muted);
@@ -840,7 +756,6 @@
 
   letter-spacing: 0.08em;
 }
-
 
 .quantity > div {
   height: 36px;
@@ -858,7 +773,6 @@
   background: #ffffff;
 }
 
-
 .quantity button {
   width: 36px;
   height: 36px;
@@ -873,13 +787,11 @@
   background: #ffffff;
 }
 
-
 .quantity button:hover {
   color: var(--blue);
 
   background: #edf5fa;
 }
-
 
 .quantity strong {
   min-width: 40px;
@@ -891,7 +803,6 @@
 
   font-size: 11px;
 }
-
 
 .remove {
   display: inline-flex;
@@ -909,15 +820,11 @@
   font-weight: 800;
 }
 
-
 .remove:hover {
   color: #8c414a;
 }
 
-
-/* =========================================================
-   SUMMARY
-========================================================= */
+/* SUMMARY */
 
 .summary {
   position: sticky;
@@ -938,7 +845,6 @@
     rgba(24, 54, 71, 0.07);
 }
 
-
 .summaryHeader {
   display: flex;
   align-items: flex-start;
@@ -946,7 +852,6 @@
 
   gap: 15px;
 }
-
 
 .summaryHeader > div:first-child span {
   color: var(--blue);
@@ -956,7 +861,6 @@
 
   letter-spacing: 0.12em;
 }
-
 
 .summaryHeader h2 {
   margin:
@@ -976,7 +880,6 @@
   letter-spacing: -0.035em;
 }
 
-
 .summaryIcon {
   width: 40px;
   height: 40px;
@@ -991,10 +894,7 @@
   background: #edf5ff;
 }
 
-
-/* =========================================================
-   SUMMARY COUNT
-========================================================= */
+/* SUMMARY COUNT */
 
 .summaryCount {
   display: flex;
@@ -1008,7 +908,6 @@
   border-bottom:
     1px solid var(--border);
 }
-
 
 .summaryCount strong {
   color: var(--heading);
@@ -1025,7 +924,6 @@
   line-height: 0.9;
 }
 
-
 .summaryCount span {
   padding-bottom: 3px;
 
@@ -1034,10 +932,7 @@
   font-size: 8px;
 }
 
-
-/* =========================================================
-   SUMMARY ROWS
-========================================================= */
+/* SUMMARY ROWS */
 
 .summaryRows {
   display: flex;
@@ -1045,7 +940,6 @@
 
   margin-top: 5px;
 }
-
 
 .summaryRows div {
   display: flex;
@@ -1059,13 +953,11 @@
     1px solid var(--border-light);
 }
 
-
 .summaryRows span {
   color: var(--muted);
 
   font-size: 9px;
 }
-
 
 .summaryRows strong {
   color: var(--heading);
@@ -1074,10 +966,7 @@
   font-weight: 800;
 }
 
-
-/* =========================================================
-   NOTICE
-========================================================= */
+/* NOTICE */
 
 .notice {
   display: flex;
@@ -1097,13 +986,11 @@
   background: #f2f8fc;
 }
 
-
 .notice > svg {
   flex: 0 0 auto;
 
   color: var(--blue);
 }
-
 
 .notice strong {
   display: block;
@@ -1112,7 +999,6 @@
 
   font-size: 9px;
 }
-
 
 .notice p {
   margin:
@@ -1125,10 +1011,7 @@
   line-height: 1.55;
 }
 
-
-/* =========================================================
-   ENQUIRY ACTIONS
-========================================================= */
+/* ENQUIRY ACTIONS */
 
 .enquiryActions {
   display: flex;
@@ -1138,7 +1021,6 @@
 
   margin-top: 18px;
 }
-
 
 .emailButton,
 .whatsappButton {
@@ -1160,13 +1042,11 @@
     background 0.18s ease;
 }
 
-
 .emailButton:hover,
 .whatsappButton:hover {
   transform:
     translateY(-2px);
 }
-
 
 /* EMAIL */
 
@@ -1179,7 +1059,6 @@
   background: #ffffff;
 }
 
-
 .emailButton:hover {
   border-color:
     var(--blue);
@@ -1191,11 +1070,9 @@
     rgba(18, 104, 196, 0.1);
 }
 
-
 .emailButton > svg {
   color: var(--blue);
 }
-
 
 /* WHATSAPP */
 
@@ -1208,7 +1085,6 @@
   background: #11966d;
 }
 
-
 .whatsappButton:hover {
   background: #0d855f;
 
@@ -1217,11 +1093,9 @@
     rgba(17, 150, 109, 0.18);
 }
 
-
 .whatsappButton > svg {
   color: #ffffff;
 }
-
 
 .emailButton span,
 .whatsappButton span {
@@ -1231,13 +1105,11 @@
   gap: 2px;
 }
 
-
 .emailButton strong,
 .whatsappButton strong {
   font-size: 10px;
   font-weight: 800;
 }
-
 
 .emailButton small,
 .whatsappButton small {
@@ -1246,7 +1118,6 @@
 
   opacity: 0.75;
 }
-
 
 .summaryNote {
   margin:
@@ -1261,10 +1132,7 @@
   text-align: center;
 }
 
-
-/* =========================================================
-   HELP
-========================================================= */
+/* HELP */
 
 .help {
   display: flex;
@@ -1283,7 +1151,6 @@
   background: #f3fafc;
 }
 
-
 .helpIcon {
   width: 35px;
   height: 35px;
@@ -1300,17 +1167,14 @@
   background: #e7f7f1;
 }
 
-
 .help > div:nth-child(2) {
   flex: 1;
 }
-
 
 .help strong,
 .help span {
   display: block;
 }
-
 
 .help strong {
   color: var(--heading);
@@ -1318,7 +1182,6 @@
   font-size: 9px;
   font-weight: 800;
 }
-
 
 .help span {
   margin-top: 3px;
@@ -1329,7 +1192,6 @@
 
   line-height: 1.5;
 }
-
 
 .helpButton {
   min-height: 36px;
@@ -1351,10 +1213,7 @@
   font-weight: 800;
 }
 
-
-/* =========================================================
-   EMPTY
-========================================================= */
+/* EMPTY */
 
 .empty {
   min-height: 450px;
@@ -1382,7 +1241,6 @@
   text-align: center;
 }
 
-
 .emptyIcon {
   width: 70px;
   height: 70px;
@@ -1404,7 +1262,6 @@
     rgba(25, 69, 91, 0.07);
 }
 
-
 .empty > span {
   margin-top: 20px;
 
@@ -1415,7 +1272,6 @@
 
   letter-spacing: 0.12em;
 }
-
 
 .empty h2 {
   margin:
@@ -1436,7 +1292,6 @@
   letter-spacing: -0.035em;
 }
 
-
 .empty p {
   max-width: 440px;
 
@@ -1448,7 +1303,6 @@
 
   line-height: 1.7;
 }
-
 
 .browseButton {
   min-height: 44px;
@@ -1477,21 +1331,16 @@
     rgba(18, 104, 196, 0.15);
 }
 
-
 .browseButton:hover {
   background: var(--blue-dark);
 }
-
 
 .browseArrow {
   transform:
     rotate(180deg);
 }
 
-
-/* =========================================================
-   LARGE TABLET
-========================================================= */
+/* LARGE TABLET */
 
 @media (max-width: 1050px) {
   .heroVisual {
@@ -1525,10 +1374,7 @@
   }
 }
 
-
-/* =========================================================
-   TABLET
-========================================================= */
+/* TABLET */
 
 @media (max-width: 900px) {
   .hero {
@@ -1564,10 +1410,7 @@
   }
 }
 
-
-/* =========================================================
-   MOBILE
-========================================================= */
+/* MOBILE */
 
 @media (max-width: 650px) {
   .container {
@@ -1631,7 +1474,6 @@
   .sectionHeading h2 {
     font-size: 22px;
   }
-
 
   /* ITEM */
 
@@ -1715,7 +1557,6 @@
     font-size: 7px;
   }
 
-
   /* SUMMARY */
 
   .summary {
@@ -1739,7 +1580,6 @@
     min-height: 54px;
   }
 
-
   /* HELP */
 
   .help {
@@ -1753,10 +1593,7 @@
   }
 }
 
-
-/* =========================================================
-   SMALL MOBILE
-========================================================= */
+/* SMALL MOBILE */
 
 @media (max-width: 450px) {
   .hero h1 {
@@ -1824,10 +1661,7 @@
   }
 }
 
-
-/* =========================================================
-   VERY SMALL MOBILE
-========================================================= */
+/* VERY SMALL MOBILE */
 
 @media (max-width: 360px) {
   .container {
@@ -1883,10 +1717,7 @@
   }
 }
 
-
-/* =========================================================
-   REDUCED MOTION
-========================================================= */
+/* REDUCED MOTION */
 
 @media (prefers-reduced-motion: reduce) {
   .page *,

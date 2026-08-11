@@ -24,9 +24,7 @@ import { whyRainbow } from "../../data/siteData";
 
 import styles from "./About.module.css";
 
-/* =========================================================
-   EXPERTISE
-========================================================= */
+/* EXPERTISE */
 
 const expertise = [
   {
@@ -61,9 +59,7 @@ const expertise = [
   },
 ];
 
-/* =========================================================
-   CERTIFICATION ICONS
-========================================================= */
+/* CERTIFICATION ICONS */
 
 const certificationIcons = [
   BadgeCheck,
@@ -72,17 +68,13 @@ const certificationIcons = [
   Leaf,
 ];
 
-/* =========================================================
-   ABOUT PAGE
-========================================================= */
+/* ABOUT PAGE */
 
 export default function About() {
   return (
     <main className={styles.page}>
 
-      {/* =====================================================
-          HERO
-      ===================================================== */}
+      {/* HERO */}
 
       <section className={styles.hero}>
         <div
@@ -190,9 +182,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* =====================================================
-          COMPANY PROFILE
-      ===================================================== */}
+      {/* COMPANY PROFILE */}
 
       <section className={styles.profile}>
         <div className={styles.container}>
@@ -258,9 +248,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* =====================================================
-          MISSION & VISION
-      ===================================================== */}
+      {/* MISSION & VISION */}
 
       <section className={styles.mission}>
         <div className={styles.container}>
@@ -333,9 +321,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* =====================================================
-          EXPERTISE
-      ===================================================== */}
+      {/* EXPERTISE */}
 
       <section className={styles.expertiseSection}>
         <div className={styles.container}>
@@ -381,9 +367,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* =====================================================
-          WHY RAINBOW
-      ===================================================== */}
+      {/* WHY RAINBOW */}
 
       <section className={styles.whySection}>
         <div className={styles.container}>
@@ -439,9 +423,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* =====================================================
-          CREDENTIALS
-      ===================================================== */}
+      {/* CREDENTIALS */}
 
       <section className={styles.credentials}>
         <div className={styles.container}>

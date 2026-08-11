@@ -29,9 +29,7 @@ export default function WhyChoose() {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-        {/* =================================================
-            SECTION HEADER
-        ================================================= */}
+        {/* SECTION HEADER */}
 
         <SectionHeader
           eyebrow="02 / Why choose Rainbow"
@@ -39,9 +37,7 @@ export default function WhyChoose() {
           text="Rainbow supports projects beyond equipment supply — from selection and installation to commissioning, servicing and maintenance."
         />
 
-        {/* =================================================
-            ENGINEERING FEATURES
-        ================================================= */}
+        {/* ENGINEERING FEATURES */}
 
         <div className={styles.grid}>
           {whyRainbow.map((item, index) => {
@@ -94,9 +90,7 @@ export default function WhyChoose() {
           })}
         </div>
 
-        {/* =================================================
-            CONTACT STRIP
-        ================================================= */}
+        {/* CONTACT STRIP */}
 
         <div className={styles.strip}>
           <div className={styles.stripContent}>

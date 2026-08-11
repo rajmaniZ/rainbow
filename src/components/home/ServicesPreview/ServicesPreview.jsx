@@ -85,9 +85,7 @@ export default function ServicesPreview() {
         </div>
 
         <div className={styles.serviceLayout}>
-          {/* =================================================
-              SERVICE LIST
-          ================================================= */}
+          {/* SERVICE LIST */}
 
           <div className={styles.list}>
             {featuredServices.map((service, index) => {
@@ -146,9 +144,7 @@ export default function ServicesPreview() {
             })}
           </div>
 
-          {/* =================================================
-              SERVICE SIDE PANEL
-          ================================================= */}
+          {/* SERVICE SIDE PANEL */}
 
           <aside className={styles.sidePanel}>
             <div className={styles.panelTop}>

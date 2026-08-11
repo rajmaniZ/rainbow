@@ -16,14 +16,10 @@ export default function Projects() {
 
   return (
     <div className={styles.page}>
-      {/* =====================================================
-          HERO
-      ===================================================== */}
+      {/* HERO */}
 
       <section className={styles.hero}>
-        {/* ===================================================
-            BACKGROUND
-        =================================================== */}
+        {/* BACKGROUND */}
 
         <div className={styles.heroBackground}>
           <div className={styles.grid} />
@@ -37,12 +33,9 @@ export default function Projects() {
             <span className={styles.node4} />
           </div>
 
-          {/* =================================================
-              RAILWAY SCENE
-          ================================================= */}
+          {/* RAILWAY SCENE */}
 
           <div className={styles.railwayScene}>
-  
 
             <div className={styles.track}>
               <div className={styles.sleepers}>
@@ -60,9 +53,7 @@ export default function Projects() {
               />
             </div>
 
-            {/* ===============================================
-                TRAIN
-            =============================================== */}
+            {/* TRAIN */}
 
             <div className={styles.trainViewport}>
               <div className={styles.train}>
@@ -107,9 +98,7 @@ export default function Projects() {
           </div>
         </div>
 
-        {/* ===================================================
-            HERO CONTENT
-        =================================================== */}
+        {/* HERO CONTENT */}
 
         <div className={styles.heroContent}>
           <span className={styles.eyebrow}>
@@ -184,12 +173,9 @@ export default function Projects() {
           </div>
         </div>
 
-      
       </section>
 
-      {/* =====================================================
-          MAJOR PROJECT
-      ===================================================== */}
+      {/* MAJOR PROJECT */}
 
       <section className={styles.projectSection}>
         <div className={styles.container}>
@@ -249,9 +235,7 @@ export default function Projects() {
         </div>
       </section>
 
-      {/* =====================================================
-          CLIENTS
-      ===================================================== */}
+      {/* CLIENTS */}
 
       <section className={styles.clientsSection}>
         <div className={styles.container}>
@@ -286,9 +270,7 @@ export default function Projects() {
         </div>
       </section>
 
-      {/* =====================================================
-          CTA
-      ===================================================== */}
+      {/* CTA */}
 
       <section className={styles.ctaSection}>
         <div className={styles.container}>

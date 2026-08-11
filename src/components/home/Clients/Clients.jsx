@@ -34,9 +34,7 @@ export default function Clients() {
 
   return (
     <section className={styles.section}>
-      {/* =================================================
-          BACKGROUND ELECTRICAL DECORATION
-      ================================================= */}
+      {/* BACKGROUND ELECTRICAL DECORATION */}
 
       <div
         className={styles.background}
@@ -49,9 +47,7 @@ export default function Clients() {
       </div>
 
       <div className={styles.container}>
-        {/* =================================================
-            HEADER
-        ================================================= */}
+        {/* HEADER */}
 
         <div className={styles.header}>
           <SectionHeader
@@ -73,9 +69,7 @@ export default function Clients() {
           </div>
         </div>
 
-        {/* =================================================
-            CLIENT GRID
-        ================================================= */}
+        {/* CLIENT GRID */}
 
         <div className={styles.grid}>
           {sectors.map(([sector, names], index) => {
@@ -150,9 +144,7 @@ export default function Clients() {
           })}
         </div>
 
-        {/* =================================================
-            TRUST STRIP
-        ================================================= */}
+        {/* TRUST STRIP */}
 
         <div className={styles.strip}>
           <div className={styles.stripLeft}>
@@ -182,17 +174,13 @@ export default function Clients() {
   );
 }
 
-
-
-
-
 // import {
-//   Building2,
-//   Landmark,
-//   Stethoscope,
-//   Factory,
-//   ArrowUpRight,
-//   Users,
+// Building2,
+// Landmark,
+// Stethoscope,
+// Factory,
+// ArrowUpRight,
+// Users,
 // } from "lucide-react";
 
 // import SectionHeader from "../../common/SectionHeader";
@@ -210,220 +198,219 @@ export default function Clients() {
 // import rajendraToyota from "../../../assets/clients/rajendra-toyota.png";
 
 // const clientGroups = [
-//   {
-//     id: "government",
-//     title: "Government",
-//     icon: Landmark,
-//     clients: [
-//       {
-//         name: "Indian Railways",
-//         subtitle: "North Eastern Railway",
-//         logo: indianRailways,
-//       },
-//     ],
-//   },
+// {
+// id: "government",
+// title: "Government",
+// icon: Landmark,
+// clients: [
+// {
+// name: "Indian Railways",
+// subtitle: "North Eastern Railway",
+// logo: indianRailways,
+// },
+// ],
+// },
 
-//   {
-//     id: "banking",
-//     title: "Banking",
-//     icon: Building2,
-//     clients: [
-//       {
-//         name: "Union Bank of India",
-//         logo: unionBank,
-//       },
-//       {
-//         name: "Bank of Baroda",
-//         logo: bankOfBaroda,
-//       },
-//       {
-//         name: "Uttar Pradesh Gramin Bank",
-//         logo: upGraminBank,
-//       },
-//       {
-//         name: "Central Bank of India",
-//         logo: centralBank,
-//       },
-//       {
-//         name: "Bank of India",
-//         logo: bankOfIndia,
-//       },
-//     ],
-//   },
+// {
+// id: "banking",
+// title: "Banking",
+// icon: Building2,
+// clients: [
+// {
+// name: "Union Bank of India",
+// logo: unionBank,
+// },
+// {
+// name: "Bank of Baroda",
+// logo: bankOfBaroda,
+// },
+// {
+// name: "Uttar Pradesh Gramin Bank",
+// logo: upGraminBank,
+// },
+// {
+// name: "Central Bank of India",
+// logo: centralBank,
+// },
+// {
+// name: "Bank of India",
+// logo: bankOfIndia,
+// },
+// ],
+// },
 
-//   {
-//     id: "healthcare",
-//     title: "Healthcare",
-//     icon: Stethoscope,
-//     clients: [
-//       {
-//         name: "Apex Hospital",
-//         logo: apexHospital,
-//       },
-//       {
-//         name: "Agrim Hospital",
-//         logo: agrimHospital,
-//       },
-//     ],
-//   },
+// {
+// id: "healthcare",
+// title: "Healthcare",
+// icon: Stethoscope,
+// clients: [
+// {
+// name: "Apex Hospital",
+// logo: apexHospital,
+// },
+// {
+// name: "Agrim Hospital",
+// logo: agrimHospital,
+// },
+// ],
+// },
 
-//   {
-//     id: "commercial",
-//     title: "Commercial",
-//     icon: Factory,
-//     clients: [
-//       {
-//         name: "Rajendra Toyota",
-//         logo: rajendraToyota,
-//       },
-//     ],
-//   },
+// {
+// id: "commercial",
+// title: "Commercial",
+// icon: Factory,
+// clients: [
+// {
+// name: "Rajendra Toyota",
+// logo: rajendraToyota,
+// },
+// ],
+// },
 // ];
 
 // export default function Clients() {
-//   return (
-//     <section className={styles.section}>
-//       <div
-//         className={styles.background}
-//         aria-hidden="true"
-//       >
-//         <span />
-//         <span />
-//         <span />
-//         <span />
-//       </div>
+// return (
+// <section className={styles.section}>
+// <div
+// className={styles.background}
+// aria-hidden="true"
 
-//       <div className={styles.container}>
-//         <div className={styles.header}>
-//           <SectionHeader
-//             eyebrow="07 / Valued clients"
-//             title="Trusted across essential sectors."
-//             text="Rainbow serves clients across government, banking, healthcare and commercial environments."
-//           />
+// <span />
+// <span />
+// <span />
+// <span />
+// </div>
 
-//           <div className={styles.trustMark}>
-//             <div>
-//               <Users size={18} />
-//             </div>
+// <div className={styles.container}>
+// <div className={styles.header}>
+// <SectionHeader
+// eyebrow="07 / Valued clients"
+// title="Trusted across essential sectors."
+// text="Rainbow serves clients across government, banking, healthcare and commercial environments."
 
-//             <span>
-//               CLIENT
-//               <br />
-//               NETWORK
-//             </span>
-//           </div>
-//         </div>
+// <div className={styles.trustMark}>
+// <div>
+// <Users size={18} />
+// </div>
 
-//         <div className={styles.grid}>
-//           {clientGroups.map((group, index) => {
-//             const Icon = group.icon;
+// <span>
+// CLIENT
+// <br />
+// NETWORK
+// </span>
+// </div>
+// </div>
 
-//             return (
-//               <article
-//                 key={group.id}
-//                 className={styles.card}
-//               >
-//                 {/* Card header */}
-//                 <div className={styles.cardTop}>
-//                   <span className={styles.number}>
-//                     {String(index + 1).padStart(2, "0")}
-//                   </span>
+// <div className={styles.grid}>
+// {clientGroups.map((group, index) => {
+// const Icon = group.icon;
 
-//                   <ArrowUpRight
-//                     size={16}
-//                     className={styles.arrow}
-//                   />
-//                 </div>
+// return (
+// <article
+// key={group.id}
+// className={styles.card}
 
-//                 {/* Sector */}
-//                 <div className={styles.sectorHeader}>
-//                   <div className={styles.icon}>
-//                     <Icon size={19} />
-//                   </div>
+// {/* Card header */}
+// <div className={styles.cardTop}>
+// <span className={styles.number}>
+// {String(index + 1).padStart(2, "0")}
+// </span>
 
-//                   <div>
-//                     <span>SECTOR</span>
-//                     <h3>{group.title}</h3>
-//                   </div>
-//                 </div>
+// <ArrowUpRight
+// size={16}
+// className={styles.arrow}
 
-//                 {/* Logos */}
-//                 <div className={styles.clients}>
-//                   {group.clients.map((client) => (
-//                     <div
-//                       key={client.name}
-//                       className={styles.client}
-//                     >
-//                       <div className={styles.logoBox}>
-//                         <img
-//                           src={client.logo}
-//                           alt={`${client.name} logo`}
-//                         />
-//                       </div>
+// </div>
 
-//                       <div className={styles.clientInfo}>
-//                         <strong>
-//                           {client.name}
-//                         </strong>
+// {/* Sector */}
+// <div className={styles.sectorHeader}>
+// <div className={styles.icon}>
+// <Icon size={19} />
+// </div>
 
-//                         {client.subtitle && (
-//                           <small>
-//                             {client.subtitle}
-//                           </small>
-//                         )}
-//                       </div>
-//                     </div>
-//                   ))}
-//                 </div>
+// <div>
+// <span>SECTOR</span>
+// <h3>{group.title}</h3>
+// </div>
+// </div>
 
-//                 {/* Footer */}
-//                 <div className={styles.cardFooter}>
-//                   <span>Rainbow client</span>
+// {/* Logos */}
+// <div className={styles.clients}>
+// {group.clients.map((client) => (
+// <div
+// key={client.name}
+// className={styles.client}
 
-//                   <span className={styles.active}>
-//                     <i />
-//                     Served
-//                   </span>
-//                 </div>
+// <div className={styles.logoBox}>
+// <img
+// src={client.logo}
+// alt={`${client.name} logo`}
 
-//                 {/* Electrical circuit */}
-//                 <div
-//                   className={styles.circuit}
-//                   aria-hidden="true"
-//                 >
-//                   <span />
-//                   <span />
-//                   <span />
-//                 </div>
-//               </article>
-//             );
-//           })}
-//         </div>
+// </div>
 
-//         <div className={styles.strip}>
-//           <div className={styles.stripLeft}>
-//             <div className={styles.stripIcon}>
-//               <Landmark size={17} />
-//             </div>
+// <div className={styles.clientInfo}>
+// <strong>
+// {client.name}
+// </strong>
 
-//             <div>
-//               <span>
-//                 GOVERNMENT · BANKING · HEALTHCARE · COMMERCIAL
-//               </span>
+// {client.subtitle && (
+// <small>
+// {client.subtitle}
+// </small>
+// )}
+// </div>
+// </div>
+// ))}
+// </div>
 
-//               <strong>
-//                 Electrical solutions for environments where reliability matters.
-//               </strong>
-//             </div>
-//           </div>
+// {/* Footer */}
+// <div className={styles.cardFooter}>
+// <span>Rainbow client</span>
 
-//           <div className={styles.connection}>
-//             <span />
-//             <span />
-//             <span />
-//           </div>
-//         </div>
-//       </div>
-//     </section>
-//   );
+// <span className={styles.active}>
+// <i />
+// Served
+// </span>
+// </div>
+
+// {/* Electrical circuit */}
+// <div
+// className={styles.circuit}
+// aria-hidden="true"
+
+// <span />
+// <span />
+// <span />
+// </div>
+// </article>
+// );
+// })}
+// </div>
+
+// <div className={styles.strip}>
+// <div className={styles.stripLeft}>
+// <div className={styles.stripIcon}>
+// <Landmark size={17} />
+// </div>
+
+// <div>
+// <span>
+// GOVERNMENT · BANKING · HEALTHCARE · COMMERCIAL
+// </span>
+
+// <strong>
+// Electrical solutions for environments where reliability matters.
+// </strong>
+// </div>
+// </div>
+
+// <div className={styles.connection}>
+// <span />
+// <span />
+// <span />
+// </div>
+// </div>
+// </div>
+// </section>
+// );
 // }

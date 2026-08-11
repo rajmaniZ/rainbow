@@ -28,25 +28,16 @@ import { useCart } from "../../context/CartContext";
 
 import styles from "./Products.module.css";
 
-
-/* =========================================================
-   SETTINGS
-========================================================= */
+/* SETTINGS */
 
 const PRODUCTS_PER_PAGE = 20;
 
-
-/* =========================================================
-   HELPERS
-========================================================= */
+/* HELPERS */
 
 /*
  * Converts an object key such as:
- *
  * maxCapacity
- *
  * into:
- *
  * Max Capacity
  */
 const formatLabel = (value) => {
@@ -60,13 +51,10 @@ const formatLabel = (value) => {
     );
 };
 
-
 /*
  * Converts any product value into readable
  * WhatsApp text.
- *
  * This allows us to send:
- *
  * strings
  * numbers
  * arrays
@@ -132,7 +120,6 @@ const formatValue = (value, level = 0) => {
   return "";
 };
 
-
 /*
  * Convert relative image path into
  * absolute URL where possible.
@@ -152,10 +139,7 @@ const getAbsoluteUrl = (value) => {
   }
 };
 
-
-/* =========================================================
-   WHATSAPP MESSAGE
-========================================================= */
+/* WHATSAPP MESSAGE */
 
 const buildWhatsAppMessage = (
   product
@@ -167,9 +151,9 @@ const buildWhatsAppMessage = (
     getAbsoluteUrl(product.image);
 
   /*
-   * Do not send the image object itself
-   * as raw object data.
-   */
+ * Do not send the image object itself
+ * as raw object data.
+ */
   const excludedKeys = new Set([
     "image",
   ]);
@@ -230,32 +214,28 @@ const buildWhatsAppMessage = (
   return lines.join("\n");
 };
 
-
-/* =========================================================
-   COMPONENT
-========================================================= */
+/* COMPONENT */
 
 export default function Products() {
   const [params, setParams] =
     useSearchParams();
 
   /*
-   * Support both names so the page remains
-   * compatible with either CartContext version.
-   */
+ * Support both names so the page remains
+ * compatible with either CartContext version.
+ */
   const {
     addToCart,
     addItem,
   } = useCart();
 
   /*
-   * Prefer addToCart because this is the
-   * current catalog API.
-   *
-   * Fallback to addItem for compatibility
-   * with the existing ProductCard / older
-   * CartContext implementation.
-   */
+ * Prefer addToCart because this is the
+ * current catalog API.
+ * Fallback to addItem for compatibility
+ * with the existing ProductCard / older
+ * CartContext implementation.
+ */
   const addProductToCart =
     typeof addToCart === "function"
       ? addToCart
@@ -263,10 +243,7 @@ export default function Products() {
         ? addItem
         : null;
 
-
-  /* =======================================================
-     STATE
-  ======================================================= */
+  /* STATE */
 
   const [category, setCategory] =
     useState(
@@ -290,10 +267,7 @@ export default function Products() {
   const [addedProductId, setAddedProductId] =
     useState(null);
 
-
-  /* =======================================================
-     SYNC URL → STATE
-  ======================================================= */
+  /* SYNC URL → STATE */
 
   useEffect(() => {
     setCategory(
@@ -311,10 +285,7 @@ export default function Products() {
     );
   }, [params]);
 
-
-  /* =======================================================
-     FILTER PRODUCTS
-  ======================================================= */
+  /* FILTER PRODUCTS */
 
   const filteredProducts =
     useMemo(() => {
@@ -426,10 +397,7 @@ export default function Products() {
       search,
     ]);
 
-
-  /* =======================================================
-     ONLY SHOW 20 PRODUCTS
-  ======================================================= */
+  /* ONLY SHOW 20 PRODUCTS */
 
   const visibleProducts =
     filteredProducts.slice(
@@ -441,10 +409,7 @@ export default function Products() {
     visibleCount <
     filteredProducts.length;
 
-
-  /* =======================================================
-     CATEGORY CHANGE
-  ======================================================= */
+  /* CATEGORY CHANGE */
 
   const handleCategoryChange = (
     value
@@ -476,10 +441,7 @@ export default function Products() {
     setMobileFilters(false);
   };
 
-
-  /* =======================================================
-     SEARCH
-  ======================================================= */
+  /* SEARCH */
 
   const handleSearchChange = (
     event
@@ -512,10 +474,7 @@ export default function Products() {
     );
   };
 
-
-  /* =======================================================
-     CLEAR SEARCH
-  ======================================================= */
+  /* CLEAR SEARCH */
 
   const clearSearch = () => {
     const nextParams =
@@ -536,10 +495,7 @@ export default function Products() {
     );
   };
 
-
-  /* =======================================================
-     RESET
-  ======================================================= */
+  /* RESET */
 
   const resetFilters = () => {
     setSearch("");
@@ -552,10 +508,7 @@ export default function Products() {
     );
   };
 
-
-  /* =======================================================
-     VIEW MORE
-  ======================================================= */
+  /* VIEW MORE */
 
   const handleViewMore = () => {
     setVisibleCount(
@@ -565,10 +518,7 @@ export default function Products() {
     );
   };
 
-
-  /* =======================================================
-     ADD TO CART
-  ======================================================= */
+  /* ADD TO CART */
 
   const handleAddToCart = (
     product
@@ -584,14 +534,10 @@ export default function Products() {
       return;
     }
 
-    /*
-     * This is the actual cart operation.
-     */
+    /* This is the actual cart operation. */
     addProductToCart(product);
 
-    /*
-     * Temporary visual confirmation.
-     */
+    /* Temporary visual confirmation. */
     setAddedProductId(
       product.id
     );
@@ -603,10 +549,7 @@ export default function Products() {
     }, 1800);
   };
 
-
-  /* =======================================================
-     WHATSAPP
-  ======================================================= */
+  /* WHATSAPP */
 
   const handleWhatsApp = (
     product
@@ -641,28 +584,20 @@ export default function Products() {
     );
   };
 
-
-  /* =======================================================
-     FILTER STATE
-  ======================================================= */
+  /* FILTER STATE */
 
   const hasFilters =
     category !== "all" ||
     search.trim() !== "";
 
-
-  /* =======================================================
-     RENDER
-  ======================================================= */
+  /* RENDER */
 
   return (
     <main
       className={styles.page}
     >
 
-      {/* =====================================================
-          HERO
-      ===================================================== */}
+      {/* HERO */}
 
       <section
         className={styles.hero}
@@ -792,7 +727,6 @@ export default function Products() {
         </div>
       </section>
 
-
       {/* =====================================================
           CATALOG
       ===================================================== */}
@@ -811,7 +745,6 @@ export default function Products() {
             title="Find the equipment or component you need."
             text="Search the catalog, filter by solution and add products to your enquiry cart. You can also send complete product information directly to Rainbow through WhatsApp."
           />
-
 
           {/* =================================================
               SEARCH
@@ -884,7 +817,6 @@ export default function Products() {
             </button>
           </div>
 
-
           {/* =================================================
               RESULT BAR
           ================================================= */}
@@ -938,7 +870,6 @@ export default function Products() {
               </button>
             )}
           </div>
-
 
           {/* =================================================
               CATALOG LAYOUT
@@ -1063,7 +994,6 @@ export default function Products() {
               </div>
             </aside>
 
-
             {/* =================================================
                 PRODUCT AREA
             ================================================= */}
@@ -1112,7 +1042,6 @@ export default function Products() {
                               />
                             </div>
 
-
                             {/* ACTIONS */}
 
                             <div
@@ -1147,7 +1076,6 @@ export default function Products() {
                                 </span>
                               </button>
 
-
                               {/* WHATSAPP */}
 
                               <button
@@ -1175,7 +1103,6 @@ export default function Products() {
                       }
                     )}
                   </div>
-
 
                   {/* =================================================
                       VIEW MORE
@@ -1224,7 +1151,6 @@ export default function Products() {
                       </button>
                     </div>
                   )}
-
 
                   {/* =================================================
                       ALL PRODUCTS SHOWN

@@ -18,10 +18,7 @@ import { company } from "../../data.js";
 
 import styles from "./Cart.module.css";
 
-
-/* =========================================================
-   HELPERS
-========================================================= */
+/* HELPERS */
 
 const formatLabel = (value) => {
   return String(value)
@@ -33,7 +30,6 @@ const formatLabel = (value) => {
       char.toUpperCase(),
     );
 };
-
 
 const formatValue = (value) => {
   if (
@@ -86,7 +82,6 @@ const formatValue = (value) => {
   return "";
 };
 
-
 const getProductUrl = (item) => {
   if (!item?.slug) {
     return "";
@@ -95,10 +90,7 @@ const getProductUrl = (item) => {
   return `${window.location.origin}/products/${item.slug}`;
 };
 
-
-/* =========================================================
-   BUILD COMPLETE ENQUIRY MESSAGE
-========================================================= */
+/* BUILD COMPLETE ENQUIRY MESSAGE */
 
 const buildEnquiryMessage = (
   items,
@@ -127,7 +119,6 @@ const buildEnquiryMessage = (
   );
 
   message.push("");
-
 
   items.forEach(
     (item, index) => {
@@ -185,10 +176,7 @@ const buildEnquiryMessage = (
         );
       }
 
-
-      /* =====================================================
-         SPECIFICATIONS
-      ===================================================== */
+      /* SPECIFICATIONS */
 
       if (
         item.specifications
@@ -258,10 +246,7 @@ const buildEnquiryMessage = (
         }
       }
 
-
-      /* =====================================================
-         SPECS
-      ===================================================== */
+      /* SPECS */
 
       if (
         Array.isArray(item.specs) &&
@@ -282,10 +267,7 @@ const buildEnquiryMessage = (
         );
       }
 
-
-      /* =====================================================
-         FEATURES
-      ===================================================== */
+      /* FEATURES */
 
       if (
         Array.isArray(
@@ -308,10 +290,7 @@ const buildEnquiryMessage = (
         );
       }
 
-
-      /* =====================================================
-         PRODUCT LINK
-      ===================================================== */
+      /* PRODUCT LINK */
 
       const url =
         getProductUrl(item);
@@ -332,7 +311,6 @@ const buildEnquiryMessage = (
     },
   );
 
-
   message.push(
     "Please share availability, suitable configuration, technical specifications and quotation.",
   );
@@ -346,10 +324,7 @@ const buildEnquiryMessage = (
   return message.join("\n");
 };
 
-
-/* =========================================================
-   COMPONENT
-========================================================= */
+/* COMPONENT */
 
 export default function Cart() {
   const {
@@ -360,34 +335,24 @@ export default function Cart() {
     clear,
   } = useCart();
 
-
-  /* =======================================================
-     TOTAL PRODUCT TYPES
-  ======================================================= */
+  /* TOTAL PRODUCT TYPES */
 
   const productTypes =
     items.length;
 
-
-  /* =======================================================
-     COMPLETE WHATSAPP MESSAGE
-  ======================================================= */
+  /* COMPLETE WHATSAPP MESSAGE */
 
   const enquiryMessage =
     buildEnquiryMessage(
       items,
     );
 
-
-  /* =======================================================
-     WHATSAPP
-  ======================================================= */
+  /* WHATSAPP */
 
   const whatsappPhone =
     String(
       company?.whatsapp || "",
     ).replace(/\D/g, "");
-
 
   const whatsappUrl =
     items.length &&
@@ -397,10 +362,7 @@ export default function Cart() {
         )}`
       : "#";
 
-
-  /* =======================================================
-     EMAIL
-  ======================================================= */
+  /* EMAIL */
 
   const emailSubject =
     `Rainbow Product Enquiry - ${productTypes} Product${
@@ -408,7 +370,6 @@ export default function Cart() {
         ? ""
         : "s"
     }`;
-
 
   const emailUrl =
     items.length
@@ -421,13 +382,10 @@ export default function Cart() {
         )}`
       : "#";
 
-
   return (
     <main className={styles.page}>
 
-      {/* =====================================================
-          HERO
-      ===================================================== */}
+      {/* HERO */}
 
       <section
         className={styles.hero}
@@ -510,10 +468,7 @@ export default function Cart() {
             </div>
           </div>
 
-
-          {/* =================================================
-              HERO VISUAL
-          ================================================= */}
+          {/* HERO VISUAL */}
 
           <div
             className={
@@ -554,10 +509,7 @@ export default function Cart() {
         </div>
       </section>
 
-
-      {/* =====================================================
-          CONTENT
-      ===================================================== */}
+      {/* CONTENT */}
 
       <section
         className={styles.content}
@@ -568,9 +520,7 @@ export default function Cart() {
 
           {items.length > 0 ? (
             <>
-              {/* =============================================
-                  TOP BAR
-              ============================================= */}
+              {/* TOP BAR */}
 
               <div
                 className={styles.topBar}
@@ -609,18 +559,13 @@ export default function Cart() {
                 </div>
               </div>
 
-
-              {/* =============================================
-                  MAIN GRID
-              ============================================= */}
+              {/* MAIN GRID */}
 
               <div
                 className={styles.layout}
               >
 
-                {/* =========================================
-                    PRODUCTS
-                ========================================= */}
+                {/* PRODUCTS */}
 
                 <section
                   className={
@@ -652,7 +597,6 @@ export default function Cart() {
                       Clear all
                     </button>
                   </div>
-
 
                   <div
                     className={
@@ -695,7 +639,6 @@ export default function Cart() {
                             </span>
                           </Link>
 
-
                           {/* DETAILS */}
 
                           <div
@@ -727,7 +670,6 @@ export default function Cart() {
                               {item.summary ||
                                 item.description}
                             </p>
-
 
                             {/* PRODUCT META */}
 
@@ -769,7 +711,6 @@ export default function Cart() {
                                 </span>
                               )}
                             </div>
-
 
                             {/* CONTROLS */}
 
@@ -853,10 +794,7 @@ export default function Cart() {
                   </div>
                 </section>
 
-
-                {/* =========================================
-                    SUMMARY
-                ========================================= */}
+                {/* SUMMARY */}
 
                 <aside
                   className={
@@ -889,7 +827,6 @@ export default function Cart() {
                     </div>
                   </div>
 
-
                   <div
                     className={
                       styles.summaryCount
@@ -904,7 +841,6 @@ export default function Cart() {
                       quantity
                     </span>
                   </div>
-
 
                   {/* SUMMARY DETAILS */}
 
@@ -946,7 +882,6 @@ export default function Cart() {
                     </div>
                   </div>
 
-
                   {/* NOTICE */}
 
                   <div
@@ -975,7 +910,6 @@ export default function Cart() {
                       </p>
                     </div>
                   </div>
-
 
                   {/* ENQUIRY BUTTONS */}
 
@@ -1011,7 +945,6 @@ export default function Cart() {
                       </span>
                     </a>
 
-
                     <a
                       href={
                         whatsappUrl
@@ -1043,7 +976,6 @@ export default function Cart() {
                     </a>
                   </div>
 
-
                   <p
                     className={
                       styles.summaryNote
@@ -1058,10 +990,7 @@ export default function Cart() {
                 </aside>
               </div>
 
-
-              {/* =============================================
-                  HELP STRIP
-              ============================================= */}
+              {/* HELP STRIP */}
 
               <div
                 className={
