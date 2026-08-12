@@ -15,9 +15,11 @@
 
   width: 100%;
   min-height: 100%;
+
   overflow: hidden;
 
   color: var(--about-heading);
+
   background: #ffffff;
 
   font-family:
@@ -45,25 +47,24 @@
 }
 
 .container {
-  width: min(1240px, calc(100% - 40px));
+  width: min(
+    1240px,
+    calc(100% - 40px)
+  );
+
   margin: 0 auto;
 }
 
-/*
- *    HERO
- *    100vh - HEADER
- */
+/* HERO */
 
 .hero {
   position: relative;
 
-  /*
- *     Desktop header:
- *     approximately 29px top strip + 76px navigation
- */
-  min-height: calc(100vh - 105px);
+  min-height:
+    calc(100vh - 105px);
 
   display: flex;
+
   align-items: center;
 
   overflow: hidden;
@@ -76,13 +77,16 @@
       #edf6fa 100%
     );
 
-  border-bottom: 1px solid var(--about-border);
+  border-bottom:
+    1px solid
+    var(--about-border);
 }
 
-/* HERO CIRCUIT BACKGROUND */
+/* HERO CIRCUIT */
 
 .heroCircuit {
   position: absolute;
+
   inset: 0;
 
   pointer-events: none;
@@ -124,7 +128,10 @@
   width: 8px;
   height: 8px;
 
-  border: 1px solid #a9c3cd;
+  border:
+    1px solid
+    #a9c3cd;
+
   border-radius: 50%;
 
   background: #f5fafb;
@@ -158,9 +165,11 @@
 
 .hero > .container {
   position: relative;
+
   z-index: 2;
 
-  min-height: calc(100vh - 105px);
+  min-height:
+    calc(100vh - 105px);
 
   display: grid;
 
@@ -180,6 +189,7 @@
 
 .heroContent {
   width: 100%;
+
   max-width: 700px;
 }
 
@@ -193,9 +203,11 @@
   color: var(--about-blue);
 
   font-size: 9px;
+
   font-weight: 800;
 
   letter-spacing: 0.15em;
+
   text-transform: uppercase;
 }
 
@@ -215,7 +227,10 @@
 .hero h1 {
   max-width: 700px;
 
-  margin: 17px 0 18px;
+  margin:
+    17px
+    0
+    18px;
 
   color: var(--about-heading);
 
@@ -226,7 +241,11 @@
     sans-serif;
 
   font-size:
-    clamp(40px, 5.2vw, 67px);
+    clamp(
+      40px,
+      5.2vw,
+      67px
+    );
 
   font-weight: 800;
 
@@ -270,6 +289,7 @@
   display: inline-flex;
 
   align-items: center;
+
   justify-content: center;
 
   gap: 7px;
@@ -279,6 +299,7 @@
   border-radius: 8px;
 
   font-size: 9px;
+
   font-weight: 800;
 
   transition:
@@ -312,7 +333,9 @@
 .secondaryButton {
   color: var(--about-heading);
 
-  border: 1px solid var(--about-border);
+  border:
+    1px solid
+    var(--about-border);
 
   background: #ffffff;
 }
@@ -333,15 +356,15 @@
   position: relative;
 
   width: min(430px, 100%);
+
   aspect-ratio: 1 / 1;
 
   justify-self: center;
 
   display: grid;
+
   place-items: center;
 }
-
-/* Outer ring */
 
 .visualRing {
   position: absolute;
@@ -349,7 +372,9 @@
   width: 100%;
   height: 100%;
 
-  border: 1px solid #c9dce3;
+  border:
+    1px solid
+    #c9dce3;
 
   border-radius: 50%;
 
@@ -371,7 +396,9 @@
 
   position: absolute;
 
-  border: 1px solid #d8e5e9;
+  border:
+    1px solid
+    #d8e5e9;
 
   border-radius: 50%;
 }
@@ -388,13 +415,19 @@
 
 .powerCard {
   position: relative;
+
   z-index: 3;
 
-  width: min(330px, 76%);
+  width: min(
+    330px,
+    76%
+  );
 
   padding: 21px;
 
-  border: 1px solid #bdd2db;
+  border:
+    1px solid
+    #bdd2db;
 
   border-radius: 18px;
 
@@ -426,12 +459,11 @@
     rgba(35, 72, 91, 0.17);
 }
 
-/* Card top */
-
 .powerTop {
   display: flex;
 
   align-items: center;
+
   justify-content: space-between;
 
   gap: 10px;
@@ -468,8 +500,6 @@
     rgba(31, 159, 115, 0.08);
 }
 
-/* POWER CORE */
-
 .powerCore {
   display: flex;
 
@@ -477,7 +507,10 @@
 
   gap: 14px;
 
-  margin: 52px 0 38px;
+  margin:
+    52px
+    0
+    38px;
 }
 
 .powerIcon {
@@ -485,6 +518,7 @@
   height: 65px;
 
   display: grid;
+
   place-items: center;
 
   flex: 0 0 auto;
@@ -497,8 +531,7 @@
 
   color: var(--about-blue);
 
-  background:
-    #ffffff;
+  background: #ffffff;
 
   box-shadow:
     0 0 0 8px
@@ -536,8 +569,6 @@
   font-weight: 800;
 }
 
-/* POWER LINES */
-
 .powerLines {
   display: flex;
 
@@ -553,7 +584,11 @@
 .powerLines span {
   width: 12px;
 
-  border-radius: 3px 3px 1px 1px;
+  border-radius:
+    3px
+    3px
+    1px
+    1px;
 
   background:
     linear-gradient(
@@ -571,37 +606,41 @@
 
 .powerLines span:nth-child(1) {
   height: 14px;
+
   animation-delay: 0s;
 }
 
 .powerLines span:nth-child(2) {
   height: 26px;
+
   animation-delay: 0.15s;
 }
 
 .powerLines span:nth-child(3) {
   height: 36px;
+
   animation-delay: 0.3s;
 }
 
 .powerLines span:nth-child(4) {
   height: 22px;
+
   animation-delay: 0.45s;
 }
 
 @keyframes electricalBars {
   from {
     opacity: 0.45;
+
     transform: scaleY(0.72);
   }
 
   to {
     opacity: 1;
+
     transform: scaleY(1);
   }
 }
-
-/* POWER FOOTER */
 
 .powerFooter {
   display: flex;
@@ -629,14 +668,13 @@
   letter-spacing: 0.07em;
 }
 
-/* VISUAL BADGE */
-
 .visualBadge {
   position: absolute;
 
   z-index: 5;
 
   right: -10px;
+
   bottom: 12%;
 
   display: flex;
@@ -688,10 +726,12 @@
   font-size: 8px;
 }
 
-/* PROFILE */
+/* COMPANY PROFILE */
 
 .profile {
-  padding: 90px 0;
+  padding:
+    90px
+    0;
 
   background: #ffffff;
 }
@@ -708,7 +748,11 @@
   gap: 60px;
 }
 
+/* NEW RAINBOW IMAGE CARD */
+
 .profileMark {
+  position: relative;
+
   width: 210px;
   min-height: 210px;
 
@@ -717,101 +761,138 @@
   flex-direction: column;
 
   align-items: center;
+
   justify-content: center;
 
-  border-radius: 25px;
+  gap: 0px;
 
-  color: #ffffff;
+  padding: 24px;
+
+  overflow: hidden;
+
+  /*
+ *  border:
+ *     1px solid
+ *     rgba(255, 255, 255, 0.18);
+ */
+
+  border-radius: 25px;
 
   background:
     linear-gradient(
       145deg,
-      #163c57,
-      #0c6885
+      #4d5d66dc,
+      #6697aadc
     );
 
   box-shadow:
     0 20px 45px
-    rgba(18, 70, 91, 0.13);
+    rgba(18, 70, 91, 0.16);
 }
 
-.markIcon {
-  width: 55px;
-  height: 55px;
+/* Very subtle decorative glow. */
 
-  display: grid;
-  place-items: center;
+.profileMark::before {
+  content: "";
 
-  margin-bottom: 14px;
+  position: absolute;
 
-  border:
-    1px solid
-    rgba(
-      255,
-      255,
-      255,
-      0.25
-    );
+  width: 180px;
+  height: 180px;
+
+  top: -95px;
+  right: -90px;
 
   border-radius: 50%;
 
-  color: #76d4df;
-
   background:
     rgba(
-      255,
-      255,
-      255,
-      0.08
-    );
-}
-
-.profileMark > strong {
-  font-family:
-    "Manrope",
-    "Segoe UI",
-    Arial,
-    sans-serif;
-
-  font-size: 17px;
-
-  letter-spacing: 0.04em;
-}
-
-.profileMark > span {
-  margin-top: 6px;
-
-  color:
-    rgba(
-      255,
-      255,
-      255,
-      0.62
+      92,
+      213,
+      227,
+      0.12
     );
 
-  font-size: 5px;
-
-  font-weight: 800;
-
-  letter-spacing: 0.08em;
+  pointer-events: none;
 }
 
-.markLine {
+.profileMark::after {
+  content: "";
+
+  position: absolute;
+
+  width: 140px;
+  height: 140px;
+
+  bottom: -100px;
+  left: -75px;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+/* FAVICON / RAINBOW IMAGE */
+
+.profileImageArea {
+  position: relative;
+
+  z-index: 2;
+
+  width: 75px;
+  height: 75px;
+
   display: flex;
 
-  gap: 4px;
+  align-items: center;
 
-  margin-top: 20px;
+  justify-content: center;
+
 }
 
-.markLine i {
-  width: 15px;
-  height: 2px;
+.profileFavicon {
+  width: 100%;
+  height: 100%;
 
-  border-radius: 2px;
+  display: block;
 
-  background: #5fd0dc;
+  object-fit: contain;
 }
+
+/* RAINBOW WORDMARK */
+
+.profileLogoArea {
+  position: relative;
+
+  z-index: 2;
+
+  width: 145px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+.profileLogo {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  max-height: 48px;
+
+  object-fit: contain;
+
+  /*
+ * Your supplied Rainbow logo is blue.
+ * The white background is transparent in the PNG,
+ * so it remains clean on the card.
+ */
+}
+
+/* PROFILE CONTENT */
 
 .profileContent {
   max-width: 760px;
@@ -904,7 +985,9 @@
 /* MISSION / VISION */
 
 .mission {
-  padding: 90px 0;
+  padding:
+    90px
+    0;
 
   background: #f5f8fa;
 }
@@ -913,7 +996,10 @@
   display: grid;
 
   grid-template-columns:
-    repeat(2, minmax(0, 1fr));
+    repeat(
+      2,
+      minmax(0, 1fr)
+    );
 
   gap: 15px;
 
@@ -958,6 +1044,7 @@
   height: 45px;
 
   display: grid;
+
   place-items: center;
 
   border-radius: 11px;
@@ -1070,7 +1157,9 @@
 /* EXPERTISE */
 
 .expertiseSection {
-  padding: 90px 0;
+  padding:
+    90px
+    0;
 
   background: #ffffff;
 }
@@ -1079,7 +1168,10 @@
   display: grid;
 
   grid-template-columns:
-    repeat(3, minmax(0, 1fr));
+    repeat(
+      3,
+      minmax(0, 1fr)
+    );
 
   gap: 13px;
 
@@ -1183,7 +1275,9 @@
 /* WHY RAINBOW */
 
 .whySection {
-  padding: 90px 0;
+  padding:
+    90px
+    0;
 
   background: #f5f8fa;
 }
@@ -1249,7 +1343,10 @@
   display: grid;
 
   grid-template-columns:
-    repeat(3, minmax(0, 1fr));
+    repeat(
+      3,
+      minmax(0, 1fr)
+    );
 
   gap: 13px;
 
@@ -1330,7 +1427,9 @@
 /* CREDENTIALS */
 
 .credentials {
-  padding: 80px 0;
+  padding:
+    80px
+    0;
 
   background: #ffffff;
 }
@@ -1425,6 +1524,7 @@
   height: 38px;
 
   display: grid;
+
   place-items: center;
 
   border-radius: 9px;
@@ -1594,13 +1694,12 @@
   display: inline-flex;
 
   align-items: center;
+
   justify-content: center;
 
   gap: 7px;
 
-  padding:
-    0
-    14px;
+  padding: 0 14px;
 
   border-radius: 8px;
 
@@ -1675,15 +1774,16 @@
   .expertiseGrid,
   .whyGrid {
     grid-template-columns:
-      repeat(2, minmax(0, 1fr));
+      repeat(
+        2,
+        minmax(0, 1fr)
+      );
   }
 }
 
 /* TABLET / SMALL LAPTOP */
 
 @media (max-width: 850px) {
-  /* Mobile/tablet header from the redesigned navbar */
-
   .hero {
     min-height:
       calc(100vh - 67px);
@@ -1721,18 +1821,33 @@
   }
 
   .profile > .container {
-    grid-template-columns: 190px 1fr;
+    grid-template-columns:
+      190px
+      1fr;
 
     gap: 30px;
   }
 
   .profileMark {
     width: 175px;
+
     min-height: 175px;
+
+    padding: 20px;
+  }
+
+  .profileImageArea {
+    width: 62px;
+    height: 62px;
+  }
+
+  .profileLogoArea {
+    width: 125px;
   }
 
   .whyHeader {
     grid-template-columns: 1fr;
+
     align-items: start;
   }
 
@@ -1754,11 +1869,6 @@
     width:
       calc(100% - 28px);
   }
-
-  /*
- *     Exact mobile viewport:
- *     100vh minus mobile navbar
- */
 
   .hero {
     min-height:
@@ -1830,6 +1940,8 @@
       0;
   }
 
+  /* MOBILE IMAGE CARD */
+
   .profile > .container {
     grid-template-columns: 1fr;
 
@@ -1837,10 +1949,26 @@
   }
 
   .profileMark {
-    width: 150px;
-    min-height: 150px;
+    width: 170px;
+
+    min-height: 170px;
 
     margin: 0 auto;
+
+    padding: 20px;
+  }
+
+  .profileImageArea {
+    width: 64px;
+    height: 64px;
+  }
+
+  .profileLogoArea {
+    width: 130px;
+  }
+
+  .profileLogo {
+    max-height: 42px;
   }
 
   .profileContent h2,
@@ -1955,6 +2083,25 @@
   .profileContent h2,
   .credentialsIntro h2 {
     font-size: 25px;
+  }
+
+  .profileMark {
+    width: 155px;
+
+    min-height: 155px;
+  }
+
+  .profileImageArea {
+    width: 58px;
+    height: 58px;
+  }
+
+  .profileLogoArea {
+    width: 118px;
+  }
+
+  .profileLogo {
+    max-height: 38px;
   }
 
   .credentialCard {

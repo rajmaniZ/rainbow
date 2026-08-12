@@ -1,6 +1,6 @@
 /*
  *    CONTACT PAGE
- *    Rainbow Light Engineering Theme
+ *    RAINBOW ENGINEERING THEME
  */
 
 .page {
@@ -36,7 +36,11 @@
 }
 
 .container {
-  width: min(1240px, calc(100% - 36px));
+  width: min(
+    1240px,
+    calc(100% - 36px)
+  );
+
   margin: 0 auto;
 }
 
@@ -50,7 +54,7 @@
   display: flex;
   align-items: center;
 
-  overflow: hidden;
+  overflow: visible;
 
   background:
     radial-gradient(
@@ -66,7 +70,7 @@
     );
 }
 
-/* GRID */
+/* HERO GRID */
 
 .heroGrid {
   position: absolute;
@@ -89,7 +93,7 @@
   pointer-events: none;
 }
 
-/* ATMOSPHERIC GLOW */
+/* HERO GLOW */
 
 .heroGlow {
   position: absolute;
@@ -134,7 +138,8 @@
   box-shadow:
     0 0 0 5px rgba(88, 212, 230, 0.08);
 
-  animation: nodePulse 3.5s ease-in-out infinite;
+  animation:
+    nodePulse 3.5s ease-in-out infinite;
 }
 
 .nodeOne {
@@ -183,7 +188,10 @@
 
   z-index: 2;
 
-  width: min(1240px, calc(100% - 36px));
+  width: min(
+    1240px,
+    calc(100% - 36px)
+  );
 
   margin: 0 auto;
 
@@ -237,7 +245,8 @@
   background: #16b98a;
 
   box-shadow:
-    0 0 0 5px rgba(22, 185, 138, 0.1);
+    0 0 0 5px
+      rgba(22, 185, 138, 0.1);
 }
 
 /* HERO HEADING */
@@ -268,7 +277,7 @@
   color: var(--blue);
 }
 
-/* HERO TEXT */
+/* HERO DESCRIPTION */
 
 .heroContent > p {
   max-width: 650px;
@@ -282,7 +291,7 @@
   line-height: 1.75;
 }
 
-/* HERO BUTTONS */
+/* HERO ACTIONS */
 
 .heroActions {
   display: flex;
@@ -310,6 +319,8 @@
 
   border-radius: 8px;
 
+  font-family: var(--body);
+
   font-size: 0.68rem;
 
   font-weight: 800;
@@ -317,6 +328,11 @@
   text-decoration: none;
 
   cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .heroPrimary {
@@ -327,7 +343,16 @@
   color: white;
 
   box-shadow:
-    0 10px 25px rgba(19, 92, 224, 0.16);
+    0 10px 25px
+      rgba(19, 92, 224, 0.16);
+}
+
+.heroPrimary:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 14px 30px
+      rgba(19, 92, 224, 0.24);
 }
 
 .heroSecondary {
@@ -336,6 +361,201 @@
   background: white;
 
   color: var(--ink);
+}
+
+.heroSecondary:hover {
+  transform: translateY(-2px);
+
+  border-color: #aebfd0;
+}
+
+/* CALL CHOOSER */
+
+.callChooserWrapper {
+  position: relative;
+
+  display: inline-flex;
+}
+
+/* PHONE CHOOSER */
+
+.phoneChooser {
+  position: absolute;
+
+  top: calc(100% + 10px);
+
+  left: 0;
+
+  z-index: 100;
+
+  width: 285px;
+
+  padding: 10px;
+
+  border: 1px solid #d6e2eb;
+
+  border-radius: 12px;
+
+  background:
+    rgba(255, 255, 255, 0.98);
+
+  box-shadow:
+    0 18px 45px
+      rgba(18, 52, 77, 0.16);
+
+  backdrop-filter: blur(12px);
+
+  animation:
+    phoneChooserIn 0.18s ease-out;
+}
+
+@keyframes phoneChooserIn {
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(-5px)
+      scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+}
+
+.phoneChooserHeader {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+
+  padding: 6px 7px 10px;
+}
+
+.phoneChooserHeader strong {
+  color: var(--ink);
+
+  font-size: 0.68rem;
+
+  font-weight: 800;
+}
+
+.phoneChooserHeader span {
+  color: #8a9bab;
+
+  font-size: 0.53rem;
+
+  line-height: 1.4;
+}
+
+.phoneChooserList {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.phoneChooserOption {
+  width: 100%;
+
+  min-height: 52px;
+
+  padding: 8px;
+
+  display: grid;
+
+  grid-template-columns:
+    31px minmax(0, 1fr) 14px;
+
+  align-items: center;
+
+  gap: 9px;
+
+  border: 1px solid #e2e9ef;
+
+  border-radius: 8px;
+
+  background: #fbfdff;
+
+  color: var(--text);
+
+  font-family: var(--body);
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.phoneChooserOption:hover {
+  transform: translateX(2px);
+
+  border-color:
+    rgba(19, 92, 224, 0.3);
+
+  background:
+    rgba(19, 92, 224, 0.045);
+}
+
+.phoneChooserOption:focus-visible {
+  outline: 2px solid var(--blue);
+
+  outline-offset: 2px;
+}
+
+.phoneChooserIcon {
+  width: 31px;
+  height: 31px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 7px;
+
+  background: #eaf3ff;
+
+  color: var(--blue);
+}
+
+.phoneChooserInfo {
+  min-width: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+.phoneChooserInfo strong {
+  color: #26384a;
+
+  font-size: 0.61rem;
+
+  font-weight: 800;
+}
+
+.phoneChooserInfo small {
+  color: #71869a;
+
+  font-size: 0.52rem;
+
+  font-weight: 600;
+}
+
+.phoneChooserArrow {
+  color: #91a1b0;
 }
 
 /* HERO STATS */
@@ -406,7 +626,8 @@
 .visualOrbitTwo {
   position: absolute;
 
-  border: 1px solid rgba(71, 167, 195, 0.25);
+  border: 1px solid
+    rgba(71, 167, 195, 0.25);
 
   border-radius: 50%;
 }
@@ -420,7 +641,8 @@
   width: 365px;
   height: 365px;
 
-  border-color: rgba(71, 167, 195, 0.18);
+  border-color:
+    rgba(71, 167, 195, 0.18);
 }
 
 /* CONNECTION LINE */
@@ -429,7 +651,6 @@
   position: absolute;
 
   width: 520px;
-
   height: 1px;
 
   background:
@@ -493,7 +714,8 @@
     );
 
   box-shadow:
-    0 25px 70px rgba(26, 68, 91, 0.12);
+    0 25px 70px
+      rgba(26, 68, 91, 0.12);
 
   transform: rotate(-1.5deg);
 }
@@ -602,20 +824,88 @@
   line-height: 1.65;
 }
 
-/* PANEL CONTACT ITEMS */
+/* HERO PANEL ITEMS */
 
 .panelItems {
   display: grid;
 
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns:
+    1fr 1fr;
 
-  gap: 7px;
+  gap: 8px;
 
   margin-top: 22px;
 }
 
-.panelItems a {
+/*
+ *    DIRECT SUPPORT
+ *    NO PHONE NUMBER HERE
+ */
+
+.directSupportItem {
   min-width: 0;
+
+  min-height: 65px;
+
+  padding: 12px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  border: 1px solid #dce7ee;
+
+  border-radius: 9px;
+
+  background: white;
+
+  color: var(--blue);
+}
+
+.directSupportItem > span {
+  min-width: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+.directSupportItem small {
+  color: #8b9cab;
+
+  font-size: 0.43rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.08em;
+}
+
+.directSupportItem strong {
+  color: #26384a;
+
+  font-size: 0.61rem;
+
+  font-weight: 800;
+}
+
+.directSupportItem em {
+  color: #91a1b0;
+
+  font-size: 0.47rem;
+
+  font-style: normal;
+}
+
+/* EMAIL */
+
+.panelEmailItem {
+  min-width: 0;
+
+  min-height: 65px;
 
   padding: 12px;
 
@@ -634,15 +924,29 @@
   color: #26384a;
 
   text-decoration: none;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
 }
 
-.panelItems a svg {
+.panelEmailItem:hover {
+  transform: translateY(-1px);
+
+  border-color:
+    rgba(19, 92, 224, 0.25);
+
+  background: #fbfdff;
+}
+
+.panelEmailItem svg {
   flex: 0 0 auto;
 
   color: var(--blue);
 }
 
-.panelItems a span {
+.panelEmailItem span {
   min-width: 0;
 
   display: flex;
@@ -660,7 +964,7 @@
   text-overflow: ellipsis;
 }
 
-.panelItems small {
+.panelEmailItem small {
   margin-bottom: 3px;
 
   color: #8b9cab;
@@ -672,18 +976,66 @@
   letter-spacing: 0.08em;
 }
 
+/* WHATSAPP */
+
 .panelItems .whatsappItem {
   grid-column: 1 / -1;
 
+  min-height: 50px;
+
+  padding: 11px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  border: 1px solid #ccebdc;
+
+  border-radius: 9px;
+
   background: #eaf8f1;
 
-  border-color: #ccebdc;
-
   color: #19734e;
+
+  text-decoration: none;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.panelItems .whatsappItem:hover {
+  transform: translateY(-1px);
+
+  background: #e2f6ec;
 }
 
 .panelItems .whatsappItem svg {
   color: var(--green);
+}
+
+.panelItems .whatsappItem span {
+  display: flex;
+
+  flex-direction: column;
+
+  font-size: 0.58rem;
+
+  font-weight: 700;
+}
+
+.panelItems .whatsappItem small {
+  margin-bottom: 3px;
+
+  color: #5f927b;
+
+  font-size: 0.43rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.08em;
 }
 
 /* PANEL FOOTER */
@@ -720,7 +1072,7 @@
   color: var(--green);
 }
 
-/* FLOATING WHATSAPP BADGE */
+/* FLOATING WHATSAPP */
 
 .floatingBadge {
   position: absolute;
@@ -746,8 +1098,23 @@
 
   color: var(--green);
 
+  text-decoration: none;
+
   box-shadow:
-    0 12px 30px rgba(21, 152, 105, 0.1);
+    0 12px 30px
+      rgba(21, 152, 105, 0.1);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.floatingBadge:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 16px 35px
+      rgba(21, 152, 105, 0.17);
 }
 
 .floatingBadge span {
@@ -803,9 +1170,10 @@
 
   display: grid;
 
-  grid-template-columns: 22px minmax(0, 1fr);
+  grid-template-columns:
+    22px minmax(0, 1fr);
 
-  gap: 4px 10px;
+  gap: 5px 10px;
 
   border: 1px solid var(--border);
 
@@ -829,10 +1197,11 @@
   border-color: #bfd0df;
 
   box-shadow:
-    0 12px 30px rgba(9, 22, 36, 0.08);
+    0 12px 30px
+      rgba(9, 22, 36, 0.08);
 }
 
-.infoCard svg {
+.infoCard > svg {
   grid-row: 1 / span 2;
 
   width: 18px;
@@ -843,7 +1212,7 @@
   color: var(--blue);
 }
 
-.infoCard span {
+.infoCard > span {
   color: #8a97a5;
 
   font-size: 0.55rem;
@@ -855,7 +1224,7 @@
   text-transform: uppercase;
 }
 
-.infoCard b {
+.infoCard > b {
   color: #536173;
 
   font-size: 0.7rem;
@@ -864,6 +1233,157 @@
 
   overflow-wrap: anywhere;
 }
+
+/* PHONE CARD */
+
+.phoneInfoCard {
+  padding-bottom: 12px;
+}
+
+/* THREE PHONE CONTACTS */
+
+.infoPhoneList {
+  grid-column: 2;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 6px;
+
+  margin-top: 2px;
+}
+
+.infoPhonePerson {
+  width: 100%;
+
+  min-height: 50px;
+
+  padding: 7px 9px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  border: 1px solid #e6edf3;
+
+  border-radius: 8px;
+
+  background: #f8fbfe;
+
+  color: var(--text);
+
+  text-decoration: none;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.infoPhonePerson:hover {
+  transform: translateX(3px);
+
+  border-color:
+    rgba(19, 92, 224, 0.22);
+
+  background: #f1f7ff;
+
+  box-shadow:
+    0 5px 15px
+      rgba(19, 92, 224, 0.06);
+}
+
+.personAvatar {
+  width: 32px;
+  height: 32px;
+
+  flex: 0 0 32px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #2f7df4,
+      #135ce0
+    );
+
+  color: white !important;
+
+  font-size: 0.62rem !important;
+
+  font-weight: 800 !important;
+
+  letter-spacing: 0 !important;
+
+  text-transform: uppercase !important;
+}
+
+.personDetails {
+  min-width: 0;
+
+  flex: 1;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+.personDetails strong {
+  color: #26384a;
+
+  font-size: 0.66rem;
+
+  font-weight: 800;
+}
+
+.personDetails small {
+  color: #71869a;
+
+  font-size: 0.55rem;
+
+  font-weight: 600;
+}
+
+.callIcon {
+  width: 30px;
+  height: 30px;
+
+  flex: 0 0 30px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 7px;
+
+  background: #eaf3ff;
+
+  color: var(--blue) !important;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.infoPhonePerson:hover
+.callIcon {
+  background: var(--blue);
+
+  color: white !important;
+}
+
+/* WHATSAPP CARD */
 
 .whatsappCard {
   background: #eaf8f1;
@@ -897,7 +1417,8 @@
   background: white;
 
   box-shadow:
-    0 15px 40px rgba(9, 22, 36, 0.08);
+    0 15px 40px
+      rgba(9, 22, 36, 0.08);
 }
 
 .formEyebrow {
@@ -1050,18 +1571,34 @@
   font-weight: 800;
 
   cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.actions button:hover {
+  transform: translateY(-2px);
 }
 
 .submitButton {
   background: var(--blue);
 
   color: white;
+
+  box-shadow:
+    0 8px 20px
+      rgba(19, 92, 224, 0.14);
 }
 
 .whatsappButton {
   background: var(--green);
 
   color: white;
+
+  box-shadow:
+    0 8px 20px
+      rgba(21, 152, 105, 0.14);
 }
 
 .note {
@@ -1080,7 +1617,7 @@
 
 @media (max-width: 1000px) {
   .hero {
-    min-height: calc(100vh - 90px);
+    min-height: auto;
   }
 
   .heroContainer {
@@ -1124,7 +1661,12 @@
   }
 
   .info {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .phoneInfoCard {
+    grid-column: 1 / -1;
   }
 }
 
@@ -1137,13 +1679,13 @@
   }
 
   .hero {
-    min-height: calc(100vh - 75px);
+    min-height: auto;
 
     align-items: flex-start;
   }
 
   .heroContainer {
-    padding: 55px 0 30px;
+    padding: 50px 0 35px;
 
     display: flex;
 
@@ -1187,6 +1729,23 @@
     font-size: 0.63rem;
   }
 
+  /* PHONE MENU */
+
+  .phoneChooser {
+    top: calc(100% + 8px);
+
+    left: 0;
+
+    width: min(
+      285px,
+      calc(100vw - 28px)
+    );
+  }
+
+  .phoneChooserOption {
+    min-height: 50px;
+  }
+
   .heroStats {
     gap: 15px;
 
@@ -1201,8 +1760,10 @@
     font-size: 0.46rem;
   }
 
+  /* HERO VISUAL */
+
   .heroVisual {
-    min-height: 400px;
+    min-height: 390px;
 
     width: 100%;
   }
@@ -1229,22 +1790,33 @@
     font-size: 1.5rem;
   }
 
+  /* HERO PANEL */
+
   .panelItems {
     grid-template-columns: 1fr;
+  }
+
+  .directSupportItem,
+  .panelEmailItem {
+    min-height: 58px;
   }
 
   .panelItems .whatsappItem {
     grid-column: auto;
   }
 
+  /* FLOATING WHATSAPP */
+
   .floatingBadge {
     right: 0;
 
-    bottom: 30px;
+    bottom: 20px;
   }
 
+  /* CONTENT */
+
   .content {
-    padding: 65px 0 75px;
+    padding: 60px 0 75px;
   }
 
   .content > .container {
@@ -1256,6 +1828,24 @@
 
     gap: 8px;
   }
+
+  .phoneInfoCard {
+    grid-column: auto;
+  }
+
+  .infoCard {
+    padding: 15px;
+  }
+
+  .infoPhoneList {
+    grid-column: 2;
+  }
+
+  .infoPhonePerson {
+    min-height: 48px;
+  }
+
+  /* FORM */
 
   .form {
     padding: 22px;
@@ -1282,7 +1872,7 @@
 
 @media (max-width: 380px) {
   .heroContainer {
-    padding-top: 45px;
+    padding-top: 42px;
   }
 
   .heroContent h1 {
@@ -1316,14 +1906,37 @@
   .form {
     padding: 18px 16px;
   }
+
+  .personAvatar {
+    width: 29px;
+    height: 29px;
+
+    flex-basis: 29px;
+  }
+
+  .personDetails strong {
+    font-size: 0.59rem;
+  }
+
+  .personDetails small {
+    font-size: 0.51rem;
+  }
 }
 
 /* REDUCED MOTION */
 
 @media (prefers-reduced-motion: reduce) {
   .heroNodes span,
-  .infoCard {
+  .infoCard,
+  .phoneChooser,
+  .heroPrimary,
+  .heroSecondary,
+  .phoneChooserOption,
+  .infoPhonePerson,
+  .floatingBadge,
+  .actions button {
     animation: none;
+
     transition: none;
   }
 }

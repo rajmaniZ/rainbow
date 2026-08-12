@@ -24,6 +24,11 @@ import { whyRainbow } from "../../data/siteData";
 
 import styles from "./About.module.css";
 
+/* ASSETS */
+
+import rainbowLogo from "../../assets/rainbow-logo.png";
+import rainbowFavicon from "/favicon.png";
+
 /* EXPERTISE */
 
 const expertise = [
@@ -73,7 +78,6 @@ const certificationIcons = [
 export default function About() {
   return (
     <main className={styles.page}>
-
       {/* HERO */}
 
       <section className={styles.hero}>
@@ -96,14 +100,18 @@ export default function About() {
 
             <h1>
               Electrical engineering
-              <span> built around reliability.</span>
+              <span>
+                {" "}
+                built around reliability.
+              </span>
             </h1>
 
             <p>
-              Rainbow provides power backup, electrical
-              control panels, industrial automation,
-              solar and complete electrical solutions
-              for residential, commercial, industrial
+              Rainbow provides power backup,
+              electrical control panels,
+              industrial automation, solar and
+              complete electrical solutions for
+              residential, commercial, industrial
               and government requirements.
             </p>
 
@@ -186,23 +194,36 @@ export default function About() {
 
       <section className={styles.profile}>
         <div className={styles.container}>
+
+          {/* RAINBOW IMAGE CARD */}
+
           <div className={styles.profileMark}>
-            <div className={styles.markIcon}>
-              <Zap size={24} />
+            <div className={styles.profileImageArea}>
+              <img
+                src={rainbowFavicon}
+                alt="Rainbow"
+                className={styles.profileFavicon}
+              />
             </div>
 
-            <strong>RAINBOW</strong>
-
-            <span>
-              POWER · ELECTRICAL · AUTOMATION
-            </span>
-
-            <div className={styles.markLine}>
-              <i />
-              <i />
-              <i />
+            <div className={styles.profileLogoArea}>
+              <img
+                src={rainbowLogo}
+                alt="Rainbow"
+                className={styles.profileLogo}
+              />
             </div>
+
+            {/*
+ *  <div className={styles.markLine}>
+ *               <i />
+ *               <i />
+ *               <i />
+ *             </div>
+ */}
           </div>
+
+          {/* COMPANY CONTENT */}
 
           <div className={styles.profileContent}>
             <div className={styles.sectionLabel}>
@@ -259,7 +280,6 @@ export default function About() {
           />
 
           <div className={styles.mvGrid}>
-
             {/* MISSION */}
 
             <article className={styles.mvCard}>
@@ -274,10 +294,11 @@ export default function About() {
               <h3>Mission</h3>
 
               <p>
-                Deliver dependable electrical and power
-                solutions through practical engineering,
-                quality products, disciplined installation
-                and responsive service.
+                Deliver dependable electrical and
+                power solutions through practical
+                engineering, quality products,
+                disciplined installation and
+                responsive service.
               </p>
 
               <div
@@ -303,9 +324,10 @@ export default function About() {
               <h3>Vision</h3>
 
               <p>
-                Become a trusted engineering partner for
-                power continuity, electrical distribution,
-                automation and long-term maintenance.
+                Become a trusted engineering partner
+                for power continuity, electrical
+                distribution, automation and
+                long-term maintenance.
               </p>
 
               <div
@@ -316,7 +338,6 @@ export default function About() {
                 <span />
               </div>
             </article>
-
           </div>
         </div>
       </section>
@@ -372,7 +393,6 @@ export default function About() {
       <section className={styles.whySection}>
         <div className={styles.container}>
           <div className={styles.whyHeader}>
-
             <SectionHeader
               eyebrow="WHY CHOOSE RAINBOW"
               title="Support around the complete electrical requirement."
@@ -392,7 +412,6 @@ export default function About() {
                 </span>
               </div>
             </div>
-
           </div>
 
           <div className={styles.whyGrid}>
@@ -427,7 +446,6 @@ export default function About() {
 
       <section className={styles.credentials}>
         <div className={styles.container}>
-
           <div className={styles.credentialsIntro}>
             <div className={styles.sectionLabel}>
               CREDENTIALS
@@ -442,10 +460,11 @@ export default function About() {
             </h2>
 
             <p>
-              Rainbow's registrations and certifications
-              demonstrate its commitment to quality,
-              environmental responsibility and
-              professional electrical practice.
+              Rainbow's registrations and
+              certifications demonstrate its
+              commitment to quality, environmental
+              responsibility and professional
+              electrical practice.
             </p>
           </div>
 
@@ -512,13 +531,12 @@ export default function About() {
         </div>
       </section>
 
-      {/* =====================================================
+      {/* ======================================================
           CTA
-      ===================================================== */}
+      ====================================================== */}
 
       <section className={styles.cta}>
         <div className={styles.container}>
-
           <div className={styles.ctaContent}>
             <div className={styles.sectionLabel}>
               WORK WITH RAINBOW
@@ -534,17 +552,15 @@ export default function About() {
 
             <p>
               Share your application, load or site
-              requirement and let Rainbow help identify
-              the right solution.
+              requirement and let Rainbow help
+              identify the right solution.
             </p>
           </div>
 
           <div className={styles.ctaActions}>
             <Link
               to="/products"
-              className={
-                styles.ctaPrimary
-              }
+              className={styles.ctaPrimary}
             >
               Explore products
               <ArrowRight size={16} />
@@ -552,17 +568,13 @@ export default function About() {
 
             <Link
               to="/contact"
-              className={
-                styles.ctaSecondary
-              }
+              className={styles.ctaSecondary}
             >
               Contact Rainbow
             </Link>
           </div>
-
         </div>
       </section>
-
     </main>
   );
 }
