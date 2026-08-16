@@ -76,6 +76,12 @@ const certificationIcons = [
 /* ABOUT PAGE */
 
 export default function About() {
+  const certificationList = Array.isArray(
+    certifications,
+  )
+    ? certifications
+    : [];
+
   return (
     <main className={styles.page}>
       {/* HERO */}
@@ -194,7 +200,6 @@ export default function About() {
 
       <section className={styles.profile}>
         <div className={styles.container}>
-
           {/* RAINBOW IMAGE CARD */}
 
           <div className={styles.profileMark}>
@@ -213,7 +218,6 @@ export default function About() {
                 className={styles.profileLogo}
               />
             </div>
-
           </div>
 
           {/* COMPANY CONTENT */}
@@ -408,8 +412,8 @@ export default function About() {
           </div>
 
           <div className={styles.whyGrid}>
-            {whyRainbow.map(
-              (item, index) => (
+            {Array.isArray(whyRainbow) &&
+              whyRainbow.map((item, index) => (
                 <article
                   key={item[0]}
                   className={styles.whyCard}
@@ -429,8 +433,7 @@ export default function About() {
 
                   <p>{item[1]}</p>
                 </article>
-              ),
-            )}
+              ))}
           </div>
         </div>
       </section>
@@ -462,7 +465,7 @@ export default function About() {
           </div>
 
           <div className={styles.credentialsList}>
-            {certifications.map(
+            {certificationList.map(
               (certification, index) => {
                 const Icon =
                   certificationIcons[
@@ -472,7 +475,10 @@ export default function About() {
 
                 return (
                   <article
-                    key={certification}
+                    key={
+                      certification.id ||
+                      `credential-${index}`
+                    }
                     className={
                       styles.credentialCard
                     }
@@ -501,8 +507,14 @@ export default function About() {
                       </small>
 
                       <strong>
-                        {certification}
+                        {certification.title}
                       </strong>
+
+                      {certification.issuer && (
+                        <small>
+                          {certification.issuer}
+                        </small>
+                      )}
 
                       <span>
                         <i />

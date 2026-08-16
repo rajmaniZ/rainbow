@@ -19,6 +19,12 @@ const certificationIcons = [
 ];
 
 export default function Certifications() {
+  const certificationList = Array.isArray(
+    certifications,
+  )
+    ? certifications
+    : [];
+
   return (
     <section className={styles.section}>
       <div
@@ -55,6 +61,7 @@ export default function Certifications() {
 
             <div>
               <strong>Verified credentials</strong>
+
               <span>
                 Quality · Safety · Compliance
               </span>
@@ -67,53 +74,72 @@ export default function Certifications() {
         ================================================= */}
 
         <div className={styles.list}>
-          {certifications.map((certification, index) => {
-            const Icon =
-              certificationIcons[
-                index % certificationIcons.length
-              ];
+          {certificationList.map(
+            (certification, index) => {
+              const Icon =
+                certificationIcons[
+                  index %
+                    certificationIcons.length
+                ];
 
-            return (
-              <article
-                className={styles.card}
-                key={certification}
-              >
-                <div className={styles.number}>
-                  {String(index + 1).padStart(2, "0")}
-                </div>
-
-                <div className={styles.icon}>
-                  <Icon size={19} />
-                </div>
-
-                <div className={styles.content}>
-                  <span className={styles.type}>
-                    CREDENTIAL
-                  </span>
-
-                  <h3>{certification}</h3>
-
-                  <div className={styles.status}>
-                    <i />
-                    <span>Registered / Certified</span>
-                  </div>
-                </div>
-
-                <div className={styles.check}>
-                  <ShieldCheck size={16} />
-                </div>
-
-                <div
-                  className={styles.circuit}
-                  aria-hidden="true"
+              return (
+                <article
+                  className={styles.card}
+                  key={
+                    certification.id ||
+                    `certification-${index}`
+                  }
                 >
-                  <span />
-                  <span />
-                  <span />
-                </div>
-              </article>
-            );
-          })}
+                  <div className={styles.number}>
+                    {String(index + 1).padStart(
+                      2,
+                      "0",
+                    )}
+                  </div>
+
+                  <div className={styles.icon}>
+                    <Icon size={19} />
+                  </div>
+
+                  <div className={styles.content}>
+                    <span className={styles.type}>
+                      CREDENTIAL
+                    </span>
+
+                    <h3>
+                      {certification.title}
+                    </h3>
+
+                    {certification.issuer && (
+                      <p>
+                        {certification.issuer}
+                      </p>
+                    )}
+
+                    <div className={styles.status}>
+                      <i />
+                      <span>
+                        Registered / Certified
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className={styles.check}>
+                    <ShieldCheck size={16} />
+                  </div>
+
+                  <div
+                    className={styles.circuit}
+                    aria-hidden="true"
+                  >
+                    <span />
+                    <span />
+                    <span />
+                  </div>
+                </article>
+              );
+            },
+          )}
         </div>
       </div>
 
