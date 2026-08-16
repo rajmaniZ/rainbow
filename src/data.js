@@ -1,3 +1,131 @@
+import  singleUPS from "./assets/singleUPS.jpeg";
+import threePhaseImage from "./assets/threePhaseImage.jpeg"
+import industrialImage from "./assets/industrialImage.jpeg"
+import modularImage from "./assets/modularImage.jpeg"
+import rackImage from "./assets/rackImage.jpeg"
+import towerImage from "./assets/towerImage.jpeg"
+import medicalImage from "./assets/medicalImage.jpeg"
+import dataCenterImage from "./assets/dataCenterImage.jpeg"
+import tubularImage from "./assets/Batteries/tubularImage.jpeg"
+// import rectifierImage from "./assets/rectifierImage.jpeg"
+// ups component
+import rectifierModulesImage from "./assets/upsComponent/rectifierModulesImage.jpg";
+import inverterModulesImage from "./assets/upsComponent/inverterModulesImage.jpg";
+import igbtPowerModulesImage from "./assets/upsComponent/igbtPowerModulesImage.jpg";
+import staticBypassSwitchesImage from "./assets/upsComponent/staticBypassSwitchesImage.jpg";
+import manualBypassSwitchesImage from "./assets/upsComponent/manualBypassSwitchesImage.jpg";
+import staticTransferSwitchImage from "./assets/upsComponent/staticTransferSwitchImage.jpg";
+import isolationTransformersImage from "./assets/upsComponent/isolationTransformersImage.jpg";
+import batteryChargersImage from "./assets/upsComponent/batteryChargersImage.jpg";
+import dspControlCardsImage from "./assets/upsComponent/dspControlCardsImage.jpg";
+import displayPanelsImage from "./assets/upsComponent/displayPanelsImage.jpg";
+import coolingFansImage from "./assets/upsComponent/coolingFansImage.jpg";
+import capacitorsImage from "./assets/upsComponent/capacitorsImage.jpg";
+import contactorsImage from "./assets/upsComponent/contactorsImage.jpg";
+import relaysImage from "./assets/upsComponent/relaysImage.jpg";
+import fusesImage from "./assets/upsComponent/fusesImage.jpg";
+import mcbImage from "./assets/upsComponent/mcbImage.jpg";
+
+import mccbImage from "./assets/upsComponent/mccbImage.jpg";
+import acbImage from "./assets/upsComponent/acbImage.jpg";
+
+import surgeProtectionDevicesImage from "./assets/upsComponent/surgeProtectionDevicesImage.jpg";
+import emiRfiFiltersImage from "./assets/upsComponent/emiRfiFiltersImage.jpg";
+import currentTransformersImage from "./assets/upsComponent/currentTransformersImage.jpg";
+import potentialTransformersImage from "./assets/upsComponent/potentialTransformersImage.jpg";
+import terminalBlocksImage from "./assets/upsComponent/terminalBlocksImage.jpg";
+import copperBusBarsImage from "./assets/upsComponent/copperBusBarsImage.jpg";
+ import batteryCabinetsImage from "./assets/upsComponent/batteryCabinetsImage.jpg";
+ import  batteryMonitoringImage from "./assets/upsComponent/batteryMonitoringImage.jpg";
+ import  upsEnclosuresImage from "./assets/upsComponent/upsEnclosuresImage.jpg";
+ import  remoteMonitoringImage from "./assets/upsComponent/remoteMonitoringImage.jpg";
+
+
+
+
+
+
+// batteries
+import smfImage from "./assets/Batteries/smfImage.jpeg"
+import lithiumImage from "./assets/Batteries/lithiumImage.jpeg"
+import batteryBankImage from "./assets/Batteries/batteryBankImage.jpeg"
+import airCooledImage from "./assets/servoVoltage/airCooledImage.jpg"
+import oilCooledImage from "./assets/servoVoltage/oilCooledImage.jpg";
+import automaticImage from "./assets/servoVoltage/automaticImage.jpg"
+ import batteryCabsImage from "./assets/Batteries/batteryCabsImage.jpg"
+  import batterymonitoringSystemImage from "./assets/Batteries/batterymonitoringSystemImage.jpg"
+
+// inverter
+import pureSineImage from "./assets/Inverter/pureSineImage.jpg";
+import industrial from "./assets/Inverter/industrial.jpg"
+import hybridSolarImage from "./assets/Inverter/hybridSolarImage.jpg"
+// import off-gridImage from "./assets/"
+
+// Solar
+import ongridImage from "./assets/Solar/ongridImage.jpg"
+import offgrideImage from "./assets/Solar/offgrideImage.jpg"
+import solarSystemImage from "./assets/Solar/solarSystemImage.jpg"
+import solarInverterImage from "./assets/Solar/solarInverterImage.jpg"
+import pvImage from "./assets/Solar/pvImage.jpg"
+import mountainStructureImage from "./assets/Solar/mountainStructureImage.jpg"
+import dcdbimage from "./assets/Solar/dcdbImage.jpg"
+import combineBoxImage from "./assets/Solar/combineBoxImage.jpg"
+
+// panels
+import ltPanelImage from "./assets/Panels/ltPanelImage.jpg"
+import htPanel from "./assets/Panels/htPanel.jpg"
+import pccPanelImage from "./assets/Panels/pccPanelImage.jpg"
+import mccPanelImage from "./assets/Panels/mccPanelImage.jpg";
+import apfcPanelImage from "./assets/Panels/apfcPanelImage.jpg"
+import dgPanelImage from "./assets/Panels/dgPanelImage.jpg"
+import amfPanelImage from "./assets/Panels/amfPanelImage.jpg"
+import feederPanelImage from "./assets/Panels/feederPanelImage.jpg"
+import dolPanelImage from "./assets/Panels/dolPanelImage.jpg"
+import starPanelImage from "./assets/Panels/starPanelImage.jpg"   
+import softPanelImage from "./assets/Panels/softPanelImage.jpg"
+import vfdPanelImage from "./assets/Panels/vfdPanelImage.jpg"
+import pumpPanelImage from "./assets/Panels/pumpPanelImage.jpg"
+import plcPanelImage from "./assets/Panels/plcPanelImage.jpg"
+import scadaPanelImage from "./assets/Panels/scadaPanelImage.jpg"
+import hmlPanelImage from "./assets/Panels/hmlPanelImage.jpg"
+import instruPanelImage from "./assets/Panels/instruPanelImage.jpg"
+import rtuPanelImage from "./assets/Panels/rtuPanelImage.jpg"
+import { Component } from "lucide-react";
+
+
+// panel Component
+import plcComponentImage from "./assets/panelComponents/plcComponentImage.jpg"
+import hmiComponentImage from "./assets/panelComponents/hmiComponentImage.jpg"
+import vfdComponentImage from "./assets/panelComponents/vfdcomponentImage.jpg"
+import softComponentImage from "./assets/panelComponents/softComponentImage.jpg"
+import mcbComponentImage from "./assets/panelComponents/mcbComponentImage.jpg"
+import mccbComponentImage from "./assets/panelComponents/mccbComponentImage.jpg"
+import acbComponentImage from "./assets/panelComponents/acbComponentImage.jpg"
+import mpcbComponentImage from "./assets/panelComponents/mpcbComponentImage.jpg"
+import rccbComponentImage from "./assets/panelComponents/rccbComponentImage.jpg"
+import elcbComponentImage from "./assets/panelComponents/elcbComponentImage.jpg"
+import contactorComponentImage from "./assets/panelComponents/contactorComponentImage.jpg"
+import overloadComponentImage from "./assets/panelComponents/overloadComponentImage.jpg"
+import timerComponentImage from "./assets/panelComponents/timerComponentImage.jpg"
+import powerComponentImage from "./assets/panelComponents/powerComponentImage.jpg"
+import ctptComponentImage from   "./assets/panelComponents/ctptComponentImage.jpg"
+import energymeterComponentImage from "./assets/panelComponents/energymeterComponentImage.jpg"
+import multifunctionComponentImage from "./assets/panelComponents/multifunctionComponentImage.jpg"
+import selectorComponentImage from "./assets/panelComponents/selectorComponentImage.jpg"
+import pushComponentImage from "./assets/panelComponents/pushComponentImage.jpg"
+import indicatorComponentImage from "./assets/panelComponents/indicatorComponentImage.jpg"
+import emergencyComponentImage from "./assets/panelComponents/emergencyComponentImage.jpg"
+import terminalComponentImage from "./assets/panelComponents/terminalComponentImage.jpg"
+import copperBusComponentImage from "./assets/panelComponents/copperBusComponentImage.jpg"
+import cableComponentImage from "./assets/panelComponents/cableComponentImage.jpg"
+import dinComponentImage from "./assets/panelComponents/dinComponentImage.jpg"
+import coolingFanComponentImage from "./assets/panelComponents/coolingFanComponentImage.jpg"
+import heaterComponentImage from "./assets/panelComponents/heaterComponentImage.jpg"
+import thermostatsComponentImage from "./assets/panelComponents/thermostatsComponentImage.jpg"
+import smpsComponentImage from "./assets/panelComponents/smpsComponentImage.jpg"
+import surgeComponentImage from "./assets/panelComponents/surgeComponentImage.jpg"
+
+
 export const company = {
   name: "Rainbow",
   tagline: "Powering reliability. Engineering what matters.",
@@ -39,6 +167,150 @@ export const categories = [
   },
 ];
 
+const upsImages = [
+  singleUPS,
+  threePhaseImage,
+  industrialImage,
+  modularImage,
+  rackImage,
+  towerImage,
+  medicalImage,
+  dataCenterImage,
+  // ractifierImage
+];
+
+const upsComponentImages = [
+  rectifierModulesImage,
+  inverterModulesImage,
+  igbtPowerModulesImage,
+  staticBypassSwitchesImage,
+  manualBypassSwitchesImage,
+  staticTransferSwitchImage,
+  isolationTransformersImage,
+  batteryChargersImage,
+  dspControlCardsImage,
+  displayPanelsImage,
+  coolingFansImage,
+  capacitorsImage,
+  contactorsImage,
+  relaysImage,
+  fusesImage,
+  mcbImage,
+  mccbImage,
+  acbImage,
+  surgeProtectionDevicesImage,
+  emiRfiFiltersImage,
+  currentTransformersImage,
+  potentialTransformersImage,
+  terminalBlocksImage,
+  copperBusBarsImage,
+   batteryCabinetsImage,
+  batteryMonitoringImage,
+  upsEnclosuresImage,
+  remoteMonitoringImage,
+];
+
+
+const batteryImages = [
+  smfImage,
+  tubularImage,
+  lithiumImage,
+  batteryBankImage,
+  batteryCabinetsImage,
+  batterymonitoringSystemImage,
+];
+
+
+// servo voltage
+const servoImages = [
+airCooledImage,
+ oilCooledImage,
+ automaticImage,
+];
+
+
+// Inverter
+const inverterImage=[
+  pureSineImage, 
+  industrial,
+  hybridSolarImage,
+  // ongridImage,
+]
+
+// solar Soution
+const solarImage=[
+  ongridImage,
+  offgrideImage,
+  solarSystemImage,
+  solarInverterImage,
+  pvImage,
+  mountainStructureImage,
+  dcdbimage,
+  combineBoxImage,
+]
+
+// panels
+const panelsImage=[
+  ltPanelImage,
+  htPanel,
+  pccPanelImage,
+  mccPanelImage,
+  apfcPanelImage,
+  dgPanelImage,
+  amfPanelImage,
+  feederPanelImage,
+  dolPanelImage,
+  starPanelImage,
+  softPanelImage,
+  vfdPanelImage,
+  pumpPanelImage,
+  plcPanelImage,
+  scadaPanelImage,
+  hmlPanelImage,
+  instruPanelImage,
+  rtuPanelImage,
+]
+
+
+// panel Components
+
+const panelComponents=[
+plcComponentImage,
+hmiComponentImage,
+vfdComponentImage,
+softComponentImage,
+mcbComponentImage,
+mccbComponentImage,
+acbComponentImage,
+mpcbComponentImage,
+rccbComponentImage,
+elcbComponentImage,
+contactorComponentImage,
+overloadComponentImage,
+timerComponentImage,
+powerComponentImage,
+ctptComponentImage,
+energymeterComponentImage,
+multifunctionComponentImage,
+selectorComponentImage,
+pushComponentImage,
+indicatorComponentImage,
+emergencyComponentImage,
+terminalComponentImage,
+copperBusComponentImage,
+cableComponentImage,
+dinComponentImage,
+coolingFanComponentImage,
+heaterComponentImage,
+thermostatsComponentImage,
+smpsComponentImage,
+surgeComponentImage,
+
+]
+
+
+
+
 export const products = [
   // UPS
   ...[
@@ -63,11 +335,15 @@ export const products = [
       "Protection against voltage fluctuation",
       "Scalable service and maintenance",
     ],
-    image: img("1558008258-3256797b43f3", "UPS"),
+    // image: img("1558008258-3256797b43f3", "UPS"),
+    image: upsImages[i],
     featured: i < 4,
   })),
 
   // UPS components
+
+
+
   ...[
     "Rectifier Modules",
     "Inverter Modules",
@@ -110,11 +386,19 @@ export const products = [
       "Suitable for service and replacement",
       "Technical selection support available",
     ],
-    image: img("1518770660439-4636190af475", "Components"),
+    // image: img("1518770660439-4636190af475", "Components"),
+    image : upsComponentImages[i],
     featured: i < 2,
   })),
 
   // Batteries
+
+
+//   const BatteryImages={
+// "Inverter Modules": inverterModules,
+
+
+  // }
   ...[
     "SMF (VRLA) Batteries",
     "Tubular Batteries",
@@ -122,6 +406,7 @@ export const products = [
     "Battery Banks",
     "Battery Cabinets",
     "Battery Monitoring Systems",
+
   ].map((name, i) => ({
     id: `battery-${i + 1}`,
     slug: name.toLowerCase().replace(/[^a-z0-9]+/g, "-"),
@@ -135,7 +420,8 @@ export const products = [
       "Battery health and maintenance support",
       "Bank and cabinet configuration available",
     ],
-    image: img("1473341304170-971dccb5ac1e", "Battery"),
+    // image: img("1473341304170-971dccb5ac1e", "Battery"),
+    image : batteryImages[i],
     featured: i < 3,
   })),
 
@@ -157,7 +443,8 @@ export const products = [
       "Industrial load protection",
       "Site-specific capacity selection",
     ],
-    image: img("1509391366360-2e959784a276", "Stabilizer"),
+    // image: img("1509391366360-2e959784a276", "Stabilizer"),
+    image: servoImages[i],
     featured: true,
   })),
 
@@ -179,7 +466,8 @@ export const products = [
       "Application-specific configuration",
       "Installation and service support",
     ],
-    image: img("1621905252507-b35492cc74b4", "Inverter"),
+    // image: img("1621905252507-b35492cc74b4", "Inverter"),
+    image: inverterImage[i],
     featured: true,
   })),
 
@@ -206,7 +494,8 @@ export const products = [
       "Protection and distribution options",
       "Residential to commercial applications",
     ],
-    image: img("1509391366360-2e959784a276", "Solar"),
+    // image: img("1509391366360-2e959784a276", "Solar"),
+    image:solarImage[i],
     featured: i < 4,
   })),
 
@@ -243,7 +532,8 @@ export const products = [
       "Component selection by application",
       "Testing and commissioning support",
     ],
-    image: img("1516321318423-f06f85e504b3", "Control Panel"),
+    // image: img("1516321318423-f06f85e504b3", "Control Panel"),
+    image: panelsImage[i],
     featured: i < 5,
   })),
 
@@ -292,7 +582,8 @@ export const products = [
       "Panel integration support",
       "Selection based on system requirements",
     ],
-    image: img("1550751827-4bd374c3f58b", "Electrical"),
+    // image: img("1550751827-4bd374c3f58b", "Electrical"),
+    image:panelComponents[i],
     featured: false,
   })),
 ];

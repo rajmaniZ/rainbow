@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-
+import singleUPS from "./../../assets/singleUPS.jpeg"
 import {
   ArrowRight,
   CheckCircle2,
