@@ -1,8 +1,3 @@
-/*
- *    CONTACT PAGE
- *    RAINBOW ENGINEERING THEME
- */
-
 .page {
   --ink: #071421;
   --blue: #135ce0;
@@ -14,19 +9,20 @@
   --muted: #687789;
 
   --border: #dfe6ed;
+  --border-strong: #cddbe7;
 
   --head: "Manrope", Arial, sans-serif;
   --body: "DM Sans", Arial, sans-serif;
 
   width: 100%;
+  min-height: 100%;
 
   background: #fff;
-
   color: var(--text);
 
   font-family: var(--body);
 
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .page *,
@@ -36,18 +32,18 @@
 }
 
 .container {
-  width: min(
-    1240px,
-    calc(100% - 36px)
-  );
-
+  width: min(1240px, calc(100% - 36px));
   margin: 0 auto;
 }
 
-/* HERO */
+
+/* ============================================================
+   HERO
+============================================================ */
 
 .hero {
   position: relative;
+  z-index: 1;
 
   min-height: calc(100vh - 112px);
 
@@ -64,16 +60,20 @@
     ),
     linear-gradient(
       110deg,
-      #fff 0%,
-      #fff 44%,
+      #ffffff 0%,
+      #ffffff 44%,
       #f4fbfd 100%
     );
 }
 
-/* HERO GRID */
+
+/* ============================================================
+   BACKGROUND
+============================================================ */
 
 .heroGrid {
   position: absolute;
+  z-index: 0;
 
   inset: 0;
 
@@ -93,10 +93,9 @@
   pointer-events: none;
 }
 
-/* HERO GLOW */
-
 .heroGlow {
   position: absolute;
+  z-index: 0;
 
   width: 600px;
   height: 600px;
@@ -116,12 +115,22 @@
       transparent 70%
     );
 
-  filter: blur(3px);
-
   pointer-events: none;
 }
 
-/* HERO NODES */
+
+/* ============================================================
+   NODES
+============================================================ */
+
+.heroNodes {
+  position: absolute;
+  z-index: 1;
+
+  inset: 0;
+
+  pointer-events: none;
+}
 
 .heroNodes span {
   position: absolute;
@@ -130,16 +139,14 @@
   height: 8px;
 
   border: 2px solid #58d4e6;
-
   border-radius: 50%;
 
-  background: white;
+  background: #fff;
 
   box-shadow:
     0 0 0 5px rgba(88, 212, 230, 0.08);
 
-  animation:
-    nodePulse 3.5s ease-in-out infinite;
+  animation: nodePulse 3.5s ease-in-out infinite;
 }
 
 .nodeOne {
@@ -181,17 +188,16 @@
   }
 }
 
-/* HERO CONTAINER */
+
+/* ============================================================
+   HERO CONTAINER
+============================================================ */
 
 .heroContainer {
   position: relative;
+  z-index: 100;
 
-  z-index: 2;
-
-  width: min(
-    1240px,
-    calc(100% - 36px)
-  );
+  width: min(1240px, calc(100% - 36px));
 
   margin: 0 auto;
 
@@ -204,19 +210,28 @@
   align-items: center;
 
   gap: 55px;
+
+  overflow: visible;
 }
 
-/* HERO CONTENT */
+
+/* ============================================================
+   HERO CONTENT
+============================================================ */
 
 .heroContent {
   position: relative;
-
-  z-index: 3;
+  z-index: 1000;
 
   padding: 55px 0;
+
+  overflow: visible;
 }
 
-/* EYEBROW */
+
+/* ============================================================
+   EYEBROW
+============================================================ */
 
 .eyebrow {
   display: inline-flex;
@@ -228,7 +243,6 @@
   color: var(--blue);
 
   font-size: 0.62rem;
-
   font-weight: 800;
 
   letter-spacing: 0.14em;
@@ -240,16 +254,20 @@
   width: 7px;
   height: 7px;
 
+  flex: 0 0 7px;
+
   border-radius: 50%;
 
   background: #16b98a;
 
   box-shadow:
-    0 0 0 5px
-      rgba(22, 185, 138, 0.1);
+    0 0 0 5px rgba(22, 185, 138, 0.1);
 }
 
-/* HERO HEADING */
+
+/* ============================================================
+   HEADING
+============================================================ */
 
 .heroContent h1 {
   max-width: 720px;
@@ -260,11 +278,7 @@
 
   font-family: var(--head);
 
-  font-size: clamp(
-    2.7rem,
-    4.7vw,
-    4.6rem
-  );
+  font-size: clamp(2.7rem, 4.7vw, 4.6rem);
 
   font-weight: 800;
 
@@ -277,7 +291,10 @@
   color: var(--blue);
 }
 
-/* HERO DESCRIPTION */
+
+/* ============================================================
+   DESCRIPTION
+============================================================ */
 
 .heroContent > p {
   max-width: 650px;
@@ -291,9 +308,15 @@
   line-height: 1.75;
 }
 
-/* HERO ACTIONS */
+
+/* ============================================================
+   HERO ACTIONS
+============================================================ */
 
 .heroActions {
+  position: relative;
+  z-index: 10000;
+
   display: flex;
 
   flex-wrap: wrap;
@@ -301,6 +324,8 @@
   gap: 9px;
 
   margin-top: 25px;
+
+  overflow: visible;
 }
 
 .heroPrimary,
@@ -312,7 +337,6 @@
   display: inline-flex;
 
   align-items: center;
-
   justify-content: center;
 
   gap: 8px;
@@ -322,7 +346,6 @@
   font-family: var(--body);
 
   font-size: 0.68rem;
-
   font-weight: 800;
 
   text-decoration: none;
@@ -336,29 +359,30 @@
 }
 
 .heroPrimary {
+  position: relative;
+  z-index: 10001;
+
   border: 0;
 
   background: var(--blue);
 
-  color: white;
+  color: #fff;
 
   box-shadow:
-    0 10px 25px
-      rgba(19, 92, 224, 0.16);
+    0 10px 25px rgba(19, 92, 224, 0.16);
 }
 
 .heroPrimary:hover {
   transform: translateY(-2px);
 
   box-shadow:
-    0 14px 30px
-      rgba(19, 92, 224, 0.24);
+    0 14px 30px rgba(19, 92, 224, 0.24);
 }
 
 .heroSecondary {
   border: 1px solid #cfdce7;
 
-  background: white;
+  background: #fff;
 
   color: var(--ink);
 }
@@ -369,24 +393,34 @@
   border-color: #aebfd0;
 }
 
-/* CALL CHOOSER */
+
+/* ============================================================
+   CALL WRAPPER
+============================================================ */
 
 .callChooserWrapper {
   position: relative;
+  z-index: 100000;
 
   display: inline-flex;
+
+  overflow: visible;
 }
 
-/* PHONE CHOOSER */
+
+/* ============================================================
+   PHONE CHOOSER
+
+   THIS IS THE MAIN Z-INDEX FIX.
+============================================================ */
 
 .phoneChooser {
   position: absolute;
 
   top: calc(100% + 10px);
-
   left: 0;
 
-  z-index: 100;
+  z-index: 2147483647;
 
   width: 285px;
 
@@ -396,38 +430,42 @@
 
   border-radius: 12px;
 
-  background:
-    rgba(255, 255, 255, 0.98);
+  background: rgba(255, 255, 255, 0.99);
 
   box-shadow:
-    0 18px 45px
-      rgba(18, 52, 77, 0.16);
+    0 20px 50px rgba(18, 52, 77, 0.2),
+    0 5px 15px rgba(18, 52, 77, 0.08);
 
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(14px);
 
-  animation:
-    phoneChooserIn 0.18s ease-out;
+  isolation: isolate;
+
+  overflow: visible;
+
+  animation: phoneChooserIn 0.18s ease-out;
 }
 
 @keyframes phoneChooserIn {
   from {
     opacity: 0;
-
-    transform:
-      translateY(-5px)
-      scale(0.98);
+    transform: translateY(-5px) scale(0.98);
   }
 
   to {
     opacity: 1;
-
-    transform:
-      translateY(0)
-      scale(1);
+    transform: translateY(0) scale(1);
   }
 }
 
+
+/* ============================================================
+   CHOOSER HEADER
+============================================================ */
+
 .phoneChooserHeader {
+  position: relative;
+  z-index: 2;
+
   display: flex;
 
   flex-direction: column;
@@ -453,7 +491,15 @@
   line-height: 1.4;
 }
 
+
+/* ============================================================
+   CHOOSER LIST
+============================================================ */
+
 .phoneChooserList {
+  position: relative;
+  z-index: 3;
+
   display: flex;
 
   flex-direction: column;
@@ -461,7 +507,15 @@
   gap: 5px;
 }
 
+
+/* ============================================================
+   CHOOSER OPTION
+============================================================ */
+
 .phoneChooserOption {
+  position: relative;
+  z-index: 4;
+
   width: 100%;
 
   min-height: 52px;
@@ -471,7 +525,9 @@
   display: grid;
 
   grid-template-columns:
-    31px minmax(0, 1fr) 14px;
+    31px
+    minmax(0, 1fr)
+    14px;
 
   align-items: center;
 
@@ -500,11 +556,9 @@
 .phoneChooserOption:hover {
   transform: translateX(2px);
 
-  border-color:
-    rgba(19, 92, 224, 0.3);
+  border-color: rgba(19, 92, 224, 0.3);
 
-  background:
-    rgba(19, 92, 224, 0.045);
+  background: rgba(19, 92, 224, 0.045);
 }
 
 .phoneChooserOption:focus-visible {
@@ -512,6 +566,11 @@
 
   outline-offset: 2px;
 }
+
+
+/* ============================================================
+   CHOOSER ICON
+============================================================ */
 
 .phoneChooserIcon {
   width: 31px;
@@ -527,6 +586,11 @@
 
   color: var(--blue);
 }
+
+
+/* ============================================================
+   CHOOSER INFO
+============================================================ */
 
 .phoneChooserInfo {
   min-width: 0;
@@ -558,9 +622,15 @@
   color: #91a1b0;
 }
 
-/* HERO STATS */
+
+/* ============================================================
+   HERO STATS
+============================================================ */
 
 .heroStats {
+  position: relative;
+  z-index: 1;
+
   display: flex;
 
   flex-wrap: wrap;
@@ -571,6 +641,9 @@
 }
 
 .heroStats > div {
+  position: relative;
+  z-index: 1;
+
   display: flex;
 
   align-items: center;
@@ -608,28 +681,38 @@
   font-weight: 500;
 }
 
-/* HERO VISUAL */
+
+/* ============================================================
+   HERO VISUAL
+============================================================ */
 
 .heroVisual {
   position: relative;
+  z-index: 10;
 
   min-height: 540px;
 
   display: grid;
 
   place-items: center;
+
+  overflow: visible;
 }
 
-/* ORBITS */
+
+/* ============================================================
+   ORBITS
+============================================================ */
 
 .visualOrbit,
 .visualOrbitTwo {
   position: absolute;
 
-  border: 1px solid
-    rgba(71, 167, 195, 0.25);
+  border: 1px solid rgba(71, 167, 195, 0.25);
 
   border-radius: 50%;
+
+  pointer-events: none;
 }
 
 .visualOrbit {
@@ -641,11 +724,13 @@
   width: 365px;
   height: 365px;
 
-  border-color:
-    rgba(71, 167, 195, 0.18);
+  border-color: rgba(71, 167, 195, 0.18);
 }
 
-/* CONNECTION LINE */
+
+/* ============================================================
+   CONNECTION LINE
+============================================================ */
 
 .connectionLine {
   position: absolute;
@@ -662,6 +747,8 @@
     );
 
   transform: rotate(-8deg);
+
+  pointer-events: none;
 }
 
 .connectionLine span {
@@ -676,7 +763,7 @@
 
   border-radius: 50%;
 
-  background: white;
+  background: #fff;
 }
 
 .connectionLine span:nth-child(1) {
@@ -691,12 +778,14 @@
   right: 12%;
 }
 
-/* CONTACT PANEL */
+
+/* ============================================================
+   CONTACT PANEL
+============================================================ */
 
 .contactPanel {
   position: relative;
-
-  z-index: 4;
+  z-index: 10;
 
   width: min(450px, 100%);
 
@@ -714,13 +803,17 @@
     );
 
   box-shadow:
-    0 25px 70px
-      rgba(26, 68, 91, 0.12);
+    0 25px 70px rgba(26, 68, 91, 0.12);
 
   transform: rotate(-1.5deg);
+
+  overflow: visible;
 }
 
-/* PANEL TOP */
+
+/* ============================================================
+   PANEL TOP
+============================================================ */
 
 .panelTop {
   display: flex;
@@ -794,7 +887,10 @@
   background: #16b98a;
 }
 
-/* PANEL HEADING */
+
+/* ============================================================
+   PANEL HEADING
+============================================================ */
 
 .contactPanel h2 {
   margin: 27px 0 8px;
@@ -824,27 +920,24 @@
   line-height: 1.65;
 }
 
-/* HERO PANEL ITEMS */
+
+/* ============================================================
+   PANEL ITEMS
+============================================================ */
 
 .panelItems {
   display: grid;
 
-  grid-template-columns:
-    1fr 1fr;
+  grid-template-columns: 1fr 1fr;
 
   gap: 8px;
 
   margin-top: 22px;
 }
 
-/*
- *    DIRECT SUPPORT
- *    NO PHONE NUMBER HERE
- */
-
-.directSupportItem {
+.directSupportItem,
+.panelEmailItem {
   min-width: 0;
-
   min-height: 65px;
 
   padding: 12px;
@@ -859,12 +952,15 @@
 
   border-radius: 9px;
 
-  background: white;
+  background: #fff;
+}
 
+.directSupportItem {
   color: var(--blue);
 }
 
-.directSupportItem > span {
+.directSupportItem > span,
+.panelEmailItem > span {
   min-width: 0;
 
   display: flex;
@@ -872,9 +968,12 @@
   flex-direction: column;
 
   gap: 3px;
+
+  overflow: hidden;
 }
 
-.directSupportItem small {
+.directSupportItem small,
+.panelEmailItem small {
   color: #8b9cab;
 
   font-size: 0.43rem;
@@ -900,44 +999,20 @@
   font-style: normal;
 }
 
-/* EMAIL */
-
 .panelEmailItem {
-  min-width: 0;
-
-  min-height: 65px;
-
-  padding: 12px;
-
-  display: flex;
-
-  align-items: center;
-
-  gap: 9px;
-
-  border: 1px solid #dce7ee;
-
-  border-radius: 9px;
-
-  background: white;
-
   color: #26384a;
 
   text-decoration: none;
 
   transition:
     border-color 0.2s ease,
-    background 0.2s ease,
     transform 0.2s ease;
 }
 
 .panelEmailItem:hover {
   transform: translateY(-1px);
 
-  border-color:
-    rgba(19, 92, 224, 0.25);
-
-  background: #fbfdff;
+  border-color: rgba(19, 92, 224, 0.3);
 }
 
 .panelEmailItem svg {
@@ -946,39 +1021,18 @@
   color: var(--blue);
 }
 
-.panelEmailItem span {
-  min-width: 0;
-
-  display: flex;
-
-  flex-direction: column;
-
-  overflow: hidden;
-
+.panelEmailItem {
   font-size: 0.58rem;
 
   font-weight: 700;
-
-  white-space: nowrap;
-
-  text-overflow: ellipsis;
 }
 
-.panelEmailItem small {
-  margin-bottom: 3px;
 
-  color: #8b9cab;
+/* ============================================================
+   WHATSAPP
+============================================================ */
 
-  font-size: 0.43rem;
-
-  font-weight: 800;
-
-  letter-spacing: 0.08em;
-}
-
-/* WHATSAPP */
-
-.panelItems .whatsappItem {
+.whatsappItem {
   grid-column: 1 / -1;
 
   min-height: 50px;
@@ -1006,17 +1060,17 @@
     transform 0.2s ease;
 }
 
-.panelItems .whatsappItem:hover {
+.whatsappItem:hover {
   transform: translateY(-1px);
 
   background: #e2f6ec;
 }
 
-.panelItems .whatsappItem svg {
+.whatsappItem svg {
   color: var(--green);
 }
 
-.panelItems .whatsappItem span {
+.whatsappItem span {
   display: flex;
 
   flex-direction: column;
@@ -1026,7 +1080,7 @@
   font-weight: 700;
 }
 
-.panelItems .whatsappItem small {
+.whatsappItem small {
   margin-bottom: 3px;
 
   color: #5f927b;
@@ -1038,7 +1092,10 @@
   letter-spacing: 0.08em;
 }
 
-/* PANEL FOOTER */
+
+/* ============================================================
+   PANEL FOOTER
+============================================================ */
 
 .panelFooter {
   display: flex;
@@ -1072,7 +1129,10 @@
   color: var(--green);
 }
 
-/* FLOATING WHATSAPP */
+
+/* ============================================================
+   FLOATING WHATSAPP
+============================================================ */
 
 .floatingBadge {
   position: absolute;
@@ -1080,7 +1140,7 @@
   right: -15px;
   bottom: 75px;
 
-  z-index: 5;
+  z-index: 20;
 
   padding: 11px 14px;
 
@@ -1101,8 +1161,7 @@
   text-decoration: none;
 
   box-shadow:
-    0 12px 30px
-      rgba(21, 152, 105, 0.1);
+    0 12px 30px rgba(21, 152, 105, 0.1);
 
   transition:
     transform 0.2s ease,
@@ -1113,8 +1172,7 @@
   transform: translateY(-3px);
 
   box-shadow:
-    0 16px 35px
-      rgba(21, 152, 105, 0.17);
+    0 16px 35px rgba(21, 152, 105, 0.17);
 }
 
 .floatingBadge span {
@@ -1133,14 +1191,18 @@
   font-size: 0.58rem;
 }
 
-/* CONTACT CONTENT */
+
+/* ============================================================
+   CONTENT
+============================================================ */
 
 .content {
   position: relative;
+  z-index: 2;
 
   padding: 85px 0 100px;
 
-  background: white;
+  background: #fff;
 }
 
 .content > .container {
@@ -1155,7 +1217,10 @@
   align-items: start;
 }
 
-/* INFORMATION */
+
+/* ============================================================
+   INFORMATION
+============================================================ */
 
 .info {
   display: grid;
@@ -1171,7 +1236,8 @@
   display: grid;
 
   grid-template-columns:
-    22px minmax(0, 1fr);
+    22px
+    minmax(0, 1fr);
 
   gap: 5px 10px;
 
@@ -1179,7 +1245,7 @@
 
   border-radius: 11px;
 
-  background: white;
+  background: #fff;
 
   color: var(--text);
 
@@ -1197,8 +1263,7 @@
   border-color: #bfd0df;
 
   box-shadow:
-    0 12px 30px
-      rgba(9, 22, 36, 0.08);
+    0 12px 30px rgba(9, 22, 36, 0.08);
 }
 
 .infoCard > svg {
@@ -1234,13 +1299,17 @@
   overflow-wrap: anywhere;
 }
 
-/* PHONE CARD */
+
+/* ============================================================
+   PHONE INFO
+============================================================ */
 
 .phoneInfoCard {
+  position: relative;
+  z-index: 2;
+
   padding-bottom: 12px;
 }
-
-/* THREE PHONE CONTACTS */
 
 .infoPhoneList {
   grid-column: 2;
@@ -1287,14 +1356,12 @@
 .infoPhonePerson:hover {
   transform: translateX(3px);
 
-  border-color:
-    rgba(19, 92, 224, 0.22);
+  border-color: rgba(19, 92, 224, 0.22);
 
   background: #f1f7ff;
 
   box-shadow:
-    0 5px 15px
-      rgba(19, 92, 224, 0.06);
+    0 5px 15px rgba(19, 92, 224, 0.06);
 }
 
 .personAvatar {
@@ -1316,15 +1383,11 @@
       #135ce0
     );
 
-  color: white !important;
+  color: #fff !important;
 
   font-size: 0.62rem !important;
 
   font-weight: 800 !important;
-
-  letter-spacing: 0 !important;
-
-  text-transform: uppercase !important;
 }
 
 .personDetails {
@@ -1369,21 +1432,23 @@
 
   background: #eaf3ff;
 
-  color: var(--blue) !important;
+  color: var(--blue);
 
   transition:
     background 0.2s ease,
     color 0.2s ease;
 }
 
-.infoPhonePerson:hover
-.callIcon {
+.infoPhonePerson:hover .callIcon {
   background: var(--blue);
 
-  color: white !important;
+  color: #fff;
 }
 
-/* WHATSAPP CARD */
+
+/* ============================================================
+   SPECIAL CARDS
+============================================================ */
 
 .whatsappCard {
   background: #eaf8f1;
@@ -1403,7 +1468,10 @@
   color: #b12d68;
 }
 
-/* FORM */
+
+/* ============================================================
+   FORM
+============================================================ */
 
 .form {
   width: 100%;
@@ -1414,11 +1482,10 @@
 
   border-radius: 15px;
 
-  background: white;
+  background: #fff;
 
   box-shadow:
-    0 15px 40px
-      rgba(9, 22, 36, 0.08);
+    0 15px 40px rgba(9, 22, 36, 0.08);
 }
 
 .formEyebrow {
@@ -1456,6 +1523,11 @@
 
   line-height: 1.6;
 }
+
+
+/* ============================================================
+   FORM ROW
+============================================================ */
 
 .row {
   display: grid;
@@ -1527,13 +1599,16 @@
 .form textarea:focus {
   border-color: #9bb4d1;
 
-  background: white;
+  background: #fff;
 
   box-shadow:
     0 0 0 3px #eef4fa;
 }
 
-/* FORM BUTTONS */
+
+/* ============================================================
+   FORM ACTIONS
+============================================================ */
 
 .actions {
   display: grid;
@@ -1584,21 +1659,19 @@
 .submitButton {
   background: var(--blue);
 
-  color: white;
+  color: #fff;
 
   box-shadow:
-    0 8px 20px
-      rgba(19, 92, 224, 0.14);
+    0 8px 20px rgba(19, 92, 224, 0.14);
 }
 
 .whatsappButton {
   background: var(--green);
 
-  color: white;
+  color: #fff;
 
   box-shadow:
-    0 8px 20px
-      rgba(21, 152, 105, 0.14);
+    0 8px 20px rgba(21, 152, 105, 0.14);
 }
 
 .note {
@@ -1613,11 +1686,16 @@
   line-height: 1.5;
 }
 
-/* TABLET */
+
+/* ============================================================
+   TABLET
+============================================================ */
 
 @media (max-width: 1000px) {
   .hero {
     min-height: auto;
+
+    overflow: visible;
   }
 
   .heroContainer {
@@ -1626,18 +1704,40 @@
     gap: 10px;
 
     padding: 60px 0;
+
+    overflow: visible;
   }
 
   .heroContent {
+    z-index: 1000;
+
     padding: 0;
 
     max-width: 720px;
+
+    overflow: visible;
+  }
+
+  .heroActions {
+    z-index: 10000;
+  }
+
+  .callChooserWrapper {
+    z-index: 100000;
+  }
+
+  .phoneChooser {
+    z-index: 2147483647;
   }
 
   .heroVisual {
+    z-index: 5;
+
     min-height: 430px;
 
     width: 100%;
+
+    overflow: visible;
   }
 
   .visualOrbit {
@@ -1651,6 +1751,8 @@
   }
 
   .contactPanel {
+    z-index: 5;
+
     width: min(470px, 90%);
   }
 
@@ -1661,8 +1763,7 @@
   }
 
   .info {
-    grid-template-columns:
-      repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .phoneInfoCard {
@@ -1670,7 +1771,10 @@
   }
 }
 
-/* MOBILE */
+
+/* ============================================================
+   MOBILE
+============================================================ */
 
 @media (max-width: 600px) {
   .container,
@@ -1682,9 +1786,15 @@
     min-height: auto;
 
     align-items: flex-start;
+
+    overflow: visible;
   }
 
   .heroContainer {
+    position: relative;
+
+    z-index: 10;
+
     padding: 50px 0 35px;
 
     display: flex;
@@ -1692,20 +1802,31 @@
     flex-direction: column;
 
     gap: 15px;
+
+    overflow: visible;
   }
 
   .heroContent {
+    position: relative;
+
+    z-index: 1000;
+
     width: 100%;
+
+    padding: 0;
+
+    overflow: visible;
   }
 
   .heroContent h1 {
     margin: 14px 0;
 
-    font-size: clamp(
-      2.1rem,
-      10vw,
-      2.8rem
-    );
+    font-size:
+      clamp(
+        2.1rem,
+        10vw,
+        2.8rem
+      );
 
     line-height: 1.04;
   }
@@ -1717,7 +1838,17 @@
   }
 
   .heroActions {
+    position: relative;
+
+    z-index: 10000;
+
     margin-top: 20px;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    overflow: visible;
   }
 
   .heroPrimary,
@@ -1729,24 +1860,60 @@
     font-size: 0.63rem;
   }
 
-  /* PHONE MENU */
+  .callChooserWrapper {
+    position: relative;
+
+    z-index: 100000;
+
+    display: inline-flex;
+
+    overflow: visible;
+  }
 
   .phoneChooser {
+    position: absolute;
+
     top: calc(100% + 8px);
 
     left: 0;
+
+    z-index: 2147483647;
 
     width: min(
       285px,
       calc(100vw - 28px)
     );
+
+    max-width:
+      calc(100vw - 28px);
+
+    padding: 9px;
+
+    border-radius: 12px;
+
+    background: #fff;
+
+    box-shadow:
+      0 20px 55px rgba(18, 52, 77, 0.24),
+      0 6px 20px rgba(18, 52, 77, 0.12);
+
+    overflow: visible;
   }
 
   .phoneChooserOption {
     min-height: 50px;
   }
 
+  /*
+   * IMPORTANT:
+   * Stats remain below the phone chooser.
+   */
+
   .heroStats {
+    position: relative;
+
+    z-index: 1;
+
     gap: 15px;
 
     margin-top: 20px;
@@ -1760,12 +1927,16 @@
     font-size: 0.46rem;
   }
 
-  /* HERO VISUAL */
-
   .heroVisual {
+    position: relative;
+
+    z-index: 5;
+
     min-height: 390px;
 
     width: 100%;
+
+    overflow: visible;
   }
 
   .visualOrbit {
@@ -1779,18 +1950,22 @@
   }
 
   .contactPanel {
+    position: relative;
+
+    z-index: 5;
+
     width: min(390px, 100%);
 
     padding: 21px;
 
     transform: none;
+
+    overflow: visible;
   }
 
   .contactPanel h2 {
     font-size: 1.5rem;
   }
-
-  /* HERO PANEL */
 
   .panelItems {
     grid-template-columns: 1fr;
@@ -1801,19 +1976,17 @@
     min-height: 58px;
   }
 
-  .panelItems .whatsappItem {
+  .whatsappItem {
     grid-column: auto;
   }
-
-  /* FLOATING WHATSAPP */
 
   .floatingBadge {
     right: 0;
 
     bottom: 20px;
-  }
 
-  /* CONTENT */
+    z-index: 20;
+  }
 
   .content {
     padding: 60px 0 75px;
@@ -1845,8 +2018,6 @@
     min-height: 48px;
   }
 
-  /* FORM */
-
   .form {
     padding: 22px;
 
@@ -1868,7 +2039,10 @@
   }
 }
 
-/* SMALL MOBILE */
+
+/* ============================================================
+   SMALL MOBILE
+============================================================ */
 
 @media (max-width: 380px) {
   .heroContainer {
@@ -1923,7 +2097,10 @@
   }
 }
 
-/* REDUCED MOTION */
+
+/* ============================================================
+   ACCESSIBILITY
+============================================================ */
 
 @media (prefers-reduced-motion: reduce) {
   .heroNodes span,

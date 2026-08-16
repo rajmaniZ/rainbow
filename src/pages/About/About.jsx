@@ -214,13 +214,6 @@ export default function About() {
               />
             </div>
 
-            {/*
- *  <div className={styles.markLine}>
- *               <i />
- *               <i />
- *               <i />
- *             </div>
- */}
           </div>
 
           {/* COMPANY CONTENT */}

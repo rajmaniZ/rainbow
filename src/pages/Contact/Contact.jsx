@@ -1,137 +1,98 @@
 import {
-  ArrowRight,
+  CheckCircle2,
+  ChevronRight,
   Mail,
   MapPin,
   Phone,
-  CheckCircle2,
+  ShieldCheck,
 } from "lucide-react";
 
-import {
-  FaInstagram,
-  FaWhatsapp,
-} from "react-icons/fa";
+import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 import { company } from "../../data.js";
-
 import styles from "./Contact.module.css";
 
-/* DIRECT CONTACT PERSONS */
-
-const contactPersons = [
-  {
-    name: "Ritik Kumar",
-    phone: "7393974444",
-  },
-  {
-    name: "Prateek Kumar",
-    phone: "7007594124",
-  },
-  {
-    name: "Sudhir Kumar",
-    phone: "7054577777",
-  },
-];
-
-/* CONTACT PAGE */
-
 export default function Contact() {
+  const [showPhoneChooser, setShowPhoneChooser] = useState(false);
   const [sent, setSent] = useState(false);
-  const [showPhoneChooser, setShowPhoneChooser] =
-    useState(false);
 
-  const phoneChooserRef = useRef(null);
+  /*
+   * ----------------------------------------------------------
+   * CONTACT NUMBERS
+   * ----------------------------------------------------------
+   */
 
-  /* CLOSE CALL MENU WHEN CLICKING OUTSIDE */
+  const contactNumbers = [
+    {
+      name: "Ritik Kumar",
+      phone: "7393974444",
+      initial: "R",
+    },
+    {
+      name: "Prateek Kumar",
+      phone: "7007594124",
+      initial: "P",
+    },
+    {
+      name: "Sudhir Kumar",
+      phone: "7054577777",
+      initial: "S",
+    },
+  ];
 
-  useEffect(() => {
-    const handleOutsideClick = (event) => {
-      if (
-        phoneChooserRef.current &&
-        !phoneChooserRef.current.contains(event.target)
-      ) {
-        setShowPhoneChooser(false);
-      }
-    };
-
-    document.addEventListener(
-      "mousedown",
-      handleOutsideClick,
-    );
-
-    return () => {
-      document.removeEventListener(
-        "mousedown",
-        handleOutsideClick,
-      );
-    };
-  }, []);
-
-  /* ESCAPE TO CLOSE CALL MENU */
-
-  useEffect(() => {
-    const handleEscape = (event) => {
-      if (event.key === "Escape") {
-        setShowPhoneChooser(false);
-      }
-    };
-
-    document.addEventListener(
-      "keydown",
-      handleEscape,
-    );
-
-    return () => {
-      document.removeEventListener(
-        "keydown",
-        handleEscape,
-      );
-    };
-  }, []);
-
-  /* FORM DATA */
+  /*
+   * ----------------------------------------------------------
+   * FORM DATA
+   * ----------------------------------------------------------
+   */
 
   const getFormData = (form) => {
     const data = new FormData(form);
 
     return {
-      name:
-        data.get("name")?.trim() || "",
-
+      name: data.get("name")?.trim() || "",
       companyName:
-        data.get("company")?.trim() ||
-        "Not provided",
-
-      phone:
-        data.get("phone")?.trim() || "",
-
+        data.get("company")?.trim() || "Not provided",
+      phone: data.get("phone")?.trim() || "",
       email:
-        data.get("email")?.trim() ||
-        "Not provided",
-
+        data.get("email")?.trim() || "Not provided",
       requirement:
         data.get("requirement")?.trim() || "",
     };
   };
 
-  /* FORM SUBMIT */
+  /*
+   * ----------------------------------------------------------
+   * NORMAL FORM SUBMIT
+   *
+   * EmailJS can be connected here later.
+   * Currently it only prepares the form.
+   * ----------------------------------------------------------
+   */
 
   const submit = (e) => {
     e.preventDefault();
 
     setSent(true);
+
+    /*
+     * EmailJS can be added here later.
+     *
+     * Example:
+     *
+     * emailjs.send(...)
+     *
+     */
   };
 
-  /* CALL SELECTED PERSON */
-
-  const callPerson = (phone) => {
-    setShowPhoneChooser(false);
-
-    window.location.href = `tel:${phone}`;
-  };
-
-  /* WHATSAPP ENQUIRY */
+  /*
+   * ----------------------------------------------------------
+   * WHATSAPP ENQUIRY
+   * ----------------------------------------------------------
+   */
 
   const sendWhatsApp = () => {
     const form = document.getElementById(
@@ -175,9 +136,9 @@ ${window.location.href}
 
 Thank you.`;
 
-    const whatsappUrl = `https://wa.me/${
-      company.whatsapp
-    }?text=${encodeURIComponent(message)}`;
+    const whatsappUrl =
+      `https://wa.me/${company.whatsapp}?text=` +
+      encodeURIComponent(message);
 
     window.open(
       whatsappUrl,
@@ -186,14 +147,55 @@ Thank you.`;
     );
   };
 
+  /*
+   * ----------------------------------------------------------
+   * CALL CONTACT
+   * ----------------------------------------------------------
+   */
+
+  const callContact = (phone) => {
+    setShowPhoneChooser(false);
+
+    window.location.href = `tel:+91${phone}`;
+  };
+
+  /*
+   * ----------------------------------------------------------
+   * WHATSAPP CONTACT
+   * ----------------------------------------------------------
+   */
+
+  const whatsappContact = (phone) => {
+    const message =
+      "Hello Rainbow, I would like to discuss an electrical requirement.";
+
+    const url =
+      `https://wa.me/91${phone}?text=` +
+      encodeURIComponent(message);
+
+    window.open(
+      url,
+      "_blank",
+      "noopener,noreferrer",
+    );
+  };
+
   return (
     <div className={styles.page}>
-      {/* HERO */}
+      {/* =====================================================
+          HERO
+      ===================================================== */}
 
       <section className={styles.hero}>
+        {/* Background grid */}
+
         <div className={styles.heroGrid} />
 
+        {/* Background glow */}
+
         <div className={styles.heroGlow} />
+
+        {/* Decorative nodes */}
 
         <div className={styles.heroNodes}>
           <span className={styles.nodeOne} />
@@ -203,7 +205,9 @@ Thank you.`;
         </div>
 
         <div className={styles.heroContainer}>
-          {/* HERO CONTENT */}
+          {/* =================================================
+              HERO CONTENT
+          ================================================= */}
 
           <div className={styles.heroContent}>
             <span className={styles.eyebrow}>
@@ -212,30 +216,25 @@ Thank you.`;
             </span>
 
             <h1>
-              Let's discuss the
-              <strong>
-                {" "}
-                electrical requirement.
-              </strong>
+              Let's discuss the{" "}
+              <strong>electrical requirement.</strong>
             </h1>
 
             <p>
-              Share a product requirement, project
-              scope, maintenance need or electrical
-              service enquiry with Rainbow's
-              engineering team.
+              Share a product requirement, project scope,
+              maintenance need or electrical service enquiry
+              with Rainbow's engineering team.
             </p>
 
-            {/* HERO ACTIONS */}
+            {/* =================================================
+                HERO ACTIONS
+            ================================================= */}
 
             <div className={styles.heroActions}>
-              {/* CALL RAINBOW */}
+              {/* Call chooser */}
 
               <div
-                className={
-                  styles.callChooserWrapper
-                }
-                ref={phoneChooserRef}
+                className={styles.callChooserWrapper}
               >
                 <button
                   type="button"
@@ -248,21 +247,23 @@ Thank you.`;
                   aria-expanded={
                     showPhoneChooser
                   }
-                  aria-haspopup="menu"
+                  aria-haspopup="dialog"
                 >
-                  <span>Call Rainbow</span>
-
+                  Call Rainbow
                   <Phone size={16} />
                 </button>
 
-                {/* PHONE SELECTION MENU */}
+                {/* =================================================
+                    PHONE CHOOSER
+
+                    HIGH Z-INDEX
+                ================================================= */}
 
                 {showPhoneChooser && (
                   <div
-                    className={
-                      styles.phoneChooser
-                    }
-                    role="menu"
+                    className={styles.phoneChooser}
+                    role="dialog"
+                    aria-label="Choose a contact"
                   >
                     <div
                       className={
@@ -274,8 +275,8 @@ Thank you.`;
                       </strong>
 
                       <span>
-                        Select a Rainbow team
-                        member to call
+                        Select a Rainbow team member
+                        to call
                       </span>
                     </div>
 
@@ -284,31 +285,26 @@ Thank you.`;
                         styles.phoneChooserList
                       }
                     >
-                      {contactPersons.map(
-                        (person) => (
+                      {contactNumbers.map(
+                        (contact) => (
                           <button
-                            key={
-                              person.phone
-                            }
                             type="button"
+                            key={contact.phone}
                             className={
                               styles.phoneChooserOption
                             }
                             onClick={() =>
-                              callPerson(
-                                person.phone,
+                              callContact(
+                                contact.phone,
                               )
                             }
-                            role="menuitem"
                           >
                             <span
                               className={
                                 styles.phoneChooserIcon
                               }
                             >
-                              <Phone
-                                size={14}
-                              />
+                              <Phone size={15} />
                             </span>
 
                             <span
@@ -317,16 +313,16 @@ Thank you.`;
                               }
                             >
                               <strong>
-                                {person.name}
+                                {contact.name}
                               </strong>
 
                               <small>
-                                Available for
-                                direct support
+                                +91{" "}
+                                {contact.phone}
                               </small>
                             </span>
 
-                            <ArrowRight
+                            <ChevronRight
                               size={14}
                               className={
                                 styles.phoneChooserArrow
@@ -340,39 +336,29 @@ Thank you.`;
                 )}
               </div>
 
-              {/* SEND ENQUIRY */}
+              {/* Email */}
 
-              <button
-                type="button"
-                className={
-                  styles.heroSecondary
-                }
-                onClick={() =>
-                  document
-                    .getElementById(
-                      "rainbow-contact-form",
-                    )
-                    ?.scrollIntoView({
-                      behavior: "smooth",
-                      block: "start",
-                    })
-                }
+              <Link
+                to="/contact"
+                className={styles.heroSecondary}
               >
                 Send an enquiry
-
-                <ArrowRight size={16} />
-              </button>
+                <ChevronRight size={16} />
+              </Link>
             </div>
 
-            {/* HERO STATS */}
+            {/* =================================================
+                HERO STATS
+
+                LOW Z-INDEX SO PHONE MENU STAYS ABOVE
+            ================================================= */}
 
             <div className={styles.heroStats}>
               <div>
-                <CheckCircle2 size={16} />
+                <CheckCircle2 size={17} />
 
                 <span>
                   Direct
-
                   <small>
                     Engineering support
                   </small>
@@ -380,11 +366,10 @@ Thank you.`;
               </div>
 
               <div>
-                <FaWhatsapp size={16} />
+                <FaWhatsapp size={17} />
 
                 <span>
                   WhatsApp
-
                   <small>
                     Quick enquiry
                   </small>
@@ -392,11 +377,10 @@ Thank you.`;
               </div>
 
               <div>
-                <Mail size={16} />
+                <Mail size={17} />
 
                 <span>
                   Email
-
                   <small>
                     Project details
                   </small>
@@ -405,7 +389,9 @@ Thank you.`;
             </div>
           </div>
 
-          {/* HERO VISUAL */}
+          {/* =================================================
+              HERO VISUAL
+          ================================================= */}
 
           <div className={styles.heroVisual}>
             <div
@@ -413,35 +399,31 @@ Thank you.`;
             />
 
             <div
-              className={
-                styles.visualOrbitTwo
-              }
+              className={styles.visualOrbitTwo}
             />
 
             <div
-              className={
-                styles.connectionLine
-              }
+              className={styles.connectionLine}
             >
               <span />
               <span />
               <span />
             </div>
 
-            {/* HERO CONTACT PANEL */}
+            {/* =================================================
+                CONTACT PANEL
+            ================================================= */}
 
             <div
-              className={
-                styles.contactPanel
-              }
+              className={styles.contactPanel}
             >
-              <div className={styles.panelTop}>
+              <div
+                className={styles.panelTop}
+              >
                 <div
-                  className={
-                    styles.panelIcon
-                  }
+                  className={styles.panelIcon}
                 >
-                  <Phone size={20} />
+                  <Phone size={23} />
                 </div>
 
                 <div>
@@ -455,9 +437,7 @@ Thank you.`;
                 </div>
 
                 <span
-                  className={
-                    styles.active
-                  }
+                  className={styles.active}
                 >
                   <i />
                   ACTIVE
@@ -465,9 +445,8 @@ Thank you.`;
               </div>
 
               <h2>
-                Talk to the
+                Talk to the{" "}
                 <strong>
-                  {" "}
                   right team.
                 </strong>
               </h2>
@@ -478,25 +457,17 @@ Thank you.`;
                 technical requirements.
               </p>
 
-              {/*
- *                   HERO PANEL CONTACTS
- *                   IMPORTANT:
- *                   No phone numbers here.
- */}
-
               <div
-                className={
-                  styles.panelItems
-                }
+                className={styles.panelItems}
               >
-                {/* DIRECT SUPPORT */}
+                {/* Phone */}
 
                 <div
                   className={
                     styles.directSupportItem
                   }
                 >
-                  <Phone size={17} />
+                  <Phone size={18} />
 
                   <span>
                     <small>
@@ -513,7 +484,7 @@ Thank you.`;
                   </span>
                 </div>
 
-                {/* EMAIL */}
+                {/* Email */}
 
                 <a
                   href={`mailto:${company.email}`}
@@ -521,7 +492,7 @@ Thank you.`;
                     styles.panelEmailItem
                   }
                 >
-                  <Mail size={15} />
+                  <Mail size={18} />
 
                   <span>
                     <small>
@@ -532,7 +503,7 @@ Thank you.`;
                   </span>
                 </a>
 
-                {/* WHATSAPP */}
+                {/* WhatsApp */}
 
                 <a
                   href={`https://wa.me/${company.whatsapp}`}
@@ -542,7 +513,7 @@ Thank you.`;
                     styles.whatsappItem
                   }
                 >
-                  <FaWhatsapp size={17} />
+                  <FaWhatsapp size={18} />
 
                   <span>
                     <small>
@@ -554,36 +525,32 @@ Thank you.`;
                 </a>
               </div>
 
-              {/* PANEL FOOTER */}
-
               <div
-                className={
-                  styles.panelFooter
-                }
+                className={styles.panelFooter}
               >
                 <span>
                   <CheckCircle2 size={14} />
-
                   Requirement support
                 </span>
 
                 <span>
                   <CheckCircle2 size={14} />
-
                   Project discussion
                 </span>
               </div>
             </div>
 
-            {/* FLOATING WHATSAPP */}
+            {/* =================================================
+                FLOATING WHATSAPP
+            ================================================= */}
 
             <a
-              href={`https://wa.me/${company.whatsapp}`}
+              href={`https://wa.me/${company.whatsapp}?text=${encodeURIComponent(
+                "Hello Rainbow, I would like to discuss an electrical requirement.",
+              )}`}
               target="_blank"
               rel="noreferrer"
-              className={
-                styles.floatingBadge
-              }
+              className={styles.floatingBadge}
             >
               <FaWhatsapp size={17} />
 
@@ -599,15 +566,34 @@ Thank you.`;
         </div>
       </section>
 
-      {/*
- *           CONTACT INFORMATION
- *           THIS IS WHERE ALL THREE PHONE NUMBERS APPEAR
- */}
+      {/* =====================================================
+          CONTACT INFORMATION
+      ===================================================== */}
 
       <section className={styles.content}>
         <div className={styles.container}>
+          {/* =================================================
+              INFORMATION
+          ================================================= */}
+
           <div className={styles.info}>
-            {/* PHONE CARD */}
+            {/* Location */}
+
+            <div className={styles.infoCard}>
+              <MapPin />
+
+              <span>
+                Location
+              </span>
+
+              <b>
+                {company.location}
+              </b>
+            </div>
+
+            {/* =================================================
+                ALL THREE PHONE NUMBERS
+            ================================================= */}
 
             <div
               className={`${styles.infoCard} ${styles.phoneInfoCard}`}
@@ -615,19 +601,22 @@ Thank you.`;
               <Phone />
 
               <span>
-                Direct phone contacts
+                Office Phone
               </span>
+
+              <b>
+                Choose a contact to call
+              </b>
 
               <div
                 className={
                   styles.infoPhoneList
                 }
               >
-                {contactPersons.map(
-                  (person) => (
-                    <a
-                      href={`tel:${person.phone}`}
-                      key={person.phone}
+                {contactNumbers.map(
+                  (contact) => (
+                    <div
+                      key={contact.phone}
                       className={
                         styles.infoPhonePerson
                       }
@@ -637,9 +626,7 @@ Thank you.`;
                           styles.personAvatar
                         }
                       >
-                        {person.name
-                          .charAt(0)
-                          .toUpperCase()}
+                        {contact.initial}
                       </span>
 
                       <span
@@ -648,60 +635,34 @@ Thank you.`;
                         }
                       >
                         <strong>
-                          {person.name}
+                          {contact.name}
                         </strong>
 
                         <small>
                           +91{" "}
-                          {person.phone}
+                          {contact.phone}
                         </small>
                       </span>
 
-                      <span
+                      <a
+                        href={`tel:+91${contact.phone}`}
                         className={
                           styles.callIcon
                         }
+                        aria-label={`Call ${contact.name}`}
+                        onClick={(e) =>
+                          e.stopPropagation()
+                        }
                       >
-                        <Phone
-                          size={14}
-                        />
-                      </span>
-                    </a>
+                        <Phone size={14} />
+                      </a>
+                    </div>
                   ),
                 )}
               </div>
             </div>
 
-            {/* EMAIL */}
-
-            <a
-              href={`mailto:${company.email}`}
-              className={styles.infoCard}
-            >
-              <Mail />
-
-              <span>Email</span>
-
-              <b>
-                {company.email}
-              </b>
-            </a>
-
-            {/* LOCATION */}
-
-            <div
-              className={styles.infoCard}
-            >
-              <MapPin />
-
-              <span>Location</span>
-
-              <b>
-                {company.location}
-              </b>
-            </div>
-
-            {/* WHATSAPP */}
+            {/* WhatsApp */}
 
             <a
               href={`https://wa.me/${company.whatsapp}`}
@@ -711,14 +672,33 @@ Thank you.`;
             >
               <FaWhatsapp />
 
-              <span>WhatsApp</span>
+              <span>
+                WhatsApp
+              </span>
 
               <b>
                 Direct enquiry
               </b>
             </a>
 
-            {/* INSTAGRAM */}
+            {/* Email */}
+
+            <a
+              href={`mailto:${company.email}`}
+              className={styles.infoCard}
+            >
+              <Mail />
+
+              <span>
+                Email
+              </span>
+
+              <b>
+                {company.email}
+              </b>
+            </a>
+
+            {/* Instagram */}
 
             <a
               href={company.instagram}
@@ -728,7 +708,9 @@ Thank you.`;
             >
               <FaInstagram />
 
-              <span>Instagram</span>
+              <span>
+                Instagram
+              </span>
 
               <b>
                 @rainbow_varanasi
@@ -736,7 +718,9 @@ Thank you.`;
             </a>
           </div>
 
-          {/* CONTACT FORM */}
+          {/* =================================================
+              CONTACT FORM
+          ================================================= */}
 
           <form
             id="rainbow-contact-form"
@@ -744,9 +728,7 @@ Thank you.`;
             onSubmit={submit}
           >
             <span
-              className={
-                styles.formEyebrow
-              }
+              className={styles.formEyebrow}
             >
               PROJECT / PRODUCT ENQUIRY
             </span>
@@ -756,16 +738,15 @@ Thank you.`;
             </h2>
 
             <p
-              className={
-                styles.formIntro
-              }
+              className={styles.formIntro}
             >
               Provide your basic details and
               requirement. You can submit the
-              enquiry now or send the same
-              information directly through
-              WhatsApp.
+              enquiry or send the same information
+              directly through WhatsApp.
             </p>
+
+            {/* Name + Company */}
 
             <div className={styles.row}>
               <label>
@@ -789,6 +770,8 @@ Thank you.`;
                 />
               </label>
             </div>
+
+            {/* Phone + Email */}
 
             <div className={styles.row}>
               <label>
@@ -815,6 +798,8 @@ Thank you.`;
               </label>
             </div>
 
+            {/* Requirement */}
+
             <label>
               Requirement
 
@@ -826,11 +811,9 @@ Thank you.`;
               />
             </label>
 
-            <div
-              className={
-                styles.actions
-              }
-            >
+            {/* Actions */}
+
+            <div className={styles.actions}>
               <button
                 type="submit"
                 className={
@@ -857,15 +840,11 @@ Thank you.`;
               </button>
             </div>
 
-            <small
-              className={
-                styles.note
-              }
-            >
-              Your information is taken
-              directly from the fields above.
-              WhatsApp sends the complete
-              enquiry to Rainbow.
+            <small className={styles.note}>
+              Your information is taken from
+              the fields above. WhatsApp sends
+              the complete enquiry directly to
+              Rainbow.
             </small>
           </form>
         </div>
