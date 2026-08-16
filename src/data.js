@@ -2240,7 +2240,7 @@ import mcbImage from "./assets/upsComponent/mcbImage.jpg";
 import mccbImage from "./assets/upsComponent/mccbImage.jpg";
 import acbImage from "./assets/upsComponent/acbImage.jpg";
 import surgeProtectionDevicesImage from "./assets/upsComponent/surgeProtectionDevicesImage.jpg";
-import emiRfiFiltersImage from "./assets/upsComponent/emirfiFiltersImage.jpg";
+import emiRfiFiltersImage from "./assets/upsComponent/emiRfiFiltersImage.jpg";
 import currentTransformersImage from "./assets/upsComponent/currentTransformersImage.jpg";
 import potentialTransformersImage from "./assets/upsComponent/potentialTransformersImage.jpg";
 import terminalBlocksImage from "./assets/upsComponent/terminalBlocksImage.jpg";
@@ -7659,11 +7659,11 @@ export const products = [
 ];
 
 export const productById = Object.fromEntries(
-  products.map((product) => [product.id, product])
+  products.map((product) => [product.id, product]),
 );
 
 export const productBySlug = Object.fromEntries(
-  products.map((product) => [product.slug, product])
+  products.map((product) => [product.slug, product]),
 );
 
 export const getProductById = (id) => productById[id] ?? null;
@@ -7693,44 +7693,40 @@ export const validateProducts = () => {
     }
 
     if (!product.category) {
-      errors.push(
-        `Product "${product.name || index}" is missing a category.`
-      );
+      errors.push(`Product "${product.name || index}" is missing a category.`);
     }
 
     if (!product.categoryName) {
       errors.push(
-        `Product "${product.name || index}" is missing categoryName.`
+        `Product "${product.name || index}" is missing categoryName.`,
       );
     }
 
     if (!Array.isArray(product.applications)) {
       errors.push(
-        `Product "${product.name || index}" has invalid applications.`
+        `Product "${product.name || index}" has invalid applications.`,
       );
     }
 
     if (!Array.isArray(product.keyFeatures)) {
       errors.push(
-        `Product "${product.name || index}" has invalid keyFeatures.`
+        `Product "${product.name || index}" has invalid keyFeatures.`,
       );
     }
 
     if (!Array.isArray(product.technicalParameters)) {
       errors.push(
-        `Product "${product.name || index}" has invalid technicalParameters.`
+        `Product "${product.name || index}" has invalid technicalParameters.`,
       );
     }
 
     if (!Array.isArray(product.selection)) {
-      errors.push(
-        `Product "${product.name || index}" has invalid selection.`
-      );
+      errors.push(`Product "${product.name || index}" has invalid selection.`);
     }
 
     if (typeof product.featured !== "boolean") {
       errors.push(
-        `Product "${product.name || index}" has invalid featured value.`
+        `Product "${product.name || index}" has invalid featured value.`,
       );
     }
   });
@@ -7864,7 +7860,7 @@ export const productStatistics = products.reduce(
     withImages: 0,
     withoutImages: 0,
     byCategory: {},
-  }
+  },
 );
 
 export const catalogStatistics = {
@@ -8257,8 +8253,7 @@ export const clients = [
     name: "Bank of India",
     organization: "Banking",
     category: "Banking & Finance",
-    description:
-      "Banking-sector organization included among company clients.",
+    description: "Banking-sector organization included among company clients.",
   },
 
   {
@@ -8296,8 +8291,7 @@ export const certifications = [
     issuer: "Government e-Marketplace",
     description:
       "Company registration associated with participation in the Government e-Marketplace ecosystem.",
-    note:
-      "This information represents a company-provided credential and should be verified against the current official registration record before publication as a formal credential.",
+    note: "This information represents a company-provided credential and should be verified against the current official registration record before publication as a formal credential.",
   },
 
   {
@@ -8306,18 +8300,15 @@ export const certifications = [
     issuer: "Relevant Electrical Licensing Authority",
     description:
       "Electrical contractor licensing credential stated by the company.",
-    note:
-      "Verify the certificate number, issuing authority, validity and current status before publishing as a formal certification claim.",
+    note: "Verify the certificate number, issuing authority, validity and current status before publishing as a formal certification claim.",
   },
 
   {
     id: "cert-iso-9001",
     title: "ISO 9001",
     issuer: "ISO Certification Body",
-    description:
-      "Quality-management certification stated by the company.",
-    note:
-      "The exact certificate scope, certification body, certificate number and validity should be verified before publication.",
+    description: "Quality-management certification stated by the company.",
+    note: "The exact certificate scope, certification body, certificate number and validity should be verified before publication.",
   },
 
   {
@@ -8326,8 +8317,7 @@ export const certifications = [
     issuer: "ISO Certification Body",
     description:
       "Environmental-management certification stated by the company.",
-    note:
-      "The exact certificate scope, certification body, certificate number and validity should be verified before publication.",
+    note: "The exact certificate scope, certification body, certificate number and validity should be verified before publication.",
   },
 ];
 
