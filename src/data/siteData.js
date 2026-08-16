@@ -1,4 +1,3 @@
-
 import {
   FaHome,
   FaBuilding,
@@ -65,9 +64,6 @@ export const expertise = [
     FaSolarPanel,
   ],
 ];
-
-
-
 
 export const whyRainbow = [
   [

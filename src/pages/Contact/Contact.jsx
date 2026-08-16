@@ -19,11 +19,7 @@ export default function Contact() {
   const [showPhoneChooser, setShowPhoneChooser] = useState(false);
   const [sent, setSent] = useState(false);
 
-  /*
-   * ----------------------------------------------------------
-   * CONTACT NUMBERS
-   * ----------------------------------------------------------
-   */
+  /* CONTACT NUMBERS */
 
   const contactNumbers = [
     {
@@ -43,11 +39,7 @@ export default function Contact() {
     },
   ];
 
-  /*
-   * ----------------------------------------------------------
-   * FORM DATA
-   * ----------------------------------------------------------
-   */
+  /* FORM DATA */
 
   const getFormData = (form) => {
     const data = new FormData(form);
@@ -65,13 +57,10 @@ export default function Contact() {
   };
 
   /*
-   * ----------------------------------------------------------
-   * NORMAL FORM SUBMIT
-   *
-   * EmailJS can be connected here later.
-   * Currently it only prepares the form.
-   * ----------------------------------------------------------
-   */
+ * NORMAL FORM SUBMIT
+ * EmailJS can be connected here later.
+ * Currently it only prepares the form.
+ */
 
   const submit = (e) => {
     e.preventDefault();
@@ -79,20 +68,13 @@ export default function Contact() {
     setSent(true);
 
     /*
-     * EmailJS can be added here later.
-     *
-     * Example:
-     *
-     * emailjs.send(...)
-     *
-     */
+ * EmailJS can be added here later.
+ * Example:
+ * emailjs.send(...)
+ */
   };
 
-  /*
-   * ----------------------------------------------------------
-   * WHATSAPP ENQUIRY
-   * ----------------------------------------------------------
-   */
+  /* WHATSAPP ENQUIRY */
 
   const sendWhatsApp = () => {
     const form = document.getElementById(
@@ -147,11 +129,7 @@ Thank you.`;
     );
   };
 
-  /*
-   * ----------------------------------------------------------
-   * CALL CONTACT
-   * ----------------------------------------------------------
-   */
+  /* CALL CONTACT */
 
   const callContact = (phone) => {
     setShowPhoneChooser(false);
@@ -159,11 +137,7 @@ Thank you.`;
     window.location.href = `tel:+91${phone}`;
   };
 
-  /*
-   * ----------------------------------------------------------
-   * WHATSAPP CONTACT
-   * ----------------------------------------------------------
-   */
+  /* WHATSAPP CONTACT */
 
   const whatsappContact = (phone) => {
     const message =
@@ -182,9 +156,7 @@ Thank you.`;
 
   return (
     <div className={styles.page}>
-      {/* =====================================================
-          HERO
-      ===================================================== */}
+      {/* HERO */}
 
       <section className={styles.hero}>
         {/* Background grid */}
@@ -205,9 +177,7 @@ Thank you.`;
         </div>
 
         <div className={styles.heroContainer}>
-          {/* =================================================
-              HERO CONTENT
-          ================================================= */}
+          {/* HERO CONTENT */}
 
           <div className={styles.heroContent}>
             <span className={styles.eyebrow}>
@@ -226,9 +196,7 @@ Thank you.`;
               with Rainbow's engineering team.
             </p>
 
-            {/* =================================================
-                HERO ACTIONS
-            ================================================= */}
+            {/* HERO ACTIONS */}
 
             <div className={styles.heroActions}>
               {/* Call chooser */}
@@ -253,11 +221,10 @@ Thank you.`;
                   <Phone size={16} />
                 </button>
 
-                {/* =================================================
-                    PHONE CHOOSER
-
-                    HIGH Z-INDEX
-                ================================================= */}
+                {/*
+ *                     PHONE CHOOSER
+ *                     HIGH Z-INDEX
+ */}
 
                 {showPhoneChooser && (
                   <div
@@ -347,11 +314,10 @@ Thank you.`;
               </Link>
             </div>
 
-            {/* =================================================
-                HERO STATS
-
-                LOW Z-INDEX SO PHONE MENU STAYS ABOVE
-            ================================================= */}
+            {/*
+ *                 HERO STATS
+ *                 LOW Z-INDEX SO PHONE MENU STAYS ABOVE
+ */}
 
             <div className={styles.heroStats}>
               <div>
@@ -389,9 +355,7 @@ Thank you.`;
             </div>
           </div>
 
-          {/* =================================================
-              HERO VISUAL
-          ================================================= */}
+          {/* HERO VISUAL */}
 
           <div className={styles.heroVisual}>
             <div
@@ -410,9 +374,7 @@ Thank you.`;
               <span />
             </div>
 
-            {/* =================================================
-                CONTACT PANEL
-            ================================================= */}
+            {/* CONTACT PANEL */}
 
             <div
               className={styles.contactPanel}
@@ -540,9 +502,7 @@ Thank you.`;
               </div>
             </div>
 
-            {/* =================================================
-                FLOATING WHATSAPP
-            ================================================= */}
+            {/* FLOATING WHATSAPP */}
 
             <a
               href={`https://wa.me/${company.whatsapp}?text=${encodeURIComponent(
@@ -566,15 +526,11 @@ Thank you.`;
         </div>
       </section>
 
-      {/* =====================================================
-          CONTACT INFORMATION
-      ===================================================== */}
+      {/* CONTACT INFORMATION */}
 
       <section className={styles.content}>
         <div className={styles.container}>
-          {/* =================================================
-              INFORMATION
-          ================================================= */}
+          {/* INFORMATION */}
 
           <div className={styles.info}>
             {/* Location */}
@@ -591,9 +547,7 @@ Thank you.`;
               </b>
             </div>
 
-            {/* =================================================
-                ALL THREE PHONE NUMBERS
-            ================================================= */}
+            {/* ALL THREE PHONE NUMBERS */}
 
             <div
               className={`${styles.infoCard} ${styles.phoneInfoCard}`}
@@ -718,9 +672,7 @@ Thank you.`;
             </a>
           </div>
 
-          {/* =================================================
-              CONTACT FORM
-          ================================================= */}
+          {/* CONTACT FORM */}
 
           <form
             id="rainbow-contact-form"

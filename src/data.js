@@ -1,30 +1,22 @@
-// // ============================================================
 // // RAINBOW - PRODUCT CATALOG
-// // ============================================================
-// //
+
 // // IMPORTANT ID RULE
-// // ------------------------------------------------------------
+
 // // Every product has a permanent explicit ID.
-// //
+
 // // NEVER use:
 // //   id: `product-${i + 1}`
 // //   id: arrayIndex
 // //   id generated from array position
-// //
+
 // // You can delete, reorder or add products without changing
 // // the IDs of existing products.
-// //
+
 // // Once an ID is published/used, DO NOT CHANGE IT.
-// // ============================================================
 
-
-// // ============================================================
 // // IMAGE IMPORTS
-// // ============================================================
 
-// // -------------------------
 // // UPS
-// // -------------------------
 
 // import singleUPS from "./assets/singleUPS.jpeg";
 // import threePhaseImage from "./assets/threePhaseImage.jpeg";
@@ -35,10 +27,7 @@
 // import medicalImage from "./assets/medicalImage.jpeg";
 // import dataCenterImage from "./assets/dataCenterImage.jpeg";
 
-
-// // -------------------------
 // // UPS COMPONENTS
-// // -------------------------
 
 // import rectifierModulesImage from "./assets/upsComponent/rectifierModulesImage.jpg";
 // import inverterModulesImage from "./assets/upsComponent/inverterModulesImage.jpg";
@@ -69,10 +58,7 @@
 // import upsEnclosuresImage from "./assets/upsComponent/upsEnclosuresImage.jpg";
 // import remoteMonitoringImage from "./assets/upsComponent/remoteMonitoringImage.jpg";
 
-
-// // -------------------------
 // // BATTERIES
-// // -------------------------
 
 // import smfImage from "./assets/Batteries/smfImage.jpeg";
 // import tubularImage from "./assets/Batteries/tubularImage.jpeg";
@@ -81,28 +67,19 @@
 // import batteryCabsImage from "./assets/Batteries/batteryCabsImage.jpg";
 // import batterymonitoringSystemImage from "./assets/Batteries/batterymonitoringSystemImage.jpg";
 
-
-// // -------------------------
 // // SERVO STABILIZERS
-// // -------------------------
 
 // import airCooledImage from "./assets/servoVoltage/airCooledImage.jpg";
 // import oilCooledImage from "./assets/servoVoltage/oilCooledImage.jpg";
 // import automaticImage from "./assets/servoVoltage/automaticImage.jpg";
 
-
-// // -------------------------
 // // INVERTERS
-// // -------------------------
 
 // import pureSineImage from "./assets/Inverter/pureSineImage.jpg";
 // import industrialInverterImage from "./assets/Inverter/industrial.jpg";
 // import hybridSolarImage from "./assets/Inverter/hybridSolarImage.jpg";
 
-
-// // -------------------------
 // // SOLAR
-// // -------------------------
 
 // import ongridImage from "./assets/Solar/ongridImage.jpg";
 // import offgrideImage from "./assets/Solar/offgrideImage.jpg";
@@ -113,10 +90,7 @@
 // import dcdbImage from "./assets/Solar/dcdbImage.jpg";
 // import combineBoxImage from "./assets/Solar/combineBoxImage.jpg";
 
-
-// // -------------------------
 // // CONTROL PANELS
-// // -------------------------
 
 // import ltPanelImage from "./assets/Panels/ltPanelImage.jpg";
 // import htPanelImage from "./assets/Panels/htPanel.jpg";
@@ -137,10 +111,7 @@
 // import instrumentationPanelImage from "./assets/Panels/instruPanelImage.jpg";
 // import rtuPanelImage from "./assets/Panels/rtuPanelImage.jpg";
 
-
-// // -------------------------
 // // PANEL COMPONENTS
-// // -------------------------
 
 // import plcComponentImage from "./assets/panelComponents/plcComponentImage.jpg";
 // import hmiComponentImage from "./assets/panelComponents/hmiComponentImage.jpg";
@@ -173,2214 +144,2073 @@
 // import smpsComponentImage from "./assets/panelComponents/smpsComponentImage.jpg";
 // import surgeComponentImage from "./assets/panelComponents/surgeComponentImage.jpg";
 
-
-// // ============================================================
 // // COMPANY
-// // ============================================================
 
 // export const company = {
-//   name: "Rainbow",
+// name: "Rainbow",
 
-//   tagline: "Powering reliability. Engineering what matters.",
+// tagline: "Powering reliability. Engineering what matters.",
 
-//   shortDescription:
-//     "Power solutions and electrical engineering for residential, commercial, industrial and government environments.",
+// shortDescription:
+// "Power solutions and electrical engineering for residential, commercial, industrial and government environments.",
 
-//   whatsapp: "+917393974444",
+// whatsapp: "+917393974444",
 
-//   phone: "+91 73939 74444",
+// phone: "+91 73939 74444",
 
-//   email: "rainbow@gmail.com",
+// email: "rainbow@gmail.com",
 
-//   instagram:
-//     "https://www.instagram.com/rainbow_varanasi/",
+// instagram:
+// "https://www.instagram.com/rainbow_varanasi/",
 
-//   location: "Varanasi, Uttar Pradesh, India",
+// location: "Varanasi, Uttar Pradesh, India",
 // };
 
-
-// // ============================================================
 // // CATEGORIES
-// // ============================================================
 
 // export const categories = [
 
-//   {
-//     id: "ups",
-//     name: "Online UPS Systems",
-//     icon: "BatteryCharging",
-//     tone: "cyan",
-//   },
+// {
+// id: "ups",
+// name: "Online UPS Systems",
+// icon: "BatteryCharging",
+// tone: "cyan",
+// },
 
-//   {
-//     id: "components",
-//     name: "UPS Components",
-//     icon: "Cpu",
-//     tone: "violet",
-//   },
+// {
+// id: "components",
+// name: "UPS Components",
+// icon: "Cpu",
+// tone: "violet",
+// },
 
-//   {
-//     id: "batteries",
-//     name: "Batteries",
-//     icon: "BatteryFull",
-//     tone: "green",
-//   },
+// {
+// id: "batteries",
+// name: "Batteries",
+// icon: "BatteryFull",
+// tone: "green",
+// },
 
-//   {
-//     id: "stabilizers",
-//     name: "Servo Stabilizers",
-//     icon: "Gauge",
-//     tone: "amber",
-//   },
+// {
+// id: "stabilizers",
+// name: "Servo Stabilizers",
+// icon: "Gauge",
+// tone: "amber",
+// },
 
-//   {
-//     id: "inverters",
-//     name: "Inverters",
-//     icon: "Zap",
-//     tone: "blue",
-//   },
+// {
+// id: "inverters",
+// name: "Inverters",
+// icon: "Zap",
+// tone: "blue",
+// },
 
-//   {
-//     id: "solar",
-//     name: "Solar Solutions",
-//     icon: "Sun",
-//     tone: "orange",
-//   },
+// {
+// id: "solar",
+// name: "Solar Solutions",
+// icon: "Sun",
+// tone: "orange",
+// },
 
-//   {
-//     id: "panels",
-//     name: "Control Panels",
-//     icon: "PanelTop",
-//     tone: "pink",
-//   },
+// {
+// id: "panels",
+// name: "Control Panels",
+// icon: "PanelTop",
+// tone: "pink",
+// },
 
-//   {
-//     id: "panel-components",
-//     name: "Panel Components",
-//     icon: "Cogs",
-//     tone: "purple",
-//   },
+// {
+// id: "panel-components",
+// name: "Panel Components",
+// icon: "Cogs",
+// tone: "purple",
+// },
 
-//   {
-//     id: "wiring-accessories",
-//     name: "Wiring Accessories",
-//     icon: "ToggleRight",
-//     tone: "cyan",
-//   },
+// {
+// id: "wiring-accessories",
+// name: "Wiring Accessories",
+// icon: "ToggleRight",
+// tone: "cyan",
+// },
 
-//   {
-//     id: "electrical-boxes",
-//     name: "Electrical Boxes & Enclosures",
-//     icon: "Box",
-//     tone: "violet",
-//   },
+// {
+// id: "electrical-boxes",
+// name: "Electrical Boxes & Enclosures",
+// icon: "Box",
+// tone: "violet",
+// },
 
-//   {
-//     id: "wires-conduits",
-//     name: "Wires & Conduits",
-//     icon: "Cable",
-//     tone: "amber",
-//   },
+// {
+// id: "wires-conduits",
+// name: "Wires & Conduits",
+// icon: "Cable",
+// tone: "amber",
+// },
 
-//   {
-//     id: "lighting",
-//     name: "LED Lighting",
-//     icon: "Lightbulb",
-//     tone: "orange",
-//   },
+// {
+// id: "lighting",
+// name: "LED Lighting",
+// icon: "Lightbulb",
+// tone: "orange",
+// },
 
-//   {
-//     id: "fans",
-//     name: "Fans & Ventilation",
-//     icon: "Fan",
-//     tone: "blue",
-//   },
+// {
+// id: "fans",
+// name: "Fans & Ventilation",
+// icon: "Fan",
+// tone: "blue",
+// },
 
-//   {
-//     id: "bells",
-//     name: "Bells & Signalling",
-//     icon: "Bell",
-//     tone: "green",
-//   },
+// {
+// id: "bells",
+// name: "Bells & Signalling",
+// icon: "Bell",
+// tone: "green",
+// },
 // ];
 
-
-// // ============================================================
 // // HELPERS
-// // ============================================================
 
 // const slugify = (value) =>
-//   value
-//     .toLowerCase()
-//     .trim()
-//     .replace(/[^a-z0-9]+/g, "-")
-//     .replace(/^-+|-+$/g, "");
-
+// value
+// .toLowerCase()
+// .trim()
+// .replace(/[^a-z0-9]+/g, "-")
+// .replace(/^-+|-+$/g, "");
 
 // const makeProduct = ({
-//   id,
-//   name,
-//   category,
-//   categoryName,
-//   image = null,
-//   summary,
-//   description,
-//   applications = [],
-//   keyFeatures = [],
-//   technicalParameters = [],
-//   selection = [],
-//   featured = false,
+// id,
+// name,
+// category,
+// categoryName,
+// image = null,
+// summary,
+// description,
+// applications = [],
+// keyFeatures = [],
+// technicalParameters = [],
+// selection = [],
+// featured = false,
 // }) => ({
-//   id,
-//   slug: slugify(name),
-//   name,
-//   category,
-//   categoryName,
-//   image,
-//   summary,
-//   description,
-//   applications,
-//   keyFeatures,
-//   technicalParameters,
-//   selection,
-//   featured,
+// id,
+// slug: slugify(name),
+// name,
+// category,
+// categoryName,
+// image,
+// summary,
+// description,
+// applications,
+// keyFeatures,
+// technicalParameters,
+// selection,
+// featured,
 // });
 
-
-// // ============================================================
 // // COMMON CATEGORY INFORMATION
-// // ============================================================
 
 // const categoryDefaults = {
 
-//   ups: {
-//     categoryName: "Online UPS Systems",
-
-//     summary:
-//       "Online double-conversion UPS systems designed to provide regulated and uninterrupted power to critical electrical and electronic loads.",
-
-//     description:
-//       "Online UPS systems continuously convert incoming AC power to DC and then back to regulated AC power. This topology provides controlled output power and transfers the connected load to stored-energy backup when the normal supply is unavailable, subject to the selected system configuration.",
-
-//     applications: [
-//       "Servers and networking",
-//       "Industrial automation",
-//       "Healthcare facilities",
-//       "Telecommunication systems",
-//       "Commercial infrastructure",
-//       "Critical electronic equipment",
-//     ],
-
-//     keyFeatures: [
-//       "Online double-conversion topology",
-//       "Continuous power conditioning",
-//       "Battery-backed operation",
-//       "Protection against supply disturbances",
-//       "Application-specific capacity and battery configuration",
-//     ],
-
-//     technicalParameters: [
-//       "Rated capacity",
-//       "Input voltage",
-//       "Output voltage",
-//       "Phase configuration",
-//       "Battery voltage/configuration",
-//       "Backup time",
-//       "Efficiency",
-//       "Topology",
-//     ],
-
-//     selection: [
-//       "Connected load",
-//       "Required capacity",
-//       "Backup-time requirement",
-//       "Input/output phase configuration",
-//       "Battery autonomy",
-//       "Installation environment",
-//     ],
-//   },
-
-
-//   components: {
-//     categoryName: "UPS Components",
-
-//     summary:
-//       "Electrical, power-electronic, protection, control and monitoring components used in UPS systems and critical-power infrastructure.",
-
-//     description:
-//       "UPS components perform specific functions such as power conversion, switching, protection, control, monitoring, thermal management and electrical interconnection. Exact compatibility must be confirmed against the UPS make, model and electrical design.",
-
-//     applications: [
-//       "UPS maintenance",
-//       "UPS repair",
-//       "Replacement of failed components",
-//       "Critical power systems",
-//       "Electrical service work",
-//     ],
-
-//     keyFeatures: [
-//       "Application-specific component selection",
-//       "Replacement and maintenance support",
-//       "Electrical protection and control",
-//       "Compatibility-based selection",
-//     ],
-
-//     technicalParameters: [
-//       "Voltage rating",
-//       "Current rating",
-//       "Power rating where applicable",
-//       "Physical dimensions",
-//       "Electrical compatibility",
-//       "Manufacturer/model compatibility",
-//     ],
-
-//     selection: [
-//       "UPS make and model",
-//       "Existing component specification",
-//       "Electrical rating",
-//       "Physical compatibility",
-//       "Application",
-//     ],
-//   },
-
-
-//   batteries: {
-//     categoryName: "Batteries",
-
-//     summary:
-//       "Battery systems for UPS, inverter and other backup-power applications.",
-
-//     description:
-//       "Battery systems store electrical energy for later use by compatible UPS, inverter or backup-power equipment. Battery chemistry, capacity, voltage and installation arrangement must be selected according to the connected system.",
-
-//     applications: [
-//       "UPS backup",
-//       "Inverter backup",
-//       "Critical power systems",
-//       "Telecommunication systems",
-//       "Energy storage applications",
-//     ],
-
-//     keyFeatures: [
-//       "Multiple battery technologies",
-//       "Application-specific capacity",
-//       "Battery-bank configuration",
-//       "Cabinet and monitoring options",
-//     ],
-
-//     technicalParameters: [
-//       "Battery chemistry",
-//       "Nominal voltage",
-//       "Capacity",
-//       "Number of batteries",
-//       "Battery configuration",
-//       "Expected operating temperature",
-//     ],
-
-//     selection: [
-//       "UPS/inverter compatibility",
-//       "Required backup time",
-//       "Load",
-//       "Battery voltage",
-//       "Available installation space",
-//       "Operating environment",
-//     ],
-//   },
-
-
-//   stabilizers: {
-//     categoryName: "Servo Voltage Stabilizers",
-
-//     summary:
-//       "Automatic voltage regulation systems designed to maintain the output voltage within a specified range for compatible electrical loads.",
-
-//     description:
-//       "Servo voltage stabilizers use a motor-driven control mechanism and voltage-sensing circuitry to correct variations in input voltage. Air-cooled and oil-cooled constructions are selected according to capacity and application.",
-
-//     applications: [
-//       "Industrial equipment",
-//       "Commercial loads",
-//       "Manufacturing equipment",
-//       "HVAC systems",
-//       "Sensitive electrical equipment",
-//     ],
-
-//     keyFeatures: [
-//       "Automatic voltage correction",
-//       "Servo-controlled regulation",
-//       "Application-specific capacity",
-//       "Air-cooled and oil-cooled configurations",
-//     ],
-
-//     technicalParameters: [
-//       "Input voltage range",
-//       "Output voltage",
-//       "Rated capacity",
-//       "Phase configuration",
-//       "Correction speed",
-//       "Cooling arrangement",
-//       "Regulation accuracy",
-//     ],
-
-//     selection: [
-//       "Load capacity",
-//       "Input voltage variation",
-//       "Single/three-phase requirement",
-//       "Cooling method",
-//       "Required output regulation",
-//     ],
-//   },
-
-
-//   inverters: {
-//     categoryName: "Inverters",
-
-//     summary:
-//       "Power-conversion systems that convert DC electrical energy into AC power for backup, industrial and renewable-energy applications.",
-
-//     description:
-//       "An inverter converts direct-current electrical energy from a battery or other DC source into alternating-current power. Product topology, output waveform, capacity and operating mode depend on the intended application.",
-
-//     applications: [
-//       "Residential backup",
-//       "Commercial backup",
-//       "Industrial applications",
-//       "Solar energy systems",
-//       "Battery energy storage",
-//     ],
-
-//     keyFeatures: [
-//       "DC-to-AC power conversion",
-//       "Application-specific output configuration",
-//       "Battery integration where applicable",
-//       "Different waveform and control technologies",
-//     ],
-
-//     technicalParameters: [
-//       "Rated power",
-//       "Input DC voltage",
-//       "Output AC voltage",
-//       "Output waveform",
-//       "Efficiency",
-//       "Battery compatibility",
-//     ],
-
-//     selection: [
-//       "Connected load",
-//       "Battery voltage",
-//       "Required power capacity",
-//       "Waveform requirement",
-//       "Backup-time requirement",
-//       "Solar/grid compatibility where applicable",
-//     ],
-//   },
-
-
-//   solar: {
-//     categoryName: "Solar Solutions",
-
-//     summary:
-//       "Solar power systems and components for generation, conversion, protection, distribution and energy management.",
-
-//     description:
-//       "Solar solutions combine photovoltaic generation with suitable inverters, protection equipment, mounting structures, wiring and, where required, battery storage. System configuration depends on site conditions, load requirements and grid availability.",
-
-//     applications: [
-//       "Residential solar",
-//       "Commercial solar",
-//       "Industrial solar",
-//       "Institutional installations",
-//       "Grid-connected systems",
-//       "Backup and hybrid systems",
-//     ],
-
-//     keyFeatures: [
-//       "PV power generation",
-//       "Grid-connected and standalone configurations",
-//       "Battery-integrated options",
-//       "Protection and distribution equipment",
-//       "Site-specific system design",
-//     ],
-
-//     technicalParameters: [
-//       "PV capacity",
-//       "Module rating",
-//       "Inverter capacity",
-//       "System voltage",
-//       "Battery capacity where applicable",
-//       "Mounting arrangement",
-//       "Protection configuration",
-//     ],
-
-//     selection: [
-//       "Available roof/land area",
-//       "Energy consumption",
-//       "Grid availability",
-//       "Required solar capacity",
-//       "Battery requirement",
-//       "Site and environmental conditions",
-//     ],
-//   },
-
-
-//   panels: {
-//     categoryName: "Electrical Control Panels",
-
-//     summary:
-//       "Engineered electrical distribution, motor-control, automation and protection panels for commercial and industrial applications.",
-
-//     description:
-//       "Electrical control panels integrate switching, protection, control, measurement and automation components within an engineered enclosure. Panel design depends on the electrical schematic, connected loads, fault level, control philosophy and applicable standards.",
-
-//     applications: [
-//       "Industrial plants",
-//       "Commercial buildings",
-//       "Water pumping systems",
-//       "Manufacturing",
-//       "Electrical distribution",
-//       "Industrial automation",
-//     ],
-
-//     keyFeatures: [
-//       "Application-specific engineering",
-//       "Protection and switching",
-//       "Control and automation integration",
-//       "Component-based construction",
-//       "Testing and commissioning support",
-//     ],
-
-//     technicalParameters: [
-//       "Rated voltage",
-//       "Rated current",
-//       "Short-circuit withstand rating",
-//       "Incomer/outgoer configuration",
-//       "Busbar rating",
-//       "Enclosure protection",
-//       "Control voltage",
-//     ],
-
-//     selection: [
-//       "Connected load",
-//       "Electrical distribution architecture",
-//       "Motor/control requirements",
-//       "Fault level",
-//       "Indoor/outdoor installation",
-//       "Required automation",
-//     ],
-//   },
-
-
-//   "panel-components": {
-//     categoryName: "Panel Components",
-
-//     summary:
-//       "Switching, protection, automation, measurement, control and interconnection components used in electrical control panels.",
-
-//     description:
-//       "Panel components are selected according to the electrical design and perform functions including switching, overload protection, short-circuit protection, measurement, control, signalling, communication and cable termination.",
-
-//     applications: [
-//       "Electrical control panels",
-//       "Motor control",
-//       "Industrial automation",
-//       "Power distribution",
-//       "Machine control",
-//     ],
-
-//     keyFeatures: [
-//       "Industrial electrical components",
-//       "Protection and switching",
-//       "Automation integration",
-//       "Measurement and indication",
-//       "Panel mounting compatibility",
-//     ],
-
-//     technicalParameters: [
-//       "Rated voltage",
-//       "Rated current",
-//       "Breaking capacity where applicable",
-//       "Control voltage",
-//       "Mounting arrangement",
-//       "Communication protocol where applicable",
-//     ],
-
-//     selection: [
-//       "Panel schematic",
-//       "Electrical rating",
-//       "Load type",
-//       "Control architecture",
-//       "Manufacturer/model compatibility",
-//     ],
-//   },
-
-
-//   "wiring-accessories": {
-//     categoryName: "Wiring Accessories",
-
-//     summary:
-//       "Switches, sockets, modular plates and related accessories used for safe and organized electrical wiring installations.",
-
-//     description:
-//       "Wiring accessories provide user-operated switching, electrical outlet connection and finished mounting arrangements in electrical installations. Products must be selected according to their electrical ratings and compatible mounting system.",
-
-//     applications: [
-//       "Residential buildings",
-//       "Offices",
-//       "Commercial buildings",
-//       "Hotels",
-//       "Institutional buildings",
-//     ],
-
-//     keyFeatures: [
-//       "Modular configurations",
-//       "Switching and socket options",
-//       "Multiple module arrangements",
-//       "Flush and surface installation options depending on product",
-//     ],
-
-//     technicalParameters: [
-//       "Rated voltage",
-//       "Rated current",
-//       "Number of modules",
-//       "Socket configuration",
-//       "Mounting arrangement",
-//     ],
-
-//     selection: [
-//       "Application",
-//       "Current rating",
-//       "Module configuration",
-//       "Mounting box compatibility",
-//       "Installation environment",
-//     ],
-//   },
-
-
-//   "electrical-boxes": {
-//     categoryName: "Electrical Boxes & Enclosures",
-
-//     summary:
-//       "Electrical boxes and enclosures used to protect, mount and organize electrical accessories and connections.",
-
-//     description:
-//       "Electrical boxes provide protected mounting and wiring space for switches, sockets, fans, meters and related accessories. Box dimensions, depth and construction must be compatible with the selected accessory and installation method.",
-
-//     applications: [
-//       "Residential wiring",
-//       "Commercial wiring",
-//       "Electrical distribution",
-//       "Modular switchboards",
-//       "Meter installations",
-//     ],
-
-//     keyFeatures: [
-//       "Accessory mounting provision",
-//       "Protected wiring space",
-//       "Different sizes and depths",
-//       "Concealed and surface installation options",
-//     ],
-
-//     technicalParameters: [
-//       "Dimensions",
-//       "Depth",
-//       "Material",
-//       "Module capacity",
-//       "Mounting arrangement",
-//     ],
-
-//     selection: [
-//       "Accessory type",
-//       "Number of modules",
-//       "Required depth",
-//       "Wall/ceiling construction",
-//       "Installation method",
-//     ],
-//   },
-
-
-//   "wires-conduits": {
-//     categoryName: "Wires & Conduits",
-
-//     summary:
-//       "Electrical wires, cables and conduits for power distribution, building wiring and protected cable routing.",
-
-//     description:
-//       "Wires and cables carry electrical power or signals, while conduits provide a defined pathway and mechanical protection for wiring. Cable and conduit selection depends on electrical load, installation method, environment and applicable standards.",
-
-//     applications: [
-//       "Residential wiring",
-//       "Commercial wiring",
-//       "Industrial installations",
-//       "Control panels",
-//       "Power distribution",
-//       "Solar installations",
-//     ],
-
-//     keyFeatures: [
-//       "Multiple conductor and cable constructions",
-//       "Copper or aluminium options depending on cable type",
-//       "Different insulation systems",
-//       "PVC conduit options",
-//       "Application-specific selection",
-//     ],
-
-//     technicalParameters: [
-//       "Conductor material",
-//       "Cross-sectional area",
-//       "Voltage rating",
-//       "Number of cores",
-//       "Insulation/sheath",
-//       "Conduit diameter",
-//       "Installation method",
-//     ],
-
-//     selection: [
-//       "Load current",
-//       "Voltage",
-//       "Cable length",
-//       "Installation method",
-//       "Ambient temperature",
-//       "Mechanical/environmental conditions",
-//     ],
-//   },
-
-
-//   lighting: {
-//     categoryName: "LED Lighting",
-
-//     summary:
-//       "LED lighting products for residential, commercial, industrial, indoor and outdoor illumination applications.",
-
-//     description:
-//       "LED luminaires use light-emitting diodes as their light source. Different products provide different lumen outputs, beam distributions, colour temperatures, mounting methods and environmental protection ratings.",
-
-//     applications: [
-//       "Residential lighting",
-//       "Office lighting",
-//       "Commercial buildings",
-//       "Industrial lighting",
-//       "Outdoor lighting",
-//       "Security lighting",
-//     ],
-
-//     keyFeatures: [
-//       "LED light source",
-//       "Different wattage options",
-//       "Multiple colour temperatures",
-//       "Different mounting arrangements",
-//       "Indoor and outdoor variants",
-//     ],
-
-//     technicalParameters: [
-//       "Wattage",
-//       "Luminous flux",
-//       "Colour temperature",
-//       "Beam angle",
-//       "Input voltage",
-//       "IP rating where applicable",
-//       "Mounting type",
-//     ],
-
-//     selection: [
-//       "Required illumination",
-//       "Wattage",
-//       "Lumen output",
-//       "Colour temperature",
-//       "Indoor/outdoor application",
-//       "Mounting arrangement",
-//     ],
-//   },
-
-
-//   fans: {
-//     categoryName: "Fans & Ventilation",
-
-//     summary:
-//       "Electric fans for air circulation and ventilation in residential, commercial and suitable industrial environments.",
-
-//     description:
-//       "Fans move air to provide circulation or ventilation. Fan type, size, air delivery, speed and mounting arrangement should be selected according to the room or equipment ventilation requirement.",
-
-//     applications: [
-//       "Homes",
-//       "Offices",
-//       "Shops",
-//       "Commercial buildings",
-//       "Bathrooms",
-//       "Utility areas",
-//     ],
-
-//     keyFeatures: [
-//       "Multiple fan types",
-//       "Different mounting configurations",
-//       "Different airflow capacities",
-//       "Speed-control options depending on model",
-//     ],
-
-//     technicalParameters: [
-//       "Fan type",
-//       "Sweep/size",
-//       "Air delivery",
-//       "Power consumption",
-//       "Speed",
-//       "Mounting arrangement",
-//     ],
-
-//     selection: [
-//       "Room size",
-//       "Required airflow",
-//       "Fan type",
-//       "Mounting arrangement",
-//       "Operating environment",
-//     ],
-//   },
-
-
-//   bells: {
-//     categoryName: "Bells & Signalling",
-
-//     summary:
-//       "Audible signalling devices for visitor notification and water-level/overflow warning applications.",
-
-//     description:
-//       "Bells and alarms provide audible notifications for specific events. Doorbells are used for visitor notification, while water-tank alarms use suitable sensing arrangements to indicate a configured water level or overflow condition.",
-
-//     applications: [
-//       "Residential entrances",
-//       "Offices",
-//       "Shops",
-//       "Apartments",
-//       "Water storage systems",
-//     ],
-
-//     keyFeatures: [
-//       "Audible notification",
-//       "Wired and wireless variants depending on product",
-//       "Application-specific sensing where required",
-//       "Simple user notification",
-//     ],
-
-//     technicalParameters: [
-//       "Operating voltage",
-//       "Sound level",
-//       "Power source",
-//       "Wired/wireless configuration",
-//       "Sensor type where applicable",
-//     ],
-
-//     selection: [
-//       "Application",
-//       "Power source",
-//       "Installation environment",
-//       "Required sensing method",
-//     ],
-//   },
+// ups: {
+// categoryName: "Online UPS Systems",
+
+// summary:
+// "Online double-conversion UPS systems designed to provide regulated and uninterrupted power to critical electrical and electronic loads.",
+
+// description:
+// "Online UPS systems continuously convert incoming AC power to DC and then back to regulated AC power. This topology provides controlled output power and transfers the connected load to stored-energy backup when the normal supply is unavailable, subject to the selected system configuration.",
+
+// applications: [
+// "Servers and networking",
+// "Industrial automation",
+// "Healthcare facilities",
+// "Telecommunication systems",
+// "Commercial infrastructure",
+// "Critical electronic equipment",
+// ],
+
+// keyFeatures: [
+// "Online double-conversion topology",
+// "Continuous power conditioning",
+// "Battery-backed operation",
+// "Protection against supply disturbances",
+// "Application-specific capacity and battery configuration",
+// ],
+
+// technicalParameters: [
+// "Rated capacity",
+// "Input voltage",
+// "Output voltage",
+// "Phase configuration",
+// "Battery voltage/configuration",
+// "Backup time",
+// "Efficiency",
+// "Topology",
+// ],
+
+// selection: [
+// "Connected load",
+// "Required capacity",
+// "Backup-time requirement",
+// "Input/output phase configuration",
+// "Battery autonomy",
+// "Installation environment",
+// ],
+// },
+
+// components: {
+// categoryName: "UPS Components",
+
+// summary:
+// "Electrical, power-electronic, protection, control and monitoring components used in UPS systems and critical-power infrastructure.",
+
+// description:
+// "UPS components perform specific functions such as power conversion, switching, protection, control, monitoring, thermal management and electrical interconnection. Exact compatibility must be confirmed against the UPS make, model and electrical design.",
+
+// applications: [
+// "UPS maintenance",
+// "UPS repair",
+// "Replacement of failed components",
+// "Critical power systems",
+// "Electrical service work",
+// ],
+
+// keyFeatures: [
+// "Application-specific component selection",
+// "Replacement and maintenance support",
+// "Electrical protection and control",
+// "Compatibility-based selection",
+// ],
+
+// technicalParameters: [
+// "Voltage rating",
+// "Current rating",
+// "Power rating where applicable",
+// "Physical dimensions",
+// "Electrical compatibility",
+// "Manufacturer/model compatibility",
+// ],
+
+// selection: [
+// "UPS make and model",
+// "Existing component specification",
+// "Electrical rating",
+// "Physical compatibility",
+// "Application",
+// ],
+// },
+
+// batteries: {
+// categoryName: "Batteries",
+
+// summary:
+// "Battery systems for UPS, inverter and other backup-power applications.",
+
+// description:
+// "Battery systems store electrical energy for later use by compatible UPS, inverter or backup-power equipment. Battery chemistry, capacity, voltage and installation arrangement must be selected according to the connected system.",
+
+// applications: [
+// "UPS backup",
+// "Inverter backup",
+// "Critical power systems",
+// "Telecommunication systems",
+// "Energy storage applications",
+// ],
+
+// keyFeatures: [
+// "Multiple battery technologies",
+// "Application-specific capacity",
+// "Battery-bank configuration",
+// "Cabinet and monitoring options",
+// ],
+
+// technicalParameters: [
+// "Battery chemistry",
+// "Nominal voltage",
+// "Capacity",
+// "Number of batteries",
+// "Battery configuration",
+// "Expected operating temperature",
+// ],
+
+// selection: [
+// "UPS/inverter compatibility",
+// "Required backup time",
+// "Load",
+// "Battery voltage",
+// "Available installation space",
+// "Operating environment",
+// ],
+// },
+
+// stabilizers: {
+// categoryName: "Servo Voltage Stabilizers",
+
+// summary:
+// "Automatic voltage regulation systems designed to maintain the output voltage within a specified range for compatible electrical loads.",
+
+// description:
+// "Servo voltage stabilizers use a motor-driven control mechanism and voltage-sensing circuitry to correct variations in input voltage. Air-cooled and oil-cooled constructions are selected according to capacity and application.",
+
+// applications: [
+// "Industrial equipment",
+// "Commercial loads",
+// "Manufacturing equipment",
+// "HVAC systems",
+// "Sensitive electrical equipment",
+// ],
+
+// keyFeatures: [
+// "Automatic voltage correction",
+// "Servo-controlled regulation",
+// "Application-specific capacity",
+// "Air-cooled and oil-cooled configurations",
+// ],
+
+// technicalParameters: [
+// "Input voltage range",
+// "Output voltage",
+// "Rated capacity",
+// "Phase configuration",
+// "Correction speed",
+// "Cooling arrangement",
+// "Regulation accuracy",
+// ],
+
+// selection: [
+// "Load capacity",
+// "Input voltage variation",
+// "Single/three-phase requirement",
+// "Cooling method",
+// "Required output regulation",
+// ],
+// },
+
+// inverters: {
+// categoryName: "Inverters",
+
+// summary:
+// "Power-conversion systems that convert DC electrical energy into AC power for backup, industrial and renewable-energy applications.",
+
+// description:
+// "An inverter converts direct-current electrical energy from a battery or other DC source into alternating-current power. Product topology, output waveform, capacity and operating mode depend on the intended application.",
+
+// applications: [
+// "Residential backup",
+// "Commercial backup",
+// "Industrial applications",
+// "Solar energy systems",
+// "Battery energy storage",
+// ],
+
+// keyFeatures: [
+// "DC-to-AC power conversion",
+// "Application-specific output configuration",
+// "Battery integration where applicable",
+// "Different waveform and control technologies",
+// ],
+
+// technicalParameters: [
+// "Rated power",
+// "Input DC voltage",
+// "Output AC voltage",
+// "Output waveform",
+// "Efficiency",
+// "Battery compatibility",
+// ],
+
+// selection: [
+// "Connected load",
+// "Battery voltage",
+// "Required power capacity",
+// "Waveform requirement",
+// "Backup-time requirement",
+// "Solar/grid compatibility where applicable",
+// ],
+// },
+
+// solar: {
+// categoryName: "Solar Solutions",
+
+// summary:
+// "Solar power systems and components for generation, conversion, protection, distribution and energy management.",
+
+// description:
+// "Solar solutions combine photovoltaic generation with suitable inverters, protection equipment, mounting structures, wiring and, where required, battery storage. System configuration depends on site conditions, load requirements and grid availability.",
+
+// applications: [
+// "Residential solar",
+// "Commercial solar",
+// "Industrial solar",
+// "Institutional installations",
+// "Grid-connected systems",
+// "Backup and hybrid systems",
+// ],
+
+// keyFeatures: [
+// "PV power generation",
+// "Grid-connected and standalone configurations",
+// "Battery-integrated options",
+// "Protection and distribution equipment",
+// "Site-specific system design",
+// ],
+
+// technicalParameters: [
+// "PV capacity",
+// "Module rating",
+// "Inverter capacity",
+// "System voltage",
+// "Battery capacity where applicable",
+// "Mounting arrangement",
+// "Protection configuration",
+// ],
+
+// selection: [
+// "Available roof/land area",
+// "Energy consumption",
+// "Grid availability",
+// "Required solar capacity",
+// "Battery requirement",
+// "Site and environmental conditions",
+// ],
+// },
+
+// panels: {
+// categoryName: "Electrical Control Panels",
+
+// summary:
+// "Engineered electrical distribution, motor-control, automation and protection panels for commercial and industrial applications.",
+
+// description:
+// "Electrical control panels integrate switching, protection, control, measurement and automation components within an engineered enclosure. Panel design depends on the electrical schematic, connected loads, fault level, control philosophy and applicable standards.",
+
+// applications: [
+// "Industrial plants",
+// "Commercial buildings",
+// "Water pumping systems",
+// "Manufacturing",
+// "Electrical distribution",
+// "Industrial automation",
+// ],
+
+// keyFeatures: [
+// "Application-specific engineering",
+// "Protection and switching",
+// "Control and automation integration",
+// "Component-based construction",
+// "Testing and commissioning support",
+// ],
+
+// technicalParameters: [
+// "Rated voltage",
+// "Rated current",
+// "Short-circuit withstand rating",
+// "Incomer/outgoer configuration",
+// "Busbar rating",
+// "Enclosure protection",
+// "Control voltage",
+// ],
+
+// selection: [
+// "Connected load",
+// "Electrical distribution architecture",
+// "Motor/control requirements",
+// "Fault level",
+// "Indoor/outdoor installation",
+// "Required automation",
+// ],
+// },
+
+// "panel-components": {
+// categoryName: "Panel Components",
+
+// summary:
+// "Switching, protection, automation, measurement, control and interconnection components used in electrical control panels.",
+
+// description:
+// "Panel components are selected according to the electrical design and perform functions including switching, overload protection, short-circuit protection, measurement, control, signalling, communication and cable termination.",
+
+// applications: [
+// "Electrical control panels",
+// "Motor control",
+// "Industrial automation",
+// "Power distribution",
+// "Machine control",
+// ],
+
+// keyFeatures: [
+// "Industrial electrical components",
+// "Protection and switching",
+// "Automation integration",
+// "Measurement and indication",
+// "Panel mounting compatibility",
+// ],
+
+// technicalParameters: [
+// "Rated voltage",
+// "Rated current",
+// "Breaking capacity where applicable",
+// "Control voltage",
+// "Mounting arrangement",
+// "Communication protocol where applicable",
+// ],
+
+// selection: [
+// "Panel schematic",
+// "Electrical rating",
+// "Load type",
+// "Control architecture",
+// "Manufacturer/model compatibility",
+// ],
+// },
+
+// "wiring-accessories": {
+// categoryName: "Wiring Accessories",
+
+// summary:
+// "Switches, sockets, modular plates and related accessories used for safe and organized electrical wiring installations.",
+
+// description:
+// "Wiring accessories provide user-operated switching, electrical outlet connection and finished mounting arrangements in electrical installations. Products must be selected according to their electrical ratings and compatible mounting system.",
+
+// applications: [
+// "Residential buildings",
+// "Offices",
+// "Commercial buildings",
+// "Hotels",
+// "Institutional buildings",
+// ],
+
+// keyFeatures: [
+// "Modular configurations",
+// "Switching and socket options",
+// "Multiple module arrangements",
+// "Flush and surface installation options depending on product",
+// ],
+
+// technicalParameters: [
+// "Rated voltage",
+// "Rated current",
+// "Number of modules",
+// "Socket configuration",
+// "Mounting arrangement",
+// ],
+
+// selection: [
+// "Application",
+// "Current rating",
+// "Module configuration",
+// "Mounting box compatibility",
+// "Installation environment",
+// ],
+// },
+
+// "electrical-boxes": {
+// categoryName: "Electrical Boxes & Enclosures",
+
+// summary:
+// "Electrical boxes and enclosures used to protect, mount and organize electrical accessories and connections.",
+
+// description:
+// "Electrical boxes provide protected mounting and wiring space for switches, sockets, fans, meters and related accessories. Box dimensions, depth and construction must be compatible with the selected accessory and installation method.",
+
+// applications: [
+// "Residential wiring",
+// "Commercial wiring",
+// "Electrical distribution",
+// "Modular switchboards",
+// "Meter installations",
+// ],
+
+// keyFeatures: [
+// "Accessory mounting provision",
+// "Protected wiring space",
+// "Different sizes and depths",
+// "Concealed and surface installation options",
+// ],
+
+// technicalParameters: [
+// "Dimensions",
+// "Depth",
+// "Material",
+// "Module capacity",
+// "Mounting arrangement",
+// ],
+
+// selection: [
+// "Accessory type",
+// "Number of modules",
+// "Required depth",
+// "Wall/ceiling construction",
+// "Installation method",
+// ],
+// },
+
+// "wires-conduits": {
+// categoryName: "Wires & Conduits",
+
+// summary:
+// "Electrical wires, cables and conduits for power distribution, building wiring and protected cable routing.",
+
+// description:
+// "Wires and cables carry electrical power or signals, while conduits provide a defined pathway and mechanical protection for wiring. Cable and conduit selection depends on electrical load, installation method, environment and applicable standards.",
+
+// applications: [
+// "Residential wiring",
+// "Commercial wiring",
+// "Industrial installations",
+// "Control panels",
+// "Power distribution",
+// "Solar installations",
+// ],
+
+// keyFeatures: [
+// "Multiple conductor and cable constructions",
+// "Copper or aluminium options depending on cable type",
+// "Different insulation systems",
+// "PVC conduit options",
+// "Application-specific selection",
+// ],
+
+// technicalParameters: [
+// "Conductor material",
+// "Cross-sectional area",
+// "Voltage rating",
+// "Number of cores",
+// "Insulation/sheath",
+// "Conduit diameter",
+// "Installation method",
+// ],
+
+// selection: [
+// "Load current",
+// "Voltage",
+// "Cable length",
+// "Installation method",
+// "Ambient temperature",
+// "Mechanical/environmental conditions",
+// ],
+// },
+
+// lighting: {
+// categoryName: "LED Lighting",
+
+// summary:
+// "LED lighting products for residential, commercial, industrial, indoor and outdoor illumination applications.",
+
+// description:
+// "LED luminaires use light-emitting diodes as their light source. Different products provide different lumen outputs, beam distributions, colour temperatures, mounting methods and environmental protection ratings.",
+
+// applications: [
+// "Residential lighting",
+// "Office lighting",
+// "Commercial buildings",
+// "Industrial lighting",
+// "Outdoor lighting",
+// "Security lighting",
+// ],
+
+// keyFeatures: [
+// "LED light source",
+// "Different wattage options",
+// "Multiple colour temperatures",
+// "Different mounting arrangements",
+// "Indoor and outdoor variants",
+// ],
+
+// technicalParameters: [
+// "Wattage",
+// "Luminous flux",
+// "Colour temperature",
+// "Beam angle",
+// "Input voltage",
+// "IP rating where applicable",
+// "Mounting type",
+// ],
+
+// selection: [
+// "Required illumination",
+// "Wattage",
+// "Lumen output",
+// "Colour temperature",
+// "Indoor/outdoor application",
+// "Mounting arrangement",
+// ],
+// },
+
+// fans: {
+// categoryName: "Fans & Ventilation",
+
+// summary:
+// "Electric fans for air circulation and ventilation in residential, commercial and suitable industrial environments.",
+
+// description:
+// "Fans move air to provide circulation or ventilation. Fan type, size, air delivery, speed and mounting arrangement should be selected according to the room or equipment ventilation requirement.",
+
+// applications: [
+// "Homes",
+// "Offices",
+// "Shops",
+// "Commercial buildings",
+// "Bathrooms",
+// "Utility areas",
+// ],
+
+// keyFeatures: [
+// "Multiple fan types",
+// "Different mounting configurations",
+// "Different airflow capacities",
+// "Speed-control options depending on model",
+// ],
+
+// technicalParameters: [
+// "Fan type",
+// "Sweep/size",
+// "Air delivery",
+// "Power consumption",
+// "Speed",
+// "Mounting arrangement",
+// ],
+
+// selection: [
+// "Room size",
+// "Required airflow",
+// "Fan type",
+// "Mounting arrangement",
+// "Operating environment",
+// ],
+// },
+
+// bells: {
+// categoryName: "Bells & Signalling",
+
+// summary:
+// "Audible signalling devices for visitor notification and water-level/overflow warning applications.",
+
+// description:
+// "Bells and alarms provide audible notifications for specific events. Doorbells are used for visitor notification, while water-tank alarms use suitable sensing arrangements to indicate a configured water level or overflow condition.",
+
+// applications: [
+// "Residential entrances",
+// "Offices",
+// "Shops",
+// "Apartments",
+// "Water storage systems",
+// ],
+
+// keyFeatures: [
+// "Audible notification",
+// "Wired and wireless variants depending on product",
+// "Application-specific sensing where required",
+// "Simple user notification",
+// ],
+
+// technicalParameters: [
+// "Operating voltage",
+// "Sound level",
+// "Power source",
+// "Wired/wireless configuration",
+// "Sensor type where applicable",
+// ],
+
+// selection: [
+// "Application",
+// "Power source",
+// "Installation environment",
+// "Required sensing method",
+// ],
+// },
 // };
 
-
-// // ============================================================
 // // PRODUCT DEFINITIONS
-// // ============================================================
 
-
-// // ============================================================
 // // ONLINE UPS
-// // ============================================================
 
 // const upsProducts = [
 
-//   {
-//     id: "ups-single-phase-online",
-//     name: "Single Phase Online UPS",
-//     image: singleUPS,
-//     summary:
-//       "Online double-conversion UPS for single-phase critical loads requiring regulated and uninterrupted AC power.",
-//     applications: [
-//       "Servers and networking",
-//       "Office IT equipment",
-//       "CCTV and security systems",
-//       "Medical and laboratory equipment",
-//       "Critical electronics",
-//     ],
-//   },
+// {
+// id: "ups-single-phase-online",
+// name: "Single Phase Online UPS",
+// image: singleUPS,
+// summary:
+// "Online double-conversion UPS for single-phase critical loads requiring regulated and uninterrupted AC power.",
+// applications: [
+// "Servers and networking",
+// "Office IT equipment",
+// "CCTV and security systems",
+// "Medical and laboratory equipment",
+// "Critical electronics",
+// ],
+// },
 
-//   {
-//     id: "ups-three-phase-online",
-//     name: "Three Phase Online UPS",
-//     image: threePhaseImage,
-//     summary:
-//       "Three-phase online UPS for larger commercial, industrial and critical-power loads.",
-//     applications: [
-//       "Data centres",
-//       "Industrial automation",
-//       "Telecommunication",
-//       "Healthcare",
-//       "Commercial infrastructure",
-//     ],
-//   },
+// {
+// id: "ups-three-phase-online",
+// name: "Three Phase Online UPS",
+// image: threePhaseImage,
+// summary:
+// "Three-phase online UPS for larger commercial, industrial and critical-power loads.",
+// applications: [
+// "Data centres",
+// "Industrial automation",
+// "Telecommunication",
+// "Healthcare",
+// "Commercial infrastructure",
+// ],
+// },
 
-//   {
-//     id: "ups-industrial",
-//     name: "Industrial UPS",
-//     image: industrialImage,
-//     summary:
-//       "Heavy-duty UPS systems configured for demanding industrial and critical-power environments.",
-//     applications: [
-//       "Industrial automation",
-//       "Process control",
-//       "Manufacturing",
-//       "Power infrastructure",
-//     ],
-//   },
+// {
+// id: "ups-industrial",
+// name: "Industrial UPS",
+// image: industrialImage,
+// summary:
+// "Heavy-duty UPS systems configured for demanding industrial and critical-power environments.",
+// applications: [
+// "Industrial automation",
+// "Process control",
+// "Manufacturing",
+// "Power infrastructure",
+// ],
+// },
 
-//   {
-//     id: "ups-modular",
-//     name: "Modular UPS",
-//     image: modularImage,
-//     summary:
-//       "Scalable UPS architecture using modular power units for capacity expansion and serviceability.",
-//     keyFeatures: [
-//       "Modular power architecture",
-//       "Capacity scalability",
-//       "Module-level serviceability",
-//       "High-availability configurations",
-//     ],
-//   },
+// {
+// id: "ups-modular",
+// name: "Modular UPS",
+// image: modularImage,
+// summary:
+// "Scalable UPS architecture using modular power units for capacity expansion and serviceability.",
+// keyFeatures: [
+// "Modular power architecture",
+// "Capacity scalability",
+// "Module-level serviceability",
+// "High-availability configurations",
+// ],
+// },
 
-//   {
-//     id: "ups-rack-mount",
-//     name: "Rack Mount UPS",
-//     image: rackImage,
-//     summary:
-//       "Rack-mount UPS designed for IT racks, network equipment and other rack-based critical loads.",
-//     applications: [
-//       "Server racks",
-//       "Network racks",
-//       "Telecom",
-//       "Security systems",
-//     ],
-//   },
+// {
+// id: "ups-rack-mount",
+// name: "Rack Mount UPS",
+// image: rackImage,
+// summary:
+// "Rack-mount UPS designed for IT racks, network equipment and other rack-based critical loads.",
+// applications: [
+// "Server racks",
+// "Network racks",
+// "Telecom",
+// "Security systems",
+// ],
+// },
 
-//   {
-//     id: "ups-tower",
-//     name: "Tower UPS",
-//     image: towerImage,
-//     summary:
-//       "Freestanding UPS form factor for IT, office and critical electronic loads.",
-//   },
+// {
+// id: "ups-tower",
+// name: "Tower UPS",
+// image: towerImage,
+// summary:
+// "Freestanding UPS form factor for IT, office and critical electronic loads.",
+// },
 
-//   {
-//     id: "ups-medical-grade",
-//     name: "Medical Grade UPS",
-//     image: medicalImage,
-//     summary:
-//       "UPS solutions configured for sensitive healthcare and medical-equipment applications.",
-//     applications: [
-//       "Diagnostic equipment",
-//       "Laboratories",
-//       "Healthcare IT",
-//       "Medical facilities",
-//     ],
-//   },
+// {
+// id: "ups-medical-grade",
+// name: "Medical Grade UPS",
+// image: medicalImage,
+// summary:
+// "UPS solutions configured for sensitive healthcare and medical-equipment applications.",
+// applications: [
+// "Diagnostic equipment",
+// "Laboratories",
+// "Healthcare IT",
+// "Medical facilities",
+// ],
+// },
 
-//   {
-//     id: "ups-data-center",
-//     name: "Data Center UPS",
-//     image: dataCenterImage,
-//     summary:
-//       "High-availability UPS solutions for data-centre and mission-critical IT power infrastructure.",
-//     applications: [
-//       "Data centres",
-//       "Server rooms",
-//       "Network infrastructure",
-//       "Mission-critical facilities",
-//     ],
-//   },
+// {
+// id: "ups-data-center",
+// name: "Data Center UPS",
+// image: dataCenterImage,
+// summary:
+// "High-availability UPS solutions for data-centre and mission-critical IT power infrastructure.",
+// applications: [
+// "Data centres",
+// "Server rooms",
+// "Network infrastructure",
+// "Mission-critical facilities",
+// ],
+// },
 // ];
 
-
-// // ============================================================
 // // UPS COMPONENTS
-// // ============================================================
 
 // const upsComponents = [
 
-//   ["upscomp-rectifier-modules", "Rectifier Modules", rectifierModulesImage],
-//   ["upscomp-inverter-modules", "Inverter Modules", inverterModulesImage],
-//   ["upscomp-igbt-power-modules", "IGBT Power Modules", igbtPowerModulesImage],
-//   ["upscomp-static-bypass-switches", "Static Bypass Switches", staticBypassSwitchesImage],
-//   ["upscomp-manual-bypass-switches", "Manual Bypass Switches", manualBypassSwitchesImage],
-//   ["upscomp-static-transfer-switch", "Static Transfer Switch (STS)", staticTransferSwitchImage],
-//   ["upscomp-isolation-transformers", "Isolation Transformers", isolationTransformersImage],
-//   ["upscomp-battery-chargers", "Battery Chargers", batteryChargersImage],
-//   ["upscomp-dsp-control-cards", "DSP & Control Cards", dspControlCardsImage],
-//   ["upscomp-display-panels", "Display Panels", displayPanelsImage],
-//   ["upscomp-cooling-fans", "Cooling Fans", coolingFansImage],
-//   ["upscomp-capacitors", "Capacitors", capacitorsImage],
-//   ["upscomp-contactors", "Contactors", contactorsImage],
-//   ["upscomp-relays", "Relays", relaysImage],
-//   ["upscomp-fuses", "Fuses", fusesImage],
-//   ["upscomp-mcb", "MCB", mcbImage],
-//   ["upscomp-mccb", "MCCB", mccbImage],
-//   ["upscomp-acb", "ACB", acbImage],
-//   ["upscomp-spd", "Surge Protection Devices (SPD)", surgeProtectionDevicesImage],
-//   ["upscomp-emi-rfi-filters", "EMI/RFI Filters", emiRfiFiltersImage],
-//   ["upscomp-ct", "Current Transformers (CT)", currentTransformersImage],
-//   ["upscomp-pt", "Potential Transformers (PT)", potentialTransformersImage],
-//   ["upscomp-terminal-blocks", "Terminal Blocks", terminalBlocksImage],
-//   ["upscomp-copper-bus-bars", "Copper Bus Bars", copperBusBarsImage],
-//   ["upscomp-battery-cabinets", "Battery Cabinets", batteryCabinetsImage],
-//   ["upscomp-battery-monitoring", "Battery Monitoring Systems", batteryMonitoringImage],
-//   ["upscomp-ups-enclosures", "UPS Enclosures", upsEnclosuresImage],
-//   ["upscomp-remote-monitoring", "Remote Monitoring Systems", remoteMonitoringImage],
+// ["upscomp-rectifier-modules", "Rectifier Modules", rectifierModulesImage],
+// ["upscomp-inverter-modules", "Inverter Modules", inverterModulesImage],
+// ["upscomp-igbt-power-modules", "IGBT Power Modules", igbtPowerModulesImage],
+// ["upscomp-static-bypass-switches", "Static Bypass Switches", staticBypassSwitchesImage],
+// ["upscomp-manual-bypass-switches", "Manual Bypass Switches", manualBypassSwitchesImage],
+// ["upscomp-static-transfer-switch", "Static Transfer Switch (STS)", staticTransferSwitchImage],
+// ["upscomp-isolation-transformers", "Isolation Transformers", isolationTransformersImage],
+// ["upscomp-battery-chargers", "Battery Chargers", batteryChargersImage],
+// ["upscomp-dsp-control-cards", "DSP & Control Cards", dspControlCardsImage],
+// ["upscomp-display-panels", "Display Panels", displayPanelsImage],
+// ["upscomp-cooling-fans", "Cooling Fans", coolingFansImage],
+// ["upscomp-capacitors", "Capacitors", capacitorsImage],
+// ["upscomp-contactors", "Contactors", contactorsImage],
+// ["upscomp-relays", "Relays", relaysImage],
+// ["upscomp-fuses", "Fuses", fusesImage],
+// ["upscomp-mcb", "MCB", mcbImage],
+// ["upscomp-mccb", "MCCB", mccbImage],
+// ["upscomp-acb", "ACB", acbImage],
+// ["upscomp-spd", "Surge Protection Devices (SPD)", surgeProtectionDevicesImage],
+// ["upscomp-emi-rfi-filters", "EMI/RFI Filters", emiRfiFiltersImage],
+// ["upscomp-ct", "Current Transformers (CT)", currentTransformersImage],
+// ["upscomp-pt", "Potential Transformers (PT)", potentialTransformersImage],
+// ["upscomp-terminal-blocks", "Terminal Blocks", terminalBlocksImage],
+// ["upscomp-copper-bus-bars", "Copper Bus Bars", copperBusBarsImage],
+// ["upscomp-battery-cabinets", "Battery Cabinets", batteryCabinetsImage],
+// ["upscomp-battery-monitoring", "Battery Monitoring Systems", batteryMonitoringImage],
+// ["upscomp-ups-enclosures", "UPS Enclosures", upsEnclosuresImage],
+// ["upscomp-remote-monitoring", "Remote Monitoring Systems", remoteMonitoringImage],
 
 // ].map(([id, name, image]) => ({
-//   id,
-//   name,
-//   image,
+// id,
+// name,
+// image,
 // }));
 
-
-// // ============================================================
 // // BATTERIES
-// // ============================================================
 
 // const batteryProducts = [
 
-//   {
-//     id: "battery-smf-vrla",
-//     name: "SMF (VRLA) Batteries",
-//     image: smfImage,
-//     summary:
-//       "Sealed maintenance-free valve-regulated lead-acid batteries for compatible UPS, backup-power and standby applications.",
-//     applications: [
-//       "UPS systems",
-//       "Emergency backup",
-//       "Telecommunication",
-//       "Security systems",
-//     ],
-//   },
+// {
+// id: "battery-smf-vrla",
+// name: "SMF (VRLA) Batteries",
+// image: smfImage,
+// summary:
+// "Sealed maintenance-free valve-regulated lead-acid batteries for compatible UPS, backup-power and standby applications.",
+// applications: [
+// "UPS systems",
+// "Emergency backup",
+// "Telecommunication",
+// "Security systems",
+// ],
+// },
 
-//   {
-//     id: "battery-tubular",
-//     name: "Tubular Batteries",
-//     image: tubularImage,
-//     summary:
-//       "Tubular lead-acid batteries commonly used for inverter and backup-power applications requiring suitable deep-cycle performance.",
-//     applications: [
-//       "Home inverters",
-//       "Commercial backup",
-//       "Backup power systems",
-//     ],
-//   },
+// {
+// id: "battery-tubular",
+// name: "Tubular Batteries",
+// image: tubularImage,
+// summary:
+// "Tubular lead-acid batteries commonly used for inverter and backup-power applications requiring suitable deep-cycle performance.",
+// applications: [
+// "Home inverters",
+// "Commercial backup",
+// "Backup power systems",
+// ],
+// },
 
-//   {
-//     id: "battery-lithium-ion",
-//     name: "Lithium-ion Batteries",
-//     image: lithiumImage,
-//     summary:
-//       "Rechargeable lithium-ion battery systems for compatible UPS, inverter and energy-storage applications.",
-//     applications: [
-//       "Energy storage",
-//       "UPS systems",
-//       "Solar backup",
-//       "Critical power",
-//     ],
-//   },
+// {
+// id: "battery-lithium-ion",
+// name: "Lithium-ion Batteries",
+// image: lithiumImage,
+// summary:
+// "Rechargeable lithium-ion battery systems for compatible UPS, inverter and energy-storage applications.",
+// applications: [
+// "Energy storage",
+// "UPS systems",
+// "Solar backup",
+// "Critical power",
+// ],
+// },
 
-//   {
-//     id: "battery-banks",
-//     name: "Battery Banks",
-//     image: batteryBankImage,
-//     summary:
-//       "Configured groups of batteries connected to provide the required voltage and energy capacity for a backup-power system.",
-//     applications: [
-//       "UPS",
-//       "Inverters",
-//       "Telecom",
-//       "Critical power systems",
-//     ],
-//   },
+// {
+// id: "battery-banks",
+// name: "Battery Banks",
+// image: batteryBankImage,
+// summary:
+// "Configured groups of batteries connected to provide the required voltage and energy capacity for a backup-power system.",
+// applications: [
+// "UPS",
+// "Inverters",
+// "Telecom",
+// "Critical power systems",
+// ],
+// },
 
-//   {
-//     id: "battery-cabinets",
-//     name: "Battery Cabinets",
-//     image: batteryCabsImage,
-//     summary:
-//       "Protective cabinets designed to house compatible battery strings or battery assemblies in organized installations.",
-//   },
+// {
+// id: "battery-cabinets",
+// name: "Battery Cabinets",
+// image: batteryCabsImage,
+// summary:
+// "Protective cabinets designed to house compatible battery strings or battery assemblies in organized installations.",
+// },
 
-//   {
-//     id: "battery-monitoring-systems",
-//     name: "Battery Monitoring Systems",
-//     image: batterymonitoringSystemImage,
-//     summary:
-//       "Battery monitoring solutions used to observe battery condition and system parameters in compatible installations.",
-//   },
+// {
+// id: "battery-monitoring-systems",
+// name: "Battery Monitoring Systems",
+// image: batterymonitoringSystemImage,
+// summary:
+// "Battery monitoring solutions used to observe battery condition and system parameters in compatible installations.",
+// },
 // ];
 
-
-// // ============================================================
 // // SERVO STABILIZERS
-// // ============================================================
 
 // const stabilizerProducts = [
 
-//   {
-//     id: "stabilizer-air-cooled-servo",
-//     name: "Air Cooled Servo Stabilizers",
-//     image: airCooledImage,
-//     summary:
-//       "Servo-controlled voltage stabilizers using air cooling for compatible electrical loads.",
-//   },
+// {
+// id: "stabilizer-air-cooled-servo",
+// name: "Air Cooled Servo Stabilizers",
+// image: airCooledImage,
+// summary:
+// "Servo-controlled voltage stabilizers using air cooling for compatible electrical loads.",
+// },
 
-//   {
-//     id: "stabilizer-oil-cooled-servo",
-//     name: "Oil Cooled Servo Stabilizers",
-//     image: oilCooledImage,
-//     summary:
-//       "Servo-controlled voltage stabilizers using oil as the cooling and insulating medium for suitable higher-capacity applications.",
-//   },
+// {
+// id: "stabilizer-oil-cooled-servo",
+// name: "Oil Cooled Servo Stabilizers",
+// image: oilCooledImage,
+// summary:
+// "Servo-controlled voltage stabilizers using oil as the cooling and insulating medium for suitable higher-capacity applications.",
+// },
 
-//   {
-//     id: "stabilizer-avr",
-//     name: "Automatic Voltage Regulators (AVR)",
-//     image: automaticImage,
-//     summary:
-//       "Automatic voltage regulation equipment designed to maintain output voltage within a specified range as input voltage varies.",
-//   },
+// {
+// id: "stabilizer-avr",
+// name: "Automatic Voltage Regulators (AVR)",
+// image: automaticImage,
+// summary:
+// "Automatic voltage regulation equipment designed to maintain output voltage within a specified range as input voltage varies.",
+// },
 // ];
 
-
-// // ============================================================
 // // INVERTERS
-// // ============================================================
 
 // const inverterProducts = [
 
-//   {
-//     id: "inverter-pure-sine-wave",
-//     name: "Pure Sine Wave Inverters",
-//     image: pureSineImage,
-//     summary:
-//       "Inverters producing sinusoidal AC output suitable for compatible household, commercial and sensitive electronic loads.",
-//   },
+// {
+// id: "inverter-pure-sine-wave",
+// name: "Pure Sine Wave Inverters",
+// image: pureSineImage,
+// summary:
+// "Inverters producing sinusoidal AC output suitable for compatible household, commercial and sensitive electronic loads.",
+// },
 
-//   {
-//     id: "inverter-industrial",
-//     name: "Industrial Inverters",
-//     image: industrialInverterImage,
-//     summary:
-//       "Industrial DC-to-AC inverter systems for demanding backup or dedicated power-conversion applications.",
-//   },
+// {
+// id: "inverter-industrial",
+// name: "Industrial Inverters",
+// image: industrialInverterImage,
+// summary:
+// "Industrial DC-to-AC inverter systems for demanding backup or dedicated power-conversion applications.",
+// },
 
-//   {
-//     id: "inverter-hybrid-solar",
-//     name: "Hybrid Solar Inverters",
-//     image: hybridSolarImage,
-//     summary:
-//       "Solar inverters capable of integrating PV generation with grid and battery sources according to the selected system architecture.",
-//   },
+// {
+// id: "inverter-hybrid-solar",
+// name: "Hybrid Solar Inverters",
+// image: hybridSolarImage,
+// summary:
+// "Solar inverters capable of integrating PV generation with grid and battery sources according to the selected system architecture.",
+// },
 // ];
 
-
-// // ============================================================
 // // SOLAR
-// // ============================================================
 
 // const solarProducts = [
 
-//   {
-//     id: "solar-on-grid",
-//     name: "On-Grid Solar Systems",
-//     image: ongridImage,
-//     summary:
-//       "Grid-connected photovoltaic systems designed for solar electricity generation and on-site energy use.",
-//   },
+// {
+// id: "solar-on-grid",
+// name: "On-Grid Solar Systems",
+// image: ongridImage,
+// summary:
+// "Grid-connected photovoltaic systems designed for solar electricity generation and on-site energy use.",
+// },
 
-//   {
-//     id: "solar-off-grid",
-//     name: "Off-Grid Solar Systems",
-//     image: offgrideImage,
-//     summary:
-//       "Standalone solar systems designed to supply electrical loads without continuous dependence on a utility grid.",
-//   },
+// {
+// id: "solar-off-grid",
+// name: "Off-Grid Solar Systems",
+// image: offgrideImage,
+// summary:
+// "Standalone solar systems designed to supply electrical loads without continuous dependence on a utility grid.",
+// },
 
-//   {
-//     id: "solar-hybrid",
-//     name: "Hybrid Solar Systems",
-//     image: solarSystemImage,
-//     summary:
-//       "Solar systems integrating PV generation with grid and battery sources for flexible energy management.",
-//   },
+// {
+// id: "solar-hybrid",
+// name: "Hybrid Solar Systems",
+// image: solarSystemImage,
+// summary:
+// "Solar systems integrating PV generation with grid and battery sources for flexible energy management.",
+// },
 
-//   {
-//     id: "solar-inverters",
-//     name: "Solar Inverters",
-//     image: solarInverterImage,
-//     summary:
-//       "Inverters designed to convert DC power from photovoltaic modules into usable AC power for compatible solar-system configurations.",
-//   },
+// {
+// id: "solar-inverters",
+// name: "Solar Inverters",
+// image: solarInverterImage,
+// summary:
+// "Inverters designed to convert DC power from photovoltaic modules into usable AC power for compatible solar-system configurations.",
+// },
 
-//   {
-//     id: "solar-pv-modules",
-//     name: "Solar PV Modules",
-//     image: pvImage,
-//     summary:
-//       "Photovoltaic modules that convert solar radiation into DC electrical energy.",
-//   },
+// {
+// id: "solar-pv-modules",
+// name: "Solar PV Modules",
+// image: pvImage,
+// summary:
+// "Photovoltaic modules that convert solar radiation into DC electrical energy.",
+// },
 
-//   {
-//     id: "solar-mounting-structures",
-//     name: "Solar Mounting Structures",
-//     image: mountainStructureImage,
-//     summary:
-//       "Mechanical structures used to support and position photovoltaic modules at the required orientation and installation angle.",
-//   },
+// {
+// id: "solar-mounting-structures",
+// name: "Solar Mounting Structures",
+// image: mountainStructureImage,
+// summary:
+// "Mechanical structures used to support and position photovoltaic modules at the required orientation and installation angle.",
+// },
 
-//   {
-//     id: "solar-dcdb-acdb",
-//     name: "Solar DCDB & ACDB",
-//     image: dcdbImage,
-//     summary:
-//       "DC and AC distribution and protection boxes used at suitable points within solar PV installations.",
-//   },
+// {
+// id: "solar-dcdb-acdb",
+// name: "Solar DCDB & ACDB",
+// image: dcdbImage,
+// summary:
+// "DC and AC distribution and protection boxes used at suitable points within solar PV installations.",
+// },
 
-//   {
-//     id: "solar-combiner-boxes",
-//     name: "Solar Combiner Boxes",
-//     image: combineBoxImage,
-//     summary:
-//       "Boxes used to combine and protect multiple PV string circuits before connection to downstream solar equipment.",
-//   },
+// {
+// id: "solar-combiner-boxes",
+// name: "Solar Combiner Boxes",
+// image: combineBoxImage,
+// summary:
+// "Boxes used to combine and protect multiple PV string circuits before connection to downstream solar equipment.",
+// },
 // ];
 
-
-// // ============================================================
 // // CONTROL PANELS
-// // ============================================================
 
 // const panelProducts = [
 
-//   ["panel-lt", "LT Panels", ltPanelImage],
-//   ["panel-ht", "HT Panels", htPanelImage],
-//   ["panel-pcc", "PCC Panels", pccPanelImage],
-//   ["panel-mcc", "MCC Panels", mccPanelImage],
-//   ["panel-apfc", "APFC Panels", apfcPanelImage],
-//   ["panel-dg-synchronization", "DG Synchronization Panels", dgPanelImage],
-//   ["panel-amf", "AMF Panels", amfPanelImage],
-//   ["panel-feeder-pillar", "Feeder Pillars", feederPanelImage],
-//   ["panel-dol-starter", "DOL Starter Panels", dolPanelImage],
-//   ["panel-star-delta", "Star-Delta Starter Panels", starPanelImage],
-//   ["panel-soft-starter", "Soft Starter Panels", softPanelImage],
-//   ["panel-vfd", "VFD Panels", vfdPanelImage],
-//   ["panel-pump-control", "Pump Control Panels", pumpPanelImage],
-//   ["panel-plc", "PLC Panels", plcPanelImage],
-//   ["panel-scada", "SCADA Panels", scadaPanelImage],
-//   ["panel-hmi", "HMI Panels", hmiPanelImage],
-//   ["panel-instrumentation", "Instrumentation Panels", instrumentationPanelImage],
-//   ["panel-rtu", "RTU Panels", rtuPanelImage],
+// ["panel-lt", "LT Panels", ltPanelImage],
+// ["panel-ht", "HT Panels", htPanelImage],
+// ["panel-pcc", "PCC Panels", pccPanelImage],
+// ["panel-mcc", "MCC Panels", mccPanelImage],
+// ["panel-apfc", "APFC Panels", apfcPanelImage],
+// ["panel-dg-synchronization", "DG Synchronization Panels", dgPanelImage],
+// ["panel-amf", "AMF Panels", amfPanelImage],
+// ["panel-feeder-pillar", "Feeder Pillars", feederPanelImage],
+// ["panel-dol-starter", "DOL Starter Panels", dolPanelImage],
+// ["panel-star-delta", "Star-Delta Starter Panels", starPanelImage],
+// ["panel-soft-starter", "Soft Starter Panels", softPanelImage],
+// ["panel-vfd", "VFD Panels", vfdPanelImage],
+// ["panel-pump-control", "Pump Control Panels", pumpPanelImage],
+// ["panel-plc", "PLC Panels", plcPanelImage],
+// ["panel-scada", "SCADA Panels", scadaPanelImage],
+// ["panel-hmi", "HMI Panels", hmiPanelImage],
+// ["panel-instrumentation", "Instrumentation Panels", instrumentationPanelImage],
+// ["panel-rtu", "RTU Panels", rtuPanelImage],
 
 // ].map(([id, name, image]) => ({
-//   id,
-//   name,
-//   image,
+// id,
+// name,
+// image,
 // }));
 
-
-// // ============================================================
 // // PANEL COMPONENTS
-// // ============================================================
 
 // const panelComponentProducts = [
 
-//   ["panelcomp-plc", "PLC", plcComponentImage],
-//   ["panelcomp-hmi", "HMI", hmiComponentImage],
-//   ["panelcomp-vfd", "VFD", vfdComponentImage],
-//   ["panelcomp-soft-starter", "Soft Starters", softComponentImage],
-//   ["panelcomp-mcb", "MCB", mcbComponentImage],
-//   ["panelcomp-mccb", "MCCB", mccbComponentImage],
-//   ["panelcomp-acb", "ACB", acbComponentImage],
-//   ["panelcomp-mpcb", "MPCB", mpcbComponentImage],
-//   ["panelcomp-rccb", "RCCB", rccbComponentImage],
-//   ["panelcomp-elcb", "ELCB", elcbComponentImage],
-//   ["panelcomp-contactors", "Contactors", contactorComponentImage],
-//   ["panelcomp-overload-relays", "Overload Relays", overloadComponentImage],
-//   ["panelcomp-timers", "Timers", timerComponentImage],
-//   ["panelcomp-power-relays", "Power Relays", powerComponentImage],
-//   ["panelcomp-ct-pt", "CT & PT", ctptComponentImage],
-//   ["panelcomp-energy-meters", "Energy Meters", energymeterComponentImage],
-//   ["panelcomp-multifunction-meters", "Multifunction Meters", multifunctionComponentImage],
-//   ["panelcomp-selector-switches", "Selector Switches", selectorComponentImage],
-//   ["panelcomp-push-buttons", "Push Buttons", pushComponentImage],
-//   ["panelcomp-indicator-lamps", "Indicator Lamps", indicatorComponentImage],
-//   ["panelcomp-emergency-stop", "Emergency Stop Switches", emergencyComponentImage],
-//   ["panelcomp-terminal-blocks", "Terminal Blocks", terminalComponentImage],
-//   ["panelcomp-copper-bus-bars", "Copper Bus Bars", copperBusComponentImage],
-//   ["panelcomp-cable-glands", "Cable Glands", cableComponentImage],
-//   ["panelcomp-din-rails", "DIN Rails", dinComponentImage],
-//   ["panelcomp-cooling-fans", "Panel Cooling Fans", coolingFanComponentImage],
-//   ["panelcomp-heaters", "Panel Heaters", heaterComponentImage],
-//   ["panelcomp-thermostats", "Thermostats", thermostatsComponentImage],
-//   ["panelcomp-smps", "SMPS Power Supplies", smpsComponentImage],
-//   ["panelcomp-spd", "Surge Protection Devices", surgeComponentImage],
+// ["panelcomp-plc", "PLC", plcComponentImage],
+// ["panelcomp-hmi", "HMI", hmiComponentImage],
+// ["panelcomp-vfd", "VFD", vfdComponentImage],
+// ["panelcomp-soft-starter", "Soft Starters", softComponentImage],
+// ["panelcomp-mcb", "MCB", mcbComponentImage],
+// ["panelcomp-mccb", "MCCB", mccbComponentImage],
+// ["panelcomp-acb", "ACB", acbComponentImage],
+// ["panelcomp-mpcb", "MPCB", mpcbComponentImage],
+// ["panelcomp-rccb", "RCCB", rccbComponentImage],
+// ["panelcomp-elcb", "ELCB", elcbComponentImage],
+// ["panelcomp-contactors", "Contactors", contactorComponentImage],
+// ["panelcomp-overload-relays", "Overload Relays", overloadComponentImage],
+// ["panelcomp-timers", "Timers", timerComponentImage],
+// ["panelcomp-power-relays", "Power Relays", powerComponentImage],
+// ["panelcomp-ct-pt", "CT & PT", ctptComponentImage],
+// ["panelcomp-energy-meters", "Energy Meters", energymeterComponentImage],
+// ["panelcomp-multifunction-meters", "Multifunction Meters", multifunctionComponentImage],
+// ["panelcomp-selector-switches", "Selector Switches", selectorComponentImage],
+// ["panelcomp-push-buttons", "Push Buttons", pushComponentImage],
+// ["panelcomp-indicator-lamps", "Indicator Lamps", indicatorComponentImage],
+// ["panelcomp-emergency-stop", "Emergency Stop Switches", emergencyComponentImage],
+// ["panelcomp-terminal-blocks", "Terminal Blocks", terminalComponentImage],
+// ["panelcomp-copper-bus-bars", "Copper Bus Bars", copperBusComponentImage],
+// ["panelcomp-cable-glands", "Cable Glands", cableComponentImage],
+// ["panelcomp-din-rails", "DIN Rails", dinComponentImage],
+// ["panelcomp-cooling-fans", "Panel Cooling Fans", coolingFanComponentImage],
+// ["panelcomp-heaters", "Panel Heaters", heaterComponentImage],
+// ["panelcomp-thermostats", "Thermostats", thermostatsComponentImage],
+// ["panelcomp-smps", "SMPS Power Supplies", smpsComponentImage],
+// ["panelcomp-spd", "Surge Protection Devices", surgeComponentImage],
 
 // ].map(([id, name, image]) => ({
-//   id,
-//   name,
-//   image,
+// id,
+// name,
+// image,
 // }));
 
-
-// // ============================================================
 // // GENERAL ELECTRICAL PRODUCTS
 // // PRODUCTS FROM THE VISITING CARD
-// // ============================================================
 
-
-// // -------------------------
 // // Wiring Accessories
-// // -------------------------
 
 // const wiringAccessoryProducts = [
 
-//   {
-//     id: "wiring-modular-boards",
-//     name: "Modular Boards",
-//     summary:
-//       "Modular electrical boards designed to accommodate compatible switches, sockets, regulators and other wiring accessories.",
-//     applications: [
-//       "Residential electrical installations",
-//       "Apartments and villas",
-//       "Offices",
-//       "Commercial buildings",
-//       "Hotels and institutions",
-//     ],
-//     keyFeatures: [
-//       "Modular accessory compatibility",
-//       "Organized wiring arrangement",
-//       "Multiple module configurations",
-//       "Flush or surface installation depending on product",
-//     ],
-//     technicalParameters: [
-//       "Number of modules",
-//       "Switch/socket configuration",
-//       "Mounting arrangement",
-//       "Plate and box compatibility",
-//     ],
-//   },
+// {
+// id: "wiring-modular-boards",
+// name: "Modular Boards",
+// summary:
+// "Modular electrical boards designed to accommodate compatible switches, sockets, regulators and other wiring accessories.",
+// applications: [
+// "Residential electrical installations",
+// "Apartments and villas",
+// "Offices",
+// "Commercial buildings",
+// "Hotels and institutions",
+// ],
+// keyFeatures: [
+// "Modular accessory compatibility",
+// "Organized wiring arrangement",
+// "Multiple module configurations",
+// "Flush or surface installation depending on product",
+// ],
+// technicalParameters: [
+// "Number of modules",
+// "Switch/socket configuration",
+// "Mounting arrangement",
+// "Plate and box compatibility",
+// ],
+// },
 
-//   {
-//     id: "wiring-switches-sockets",
-//     name: "Switches & Sockets",
-//     summary:
-//       "Electrical switches and socket outlets for controlling lighting, fans and connecting compatible electrical appliances.",
-//     applications: [
-//       "Lighting circuits",
-//       "Fan circuits",
-//       "Residential outlets",
-//       "Office installations",
-//       "Commercial buildings",
-//     ],
-//     keyFeatures: [
-//       "Multiple modular configurations",
-//       "Different current ratings",
-//       "Switch and socket combinations",
-//       "Flush and surface options depending on product",
-//     ],
-//     technicalParameters: [
-//       "Rated voltage",
-//       "Rated current",
-//       "Number of modules",
-//       "Socket configuration",
-//       "Installation type",
-//     ],
-//   },
+// {
+// id: "wiring-switches-sockets",
+// name: "Switches & Sockets",
+// summary:
+// "Electrical switches and socket outlets for controlling lighting, fans and connecting compatible electrical appliances.",
+// applications: [
+// "Lighting circuits",
+// "Fan circuits",
+// "Residential outlets",
+// "Office installations",
+// "Commercial buildings",
+// ],
+// keyFeatures: [
+// "Multiple modular configurations",
+// "Different current ratings",
+// "Switch and socket combinations",
+// "Flush and surface options depending on product",
+// ],
+// technicalParameters: [
+// "Rated voltage",
+// "Rated current",
+// "Number of modules",
+// "Socket configuration",
+// "Installation type",
+// ],
+// },
 
-//   {
-//     id: "wiring-modular-plates",
-//     name: "Modular Plates",
-//     summary:
-//       "Mounting and cover plates designed for compatible modular switches, sockets and electrical accessories.",
-//     applications: [
-//       "Residential switchboards",
-//       "Commercial buildings",
-//       "Offices",
-//       "Hotels",
-//       "Institutional installations",
-//     ],
-//     keyFeatures: [
-//       "Multiple module configurations",
-//       "Compatible modular accessories",
-//       "Finished wall appearance",
-//       "Different materials and finishes depending on product",
-//     ],
-//     technicalParameters: [
-//       "Module size",
-//       "Number of modules",
-//       "Plate material",
-//       "Finish",
-//       "Box compatibility",
-//     ],
-//   },
+// {
+// id: "wiring-modular-plates",
+// name: "Modular Plates",
+// summary:
+// "Mounting and cover plates designed for compatible modular switches, sockets and electrical accessories.",
+// applications: [
+// "Residential switchboards",
+// "Commercial buildings",
+// "Offices",
+// "Hotels",
+// "Institutional installations",
+// ],
+// keyFeatures: [
+// "Multiple module configurations",
+// "Compatible modular accessories",
+// "Finished wall appearance",
+// "Different materials and finishes depending on product",
+// ],
+// technicalParameters: [
+// "Module size",
+// "Number of modules",
+// "Plate material",
+// "Finish",
+// "Box compatibility",
+// ],
+// },
 // ];
 
-
-// // -------------------------
 // // Electrical Boxes
-// // -------------------------
 
 // const electricalBoxProducts = [
 
-//   {
-//     id: "box-gang-boxes",
-//     name: "Gang Boxes",
-//     summary:
-//       "Electrical mounting boxes used to house and mount compatible switches, sockets and modular accessories.",
-//     applications: [
-//       "Residential wiring",
-//       "Commercial wiring",
-//       "Office installations",
-//       "Modular switchboards",
-//       "Renovation projects",
-//     ],
-//     keyFeatures: [
-//       "Multiple gang/module sizes",
-//       "Accessory mounting provision",
-//       "Organized wiring space",
-//       "Concealed and surface variants depending on product",
-//     ],
-//     technicalParameters: [
-//       "Number of gangs/modules",
-//       "Box depth",
-//       "Material",
-//       "Mounting arrangement",
-//       "Accessory compatibility",
-//     ],
-//   },
+// {
+// id: "box-gang-boxes",
+// name: "Gang Boxes",
+// summary:
+// "Electrical mounting boxes used to house and mount compatible switches, sockets and modular accessories.",
+// applications: [
+// "Residential wiring",
+// "Commercial wiring",
+// "Office installations",
+// "Modular switchboards",
+// "Renovation projects",
+// ],
+// keyFeatures: [
+// "Multiple gang/module sizes",
+// "Accessory mounting provision",
+// "Organized wiring space",
+// "Concealed and surface variants depending on product",
+// ],
+// technicalParameters: [
+// "Number of gangs/modules",
+// "Box depth",
+// "Material",
+// "Mounting arrangement",
+// "Accessory compatibility",
+// ],
+// },
 
-//   {
-//     id: "box-concealed",
-//     name: "Concealed Boxes",
-//     summary:
-//       "Recessed electrical boxes installed inside walls to provide mounting space for switches, sockets and other accessories.",
-//     applications: [
-//       "Residential concealed wiring",
-//       "Commercial buildings",
-//       "Office interiors",
-//       "New construction",
-//       "Renovation",
-//     ],
-//     keyFeatures: [
-//       "Recessed wall installation",
-//       "Accessory mounting space",
-//       "Clean finished-wall appearance",
-//       "Different sizes and depths",
-//     ],
-//     technicalParameters: [
-//       "Dimensions",
-//       "Depth",
-//       "Material",
-//       "Module capacity",
-//       "Plate compatibility",
-//     ],
-//   },
+// {
+// id: "box-concealed",
+// name: "Concealed Boxes",
+// summary:
+// "Recessed electrical boxes installed inside walls to provide mounting space for switches, sockets and other accessories.",
+// applications: [
+// "Residential concealed wiring",
+// "Commercial buildings",
+// "Office interiors",
+// "New construction",
+// "Renovation",
+// ],
+// keyFeatures: [
+// "Recessed wall installation",
+// "Accessory mounting space",
+// "Clean finished-wall appearance",
+// "Different sizes and depths",
+// ],
+// technicalParameters: [
+// "Dimensions",
+// "Depth",
+// "Material",
+// "Module capacity",
+// "Plate compatibility",
+// ],
+// },
 
-//   {
-//     id: "box-fan-boxes",
-//     name: "Fan Boxes",
-//     summary:
-//       "Ceiling electrical boxes and mounting arrangements for compatible ceiling-fan installations.",
-//     applications: [
-//       "Residential ceiling fans",
-//       "Commercial buildings",
-//       "Offices",
-//       "Shops",
-//       "Institutional buildings",
-//     ],
-//     keyFeatures: [
-//       "Ceiling-mounted installation",
-//       "Electrical connection enclosure",
-//       "Compatible fan mounting arrangements",
-//       "Different construction options",
-//     ],
-//     technicalParameters: [
-//       "Fan-load compatibility",
-//       "Mounting arrangement",
-//       "Box material",
-//       "Ceiling construction",
-//     ],
-//   },
+// {
+// id: "box-fan-boxes",
+// name: "Fan Boxes",
+// summary:
+// "Ceiling electrical boxes and mounting arrangements for compatible ceiling-fan installations.",
+// applications: [
+// "Residential ceiling fans",
+// "Commercial buildings",
+// "Offices",
+// "Shops",
+// "Institutional buildings",
+// ],
+// keyFeatures: [
+// "Ceiling-mounted installation",
+// "Electrical connection enclosure",
+// "Compatible fan mounting arrangements",
+// "Different construction options",
+// ],
+// technicalParameters: [
+// "Fan-load compatibility",
+// "Mounting arrangement",
+// "Box material",
+// "Ceiling construction",
+// ],
+// },
 
-//   {
-//     id: "box-meter-boxes",
-//     name: "Meter Boxes",
-//     summary:
-//       "Protective enclosures designed to accommodate compatible electrical energy meters and associated connections.",
-//     applications: [
-//       "Residential meter installations",
-//       "Commercial installations",
-//       "Utility service connections",
-//       "Building electrical distribution",
-//     ],
-//     keyFeatures: [
-//       "Meter mounting provision",
-//       "Protection against accidental contact",
-//       "Organized cable entry",
-//       "Different enclosure sizes",
-//     ],
-//     technicalParameters: [
-//       "Meter type",
-//       "Dimensions",
-//       "Material",
-//       "Cable-entry arrangement",
-//       "Utility requirements",
-//     ],
-//   },
+// {
+// id: "box-meter-boxes",
+// name: "Meter Boxes",
+// summary:
+// "Protective enclosures designed to accommodate compatible electrical energy meters and associated connections.",
+// applications: [
+// "Residential meter installations",
+// "Commercial installations",
+// "Utility service connections",
+// "Building electrical distribution",
+// ],
+// keyFeatures: [
+// "Meter mounting provision",
+// "Protection against accidental contact",
+// "Organized cable entry",
+// "Different enclosure sizes",
+// ],
+// technicalParameters: [
+// "Meter type",
+// "Dimensions",
+// "Material",
+// "Cable-entry arrangement",
+// "Utility requirements",
+// ],
+// },
 // ];
 
-
-// // -------------------------
 // // Wires & Conduits
-// // -------------------------
 
 // const wireConduitProducts = [
 
-//   {
-//     id: "wire-wires-cables",
-//     name: "Wires & Cables",
-//     summary:
-//       "Electrical wires and cables for building wiring, power distribution, control and other application-specific installations.",
-//     applications: [
-//       "Residential wiring",
-//       "Commercial wiring",
-//       "Industrial power distribution",
-//       "Control panels",
-//       "Motor/equipment connections",
-//       "Solar installations",
-//     ],
-//     keyFeatures: [
-//       "Copper or aluminium conductor options depending on cable type",
-//       "Single-core and multicore constructions",
-//       "Different insulation systems",
-//       "Application-specific cable constructions",
-//     ],
-//     technicalParameters: [
-//       "Conductor material",
-//       "Cross-sectional area",
-//       "Voltage rating",
-//       "Number of cores",
-//       "Insulation/sheath",
-//       "Armouring where applicable",
-//       "Installation method",
-//     ],
-//   },
+// {
+// id: "wire-wires-cables",
+// name: "Wires & Cables",
+// summary:
+// "Electrical wires and cables for building wiring, power distribution, control and other application-specific installations.",
+// applications: [
+// "Residential wiring",
+// "Commercial wiring",
+// "Industrial power distribution",
+// "Control panels",
+// "Motor/equipment connections",
+// "Solar installations",
+// ],
+// keyFeatures: [
+// "Copper or aluminium conductor options depending on cable type",
+// "Single-core and multicore constructions",
+// "Different insulation systems",
+// "Application-specific cable constructions",
+// ],
+// technicalParameters: [
+// "Conductor material",
+// "Cross-sectional area",
+// "Voltage rating",
+// "Number of cores",
+// "Insulation/sheath",
+// "Armouring where applicable",
+// "Installation method",
+// ],
+// },
 
-//   {
-//     id: "wire-pvc-conduits",
-//     name: "PVC Conduits & Pipes",
-//     summary:
-//       "PVC electrical conduits used to route and mechanically protect electrical wires and cables.",
-//     applications: [
-//       "Concealed wiring",
-//       "Surface wiring",
-//       "Residential buildings",
-//       "Commercial buildings",
-//       "Industrial installations",
-//     ],
-//     keyFeatures: [
-//       "Lightweight construction",
-//       "Corrosion resistance",
-//       "Different diameters",
-//       "Compatible fittings",
-//       "Organized cable routing",
-//     ],
-//     technicalParameters: [
-//       "Nominal diameter",
-//       "Wall thickness/class",
-//       "Cable fill",
-//       "Installation method",
-//       "Environmental conditions",
-//     ],
-//   },
+// {
+// id: "wire-pvc-conduits",
+// name: "PVC Conduits & Pipes",
+// summary:
+// "PVC electrical conduits used to route and mechanically protect electrical wires and cables.",
+// applications: [
+// "Concealed wiring",
+// "Surface wiring",
+// "Residential buildings",
+// "Commercial buildings",
+// "Industrial installations",
+// ],
+// keyFeatures: [
+// "Lightweight construction",
+// "Corrosion resistance",
+// "Different diameters",
+// "Compatible fittings",
+// "Organized cable routing",
+// ],
+// technicalParameters: [
+// "Nominal diameter",
+// "Wall thickness/class",
+// "Cable fill",
+// "Installation method",
+// "Environmental conditions",
+// ],
+// },
 // ];
 
-
-// // -------------------------
 // // LED Lighting
-// // -------------------------
 
 // const lightingProducts = [
 
-//   {
-//     id: "lighting-led-lights",
-//     name: "LED Lights",
-//     summary:
-//       "LED luminaires for residential, commercial, industrial and general-purpose illumination.",
-//     applications: [
-//       "Homes",
-//       "Offices",
-//       "Shops",
-//       "Commercial buildings",
-//       "Industrial spaces",
-//       "General indoor lighting",
-//     ],
-//     keyFeatures: [
-//       "LED light source",
-//       "Different wattages",
-//       "Multiple colour temperatures",
-//       "Different mounting formats",
-//     ],
-//     technicalParameters: [
-//       "Wattage",
-//       "Luminous flux",
-//       "Colour temperature",
-//       "Beam angle",
-//       "Input voltage",
-//       "IP rating where applicable",
-//     ],
-//   },
+// {
+// id: "lighting-led-lights",
+// name: "LED Lights",
+// summary:
+// "LED luminaires for residential, commercial, industrial and general-purpose illumination.",
+// applications: [
+// "Homes",
+// "Offices",
+// "Shops",
+// "Commercial buildings",
+// "Industrial spaces",
+// "General indoor lighting",
+// ],
+// keyFeatures: [
+// "LED light source",
+// "Different wattages",
+// "Multiple colour temperatures",
+// "Different mounting formats",
+// ],
+// technicalParameters: [
+// "Wattage",
+// "Luminous flux",
+// "Colour temperature",
+// "Beam angle",
+// "Input voltage",
+// "IP rating where applicable",
+// ],
+// },
 
-//   {
-//     id: "lighting-downlights",
-//     name: "Concealed Lights / Downlights",
-//     summary:
-//       "Recessed LED downlights designed for low-profile ceiling and interior lighting applications.",
-//     applications: [
-//       "Homes",
-//       "Offices",
-//       "Hotels",
-//       "Retail spaces",
-//       "Showrooms",
-//       "False ceilings",
-//     ],
-//     keyFeatures: [
-//       "Recessed installation",
-//       "Low-profile appearance",
-//       "Multiple wattage options",
-//       "Multiple colour temperatures",
-//       "Different beam distributions",
-//     ],
-//     technicalParameters: [
-//       "Cut-out diameter",
-//       "Wattage",
-//       "Lumen output",
-//       "Colour temperature",
-//       "Beam angle",
-//       "Input voltage",
-//     ],
-//   },
+// {
+// id: "lighting-downlights",
+// name: "Concealed Lights / Downlights",
+// summary:
+// "Recessed LED downlights designed for low-profile ceiling and interior lighting applications.",
+// applications: [
+// "Homes",
+// "Offices",
+// "Hotels",
+// "Retail spaces",
+// "Showrooms",
+// "False ceilings",
+// ],
+// keyFeatures: [
+// "Recessed installation",
+// "Low-profile appearance",
+// "Multiple wattage options",
+// "Multiple colour temperatures",
+// "Different beam distributions",
+// ],
+// technicalParameters: [
+// "Cut-out diameter",
+// "Wattage",
+// "Lumen output",
+// "Colour temperature",
+// "Beam angle",
+// "Input voltage",
+// ],
+// },
 
-//   {
-//     id: "lighting-panel-lights",
-//     name: "LED Panel Lights",
-//     summary:
-//       "Slim LED luminaires designed to provide broad and relatively uniform indoor illumination.",
-//     applications: [
-//       "Offices",
-//       "Schools",
-//       "Hospitals",
-//       "Commercial buildings",
-//       "Retail spaces",
-//       "Residential interiors",
-//     ],
-//     keyFeatures: [
-//       "Slim form factor",
-//       "Broad light distribution",
-//       "Recessed variants",
-//       "Surface-mount variants",
-//       "Multiple wattage options",
-//     ],
-//     technicalParameters: [
-//       "Panel dimensions",
-//       "Wattage",
-//       "Lumen output",
-//       "Colour temperature",
-//       "Mounting type",
-//       "Input voltage",
-//     ],
-//   },
+// {
+// id: "lighting-panel-lights",
+// name: "LED Panel Lights",
+// summary:
+// "Slim LED luminaires designed to provide broad and relatively uniform indoor illumination.",
+// applications: [
+// "Offices",
+// "Schools",
+// "Hospitals",
+// "Commercial buildings",
+// "Retail spaces",
+// "Residential interiors",
+// ],
+// keyFeatures: [
+// "Slim form factor",
+// "Broad light distribution",
+// "Recessed variants",
+// "Surface-mount variants",
+// "Multiple wattage options",
+// ],
+// technicalParameters: [
+// "Panel dimensions",
+// "Wattage",
+// "Lumen output",
+// "Colour temperature",
+// "Mounting type",
+// "Input voltage",
+// ],
+// },
 
-//   {
-//     id: "lighting-flood-lights",
-//     name: "LED Flood Lights",
-//     summary:
-//       "High-output LED luminaires designed for broad-area outdoor, industrial, security and area-lighting applications.",
-//     applications: [
-//       "Building exteriors",
-//       "Parking areas",
-//       "Industrial premises",
-//       "Warehouses",
-//       "Sports areas",
-//       "Security lighting",
-//     ],
-//     keyFeatures: [
-//       "Broad-area illumination",
-//       "Different output levels",
-//       "Outdoor-rated variants",
-//       "Multiple mounting arrangements",
-//       "Different beam distributions",
-//     ],
-//     technicalParameters: [
-//       "Wattage",
-//       "Lumen output",
-//       "IP rating",
-//       "Beam angle",
-//       "Colour temperature",
-//       "Mounting arrangement",
-//     ],
-//   },
+// {
+// id: "lighting-flood-lights",
+// name: "LED Flood Lights",
+// summary:
+// "High-output LED luminaires designed for broad-area outdoor, industrial, security and area-lighting applications.",
+// applications: [
+// "Building exteriors",
+// "Parking areas",
+// "Industrial premises",
+// "Warehouses",
+// "Sports areas",
+// "Security lighting",
+// ],
+// keyFeatures: [
+// "Broad-area illumination",
+// "Different output levels",
+// "Outdoor-rated variants",
+// "Multiple mounting arrangements",
+// "Different beam distributions",
+// ],
+// technicalParameters: [
+// "Wattage",
+// "Lumen output",
+// "IP rating",
+// "Beam angle",
+// "Colour temperature",
+// "Mounting arrangement",
+// ],
+// },
 // ];
 
-
-// // -------------------------
 // // Fans
-// // -------------------------
 
 // const fanProducts = [
 
-//   {
-//     id: "fan-general",
-//     name: "Fans",
-//     summary:
-//       "Electric fans for air circulation and ventilation in residential, commercial and suitable industrial environments.",
-//     applications: [
-//       "Homes",
-//       "Offices",
-//       "Shops",
-//       "Commercial buildings",
-//       "Bathrooms",
-//       "Utility areas",
-//     ],
-//     keyFeatures: [
-//       "Multiple fan types",
-//       "Different mounting arrangements",
-//       "Different airflow capacities",
-//       "Speed-control options depending on model",
-//     ],
-//     technicalParameters: [
-//       "Fan type",
-//       "Sweep/size",
-//       "Air delivery",
-//       "Power consumption",
-//       "Speed",
-//       "Mounting arrangement",
-//     ],
-//   },
+// {
+// id: "fan-general",
+// name: "Fans",
+// summary:
+// "Electric fans for air circulation and ventilation in residential, commercial and suitable industrial environments.",
+// applications: [
+// "Homes",
+// "Offices",
+// "Shops",
+// "Commercial buildings",
+// "Bathrooms",
+// "Utility areas",
+// ],
+// keyFeatures: [
+// "Multiple fan types",
+// "Different mounting arrangements",
+// "Different airflow capacities",
+// "Speed-control options depending on model",
+// ],
+// technicalParameters: [
+// "Fan type",
+// "Sweep/size",
+// "Air delivery",
+// "Power consumption",
+// "Speed",
+// "Mounting arrangement",
+// ],
+// },
 // ];
 
-
-// // -------------------------
 // // Bells & Signalling
-// // -------------------------
 
 // const bellProducts = [
 
-//   {
-//     id: "bell-door-bells",
-//     name: "Door Bells",
-//     summary:
-//       "Audible visitor-notification devices for residential and commercial entrances.",
-//     applications: [
-//       "Residential entrances",
-//       "Apartments",
-//       "Offices",
-//       "Shops",
-//       "Hotels",
-//       "Commercial premises",
-//     ],
-//     keyFeatures: [
-//       "Wired and wireless variants depending on product",
-//       "Electronic chime options",
-//       "Multiple tone options depending on model",
-//       "Wall-mounted and other installation formats",
-//     ],
-//     technicalParameters: [
-//       "Operating voltage/power source",
-//       "Sound level",
-//       "Wired/wireless configuration",
-//       "Mounting arrangement",
-//     ],
-//   },
+// {
+// id: "bell-door-bells",
+// name: "Door Bells",
+// summary:
+// "Audible visitor-notification devices for residential and commercial entrances.",
+// applications: [
+// "Residential entrances",
+// "Apartments",
+// "Offices",
+// "Shops",
+// "Hotels",
+// "Commercial premises",
+// ],
+// keyFeatures: [
+// "Wired and wireless variants depending on product",
+// "Electronic chime options",
+// "Multiple tone options depending on model",
+// "Wall-mounted and other installation formats",
+// ],
+// technicalParameters: [
+// "Operating voltage/power source",
+// "Sound level",
+// "Wired/wireless configuration",
+// "Mounting arrangement",
+// ],
+// },
 
-//   {
-//     id: "bell-water-tank-overflow",
-//     name: "Water Tank Overflow Bells",
-//     summary:
-//       "Audible water-level alarm devices designed to alert users when a water tank reaches a configured level.",
-//     applications: [
-//       "Residential overhead tanks",
-//       "Apartments",
-//       "Commercial buildings",
-//       "Schools",
-//       "Institutional buildings",
-//     ],
-//     keyFeatures: [
-//       "Audible water-level warning",
-//       "Wired and wireless variants depending on product",
-//       "Sensor-based operation where applicable",
-//       "Designed to help prevent unnoticed overflow",
-//     ],
-//     technicalParameters: [
-//       "Sensing mechanism",
-//       "Operating voltage",
-//       "Wired/wireless configuration",
-//       "Alarm sound level",
-//       "Installation environment",
-//     ],
-//   },
+// {
+// id: "bell-water-tank-overflow",
+// name: "Water Tank Overflow Bells",
+// summary:
+// "Audible water-level alarm devices designed to alert users when a water tank reaches a configured level.",
+// applications: [
+// "Residential overhead tanks",
+// "Apartments",
+// "Commercial buildings",
+// "Schools",
+// "Institutional buildings",
+// ],
+// keyFeatures: [
+// "Audible water-level warning",
+// "Wired and wireless variants depending on product",
+// "Sensor-based operation where applicable",
+// "Designed to help prevent unnoticed overflow",
+// ],
+// technicalParameters: [
+// "Sensing mechanism",
+// "Operating voltage",
+// "Wired/wireless configuration",
+// "Alarm sound level",
+// "Installation environment",
+// ],
+// },
 // ];
 
-
-// // ============================================================
 // // PRODUCT BUILDER
-// // ============================================================
 
 // const categoryProduct = (
-//   product,
-//   category,
-//   featured = false
+// product,
+// category,
+// featured = false
 // ) => {
 
-//   const defaults = categoryDefaults[category];
+// const defaults = categoryDefaults[category];
 
-//   return makeProduct({
+// return makeProduct({
 
-//     id: product.id,
+// id: product.id,
 
-//     name: product.name,
+// name: product.name,
 
-//     category,
+// category,
 
-//     categoryName: defaults.categoryName,
+// categoryName: defaults.categoryName,
 
-//     image: product.image ?? null,
+// image: product.image ?? null,
 
-//     summary:
-//       product.summary ??
-//       defaults.summary,
+// summary:
+// product.summary ??
+// defaults.summary,
 
-//     description:
-//       product.description ??
-//       defaults.description,
+// description:
+// product.description ??
+// defaults.description,
 
-//     applications:
-//       product.applications ??
-//       defaults.applications,
+// applications:
+// product.applications ??
+// defaults.applications,
 
-//     keyFeatures:
-//       product.keyFeatures ??
-//       defaults.keyFeatures,
+// keyFeatures:
+// product.keyFeatures ??
+// defaults.keyFeatures,
 
-//     technicalParameters:
-//       product.technicalParameters ??
-//       defaults.technicalParameters,
+// technicalParameters:
+// product.technicalParameters ??
+// defaults.technicalParameters,
 
-//     selection:
-//       product.selection ??
-//       defaults.selection,
+// selection:
+// product.selection ??
+// defaults.selection,
 
-//     featured:
-//       product.featured ?? featured,
-//   });
+// featured:
+// product.featured ?? featured,
+// });
 // };
 
-
-// // ============================================================
 // // BUILD ALL PRODUCTS
-// // ============================================================
 
 // export const products = [
 
-//   // -------------------------
-//   // UPS
-//   // -------------------------
+// // UPS
 
-//   ...upsProducts.map((product, index) =>
-//     categoryProduct(
-//       product,
-//       "ups",
-//       index < 4
-//     )
-//   ),
+// ...upsProducts.map((product, index) =>
+// categoryProduct(
+// product,
+// "ups",
+// index < 4
+// )
+// ),
 
+// // UPS COMPONENTS
 
-//   // -------------------------
-//   // UPS COMPONENTS
-//   // -------------------------
+// ...upsComponents.map(
+// (product, index) =>
+// categoryProduct(
+// product,
+// "components",
+// index < 2
+// )
+// ),
 
-//   ...upsComponents.map(
-//     (product, index) =>
-//       categoryProduct(
-//         product,
-//         "components",
-//         index < 2
-//       )
-//   ),
+// // BATTERIES
 
+// ...batteryProducts.map(
+// (product, index) =>
+// categoryProduct(
+// product,
+// "batteries",
+// index < 3
+// )
+// ),
 
-//   // -------------------------
-//   // BATTERIES
-//   // -------------------------
+// // STABILIZERS
 
-//   ...batteryProducts.map(
-//     (product, index) =>
-//       categoryProduct(
-//         product,
-//         "batteries",
-//         index < 3
-//       )
-//   ),
+// ...stabilizerProducts.map(
+// (product) =>
+// categoryProduct(
+// product,
+// "stabilizers",
+// true
+// )
+// ),
 
+// // INVERTERS
 
-//   // -------------------------
-//   // STABILIZERS
-//   // -------------------------
+// ...inverterProducts.map(
+// (product) =>
+// categoryProduct(
+// product,
+// "inverters",
+// true
+// )
+// ),
 
-//   ...stabilizerProducts.map(
-//     (product) =>
-//       categoryProduct(
-//         product,
-//         "stabilizers",
-//         true
-//       )
-//   ),
+// // SOLAR
 
+// ...solarProducts.map(
+// (product, index) =>
+// categoryProduct(
+// product,
+// "solar",
+// index < 4
+// )
+// ),
 
-//   // -------------------------
-//   // INVERTERS
-//   // -------------------------
+// // CONTROL PANELS
 
-//   ...inverterProducts.map(
-//     (product) =>
-//       categoryProduct(
-//         product,
-//         "inverters",
-//         true
-//       )
-//   ),
+// ...panelProducts.map(
+// (product, index) =>
+// categoryProduct(
+// product,
+// "panels",
+// index < 5
+// )
+// ),
 
+// // PANEL COMPONENTS
+// // IMPORTANT:
+// // category is panel-components,
+// // NOT panels.
 
-//   // -------------------------
-//   // SOLAR
-//   // -------------------------
+// ...panelComponentProducts.map(
+// (product) =>
+// categoryProduct(
+// product,
+// "panel-components",
+// false
+// )
+// ),
 
-//   ...solarProducts.map(
-//     (product, index) =>
-//       categoryProduct(
-//         product,
-//         "solar",
-//         index < 4
-//       )
-//   ),
+// // WIRING ACCESSORIES
 
+// ...wiringAccessoryProducts.map(
+// (product, index) =>
+// categoryProduct(
+// product,
+// "wiring-accessories",
+// index < 3
+// )
+// ),
 
-//   // -------------------------
-//   // CONTROL PANELS
-//   // -------------------------
+// // ELECTRICAL BOXES
 
-//   ...panelProducts.map(
-//     (product, index) =>
-//       categoryProduct(
-//         product,
-//         "panels",
-//         index < 5
-//       )
-//   ),
+// ...electricalBoxProducts.map(
+// (product, index) =>
+// categoryProduct(
+// product,
+// "electrical-boxes",
+// index === 0
+// )
+// ),
 
+// // WIRES & CONDUITS
 
-//   // -------------------------
-//   // PANEL COMPONENTS
-//   // IMPORTANT:
-//   // category is panel-components,
-//   // NOT panels.
-//   // -------------------------
+// ...wireConduitProducts.map(
+// (product, index) =>
+// categoryProduct(
+// product,
+// "wires-conduits",
+// index === 0
+// )
+// ),
 
-//   ...panelComponentProducts.map(
-//     (product) =>
-//       categoryProduct(
-//         product,
-//         "panel-components",
-//         false
-//       )
-//   ),
+// // LED LIGHTING
 
+// ...lightingProducts.map(
+// (product, index) =>
+// categoryProduct(
+// product,
+// "lighting",
+// index < 4
+// )
+// ),
 
-//   // -------------------------
-//   // WIRING ACCESSORIES
-//   // -------------------------
+// // FANS
 
-//   ...wiringAccessoryProducts.map(
-//     (product, index) =>
-//       categoryProduct(
-//         product,
-//         "wiring-accessories",
-//         index < 3
-//       )
-//   ),
+// ...fanProducts.map(
+// (product) =>
+// categoryProduct(
+// product,
+// "fans",
+// true
+// )
+// ),
 
+// // BELLS
 
-//   // -------------------------
-//   // ELECTRICAL BOXES
-//   // -------------------------
-
-//   ...electricalBoxProducts.map(
-//     (product, index) =>
-//       categoryProduct(
-//         product,
-//         "electrical-boxes",
-//         index === 0
-//       )
-//   ),
-
-
-//   // -------------------------
-//   // WIRES & CONDUITS
-//   // -------------------------
-
-//   ...wireConduitProducts.map(
-//     (product, index) =>
-//       categoryProduct(
-//         product,
-//         "wires-conduits",
-//         index === 0
-//       )
-//   ),
-
-
-//   // -------------------------
-//   // LED LIGHTING
-//   // -------------------------
-
-//   ...lightingProducts.map(
-//     (product, index) =>
-//       categoryProduct(
-//         product,
-//         "lighting",
-//         index < 4
-//       )
-//   ),
-
-
-//   // -------------------------
-//   // FANS
-//   // -------------------------
-
-//   ...fanProducts.map(
-//     (product) =>
-//       categoryProduct(
-//         product,
-//         "fans",
-//         true
-//       )
-//   ),
-
-
-//   // -------------------------
-//   // BELLS
-//   // -------------------------
-
-//   ...bellProducts.map(
-//     (product) =>
-//       categoryProduct(
-//         product,
-//         "bells",
-//         false
-//       )
-//   ),
+// ...bellProducts.map(
+// (product) =>
+// categoryProduct(
+// product,
+// "bells",
+// false
+// )
+// ),
 // ];
 
-
-// // ============================================================
 // // SERVICES
-// // ============================================================
 
 // export const services = [
 
-//   {
-//     title: "Power Solutions",
+// {
+// title: "Power Solutions",
 
-//     description:
-//       "Complete lifecycle support for backup power and critical electrical infrastructure.",
+// description:
+// "Complete lifecycle support for backup power and critical electrical infrastructure.",
 
-//     items: [
-//       "UPS Installation",
-//       "UPS Repair & Servicing",
-//       "UPS Annual Maintenance Contracts (AMC)",
-//       "Preventive Maintenance",
-//       "Breakdown Maintenance",
-//       "Battery Replacement",
-//       "Battery Health Testing",
-//       "Load Testing",
-//       "Power Quality Analysis",
-//       "Site Survey & Consultation",
-//     ],
-//   },
+// items: [
+// "UPS Installation",
+// "UPS Repair & Servicing",
+// "UPS Annual Maintenance Contracts (AMC)",
+// "Preventive Maintenance",
+// "Breakdown Maintenance",
+// "Battery Replacement",
+// "Battery Health Testing",
+// "Load Testing",
+// "Power Quality Analysis",
+// "Site Survey & Consultation",
+// ],
+// },
 
+// {
+// title: "Electrical Control Panels",
 
-//   {
-//     title: "Electrical Control Panels",
+// description:
+// "From panel engineering to automation integration, testing and commissioning.",
 
-//     description:
-//       "From panel engineering to automation integration, testing and commissioning.",
+// items: [
+// "Panel Design",
+// "Panel Manufacturing",
+// "Panel Installation",
+// "Panel Testing & Commissioning",
+// "PLC Programming",
+// "Industrial Automation",
+// "SCADA Integration",
+// ],
+// },
 
-//     items: [
-//       "Panel Design",
-//       "Panel Manufacturing",
-//       "Panel Installation",
-//       "Panel Testing & Commissioning",
-//       "PLC Programming",
-//       "Industrial Automation",
-//       "SCADA Integration",
-//     ],
-//   },
+// {
+// title: "Electrical Services",
 
+// description:
+// "Electrical installation, maintenance and troubleshooting across project environments.",
 
-//   {
-//     title: "Electrical Services",
+// items: [
+// "Residential Electrical Wiring",
+// "Commercial Electrical Wiring",
+// "Industrial Electrical Wiring",
+// "Complete Electrical Installation",
+// "Electrical Rewiring",
+// "Electrical Fault Finding & Troubleshooting",
+// "Electrical Maintenance",
+// "Electrical Safety Inspection",
+// "Cable Laying & Cable Termination",
+// ],
+// },
 
-//     description:
-//       "Electrical installation, maintenance and troubleshooting across project environments.",
+// {
+// title: "Switching & Protection",
 
-//     items: [
-//       "Residential Electrical Wiring",
-//       "Commercial Electrical Wiring",
-//       "Industrial Electrical Wiring",
-//       "Complete Electrical Installation",
-//       "Electrical Rewiring",
-//       "Electrical Fault Finding & Troubleshooting",
-//       "Electrical Maintenance",
-//       "Electrical Safety Inspection",
-//       "Cable Laying & Cable Termination",
-//     ],
-//   },
+// description:
+// "Protection and switching systems designed around safety, continuity and maintainability.",
 
+// items: [
+// "Switchgear Installation",
+// "MCB Installation & Replacement",
+// "MCCB Installation & Replacement",
+// "ACB Installation & Maintenance",
+// "Isolator Installation",
+// "Changeover Switch Installation",
+// "Panel Switching Solutions",
+// "Electrical Protection System Installation",
+// ],
+// },
 
-//   {
-//     title: "Switching & Protection",
+// {
+// title: "Lighting Services",
 
-//     description:
-//       "Protection and switching systems designed around safety, continuity and maintainability.",
+// description:
+// "Practical lighting solutions for residential, commercial, industrial and outdoor applications.",
 
-//     items: [
-//       "Switchgear Installation",
-//       "MCB Installation & Replacement",
-//       "MCCB Installation & Replacement",
-//       "ACB Installation & Maintenance",
-//       "Isolator Installation",
-//       "Changeover Switch Installation",
-//       "Panel Switching Solutions",
-//       "Electrical Protection System Installation",
-//     ],
-//   },
-
-
-//   {
-//     title: "Lighting Services",
-
-//     description:
-//       "Practical lighting solutions for residential, commercial, industrial and outdoor applications.",
-
-//     items: [
-//       "Residential Lighting Installation",
-//       "Commercial Lighting Installation",
-//       "Industrial Lighting Installation",
-//       "LED Lighting Solutions",
-//       "Indoor Lighting",
-//       "Outdoor Lighting",
-//       "Street Lighting",
-//     ],
-//   },
+// items: [
+// "Residential Lighting Installation",
+// "Commercial Lighting Installation",
+// "Industrial Lighting Installation",
+// "LED Lighting Solutions",
+// "Indoor Lighting",
+// "Outdoor Lighting",
+// "Street Lighting",
+// ],
+// },
 // ];
 
-
-// // ============================================================
 // // PROJECTS
-// // ============================================================
 
 // export const projects = [
 
-//   {
-//     id: "project-ner-17-stations",
+// {
+// id: "project-ner-17-stations",
 
-//     title:
-//       "North Eastern Railway — 17 Stations",
+// title:
+// "North Eastern Railway — 17 Stations",
 
-//     client:
-//       "Indian Railways / North Eastern Railway",
+// client:
+// "Indian Railways / North Eastern Railway",
 
-//     type:
-//       "Government Infrastructure",
+// type:
+// "Government Infrastructure",
 
-//     description:
-//       "Comprehensive electrical works across 17 North Eastern Railway stations.",
+// description:
+// "Comprehensive electrical works across 17 North Eastern Railway stations.",
 
-//     scope: [
-//       "Complete Electrical Wiring",
-//       "Power & Control Cabling",
-//       "Street Lighting Installation",
-//       "Street Light Pole Installation",
-//       "Station Name Board Lighting",
-//       "Indoor & Outdoor Lighting",
-//       "Electrical Maintenance",
-//       "Supply of Electrical Appliances",
-//       "Air Conditioner Supply & Installation",
-//       "Heater Supply",
-//       "Electrical Accessories Supply",
-//       "Electrical Control Panel Supply & Installation",
-//       "Testing & Commissioning",
-//     ],
-//   },
+// scope: [
+// "Complete Electrical Wiring",
+// "Power & Control Cabling",
+// "Street Lighting Installation",
+// "Street Light Pole Installation",
+// "Station Name Board Lighting",
+// "Indoor & Outdoor Lighting",
+// "Electrical Maintenance",
+// "Supply of Electrical Appliances",
+// "Air Conditioner Supply & Installation",
+// "Heater Supply",
+// "Electrical Accessories Supply",
+// "Electrical Control Panel Supply & Installation",
+// "Testing & Commissioning",
+// ],
+// },
 // ];
 
-
-// // ============================================================
 // // CLIENTS
-// // ============================================================
 
 // export const clients = {
 
-//   government: [
-//     "Indian Railways (North Eastern Railway)",
-//   ],
+// government: [
+// "Indian Railways (North Eastern Railway)",
+// ],
 
-//   banking: [
-//     "Union Bank of India",
-//     "Bank of Baroda",
-//     "Uttar Pradesh Gramin Bank",
-//     "Central Bank of India",
-//     "Bank of India",
-//   ],
+// banking: [
+// "Union Bank of India",
+// "Bank of Baroda",
+// "Uttar Pradesh Gramin Bank",
+// "Central Bank of India",
+// "Bank of India",
+// ],
 
-//   healthcare: [
-//     "Apex Hospital",
-//     "Agrim Hospital",
-//   ],
+// healthcare: [
+// "Apex Hospital",
+// "Agrim Hospital",
+// ],
 
-//   commercial: [
-//     "Rajendra Toyota",
-//   ],
+// commercial: [
+// "Rajendra Toyota",
+// ],
 // };
 
-
-// // ============================================================
 // // CERTIFICATIONS
-// // ============================================================
 
 // export const certifications = [
 
-//   "Registered on the Government e-Marketplace (GeM) Portal",
+// "Registered on the Government e-Marketplace (GeM) Portal",
 
-//   "A Class Electrical Contractor Certificate",
+// "A Class Electrical Contractor Certificate",
 
-//   "ISO 9001 Certified — Quality Management System",
+// "ISO 9001 Certified — Quality Management System",
 
-//   "ISO 14001 Certified — Environmental Management System",
+// "ISO 14001 Certified — Environmental Management System",
 // ];
-
-
-
-
 
 import singleUPS from "./assets/singleUPS.jpeg";
 import threePhaseImage from "./assets/threePhaseImage.jpeg";
@@ -4174,7 +4004,6 @@ export const upsComponentProducts = [
   }),
 ];
 
-
 export const batteryProducts = [
   {
     id: "battery-smf-vrla",
@@ -5045,8 +4874,6 @@ export const solarProducts = [
     featured: false,
   },
 ];
-
-
 
 export const controlPanelProducts = [
   {
@@ -7814,10 +7641,6 @@ export const bellProducts = [
   },
 ];
 
-
-
-
-
 export const products = [
   ...upsProducts,
   ...upsComponentProducts,
@@ -7852,7 +7675,6 @@ export const getProductsByCategory = (category) =>
 
 export const getFeaturedProducts = () =>
   products.filter((product) => product.featured === true);
-
 
 export const validateProducts = () => {
   const errors = [];
@@ -7919,7 +7741,6 @@ export const validateProducts = () => {
   };
 };
 
-
 export const validateProductIds = () => {
   const seen = new Set();
   const duplicates = [];
@@ -7937,7 +7758,6 @@ export const validateProductIds = () => {
     duplicates,
   };
 };
-
 
 export const validateProductSlugs = () => {
   const seen = new Set();
@@ -7957,7 +7777,6 @@ export const validateProductSlugs = () => {
   };
 };
 
-
 export const validateProductCategories = () => {
   const categoryIds = new Set(categories.map((category) => category.id));
 
@@ -7974,7 +7793,6 @@ export const validateProductCategories = () => {
     invalidProducts,
   };
 };
-
 
 export const validateProductReferences = () => {
   const errors = [];
@@ -7994,7 +7812,6 @@ export const validateProductReferences = () => {
     errors,
   };
 };
-
 
 export const validateCatalog = () => {
   const productValidation = validateProducts();
@@ -8018,7 +7835,6 @@ export const validateCatalog = () => {
     references: referenceValidation,
   };
 };
-
 
 export const productStatistics = products.reduce(
   (stats, product) => {
@@ -8051,7 +7867,6 @@ export const productStatistics = products.reduce(
   }
 );
 
-
 export const catalogStatistics = {
   categories: categories.length,
   products: products.length,
@@ -8060,7 +7875,6 @@ export const catalogStatistics = {
   productsWithoutImages: productStatistics.withoutImages,
   productsByCategory: productStatistics.byCategory,
 };
-
 
 export const services = [
   {
@@ -8365,7 +8179,6 @@ export const services = [
   },
 ];
 
-
 export const projects = [
   {
     id: "project-ner-17-stations",
@@ -8383,7 +8196,6 @@ export const projects = [
     featured: true,
   },
 ];
-
 
 export const clients = [
   {
@@ -8477,7 +8289,6 @@ export const clients = [
   },
 ];
 
-
 export const certifications = [
   {
     id: "cert-gem-registration",
@@ -8519,7 +8330,6 @@ export const certifications = [
       "The exact certificate scope, certification body, certificate number and validity should be verified before publication.",
   },
 ];
-
 
 export const defaultExport = {
   company,
