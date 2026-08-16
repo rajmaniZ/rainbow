@@ -11,8 +11,246 @@ import SectionHeader from "../../components/common/SectionHeader";
 
 import styles from "./Projects.module.css";
 
+/* DATA HELPERS */
+
+/*
+ * Safely converts any value into an array.
+ * Supports:
+ * - arrays
+ * - strings
+ * - numbers
+ * - objects
+ * - null / undefined
+ * This prevents errors such as:
+ * "names.map is not a function"
+ */
+const toArray = (value) => {
+  if (Array.isArray(value)) {
+    return value;
+  }
+
+  if (value === null || value === undefined) {
+    return [];
+  }
+
+  if (
+    typeof value === "string" ||
+    typeof value === "number"
+  ) {
+    return [value];
+  }
+
+  if (typeof value === "object") {
+    return Object.values(value);
+  }
+
+  return [];
+};
+
+/*
+ * Convert the current clients data structure into
+ * sector-based groups.
+ * Current structure:
+ * clients = [
+ *   {
+ *     id: "...",
+ *     name: "...",
+ *     category: "Government"
+ *   },
+ * ]
+ * Older structure:
+ * clients = {
+ *   Government: ["Client A", "Client B"],
+ *   Banking: ["Client C"]
+ * }
+ * This helper supports both structures so the component
+ * remains backwards compatible.
+ */
+const groupClientsBySector = (clientData) => {
+  if (Array.isArray(clientData)) {
+    const groups = new Map();
+
+    clientData.forEach((client) => {
+      if (!client) {
+        return;
+      }
+
+      /* Current client object structure. */
+      if (
+        typeof client === "object" &&
+        !Array.isArray(client)
+      ) {
+        const sector =
+          client.category ||
+          client.sector ||
+          client.categoryName ||
+          "Other";
+
+        const name =
+          client.name ||
+          client.client ||
+          client.title;
+
+        if (!name) {
+          return;
+        }
+
+        if (!groups.has(sector)) {
+          groups.set(sector, []);
+        }
+
+        groups.get(sector).push({
+          id:
+            client.id ||
+            `${sector}-${name}`,
+          name: String(name),
+        });
+
+        return;
+      }
+
+      /*
+ * If an unexpected primitive value exists inside
+ * the clients array, keep it safe.
+ */
+      if (
+        typeof client === "string" ||
+        typeof client === "number"
+      ) {
+        const sector = "Other";
+
+        if (!groups.has(sector)) {
+          groups.set(sector, []);
+        }
+
+        groups.get(sector).push({
+          id: `${sector}-${client}`,
+          name: String(client),
+        });
+      }
+    });
+
+    return Array.from(groups.entries()).map(
+      ([sector, names]) => ({
+        sector,
+        names,
+      }),
+    );
+  }
+
+  /*
+ * Backwards compatibility for the previous object
+ * structure:
+ * {
+ *   Government: [...],
+ *   Banking: [...],
+ * }
+ */
+  if (
+    clientData &&
+    typeof clientData === "object"
+  ) {
+    return Object.entries(clientData).map(
+      ([sector, value]) => ({
+        sector,
+        names: toArray(value)
+          .map((item, index) => {
+            if (
+              item &&
+              typeof item === "object"
+            ) {
+              return {
+                id:
+                  item.id ||
+                  `${sector}-${index}`,
+                name:
+                  item.name ||
+                  item.client ||
+                  item.title ||
+                  `Client ${index + 1}`,
+              };
+            }
+
+            return {
+              id: `${sector}-${index}`,
+              name: String(item),
+            };
+          })
+          .filter((item) => item.name),
+      }),
+    );
+  }
+
+  return [];
+};
+
+/*
+ * Safely convert project scope into a displayable
+ * array.
+ */
+const getProjectScope = (project) => {
+  if (!project) {
+    return [];
+  }
+
+  const scope = project.scope;
+
+  if (Array.isArray(scope)) {
+    return scope.filter(Boolean);
+  }
+
+  if (
+    typeof scope === "string" ||
+    typeof scope === "number"
+  ) {
+    return [scope];
+  }
+
+  if (
+    scope &&
+    typeof scope === "object"
+  ) {
+    return Object.entries(scope).map(
+      ([key, value]) => {
+        if (
+          value === null ||
+          value === undefined ||
+          value === ""
+        ) {
+          return key;
+        }
+
+        if (
+          typeof value === "object"
+        ) {
+          return `${key}: ${JSON.stringify(value)}`;
+        }
+
+        return `${key}: ${value}`;
+      },
+    );
+  }
+
+  return [];
+};
+
+/* COMPONENT */
+
 export default function Projects() {
-  const project = projects?.[0];
+  /* Protect against malformed data exports. */
+  const projectList = Array.isArray(projects)
+    ? projects
+    : [];
+
+  const project = projectList[0] || null;
+
+  /* Normalize clients before rendering. */
+  const clientSectors =
+    groupClientsBySector(clients);
+
+  /* Normalize project scope before rendering. */
+  const projectScope =
+    getProjectScope(project);
 
   return (
     <div className={styles.page}>
@@ -36,12 +274,14 @@ export default function Projects() {
           {/* RAILWAY SCENE */}
 
           <div className={styles.railwayScene}>
-
             <div className={styles.track}>
               <div className={styles.sleepers}>
-                {Array.from({ length: 90 }, (_, index) => (
-                  <span key={index} />
-                ))}
+                {Array.from(
+                  { length: 90 },
+                  (_, index) => (
+                    <span key={index} />
+                  ),
+                )}
               </div>
 
               <span
@@ -57,31 +297,52 @@ export default function Projects() {
 
             <div className={styles.trainViewport}>
               <div className={styles.train}>
-                {/* Train front */}
+                {/* TRAIN FRONT */}
+
                 <div className={styles.trainFront}>
-                  <div className={styles.trainWindow}>
+                  <div
+                    className={
+                      styles.trainWindow
+                    }
+                  >
                     <TrainFront size={17} />
                   </div>
 
-                  <span className={styles.headlight} />
+                  <span
+                    className={styles.headlight}
+                  />
                 </div>
 
-                {/* Train body */}
+                {/* TRAIN BODY */}
+
                 <div className={styles.trainBody}>
-                  <div className={styles.trainWindows}>
+                  <div
+                    className={
+                      styles.trainWindows
+                    }
+                  >
                     <span />
                     <span />
                     <span />
                   </div>
 
-                  <span className={styles.trainStripe} />
+                  <span
+                    className={
+                      styles.trainStripe
+                    }
+                  />
 
-                  <span className={styles.trainPower}>
+                  <span
+                    className={
+                      styles.trainPower
+                    }
+                  >
                     <Zap size={11} />
                   </span>
                 </div>
 
-                {/* Wheels */}
+                {/* WHEELS */}
+
                 <span
                   className={`${styles.wheel} ${styles.wheelOne}`}
                 />
@@ -103,7 +364,7 @@ export default function Projects() {
         <div className={styles.heroContent}>
           <span className={styles.eyebrow}>
             <i />
-            PROJECTS & CLIENTS
+            PROJECTS &amp; CLIENTS
           </span>
 
           <h1>
@@ -115,9 +376,11 @@ export default function Projects() {
           </h1>
 
           <p>
-            Rainbow delivers electrical infrastructure, power systems
-            and engineering services across government, banking,
-            healthcare, industrial and commercial environments.
+            Rainbow delivers electrical
+            infrastructure, power systems and
+            engineering services across
+            government, banking, healthcare,
+            industrial and commercial environments.
           </p>
 
           <div className={styles.actions}>
@@ -137,9 +400,13 @@ export default function Projects() {
             </Link>
           </div>
 
+          {/* STATS */}
+
           <div className={styles.stats}>
             <div className={styles.stat}>
-              <span className={styles.statIcon}>
+              <span
+                className={styles.statIcon}
+              >
                 <TrainFront size={15} />
               </span>
 
@@ -150,7 +417,9 @@ export default function Projects() {
             </div>
 
             <div className={styles.stat}>
-              <span className={styles.statIcon}>
+              <span
+                className={styles.statIcon}
+              >
                 <Zap size={15} />
               </span>
 
@@ -161,18 +430,21 @@ export default function Projects() {
             </div>
 
             <div className={styles.stat}>
-              <span className={styles.statIcon}>
+              <span
+                className={styles.statIcon}
+              >
                 <CheckCircle2 size={15} />
               </span>
 
               <div>
                 <strong>Direct</strong>
-                <small>Engineering support</small>
+                <small>
+                  Engineering support
+                </small>
               </div>
             </div>
           </div>
         </div>
-
       </section>
 
       {/* MAJOR PROJECT */}
@@ -186,6 +458,8 @@ export default function Projects() {
           />
 
           <article className={styles.projectCard}>
+            {/* PROJECT VISUAL */}
+
             <div className={styles.projectVisual}>
               <div className={styles.projectIcon}>
                 <TrainFront size={28} />
@@ -195,16 +469,26 @@ export default function Projects() {
 
               <strong>17</strong>
 
-              <small>RAILWAY STATIONS</small>
+              <small>
+                RAILWAY STATIONS
+              </small>
             </div>
 
+            {/* PROJECT BODY */}
+
             <div className={styles.projectBody}>
-              <small className={styles.projectType}>
-                {project?.type || "Electrical Infrastructure"}
+              <small
+                className={
+                  styles.projectType
+                }
+              >
+                {project?.type ||
+                  "Electrical Infrastructure"}
               </small>
 
               <h2>
-                {project?.client || "North Eastern Railway"}
+                {project?.client ||
+                  "North Eastern Railway"}
               </h2>
 
               <p>
@@ -214,18 +498,59 @@ export default function Projects() {
 
               <h3>Scope of work</h3>
 
-              <div className={styles.scope}>
-                {project?.scope?.map((item) => (
-                  <span key={item}>
-                    <CheckCircle2 size={15} />
-                    {item}
+              {projectScope.length > 0 ? (
+                <div className={styles.scope}>
+                  {projectScope.map(
+                    (item, index) => (
+                      <span
+                        key={`scope-${index}`}
+                      >
+                        <CheckCircle2
+                          size={15}
+                        />
+
+                        {String(item)}
+                      </span>
+                    ),
+                  )}
+                </div>
+              ) : (
+                <div className={styles.scope}>
+                  <span>
+                    <CheckCircle2
+                      size={15}
+                    />
+                    Electrical installation
                   </span>
-                ))}
-              </div>
+
+                  <span>
+                    <CheckCircle2
+                      size={15}
+                    />
+                    Lighting systems
+                  </span>
+
+                  <span>
+                    <CheckCircle2
+                      size={15}
+                    />
+                    Power distribution
+                  </span>
+
+                  <span>
+                    <CheckCircle2
+                      size={15}
+                    />
+                    Cabling and commissioning
+                  </span>
+                </div>
+              )}
 
               <Link
                 to="/contact"
-                className={styles.projectAction}
+                className={
+                  styles.projectAction
+                }
               >
                 Discuss this project
                 <ArrowRight size={16} />
@@ -246,26 +571,93 @@ export default function Projects() {
           />
 
           <div className={styles.clientsGrid}>
-            {Object.entries(clients).map(([sector, names]) => (
+            {clientSectors.length > 0 ? (
+              clientSectors.map(
+                ({ sector, names }) => (
+                  <article
+                    className={
+                      styles.clientCard
+                    }
+                    key={sector}
+                  >
+                    <div
+                      className={
+                        styles.clientHeader
+                      }
+                    >
+                      <span>SECTOR</span>
+
+                      <strong>
+                        {sector}
+                      </strong>
+                    </div>
+
+                    <div
+                      className={
+                        styles.clientList
+                      }
+                    >
+                      {Array.isArray(
+                        names,
+                      ) &&
+                        names.map(
+                          (client) => (
+                            <div
+                              key={
+                                client.id ||
+                                client.name
+                              }
+                            >
+                              <CheckCircle2
+                                size={15}
+                              />
+
+                              <span>
+                                {client.name}
+                              </span>
+                            </div>
+                          ),
+                        )}
+                    </div>
+                  </article>
+                ),
+              )
+            ) : (
               <article
-                className={styles.clientCard}
-                key={sector}
+                className={
+                  styles.clientCard
+                }
               >
-                <div className={styles.clientHeader}>
-                  <span>SECTOR</span>
-                  <strong>{sector}</strong>
+                <div
+                  className={
+                    styles.clientHeader
+                  }
+                >
+                  <span>CLIENT NETWORK</span>
+
+                  <strong>
+                    Rainbow
+                  </strong>
                 </div>
 
-                <div className={styles.clientList}>
-                  {names.map((name) => (
-                    <div key={name}>
-                      <CheckCircle2 size={15} />
-                      <span>{name}</span>
-                    </div>
-                  ))}
+                <div
+                  className={
+                    styles.clientList
+                  }
+                >
+                  <div>
+                    <CheckCircle2
+                      size={15}
+                    />
+
+                    <span>
+                      Client information
+                      available on request
+                    </span>
+                  </div>
                 </div>
               </article>
-            ))}
+            )}
           </div>
         </div>
       </section>
@@ -276,15 +668,20 @@ export default function Projects() {
         <div className={styles.container}>
           <div className={styles.cta}>
             <div>
-              <span>Your next project</span>
+              <span>
+                Your next project
+              </span>
 
               <h2>
-                Let's discuss the electrical scope.
+                Let's discuss the
+                electrical scope.
               </h2>
 
               <p>
-                Share your application, site requirement or project
-                scope with Rainbow's engineering team.
+                Share your application,
+                site requirement or project
+                scope with Rainbow's
+                engineering team.
               </p>
             </div>
 

@@ -219,18 +219,17 @@ export default function Footer() {
 
           <div className={styles.companyBlock}>
             <div className={styles.brandStatement}>
-
               <Link
                 to="/"
                 className={styles.logoLink}
                 aria-label="Rainbow Home"
               >
                 <img
-                src={rainbowFavicon}
-                alt=""
-                aria-hidden="true"
-                className={styles.faviconMark}
-              />
+                  src={rainbowFavicon}
+                  alt=""
+                  aria-hidden="true"
+                  className={styles.faviconMark}
+                />
                 <img
                   src={logo}
                   alt="Rainbow Electrical"
@@ -410,24 +409,26 @@ export default function Footer() {
 
             <div className={styles.contactList}>
               {/* OFFICE LOCATION */}
+              <a
+                href="https://maps.app.goo.gl/fkHx7bFbwB2SWJG27"
+                target="_blank"
+              >
+                <div className={styles.contactRow}>
+                  <div className={styles.contactIcon}>
+                    <FaMapMarkerAlt />
+                  </div>
 
-              <div className={styles.contactRow}>
-                <div className={styles.contactIcon}>
-                  <FaMapMarkerAlt />
+                  <div>
+                    <span className={styles.contactLabel}>OFFICE</span>
+
+                    <p>{location}</p>
+                  </div>
                 </div>
-
-                <div>
-                  <span className={styles.contactLabel}>OFFICE</span>
-
-                  <p>{location}</p>
-                </div>
-              </div>
-
-              {/*
+                {/*
  *                   OFFICE PHONE
  *                   ENTIRE CARD IS CLICKABLE
  */}
-
+              </a>
               <div
                 className={`${styles.contactRow} ${styles.phoneContactRow}`}
                 role="button"

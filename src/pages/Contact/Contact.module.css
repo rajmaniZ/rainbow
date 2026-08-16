@@ -1,3 +1,5 @@
+/* CONTACT PAGE */
+
 .page {
   --ink: #071421;
   --blue: #135ce0;
@@ -63,7 +65,7 @@
     );
 }
 
-/* BACKGROUND */
+/* HERO BACKGROUND */
 
 .heroGrid {
   position: absolute;
@@ -112,7 +114,7 @@
   pointer-events: none;
 }
 
-/* NODES */
+/* HERO NODES */
 
 .heroNodes {
   position: absolute;
@@ -213,8 +215,6 @@
   overflow: visible;
 }
 
-/* EYEBROW */
-
 .eyebrow {
   display: inline-flex;
 
@@ -246,8 +246,6 @@
     0 0 0 5px rgba(22, 185, 138, 0.1);
 }
 
-/* HEADING */
-
 .heroContent h1 {
   max-width: 720px;
 
@@ -269,8 +267,6 @@
 .heroContent h1 strong {
   color: var(--blue);
 }
-
-/* DESCRIPTION */
 
 .heroContent > p {
   max-width: 650px;
@@ -366,7 +362,7 @@
   border-color: #aebfd0;
 }
 
-/* CALL WRAPPER */
+/* PHONE CHOOSER */
 
 .callChooserWrapper {
   position: relative;
@@ -376,11 +372,6 @@
 
   overflow: visible;
 }
-
-/*
- *    PHONE CHOOSER
- *    THIS IS THE MAIN Z-INDEX FIX.
- */
 
 .phoneChooser {
   position: absolute;
@@ -425,12 +416,7 @@
   }
 }
 
-/* CHOOSER HEADER */
-
 .phoneChooserHeader {
-  position: relative;
-  z-index: 2;
-
   display: flex;
 
   flex-direction: column;
@@ -456,12 +442,7 @@
   line-height: 1.4;
 }
 
-/* CHOOSER LIST */
-
 .phoneChooserList {
-  position: relative;
-  z-index: 3;
-
   display: flex;
 
   flex-direction: column;
@@ -469,11 +450,8 @@
   gap: 5px;
 }
 
-/* CHOOSER OPTION */
-
 .phoneChooserOption {
   position: relative;
-  z-index: 4;
 
   width: 100%;
 
@@ -526,8 +504,6 @@
   outline-offset: 2px;
 }
 
-/* CHOOSER ICON */
-
 .phoneChooserIcon {
   width: 31px;
   height: 31px;
@@ -542,8 +518,6 @@
 
   color: var(--blue);
 }
-
-/* CHOOSER INFO */
 
 .phoneChooserInfo {
   min-width: 0;
@@ -591,9 +565,6 @@
 }
 
 .heroStats > div {
-  position: relative;
-  z-index: 1;
-
   display: flex;
 
   align-items: center;
@@ -646,8 +617,6 @@
   overflow: visible;
 }
 
-/* ORBITS */
-
 .visualOrbit,
 .visualOrbitTwo {
   position: absolute;
@@ -670,8 +639,6 @@
 
   border-color: rgba(71, 167, 195, 0.18);
 }
-
-/* CONNECTION LINE */
 
 .connectionLine {
   position: absolute;
@@ -748,8 +715,6 @@
   overflow: visible;
 }
 
-/* PANEL TOP */
-
 .panelTop {
   display: flex;
 
@@ -821,8 +786,6 @@
 
   background: #16b98a;
 }
-
-/* PANEL HEADING */
 
 .contactPanel h2 {
   margin: 27px 0 8px;
@@ -931,6 +894,10 @@
 .panelEmailItem {
   color: #26384a;
 
+  font-size: 0.58rem;
+
+  font-weight: 700;
+
   text-decoration: none;
 
   transition:
@@ -949,14 +916,6 @@
 
   color: var(--blue);
 }
-
-.panelEmailItem {
-  font-size: 0.58rem;
-
-  font-weight: 700;
-}
-
-/* WHATSAPP */
 
 .whatsappItem {
   grid-column: 1 / -1;
@@ -1111,7 +1070,7 @@
   font-size: 0.58rem;
 }
 
-/* CONTENT */
+/* CONTACT CONTENT */
 
 .content {
   position: relative;
@@ -1213,7 +1172,7 @@
   overflow-wrap: anywhere;
 }
 
-/* PHONE INFO */
+/* PHONE INFORMATION */
 
 .phoneInfoCard {
   position: relative;
@@ -1255,8 +1214,6 @@
 
   color: var(--text);
 
-  text-decoration: none;
-
   transition:
     transform 0.2s ease,
     background 0.2s ease,
@@ -1294,11 +1251,11 @@
       #135ce0
     );
 
-  color: #fff !important;
+  color: #fff;
 
-  font-size: 0.62rem !important;
+  font-size: 0.62rem;
 
-  font-weight: 800 !important;
+  font-weight: 800;
 }
 
 .personDetails {
@@ -1344,6 +1301,8 @@
   background: #eaf3ff;
 
   color: var(--blue);
+
+  text-decoration: none;
 
   transition:
     background 0.2s ease,
@@ -1428,8 +1387,6 @@
 
   line-height: 1.6;
 }
-
-/* FORM ROW */
 
 .row {
   display: grid;
@@ -1585,6 +1542,264 @@
   line-height: 1.5;
 }
 
+/* GOOGLE MAP SECTION */
+
+.mapSection {
+  position: relative;
+
+  width: 100%;
+
+  padding: 90px 0 100px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #f7fafc 0%,
+      #ffffff 100%
+    );
+
+  border-top: 1px solid #edf2f6;
+}
+
+.mapContainer {
+  width: min(1240px, calc(100% - 36px));
+
+  margin: 0 auto;
+}
+
+/* MAP HEADER */
+
+.mapHeader {
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap: 40px;
+
+  margin-bottom: 28px;
+}
+
+.mapHeader > div {
+  min-width: 0;
+}
+
+.mapEyebrow {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  margin-bottom: 11px;
+
+  color: var(--blue);
+
+  font-size: 0.62rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.14em;
+
+  text-transform: uppercase;
+}
+
+.mapEyebrow svg {
+  flex: 0 0 auto;
+}
+
+.mapHeader h2 {
+  margin: 0;
+
+  color: #102a43;
+
+  font-family: var(--head);
+
+  font-size: clamp(
+    2rem,
+    3.6vw,
+    3.15rem
+  );
+
+  font-weight: 800;
+
+  line-height: 1.04;
+
+  letter-spacing: -0.05em;
+}
+
+.mapHeader p {
+  max-width: 620px;
+
+  margin: 12px 0 0;
+
+  color: var(--muted);
+
+  font-size: 0.76rem;
+
+  line-height: 1.7;
+}
+
+/* DIRECTIONS BUTTON */
+
+.mapDirections {
+  flex: 0 0 auto;
+
+  min-height: 46px;
+
+  padding: 0 18px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 7px;
+
+  border: 1px solid #d4e0ea;
+
+  border-radius: 9px;
+
+  background: #fff;
+
+  color: var(--blue);
+
+  font-family: var(--body);
+
+  font-size: 0.66rem;
+
+  font-weight: 800;
+
+  text-decoration: none;
+
+  box-shadow:
+    0 7px 22px rgba(15, 42, 67, 0.06);
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.mapDirections:hover {
+  transform: translateY(-2px);
+
+  border-color: #aac4dc;
+
+  background: #f8fbff;
+
+  box-shadow:
+    0 12px 28px rgba(15, 42, 67, 0.1);
+}
+
+.mapDirections svg {
+  transition: transform 0.2s ease;
+}
+
+.mapDirections:hover svg {
+  transform: translateX(3px);
+}
+
+/* MAP CARD */
+
+.mapFrame {
+  position: relative;
+
+  width: 100%;
+
+  height: 500px;
+
+  overflow: hidden;
+
+  border: 1px solid #d6e1e9;
+
+  border-radius: 18px;
+
+  background: #e9eef2;
+
+  box-shadow:
+    0 22px 60px rgba(15, 42, 67, 0.12);
+
+  isolation: isolate;
+}
+
+.mapFrame::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 2;
+
+  pointer-events: none;
+
+  border: 1px solid rgba(
+    255,
+    255,
+    255,
+    0.7
+  );
+
+  border-radius: inherit;
+}
+
+.mapFrame iframe {
+  display: block;
+
+  width: 100%;
+
+  height: 100%;
+
+  border: 0;
+
+  border-radius: inherit;
+}
+
+/* MAP LOCATION BADGE */
+
+.mapFrame::after {
+  content: "RAINBOW  /  VARANASI";
+
+  position: absolute;
+
+  left: 18px;
+
+  bottom: 18px;
+
+  z-index: 3;
+
+  padding: 8px 11px;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.7);
+
+  border-radius: 7px;
+
+  background:
+    rgba(255, 255, 255, 0.94);
+
+  color: #31506a;
+
+  font-family: var(--body);
+
+  font-size: 0.52rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.08em;
+
+  box-shadow:
+    0 6px 20px rgba(15, 42, 67, 0.12);
+
+  backdrop-filter: blur(8px);
+
+  pointer-events: none;
+}
+
 /* TABLET */
 
 @media (max-width: 1000px) {
@@ -1659,11 +1874,20 @@
   }
 
   .info {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns:
+      repeat(2, 1fr);
   }
 
   .phoneInfoCard {
     grid-column: 1 / -1;
+  }
+
+  .mapHeader {
+    gap: 25px;
+  }
+
+  .mapFrame {
+    height: 450px;
   }
 }
 
@@ -1787,8 +2011,10 @@
     background: #fff;
 
     box-shadow:
-      0 20px 55px rgba(18, 52, 77, 0.24),
-      0 6px 20px rgba(18, 52, 77, 0.12);
+      0 20px 55px
+        rgba(18, 52, 77, 0.24),
+      0 6px 20px
+        rgba(18, 52, 77, 0.12);
 
     overflow: visible;
   }
@@ -1796,11 +2022,6 @@
   .phoneChooserOption {
     min-height: 50px;
   }
-
-  /*
- * IMPORTANT:
- * Stats remain below the phone chooser.
- */
 
   .heroStats {
     position: relative;
@@ -1930,6 +2151,52 @@
   .actions {
     grid-template-columns: 1fr;
   }
+
+  /* MAP */
+
+  .mapSection {
+    padding: 60px 0 70px;
+  }
+
+  .mapContainer {
+    width: calc(100% - 28px);
+  }
+
+  .mapHeader {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 18px;
+
+    margin-bottom: 20px;
+  }
+
+  .mapHeader h2 {
+    font-size: 2rem;
+  }
+
+  .mapHeader p {
+    font-size: 0.68rem;
+  }
+
+  .mapDirections {
+    width: 100%;
+  }
+
+  .mapFrame {
+    height: 360px;
+
+    border-radius: 13px;
+  }
+
+  .mapFrame::after {
+    left: 12px;
+
+    bottom: 12px;
+
+    font-size: 0.46rem;
+  }
 }
 
 /* SMALL MOBILE */
@@ -1985,6 +2252,10 @@
   .personDetails small {
     font-size: 0.51rem;
   }
+
+  .mapFrame {
+    height: 320px;
+  }
 }
 
 /* ACCESSIBILITY */
@@ -1998,7 +2269,8 @@
   .phoneChooserOption,
   .infoPhonePerson,
   .floatingBadge,
-  .actions button {
+  .actions button,
+  .mapDirections {
     animation: none;
 
     transition: none;

@@ -7,6 +7,7 @@ import {
   FaChevronRight,
   FaShoppingCart,
   FaTimes,
+  FaGoogle,
 } from "react-icons/fa";
 
 import { ChevronDown } from "lucide-react";
@@ -21,6 +22,10 @@ import {
 import { useCart } from "../../../context/CartContext";
 
 import styles from "./Header.module.css";
+
+/* GOOGLE BUSINESS PROFILE */
+
+const GOOGLE_PROFILE_URL = "https://share.google/ueXfYR6Oc6k6qZ90M";
 
 /* MAIN NAVIGATION */
 
@@ -40,27 +45,16 @@ function getItemName(item) {
     return item;
   }
 
-  return (
-    item?.name ||
-    item?.title ||
-    item?.label ||
-    item?.category ||
-    "Item"
-  );
+  return item?.name || item?.title || item?.label || item?.category || "Item";
 }
 
 function getItemPath(item, basePath) {
   if (typeof item === "string") {
-    return `${basePath}/${item
-      .toLowerCase()
-      .trim()
-      .replace(/\s+/g, "-")}`;
+    return `${basePath}/${item.toLowerCase().trim().replace(/\s+/g, "-")}`;
   }
 
   if (item?.path) {
-    return item.path.startsWith("/")
-      ? item.path
-      : `${basePath}/${item.path}`;
+    return item.path.startsWith("/") ? item.path : `${basePath}/${item.path}`;
   }
 
   if (item?.slug) {
@@ -83,16 +77,13 @@ export default function Header() {
 
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  const [mobileProductsOpen, setMobileProductsOpen] =
-    useState(false);
+  const [mobileProductsOpen, setMobileProductsOpen] = useState(false);
 
-  const [mobileServicesOpen, setMobileServicesOpen] =
-    useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
 
   /* REFS */
 
   const productsRef = useRef(null);
-
   const servicesRef = useRef(null);
 
   /* CART */
@@ -103,11 +94,9 @@ export default function Header() {
 
   useEffect(() => {
     const handleOutsideClick = (event) => {
-      const clickedProducts =
-        productsRef.current?.contains(event.target);
+      const clickedProducts = productsRef.current?.contains(event.target);
 
-      const clickedServices =
-        servicesRef.current?.contains(event.target);
+      const clickedServices = servicesRef.current?.contains(event.target);
 
       if (!clickedProducts && !clickedServices) {
         setProductsOpen(false);
@@ -115,16 +104,10 @@ export default function Header() {
       }
     };
 
-    document.addEventListener(
-      "mousedown",
-      handleOutsideClick
-    );
+    document.addEventListener("mousedown", handleOutsideClick);
 
     return () => {
-      document.removeEventListener(
-        "mousedown",
-        handleOutsideClick
-      );
+      document.removeEventListener("mousedown", handleOutsideClick);
     };
   }, []);
 
@@ -145,16 +128,10 @@ export default function Header() {
       setMobileServicesOpen(false);
     };
 
-    document.addEventListener(
-      "keydown",
-      handleEscape
-    );
+    document.addEventListener("keydown", handleEscape);
 
     return () => {
-      document.removeEventListener(
-        "keydown",
-        handleEscape
-      );
+      document.removeEventListener("keydown", handleEscape);
     };
   }, []);
 
@@ -164,15 +141,11 @@ export default function Header() {
     if (mobileOpen) {
       document.body.classList.add("rainbow-menu-open");
     } else {
-      document.body.classList.remove(
-        "rainbow-menu-open"
-      );
+      document.body.classList.remove("rainbow-menu-open");
     }
 
     return () => {
-      document.body.classList.remove(
-        "rainbow-menu-open"
-      );
+      document.body.classList.remove("rainbow-menu-open");
     };
   }, [mobileOpen]);
 
@@ -225,9 +198,7 @@ export default function Header() {
     event.preventDefault();
     event.stopPropagation();
 
-    setMobileProductsOpen(
-      (current) => !current
-    );
+    setMobileProductsOpen((current) => !current);
 
     setMobileServicesOpen(false);
   };
@@ -238,21 +209,19 @@ export default function Header() {
     event.preventDefault();
     event.stopPropagation();
 
-    setMobileServicesOpen(
-      (current) => !current
-    );
+    setMobileServicesOpen((current) => !current);
 
     setMobileProductsOpen(false);
   };
 
+  /* RENDER */
+
   return (
     <header className={styles.header}>
-
       {/* TOP BAR */}
 
       <div className={styles.topBar}>
         <div className={styles.topInner}>
-
           <div className={styles.topLeft}>
             <span>Power backup</span>
 
@@ -276,7 +245,6 @@ export default function Header() {
 
             <span>No payment required</span>
           </div>
-
         </div>
       </div>
 
@@ -284,7 +252,6 @@ export default function Header() {
 
       <div className={styles.navbar}>
         <div className={styles.inner}>
-
           {/* LOGO */}
 
           <Link
@@ -293,374 +260,261 @@ export default function Header() {
             onClick={closeMenus}
             aria-label="Rainbow Home"
           >
-            <img
-              src={logo}
-              alt="Rainbow"
-            />
+            <img src={logo} alt="Rainbow" />
           </Link>
 
-          {/* DESKTOP NAV */}
+          {/* DESKTOP NAVIGATION */}
 
-          <nav
-            className={styles.desktopNav}
-            aria-label="Main navigation"
-          >
+          <nav className={styles.desktopNav} aria-label="Main navigation">
+            {links.map(([to, label, end]) => {
+              /* PRODUCTS */
 
-            {links.map(
-              ([to, label, end]) => {
-
-                /* PRODUCTS */
-
-                if (label === "Products") {
-                  return (
-                    <div
-                      key={to}
-                      ref={productsRef}
-                      className={styles.productNav}
-                      onMouseEnter={() => {
-                        setProductsOpen(true);
-                        setServicesOpen(false);
-                      }}
-                      onMouseLeave={() => {
-                        setProductsOpen(false);
-                      }}
-                    >
-
-                      <div
-                        className={
-                          styles.productTrigger
+              if (label === "Products") {
+                return (
+                  <div
+                    key={to}
+                    ref={productsRef}
+                    className={styles.productNav}
+                    onMouseEnter={() => {
+                      setProductsOpen(true);
+                      setServicesOpen(false);
+                    }}
+                    onMouseLeave={() => {
+                      setProductsOpen(false);
+                    }}
+                  >
+                    <div className={styles.productTrigger}>
+                      <NavLink
+                        to="/products"
+                        className={({ isActive }) =>
+                          isActive
+                            ? `${styles.navLink} ${styles.active}`
+                            : styles.navLink
                         }
+                        onClick={() => {
+                          setProductsOpen(false);
+                          setServicesOpen(false);
+                        }}
                       >
+                        Products
+                      </NavLink>
 
-                        <NavLink
-                          to="/products"
-                          className={({ isActive }) =>
-                            isActive
-                              ? `${styles.navLink} ${styles.active}`
-                              : styles.navLink
-                          }
-                          onClick={() => {
-                            setProductsOpen(false);
-                            setServicesOpen(false);
-                          }}
-                        >
-                          Products
-                        </NavLink>
-
-                        <button
-                          type="button"
-                          className={
-                            productsOpen
-                              ? `${styles.dropdownToggle} ${styles.dropdownToggleOpen}`
-                              : styles.dropdownToggle
-                          }
-                          onClick={toggleProducts}
-                          aria-label="Toggle products menu"
-                          aria-expanded={
-                            productsOpen
-                          }
-                        >
-                          <ChevronDown
-                            size={13}
-                          />
-                        </button>
-
-                      </div>
-
-                      {/* PRODUCT DROPDOWN */}
-
-                      <div
+                      <button
+                        type="button"
                         className={
                           productsOpen
-                            ? `${styles.dropdown} ${styles.dropdownOpen}`
-                            : styles.dropdown
+                            ? `${styles.dropdownToggle} ${styles.dropdownToggleOpen}`
+                            : styles.dropdownToggle
                         }
+                        onClick={toggleProducts}
+                        aria-label="Toggle products menu"
+                        aria-expanded={productsOpen}
                       >
-
-                        <div
-                          className={
-                            styles.dropdownHeader
-                          }
-                        >
-
-                          <div
-                            className={
-                              styles.dropdownIcon
-                            }
-                          >
-                            <FaBolt />
-                          </div>
-
-                          <div>
-                            <strong>
-                              Electrical Products
-                            </strong>
-
-                            <span>
-                              Power, protection & control
-                            </span>
-                          </div>
-
-                        </div>
-
-                        <div
-                          className={
-                            styles.categoryGrid
-                          }
-                        >
-
-                          {productCategories?.map(
-                            (
-                              category,
-                              index
-                            ) => {
-
-                              const name =
-                                getItemName(
-                                  category
-                                );
-
-                              const path =
-                                getItemPath(
-                                  category,
-                                  "/products"
-                                );
-
-                              return (
-                                <Link
-                                  key={`${name}-${index}`}
-                                  to={path}
-                                  className={
-                                    styles.dropdownItem
-                                  }
-                                  onClick={
-                                    closeMenus
-                                  }
-                                >
-                                  <span>
-                                    {name}
-                                  </span>
-
-                                  <FaChevronRight
-                                    size={8}
-                                  />
-                                </Link>
-                              );
-                            }
-                          )}
-
-                        </div>
-
-                        <Link
-                          to="/products"
-                          className={
-                            styles.dropdownFooter
-                          }
-                          onClick={closeMenus}
-                        >
-                          <span>
-                            View all products
-                          </span>
-
-                          <FaChevronRight
-                            size={9}
-                          />
-                        </Link>
-
-                      </div>
+                        <ChevronDown size={13} />
+                      </button>
                     </div>
-                  );
-                }
 
-                /* SERVICES */
+                    {/* PRODUCT DROPDOWN */}
 
-                if (label === "Services") {
-                  return (
                     <div
-                      key={to}
-                      ref={servicesRef}
-                      className={styles.serviceNav}
-                      onMouseEnter={() => {
-                        setServicesOpen(true);
-                        setProductsOpen(false);
-                      }}
-                      onMouseLeave={() => {
-                        setServicesOpen(false);
-                      }}
+                      className={
+                        productsOpen
+                          ? `${styles.dropdown} ${styles.dropdownOpen}`
+                          : styles.dropdown
+                      }
                     >
-
-                      <div
-                        className={
-                          styles.serviceTrigger
-                        }
-                      >
-
-                        <NavLink
-                          to="/services"
-                          className={({ isActive }) =>
-                            isActive
-                              ? `${styles.navLink} ${styles.active}`
-                              : styles.navLink
-                          }
-                          onClick={() => {
-                            setServicesOpen(false);
-                            setProductsOpen(false);
-                          }}
-                        >
-                          Services
-                        </NavLink>
-
-                        <button
-                          type="button"
-                          className={
-                            servicesOpen
-                              ? `${styles.dropdownToggle} ${styles.dropdownToggleOpen}`
-                              : styles.dropdownToggle
-                          }
-                          onClick={toggleServices}
-                          aria-label="Toggle services menu"
-                          aria-expanded={
-                            servicesOpen
-                          }
-                        >
-                          <ChevronDown
-                            size={13}
-                          />
-                        </button>
-
-                      </div>
-
-                      {/* SERVICES DROPDOWN */}
-
-                      <div
-                        className={
-                          servicesOpen
-                            ? `${styles.dropdown} ${styles.dropdownOpen}`
-                            : styles.dropdown
-                        }
-                      >
-
-                        <div
-                          className={
-                            styles.dropdownHeader
-                          }
-                        >
-
-                          <div
-                            className={
-                              styles.dropdownIcon
-                            }
-                          >
-                            <FaBolt />
-                          </div>
-
-                          <div>
-                            <strong>
-                              Electrical Services
-                            </strong>
-
-                            <span>
-                              Installation, maintenance & engineering
-                            </span>
-                          </div>
-
+                      <div className={styles.dropdownHeader}>
+                        <div className={styles.dropdownIcon}>
+                          <FaBolt />
                         </div>
 
-                        <div
-                          className={
-                            styles.categoryGrid
-                          }
-                        >
+                        <div>
+                          <strong>Electrical Products</strong>
 
-                          {serviceCategories?.map(
-                            (
-                              service,
-                              index
-                            ) => {
-
-                              const name =
-                                getItemName(
-                                  service
-                                );
-
-                              const path =
-                                getItemPath(
-                                  service,
-                                  "/services"
-                                );
-
-                              return (
-                                <Link
-                                  key={`${name}-${index}`}
-                                  to={path}
-                                  className={
-                                    styles.dropdownItem
-                                  }
-                                  onClick={
-                                    closeMenus
-                                  }
-                                >
-                                  <span>
-                                    {name}
-                                  </span>
-
-                                  <FaChevronRight
-                                    size={8}
-                                  />
-                                </Link>
-                              );
-                            }
-                          )}
-
+                          <span>Power, protection & control</span>
                         </div>
-
-                        <Link
-                          to="/services"
-                          className={
-                            styles.dropdownFooter
-                          }
-                          onClick={closeMenus}
-                        >
-                          <span>
-                            Explore all services
-                          </span>
-
-                          <FaChevronRight
-                            size={9}
-                          />
-                        </Link>
-
                       </div>
+
+                      <div className={styles.categoryGrid}>
+                        {productCategories?.map((category, index) => {
+                          const name = getItemName(category);
+
+                          const path = getItemPath(category, "/products");
+
+                          return (
+                            <Link
+                              key={`${name}-${index}`}
+                              to={path}
+                              className={styles.dropdownItem}
+                              onClick={closeMenus}
+                            >
+                              <span>{name}</span>
+
+                              <FaChevronRight size={8} />
+                            </Link>
+                          );
+                        })}
+                      </div>
+
+                      <Link
+                        to="/products"
+                        className={styles.dropdownFooter}
+                        onClick={closeMenus}
+                      >
+                        <span>View all products</span>
+
+                        <FaChevronRight size={9} />
+                      </Link>
                     </div>
-                  );
-                }
-
-                /* NORMAL NAVIGATION LINK */
-
-                return (
-                  <NavLink
-                    key={to}
-                    to={to}
-                    end={end}
-                    onClick={closeMenus}
-                    className={({ isActive }) =>
-                      isActive
-                        ? `${styles.navLink} ${styles.active}`
-                        : styles.navLink
-                    }
-                  >
-                    {label}
-                  </NavLink>
+                  </div>
                 );
               }
-            )}
 
+              /* SERVICES */
+
+              if (label === "Services") {
+                return (
+                  <div
+                    key={to}
+                    ref={servicesRef}
+                    className={styles.serviceNav}
+                    onMouseEnter={() => {
+                      setServicesOpen(true);
+                      setProductsOpen(false);
+                    }}
+                    onMouseLeave={() => {
+                      setServicesOpen(false);
+                    }}
+                  >
+                    <div className={styles.serviceTrigger}>
+                      <NavLink
+                        to="/services"
+                        className={({ isActive }) =>
+                          isActive
+                            ? `${styles.navLink} ${styles.active}`
+                            : styles.navLink
+                        }
+                        onClick={() => {
+                          setServicesOpen(false);
+                          setProductsOpen(false);
+                        }}
+                      >
+                        Services
+                      </NavLink>
+
+                      <button
+                        type="button"
+                        className={
+                          servicesOpen
+                            ? `${styles.dropdownToggle} ${styles.dropdownToggleOpen}`
+                            : styles.dropdownToggle
+                        }
+                        onClick={toggleServices}
+                        aria-label="Toggle services menu"
+                        aria-expanded={servicesOpen}
+                      >
+                        <ChevronDown size={13} />
+                      </button>
+                    </div>
+
+                    {/* SERVICES DROPDOWN */}
+
+                    <div
+                      className={
+                        servicesOpen
+                          ? `${styles.dropdown} ${styles.dropdownOpen}`
+                          : styles.dropdown
+                      }
+                    >
+                      <div className={styles.dropdownHeader}>
+                        <div className={styles.dropdownIcon}>
+                          <FaBolt />
+                        </div>
+
+                        <div>
+                          <strong>Electrical Services</strong>
+
+                          <span>Installation, maintenance & engineering</span>
+                        </div>
+                      </div>
+
+                      <div className={styles.categoryGrid}>
+                        {serviceCategories?.map((service, index) => {
+                          const name = getItemName(service);
+
+                          const path = getItemPath(service, "/services");
+
+                          return (
+                            <Link
+                              key={`${name}-${index}`}
+                              to={path}
+                              className={styles.dropdownItem}
+                              onClick={closeMenus}
+                            >
+                              <span>{name}</span>
+
+                              <FaChevronRight size={8} />
+                            </Link>
+                          );
+                        })}
+                      </div>
+
+                      <Link
+                        to="/services"
+                        className={styles.dropdownFooter}
+                        onClick={closeMenus}
+                      >
+                        <span>Explore all services</span>
+
+                        <FaChevronRight size={9} />
+                      </Link>
+                    </div>
+                  </div>
+                );
+              }
+
+              /* NORMAL NAVIGATION LINK */
+
+              return (
+                <NavLink
+                  key={to}
+                  to={to}
+                  end={end}
+                  onClick={closeMenus}
+                  className={({ isActive }) =>
+                    isActive
+                      ? `${styles.navLink} ${styles.active}`
+                      : styles.navLink
+                  }
+                >
+                  {label}
+                </NavLink>
+              );
+            })}
+
+            {/* GOOGLE PROFILE */}
+
+            <a
+              href={GOOGLE_PROFILE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.navLink}
+              onClick={closeMenus}
+              aria-label="Open Rainbow Google Profile"
+            >
+              <FaGoogle
+                size={12}
+                style={{
+                  marginRight: "6px",
+                }}
+              />
+              Google
+            </a>
           </nav>
 
           {/* ACTIONS */}
 
           <div className={styles.actions}>
-
             {/* CART */}
 
             <Link
@@ -672,32 +526,18 @@ export default function Header() {
               <FaShoppingCart />
 
               {count > 0 && (
-                <span
-                  className={
-                    styles.cartCount
-                  }
-                >
-                  {count > 99
-                    ? "99+"
-                    : count}
+                <span className={styles.cartCount}>
+                  {count > 99 ? "99+" : count}
                 </span>
               )}
             </Link>
 
             {/* QUOTE */}
 
-            <Link
-              to="/contact"
-              className={styles.quote}
-              onClick={closeMenus}
-            >
-              <span>
-                Get a Quote
-              </span>
+            <Link to="/contact" className={styles.quote} onClick={closeMenus}>
+              <span>Get a Quote</span>
 
-              <FaChevronRight
-                size={9}
-              />
+              <FaChevronRight size={9} />
             </Link>
 
             {/* MOBILE MENU */}
@@ -705,33 +545,17 @@ export default function Header() {
             <button
               type="button"
               className={
-                mobileOpen
-                  ? `${styles.menu} ${styles.menuOpen}`
-                  : styles.menu
+                mobileOpen ? `${styles.menu} ${styles.menuOpen}` : styles.menu
               }
               onClick={toggleMobileMenu}
-              aria-label={
-                mobileOpen
-                  ? "Close navigation"
-                  : "Open navigation"
-              }
+              aria-label={mobileOpen ? "Close navigation" : "Open navigation"}
               aria-expanded={mobileOpen}
             >
-              <span
-                className={
-                  styles.menuIcon
-                }
-              >
-                {mobileOpen ? (
-                  <FaTimes />
-                ) : (
-                  <FaBars />
-                )}
+              <span className={styles.menuIcon}>
+                {mobileOpen ? <FaTimes /> : <FaBars />}
               </span>
             </button>
-
           </div>
-
         </div>
       </div>
 
@@ -744,49 +568,24 @@ export default function Header() {
             : styles.mobilePanel
         }
       >
-
-        <div
-          className={
-            styles.mobileInner
-          }
-        >
-
+        <div className={styles.mobileInner}>
           {/* MOBILE BRAND */}
 
-          <div
-            className={
-              styles.mobileBrand
-            }
-          >
-
-            <div
-              className={
-                styles.mobileBrandIcon
-              }
-            >
+          <div className={styles.mobileBrand}>
+            <div className={styles.mobileBrandIcon}>
               <FaBolt />
             </div>
 
             <div>
-              <strong>
-                Rainbow Electrical
-              </strong>
+              <strong>Rainbow Electrical</strong>
 
-              <span>
-                Power • Panels • Automation • Solar
-              </span>
+              <span>Power • Panels • Automation • Solar</span>
             </div>
-
           </div>
 
           {/* MOBILE NAV ITEMS */}
 
-          <div
-            className={
-              styles.mobileLinks
-            }
-          >
-
+          <div className={styles.mobileLinks}>
             {/* HOME */}
 
             <NavLink
@@ -799,13 +598,9 @@ export default function Header() {
                   : styles.mobileLink
               }
             >
-              <span>
-                Home
-              </span>
+              <span>Home</span>
 
-              <FaChevronRight
-                size={10}
-              />
+              <FaChevronRight size={10} />
             </NavLink>
 
             {/* ABOUT */}
@@ -819,23 +614,14 @@ export default function Header() {
                   : styles.mobileLink
               }
             >
-              <span>
-                About
-              </span>
+              <span>About</span>
 
-              <FaChevronRight
-                size={10}
-              />
+              <FaChevronRight size={10} />
             </NavLink>
 
             {/* MOBILE PRODUCTS */}
 
-            <div
-              className={
-                styles.mobileAccordion
-              }
-            >
-
+            <div className={styles.mobileAccordion}>
               <button
                 type="button"
                 className={
@@ -843,27 +629,15 @@ export default function Header() {
                     ? `${styles.mobileAccordionButton} ${styles.mobileAccordionActive}`
                     : styles.mobileAccordionButton
                 }
-                onClick={
-                  toggleMobileProducts
-                }
-                aria-expanded={
-                  mobileProductsOpen
-                }
+                onClick={toggleMobileProducts}
+                aria-expanded={mobileProductsOpen}
               >
-
-                <span>
-                  Products
-                </span>
+                <span>Products</span>
 
                 <ChevronDown
                   size={17}
-                  className={
-                    mobileProductsOpen
-                      ? styles.arrowRotated
-                      : ""
-                  }
+                  className={mobileProductsOpen ? styles.arrowRotated : ""}
                 />
-
               </button>
 
               <div
@@ -873,73 +647,40 @@ export default function Header() {
                     : styles.mobileSubmenu
                 }
               >
+                {productCategories?.map((category, index) => {
+                  const name = getItemName(category);
 
-                {productCategories?.map(
-                  (
-                    category,
-                    index
-                  ) => {
+                  const path = getItemPath(category, "/products");
 
-                    const name =
-                      getItemName(
-                        category
-                      );
+                  return (
+                    <Link
+                      key={`${name}-${index}`}
+                      to={path}
+                      onClick={closeMenus}
+                      className={styles.mobileSubLink}
+                    >
+                      <span>{name}</span>
 
-                    const path =
-                      getItemPath(
-                        category,
-                        "/products"
-                      );
-
-                    return (
-                      <Link
-                        key={`${name}-${index}`}
-                        to={path}
-                        onClick={closeMenus}
-                        className={
-                          styles.mobileSubLink
-                        }
-                      >
-                        <span>
-                          {name}
-                        </span>
-
-                        <FaChevronRight
-                          size={8}
-                        />
-                      </Link>
-                    );
-                  }
-                )}
+                      <FaChevronRight size={8} />
+                    </Link>
+                  );
+                })}
 
                 <Link
                   to="/products"
                   onClick={closeMenus}
-                  className={
-                    styles.mobileViewAll
-                  }
+                  className={styles.mobileViewAll}
                 >
-                  <span>
-                    View all products
-                  </span>
+                  <span>View all products</span>
 
-                  <FaChevronRight
-                    size={9}
-                  />
+                  <FaChevronRight size={9} />
                 </Link>
-
               </div>
-
             </div>
 
             {/* MOBILE SERVICES */}
 
-            <div
-              className={
-                styles.mobileAccordion
-              }
-            >
-
+            <div className={styles.mobileAccordion}>
               <button
                 type="button"
                 className={
@@ -947,27 +688,15 @@ export default function Header() {
                     ? `${styles.mobileAccordionButton} ${styles.mobileAccordionActive}`
                     : styles.mobileAccordionButton
                 }
-                onClick={
-                  toggleMobileServices
-                }
-                aria-expanded={
-                  mobileServicesOpen
-                }
+                onClick={toggleMobileServices}
+                aria-expanded={mobileServicesOpen}
               >
-
-                <span>
-                  Services
-                </span>
+                <span>Services</span>
 
                 <ChevronDown
                   size={17}
-                  className={
-                    mobileServicesOpen
-                      ? styles.arrowRotated
-                      : ""
-                  }
+                  className={mobileServicesOpen ? styles.arrowRotated : ""}
                 />
-
               </button>
 
               <div
@@ -977,63 +706,35 @@ export default function Header() {
                     : styles.mobileSubmenu
                 }
               >
+                {serviceCategories?.map((service, index) => {
+                  const name = getItemName(service);
 
-                {serviceCategories?.map(
-                  (
-                    service,
-                    index
-                  ) => {
+                  const path = getItemPath(service, "/services");
 
-                    const name =
-                      getItemName(
-                        service
-                      );
+                  return (
+                    <Link
+                      key={`${name}-${index}`}
+                      to={path}
+                      onClick={closeMenus}
+                      className={styles.mobileSubLink}
+                    >
+                      <span>{name}</span>
 
-                    const path =
-                      getItemPath(
-                        service,
-                        "/services"
-                      );
-
-                    return (
-                      <Link
-                        key={`${name}-${index}`}
-                        to={path}
-                        onClick={closeMenus}
-                        className={
-                          styles.mobileSubLink
-                        }
-                      >
-                        <span>
-                          {name}
-                        </span>
-
-                        <FaChevronRight
-                          size={8}
-                        />
-                      </Link>
-                    );
-                  }
-                )}
+                      <FaChevronRight size={8} />
+                    </Link>
+                  );
+                })}
 
                 <Link
                   to="/services"
                   onClick={closeMenus}
-                  className={
-                    styles.mobileViewAll
-                  }
+                  className={styles.mobileViewAll}
                 >
-                  <span>
-                    Explore all services
-                  </span>
+                  <span>Explore all services</span>
 
-                  <FaChevronRight
-                    size={9}
-                  />
+                  <FaChevronRight size={9} />
                 </Link>
-
               </div>
-
             </div>
 
             {/* PROJECTS */}
@@ -1047,13 +748,9 @@ export default function Header() {
                   : styles.mobileLink
               }
             >
-              <span>
-                Projects
-              </span>
+              <span>Projects</span>
 
-              <FaChevronRight
-                size={10}
-              />
+              <FaChevronRight size={10} />
             </NavLink>
 
             {/* CONTACT */}
@@ -1067,67 +764,58 @@ export default function Header() {
                   : styles.mobileLink
               }
             >
-              <span>
-                Contact
-              </span>
+              <span>Contact</span>
 
-              <FaChevronRight
-                size={10}
-              />
+              <FaChevronRight size={10} />
             </NavLink>
 
+            {/* GOOGLE PROFILE — MOBILE */}
+
+            <a
+              href={GOOGLE_PROFILE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.mobileLink}
+              onClick={closeMenus}
+              aria-label="Open Rainbow Google Profile"
+            >
+              <span
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "9px",
+                }}
+              >
+                <FaGoogle size={13} />
+                Google Profile
+              </span>
+
+              <FaChevronRight size={10} />
+            </a>
           </div>
 
           {/* MOBILE ACTIONS */}
 
-          <div
-            className={
-              styles.mobileActions
-            }
-          >
-
-            <Link
-              to="/cart"
-              className={
-                styles.mobileCart
-              }
-              onClick={closeMenus}
-            >
+          <div className={styles.mobileActions}>
+            <Link to="/cart" className={styles.mobileCart} onClick={closeMenus}>
               <FaShoppingCart />
 
-              <span>
-                Enquiry Cart
-              </span>
+              <span>Enquiry Cart</span>
 
-              {count > 0 && (
-                <b>
-                  {count > 99
-                    ? "99+"
-                    : count}
-                </b>
-              )}
+              {count > 0 && <b>{count > 99 ? "99+" : count}</b>}
             </Link>
 
             <Link
               to="/contact"
-              className={
-                styles.mobileQuote
-              }
+              className={styles.mobileQuote}
               onClick={closeMenus}
             >
-              <span>
-                Get a Quote
-              </span>
+              <span>Get a Quote</span>
 
-              <FaChevronRight
-                size={10}
-              />
+              <FaChevronRight size={10} />
             </Link>
-
           </div>
-
         </div>
-
       </div>
     </header>
   );
