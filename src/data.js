@@ -2324,7 +2324,6 @@ import thermostatsComponentImage from "./assets/panelComponents/thermostatsCompo
 import smpsComponentImage from "./assets/panelComponents/smpsComponentImage.jpg";
 import surgeComponentImage from "./assets/panelComponents/surgeComponentImage.jpg";
 
-
 import distributionModuleImage from "./assets/Wiring/distributionModuleImage.jpg";
 import switchesandsocketsImage from "./assets/Wiring/switchesandsocketsImage.jpg";
 import switchPlatesImage from "./assets/Wiring/switchPlatesImage.jpg";
@@ -2346,9 +2345,6 @@ import generalFanImage from "./assets/Fan/generalFanImage.jpg";
 
 import doorBellImage from "./assets/Bells/doorBellImage.jpeg";
 import waterOverflowImage from "./assets/Bells/wateroverflowImage.jpg"
-
-
-
 
 export const company = {
   name: "Rainbow",
