@@ -2324,6 +2324,32 @@ import thermostatsComponentImage from "./assets/panelComponents/thermostatsCompo
 import smpsComponentImage from "./assets/panelComponents/smpsComponentImage.jpg";
 import surgeComponentImage from "./assets/panelComponents/surgeComponentImage.jpg";
 
+
+import distributionModuleImage from "./assets/Wiring/distributionModuleImage.jpg";
+import switchesandsocketsImage from "./assets/Wiring/switchesandsocketsImage.jpg";
+import switchPlatesImage from "./assets/Wiring/switchPlatesImage.jpg";
+
+import gangBoxeImage from "./assets/Electrical/gangBoxeImage.jpg";
+import concealedImage from "./assets/Electrical/concealedImage.jpg";
+import fanBoxImage from "./assets/Electrical/fanBoxImage.jpg"
+import meterBoxImage from "./assets/Electrical/meterBoxImage.jpg"
+
+import wireandcablesImage from "./assets/Wires/wireandcablesImage.jpg";
+import pvcImage from "./assets/Wires/pvcImage.jpg";
+
+import ledlightImage from "./assets/Lighting/ledlightImage.jpg";
+import ledDownlightImage from "./assets/Lighting/ledDownlightImage.jpg";
+import ledPanelImage from "./assets/Lighting/ledPanelImage.jpg";
+import ledFloodImage from "./assets/Lighting/ledFloodImage.jpg"
+
+import generalFanImage from "./assets/Fan/generalFanImage.jpg";
+
+import doorBellImage from "./assets/Bells/doorBellImage.jpeg";
+import waterOverflowImage from "./assets/Bells/wateroverflowImage.jpg"
+
+
+
+
 export const company = {
   name: "Rainbow",
   tagline: "Powering reliability. Engineering what matters.",
@@ -6947,7 +6973,7 @@ export const wiringAccessoryProducts = [
     name: "Modular Distribution Boards",
     category: "wiring-accessories",
     categoryName: "Wiring Accessories",
-    image: null,
+    image: distributionModuleImage,
     summary:
       "Compact distribution boards designed to house modular circuit protection and switching devices in residential and commercial installations.",
     description:
@@ -6990,7 +7016,7 @@ export const wiringAccessoryProducts = [
     name: "Modular Switches and Sockets",
     category: "wiring-accessories",
     categoryName: "Wiring Accessories",
-    image: null,
+    image: switchesandsocketsImage,
     summary:
       "Modular electrical switches and socket outlets for residential, office and commercial wiring installations.",
     description:
@@ -7033,7 +7059,7 @@ export const wiringAccessoryProducts = [
     name: "Modular Switch Plates",
     category: "wiring-accessories",
     categoryName: "Wiring Accessories",
-    image: null,
+    image: switchPlatesImage,
     summary:
       "Front plates designed to hold modular switches, sockets and control accessories in coordinated electrical installations.",
     description:
@@ -7077,7 +7103,7 @@ export const electricalBoxProducts = [
     name: "Electrical Gang Boxes",
     category: "electrical-boxes",
     categoryName: "Electrical Boxes & Enclosures",
-    image: null,
+    image: gangBoxeImage,
     summary:
       "Electrical mounting boxes used to house switches, sockets and modular wiring accessories.",
     description:
@@ -7119,7 +7145,7 @@ export const electricalBoxProducts = [
     name: "Concealed Electrical Boxes",
     category: "electrical-boxes",
     categoryName: "Electrical Boxes & Enclosures",
-    image: null,
+    image: concealedImage,
     summary:
       "Recessed electrical boxes installed within walls to provide mounting space for wiring accessories and junction connections.",
     description:
@@ -7161,7 +7187,7 @@ export const electricalBoxProducts = [
     name: "Ceiling Fan Boxes",
     category: "electrical-boxes",
     categoryName: "Electrical Boxes & Enclosures",
-    image: null,
+    image: fanBoxImage,
     summary:
       "Ceiling mounting boxes designed to provide a secure electrical and mechanical mounting point for compatible ceiling fans.",
     description:
@@ -7203,7 +7229,7 @@ export const electricalBoxProducts = [
     name: "Electrical Meter Boxes",
     category: "electrical-boxes",
     categoryName: "Electrical Boxes & Enclosures",
-    image: null,
+    image: meterBoxImage,
     summary:
       "Protective enclosures designed to house electrical energy meters and associated service connections.",
     description:
@@ -7248,7 +7274,7 @@ export const wireConduitProducts = [
     name: "Electrical Wires and Cables",
     category: "wires-conduits",
     categoryName: "Wires & Conduits",
-    image: null,
+    image: wireandcablesImage,
     summary:
       "Electrical conductors and cable assemblies for power distribution, lighting, control and equipment connections.",
     description:
@@ -7292,7 +7318,7 @@ export const wireConduitProducts = [
     name: "PVC Electrical Conduits",
     category: "wires-conduits",
     categoryName: "Wires & Conduits",
-    image: null,
+    image: pvcImage,
     summary:
       "PVC conduit systems for routing and protecting electrical wiring in concealed and exposed installations.",
     description:
@@ -7337,7 +7363,7 @@ export const lightingProducts = [
     name: "LED Lights",
     category: "lighting",
     categoryName: "LED Lighting",
-    image: null,
+    image:ledlightImage ,
     summary:
       "Energy-efficient LED luminaires for general indoor and outdoor illumination.",
     description:
@@ -7381,7 +7407,7 @@ export const lightingProducts = [
     name: "LED Downlights",
     category: "lighting",
     categoryName: "LED Lighting",
-    image: null,
+    image: ledDownlightImage,
     summary:
       "Recessed or surface-mounted LED luminaires designed for focused general lighting in ceilings and architectural spaces.",
     description:
@@ -7425,7 +7451,7 @@ export const lightingProducts = [
     name: "LED Panel Lights",
     category: "lighting",
     categoryName: "LED Lighting",
-    image: null,
+    image: ledPanelImage,
     summary:
       "Flat LED luminaires designed for uniform illumination in offices, classrooms, commercial spaces and other indoor environments.",
     description:
@@ -7469,7 +7495,7 @@ export const lightingProducts = [
     name: "LED Flood Lights",
     category: "lighting",
     categoryName: "LED Lighting",
-    image: null,
+    image: ledFloodImage,
     summary:
       "High-output directional LED luminaires for outdoor areas, facades, yards and security illumination.",
     description:
@@ -7515,7 +7541,7 @@ export const fanProducts = [
     name: "General Purpose Fans",
     category: "fans",
     categoryName: "Fans & Ventilation",
-    image: null,
+    image: generalFanImage,
     summary:
       "Electric fans for air circulation and ventilation in residential, commercial and general indoor environments.",
     description:
@@ -7560,7 +7586,7 @@ export const bellProducts = [
     name: "Door Bells",
     category: "bells",
     categoryName: "Bells & Signalling",
-    image: null,
+    image: doorBellImage,
     summary:
       "Electrical doorbell systems for residential, office and commercial visitor notification.",
     description:
@@ -7603,7 +7629,7 @@ export const bellProducts = [
     name: "Water Tank Overflow Alarm",
     category: "bells",
     categoryName: "Bells & Signalling",
-    image: null,
+    image: waterOverflowImage,
     summary:
       "Water-level alert system designed to provide an audible warning when a tank reaches a configured high-water level.",
     description:
