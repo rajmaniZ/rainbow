@@ -2330,8 +2330,8 @@ import switchPlatesImage from "./assets/Wiring/switchPlatesImage.jpg";
 
 import gangBoxeImage from "./assets/Electrical/gangBoxeImage.jpg";
 import concealedImage from "./assets/Electrical/concealedImage.jpg";
-import fanBoxImage from "./assets/Electrical/fanBoxImage.jpg"
-import meterBoxImage from "./assets/Electrical/meterBoxImage.jpg"
+import fanBoxImage from "./assets/Electrical/fanBoxImage.jpg";
+import meterBoxImage from "./assets/Electrical/meterBoxImage.jpg";
 
 import wireandcablesImage from "./assets/Wires/wireandcablesImage.jpg";
 import pvcImage from "./assets/Wires/pvcImage.jpg";
@@ -2339,12 +2339,12 @@ import pvcImage from "./assets/Wires/pvcImage.jpg";
 import ledlightImage from "./assets/Lighting/ledlightImage.jpg";
 import ledDownlightImage from "./assets/Lighting/ledDownlightImage.jpg";
 import ledPanelImage from "./assets/Lighting/ledPanelImage.jpg";
-import ledFloodImage from "./assets/Lighting/ledFloodImage.jpg"
+import ledFloodImage from "./assets/Lighting/ledFloodImage.jpg";
 
 import generalFanImage from "./assets/Fan/generalFanImage.jpg";
 
 import doorBellImage from "./assets/Bells/doorBellImage.jpeg";
-import waterOverflowImage from "./assets/Bells/wateroverflowImage.jpg"
+import waterOverflowImage from "./assets/Bells/waterOverflowImage.jpg";
 
 export const company = {
   name: "Rainbow",
@@ -7359,7 +7359,7 @@ export const lightingProducts = [
     name: "LED Lights",
     category: "lighting",
     categoryName: "LED Lighting",
-    image:ledlightImage ,
+    image: ledlightImage,
     summary:
       "Energy-efficient LED luminaires for general indoor and outdoor illumination.",
     description:
