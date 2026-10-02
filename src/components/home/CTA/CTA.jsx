@@ -44,7 +44,7 @@ export default function CTA() {
 
           <p>
             Tell us what you need. From UPS systems and
-            batteries to control panels, solar and
+            batteries to solar and
             industrial electrical work, Rainbow can help
             identify the right solution.
           </p>
@@ -104,3 +104,4 @@ export default function CTA() {
     </section>
   );
 }
+

@@ -20,7 +20,7 @@ export const industries = [
     id: "commercial",
     title: "Commercial",
     description:
-      "UPS, distribution, lighting, panels and maintenance for business environments.",
+      "UPS, distribution, lighting and maintenance for business environments.",
     icon: FaBuilding,
   },
   {
@@ -34,7 +34,7 @@ export const industries = [
     id: "government",
     title: "Government",
     description:
-      "Station electrical works, lighting, panels, supply, testing and commissioning.",
+      "Station electrical works, lighting, supply, testing and commissioning.",
     icon: FaLandmark,
   },
 ];
@@ -57,7 +57,7 @@ export const expertise = [
     "LT/HT, PCC, MCC, APFC and feeder solutions.",
     FaBolt,
   ],
-  ["Automation", "PLC, HMI, VFD, SCADA and instrumentation panels.", FaCogs],
+  ["Automation", "PLC, HMI, VFD, SCADA and instrumentation systems.", FaCogs],
   [
     "Solar Solutions",
     "On-grid, off-grid and hybrid solar systems.",
@@ -91,3 +91,4 @@ export const whyRainbow = [
     "No login and no forced online payment — build a requirement and discuss it directly.",
   ],
 ];
+

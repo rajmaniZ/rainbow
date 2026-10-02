@@ -44,14 +44,6 @@ const fallbackCategories = [
     name: "Solar Solutions",
     slug: "solar",
   },
-  {
-    name: "Control Panels",
-    slug: "panels",
-  },
-  {
-    name: "Panel Components",
-    slug: "panel-components",
-  },
 ];
 
 /* SERVICES */
@@ -60,8 +52,7 @@ const services = [
   "UPS Installation & Commissioning",
   "UPS Repair & Maintenance",
   "Battery Replacement & Testing",
-  "Panel Design & Manufacturing",
-  "PLC & Industrial Automation",
+  "Industrial Automation",
   "SCADA Integration",
   "Electrical Wiring & Installation",
   "Switchgear & Protection",
@@ -244,8 +235,8 @@ export default function Footer() {
             </p>
 
             <p className={styles.descriptionSecondary}>
-              Our solutions cover UPS systems, batteries, electrical panels,
-              automation, solar systems, electrical installation and
+              Our solutions cover UPS systems, batteries, automation, solar systems,
+              electrical installation and
               maintenance.
             </p>
 
@@ -284,7 +275,7 @@ export default function Footer() {
 
               <p>
                 Electrical works across 17 railway stations including wiring,
-                lighting, cabling, electrical panels, appliances and
+                lighting, cabling, appliances and
                 commissioning.
               </p>
 
@@ -644,3 +635,4 @@ export default function Footer() {
     </footer>
   );
 }
+

@@ -11,12 +11,12 @@ import CTA from "../../components/home/CTA/CTA";
 export default function Home() {
   return (
     <>
-      <Hero />
+      {/* <Hero /> */}
       <CategoryGrid />
       <WhyChoose />
       <Industries />
-      <ProductShowcase />
       <ServicesPreview />
+      <ProductShowcase />
       <ProjectHighlight />
       <Clients />
       <Certifications />
@@ -24,3 +24,4 @@ export default function Home() {
     </>
   );
 }
+

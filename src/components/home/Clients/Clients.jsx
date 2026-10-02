@@ -9,8 +9,6 @@ import {
 
 import { clients } from "../../../data.js";
 
-import SectionHeader from "../../common/SectionHeader";
-
 import styles from "./Clients.module.css";
 
 const sectorIcons = {
@@ -72,7 +70,17 @@ export default function Clients() {
   return (
     <section className={styles.section}>
       <div
-        className={styles.background}
+        className={styles.gridTexture}
+        aria-hidden="true"
+      />
+
+      <div
+        className={styles.backgroundGlow}
+        aria-hidden="true"
+      />
+
+      <div
+        className={styles.backgroundCircuit}
         aria-hidden="true"
       >
         <span />
@@ -82,25 +90,83 @@ export default function Clients() {
       </div>
 
       <div className={styles.container}>
-        <div className={styles.header}>
-          <SectionHeader
-            eyebrow="07 / Valued clients"
-            title="Trusted across essential sectors."
-            text="Rainbow serves organizations across government, banking, healthcare, automotive, industrial and commercial environments."
-          />
+        {/* SYSTEM BAR */}
 
-          <div className={styles.trustMark}>
-            <div>
-              <Users size={18} />
+        <div className={styles.systemBar}>
+          <span className={styles.systemLabel}>
+            <i />
+            07 / CLIENT NETWORK
+          </span>
+
+          <span className={styles.systemStatus}>
+            <i />
+            TRUSTED ORGANIZATIONS
+          </span>
+        </div>
+
+        {/* HEADER */}
+
+        <header className={styles.header}>
+          <div className={styles.headerMain}>
+            <span className={styles.headingEyebrow}>
+              VALUED CLIENTS
+            </span>
+
+            <h2 className={styles.title}>
+              Trusted across
+              <span>essential sectors.</span>
+            </h2>
+
+            <p className={styles.description}>
+              Rainbow serves organizations across government,
+              banking, healthcare, automotive, industrial and
+              commercial environments.
+            </p>
+          </div>
+
+          <div className={styles.headerRight}>
+            <div className={styles.trustMark}>
+              <div className={styles.trustIcon}>
+                <Users
+                  size={18}
+                  strokeWidth={1.7}
+                />
+              </div>
+
+              <span>
+                CLIENT
+                <br />
+                NETWORK
+              </span>
             </div>
+          </div>
+        </header>
+
+        {/* CLIENT SYSTEM BAR */}
+
+        <div className={styles.networkBar}>
+          <div className={styles.networkLabel}>
+            <span className={styles.statusDot} />
 
             <span>
-              CLIENT
-              <br />
-              NETWORK
+              ACTIVE CLIENT NETWORK
+            </span>
+          </div>
+
+          <div className={styles.networkMeta}>
+            <span>
+              {String(sectors.length).padStart(2, "0")} SECTORS
+            </span>
+
+            <span className={styles.networkLine} />
+
+            <span>
+              GOVERNMENT · PRIVATE · INDUSTRIAL
             </span>
           </div>
         </div>
+
+        {/* CLIENT GRID */}
 
         <div className={styles.grid}>
           {sectors.map(
@@ -116,28 +182,49 @@ export default function Clients() {
                   key={category}
                   className={styles.card}
                 >
+                  <div
+                    className={styles.cardGlow}
+                    aria-hidden="true"
+                  />
+
                   <div className={styles.cardTop}>
                     <span className={styles.number}>
                       {String(index + 1).padStart(2, "0")}
                     </span>
 
-                    <ArrowUpRight
-                      size={16}
-                      className={styles.arrow}
-                    />
+                    <span className={styles.cardStatus}>
+                      <i />
+                      ACTIVE
+                    </span>
                   </div>
 
-                  <div className={styles.icon}>
-                    <Icon size={19} />
+                  <div className={styles.cardMain}>
+                    <div className={styles.iconWrap}>
+                      <Icon
+                        size={19}
+                        strokeWidth={1.7}
+                      />
+                    </div>
+
+                    <div className={styles.cardHeading}>
+                      <span>
+                        SECTOR
+                      </span>
+
+                      <h3>
+                        {category}
+                      </h3>
+                    </div>
+
+                    <div className={styles.cardArrow}>
+                      <ArrowUpRight
+                        size={15}
+                        strokeWidth={1.7}
+                      />
+                    </div>
                   </div>
 
-                  <div className={styles.sector}>
-                    <span>SECTOR</span>
-
-                    <h3>{category}</h3>
-                  </div>
-
-                  <div className={styles.clients}>
+                  <div className={styles.clientList}>
                     {categoryClients.map((client) => (
                       <div
                         className={styles.client}
@@ -147,26 +234,33 @@ export default function Clients() {
                         }
                       >
                         <span
-                          className={
-                            styles.clientDot
-                          }
+                          className={styles.clientDot}
                         />
 
                         <strong>
                           {client.name}
                         </strong>
+
+                        <span
+                          className={styles.clientArrow}
+                        >
+                          <ArrowUpRight
+                            size={10}
+                            strokeWidth={1.7}
+                          />
+                        </span>
                       </div>
                     ))}
                   </div>
 
                   <div className={styles.cardFooter}>
-                    <span>Rainbow client</span>
+                    <span>
+                      RAINBOW CLIENT
+                    </span>
 
-                    <span
-                      className={styles.active}
-                    >
+                    <span className={styles.served}>
                       <i />
-                      Served
+                      SERVED
                     </span>
                   </div>
 
@@ -177,6 +271,7 @@ export default function Clients() {
                     <span />
                     <span />
                     <span />
+                    <span />
                   </div>
                 </article>
               );
@@ -184,13 +279,18 @@ export default function Clients() {
           )}
         </div>
 
+        {/* TRUST STRIP */}
+
         <div className={styles.strip}>
           <div className={styles.stripLeft}>
             <div className={styles.stripIcon}>
-              <Landmark size={17} />
+              <Landmark
+                size={17}
+                strokeWidth={1.7}
+              />
             </div>
 
-            <div>
+            <div className={styles.stripContent}>
               <span>
                 GOVERNMENT · BANKING · HEALTHCARE ·
                 AUTOMOTIVE · INDUSTRIAL · COMMERCIAL
@@ -208,6 +308,22 @@ export default function Clients() {
             <span />
             <span />
           </div>
+        </div>
+
+        {/* FOOTER LINE */}
+
+        <div className={styles.footerLine}>
+          <span>
+            07 / CLIENT NETWORK
+          </span>
+
+          <span>
+            RAINBOW ELECTRICAL & POWER SYSTEMS
+          </span>
+
+          <span>
+            POWER · PROTECTION · CONTINUITY
+          </span>
         </div>
       </div>
     </section>

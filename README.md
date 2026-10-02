@@ -1,65 +1,78 @@
-# Rainbow Electrical & Electronics — V2
+# Rainbow Electrical & Electronics — Refactored V2
 
-This version uses the supplied Rainbow business content and the uploaded reference project's **content organization philosophy**, without copying its visual style.
+React + JavaScript + Vite catalogue website for Rainbow.
 
-## Main decisions
+## What was fixed
 
-- React + JavaScript + Vite only.
-- No backend, login or payment gateway.
-- Product catalogue behaves like an e-commerce site but uses an **enquiry cart** instead of checkout.
-- Dedicated `/cart` page.
-- Cart persists in localStorage.
-- WhatsApp enquiry is generated from selected products.
-- Product, service, project, client and certification information is centralized in data files.
-- Major UI sections are split into components with their own `.module.css` file.
-- Only `src/styles/global.css` contains global tokens/reset/font rules.
+- Removed the active Control Panels product category and all Control Panel products from the catalogue.
+- Removed Control Panel-specific service entries and public-facing marketing references.
+- Kept automation/control components as a separate product family; these are components, not a Control Panels catalogue.
+- Fixed `CartItem.jsx`, which previously returned before rendering its JSX.
+- Removed the broken/empty duplicate `src/pages/Products/ProductCard/ProductCard.jsx` file.
+- Enabled the global stylesheet from `src/main.jsx` and replaced the duplicate reset with a small global foundation.
+- Fixed product-category links in the header so they use `/products?category=...` instead of being treated as product-detail slugs.
+- Removed the large legacy/commented copy of the old data file.
+- Added catalogue validation and preserved explicit product IDs/slugs.
 
-## Debugging-friendly structure
+## Data architecture
+
+`src/data.js` is now only a compatibility entry point.
 
 ```text
 src/
-  components/
-    common/
-    layout/
-    home/
-    products/
-    cart/
-  context/
+  data.js
   data/
-  pages/
-    Home/
-    About/
-    Products/
-    ProductDetails/
-    Services/
-    Projects/
-    Contact/
-    Cart/
+    index.js
+    company.js
+    categories.js
+    helpers.js
+    catalog.js
+    services.js
+    projects.js
+    clients.js
+    certifications.js
+    siteData.js
+    products/
+      ups.js
+      upsComponents.js
+      batteries.js
+      stabilizers.js
+      inverters.js
+      solar.js
+      automationComponents.js
+      wiringAccessories.js
+      electricalBoxes.js
+      wiresConduits.js
+      lighting.js
+      fans.js
+      bells.js
 ```
 
-A typical section is:
+Product data is split by product family. `catalog.js` combines the families and exposes lookup/validation helpers.
 
-```text
-components/home/Industries/
-  Industries.jsx
-  Industries.module.css
+## Current catalogue
+
+- 13 product categories
+- 103 products
+- 0 duplicate product IDs
+- 0 duplicate product slugs
+- 0 invalid product-category references
+- Control Panels category removed
+- Control Panel products removed
+
+## Existing imports
+
+Existing components may continue importing from:
+
+```js
+import { products, categories } from "../../data.js";
 ```
 
-So you can debug a section without searching through one huge stylesheet.
+because `src/data.js` re-exports the organized modules. New code can import directly from `src/data/index.js` or the specific module it needs.
 
-## Centralized content
+## Assets
 
-The existing Rainbow product/service/project content is kept in `src/data.js`. Additional website-specific content is in `src/data/siteData.js`.
-
-Do not duplicate product names or service lists in individual pages.
-
-## Before production
-
-1. Replace placeholder phone, email and WhatsApp values in `src/data.js`.
-2. Replace demo product images with Rainbow's real product photographs.
-3. Add exact product specifications, brands, capacity ranges and datasheets where Rainbow provides them.
-4. Confirm the client/brand relationship before describing any manufacturer as an authorized dealer.
-5. Add the real address/map if required.
+The source merger excludes image binaries. Keep the existing `src/assets/` directory from the original project unchanged. Product modules now reference those assets from their new `src/data/products/` location using the correct `../../assets/...` path.
 
 ## Run
 
@@ -73,3 +86,5 @@ Production check:
 ```bash
 npm run build
 ```
+
+The catalog modules were independently executed after refactoring with their image imports stubbed, and the catalogue validation returned valid IDs, slugs, categories and references.

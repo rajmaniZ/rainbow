@@ -1,5 +1,4 @@
 import { useEffect, useMemo, useState } from "react";
-import singleUPS from "./../../assets/singleUPS.jpeg"
 import {
   ArrowRight,
   CheckCircle2,
@@ -646,8 +645,7 @@ export default function Products() {
               portfolio of UPS
               systems, batteries,
               stabilizers, inverters,
-              solar systems, control
-              panels and electrical
+              solar systems and electrical
               components.
             </p>
 
@@ -1229,3 +1227,4 @@ export default function Products() {
     </main>
   );
 }
+

@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+
 import {
   ArrowRight,
   CheckCircle2,
@@ -8,14 +9,14 @@ import {
   ShieldCheck,
   Zap,
 } from "lucide-react";
+
 import { FaWhatsapp } from "react-icons/fa";
 
 import { company, services } from "../../data.js";
+
 import SectionHeader from "../../components/common/SectionHeader";
 
 import styles from "./Services.module.css";
-
-/* CONFIG */
 
 const WHATSAPP_NUMBER = String(
   company?.whatsapp || "",
@@ -23,15 +24,6 @@ const WHATSAPP_NUMBER = String(
 
 /* DATA HELPERS */
 
-/*
- * Safely converts a value into an array.
- * Supports:
- * - arrays
- * - strings
- * - numbers
- * - objects
- * - null / undefined
- */
 const toArray = (value) => {
   if (Array.isArray(value)) {
     return value.filter(
@@ -56,9 +48,7 @@ const toArray = (value) => {
     return [value];
   }
 
-  if (
-    typeof value === "object"
-  ) {
+  if (typeof value === "object") {
     return Object.entries(value)
       .map(([key, item]) => {
         if (
@@ -69,12 +59,8 @@ const toArray = (value) => {
           return key;
         }
 
-        if (
-          typeof item === "object"
-        ) {
-          return `${key}: ${JSON.stringify(
-            item,
-          )}`;
+        if (typeof item === "object") {
+          return `${key}: ${JSON.stringify(item)}`;
         }
 
         return `${key}: ${item}`;
@@ -85,10 +71,6 @@ const toArray = (value) => {
   return [];
 };
 
-/*
- * Convert any service item into a safe
- * display string.
- */
 const formatServiceItem = (item) => {
   if (
     item === null ||
@@ -135,13 +117,12 @@ const formatServiceItem = (item) => {
 };
 
 /*
- * Normalize the complete services collection.
- * This is important because the component previously
- * assumed:
- * service.items
- * was always an array.
- * Now every service receives a guaranteed `items`
- * array before rendering.
+ * Normalize the service collection.
+ *
+ * The current data uses `applications`,
+ * while older data may use `items`.
+ *
+ * Both are supported.
  */
 const normalizeServices = (serviceData) => {
   if (!Array.isArray(serviceData)) {
@@ -155,9 +136,12 @@ const normalizeServices = (serviceData) => {
         typeof service === "object",
     )
     .map((service, index) => {
-      const items = toArray(
-        service.items,
-      )
+      const rawItems =
+        Array.isArray(service.items)
+          ? service.items
+          : service.applications;
+
+      const items = toArray(rawItems)
         .map(formatServiceItem)
         .filter(Boolean);
 
@@ -180,9 +164,7 @@ const normalizeServices = (serviceData) => {
 
         items,
 
-        icon:
-          service.icon ||
-          Zap,
+        image: service.image || null,
       };
     });
 };
@@ -193,7 +175,8 @@ function sendWhatsApp(
   service,
   item = "",
 ) {
-  const servicesUrl = `${window.location.origin}/services`;
+  const servicesUrl =
+    `${window.location.origin}/services`;
 
   const message = [
     "Hello Rainbow,",
@@ -212,10 +195,6 @@ function sendWhatsApp(
     .filter(Boolean)
     .join("\n");
 
-  /*
- * If the WhatsApp number has not been configured,
- * don't generate an invalid wa.me URL.
- */
   if (!WHATSAPP_NUMBER) {
     console.warn(
       "Rainbow WhatsApp number is not configured.",
@@ -243,61 +222,49 @@ function ServiceCard({
   open,
   onToggle,
 }) {
-  const Icon = service.icon || Zap;
-
-  /*
- * This is guaranteed to be an array because
- * normalizeServices() already converted it.
- * Keeping this extra guard makes the component
- * independently safe as well.
- */
-  const items = Array.isArray(
-    service.items,
-  )
-    ? service.items
-    : [];
-
   return (
     <article
       className={`${styles.serviceCard} ${
-        open
-          ? styles.serviceCardOpen
-          : ""
+        open ? styles.serviceCardOpen : ""
       }`}
     >
-      {/* CARD HEADER */}
-
       <button
         type="button"
         className={styles.cardHeader}
-        onClick={() =>
-          onToggle(service.title)
-        }
+        onClick={() => onToggle(service.title)}
         aria-expanded={open}
       >
         <div className={styles.serviceIcon}>
-          <Icon
-            size={23}
-            strokeWidth={1.8}
-          />
+          {service.image ? (
+            <img
+              src={service.image}
+              alt=""
+              aria-hidden="true"
+              draggable="false"
+            />
+          ) : (
+            <Zap
+              size={23}
+              strokeWidth={1.8}
+            />
+          )}
         </div>
 
         <div className={styles.cardTitle}>
           <span className={styles.number}>
-            {String(index + 1).padStart(
-              2,
-              "0",
-            )}
+            {String(index + 1).padStart(2, "0")}
           </span>
 
           <h2>{service.title}</h2>
+
+          {service.category && (
+            <span className={styles.category}>
+              {service.category}
+            </span>
+          )}
         </div>
 
-        <span
-          className={
-            styles.expandButton
-          }
-        >
+        <span className={styles.expandButton}>
           {open ? (
             <ChevronUp size={19} />
           ) : (
@@ -306,53 +273,27 @@ function ServiceCard({
         </span>
       </button>
 
-      {/* DESCRIPTION */}
-
-      <div
-        className={
-          styles.cardDescription
-        }
-      >
+      <div className={styles.cardDescription}>
         <p>{service.description}</p>
       </div>
 
-      {/* EXPANDED CONTENT */}
-
       {open && (
-        <div
-          className={
-            styles.expandedContent
-          }
-        >
-          <div
-            className={
-              styles.serviceItems
-            }
-          >
-            {items.length > 0 ? (
-              items.map(
+        <div className={styles.expandedContent}>
+          <div className={styles.serviceItems}>
+            {service.items.length > 0 ? (
+              service.items.map(
                 (item, itemIndex) => (
                   <div
-                    className={
-                      styles.serviceItem
-                    }
+                    className={styles.serviceItem}
                     key={`${service.id}-${itemIndex}-${item}`}
                   >
-                    <span
-                      className={
-                        styles.check
-                      }
-                    >
-                      <CheckCircle2
-                        size={18}
-                      />
+                    <span className={styles.check}>
+                      <CheckCircle2 size={18} />
                     </span>
 
                     <button
                       type="button"
-                      className={
-                        styles.serviceName
-                      }
+                      className={styles.serviceName}
                       onClick={() =>
                         sendWhatsApp(
                           service.title,
@@ -377,34 +318,18 @@ function ServiceCard({
                         )
                       }
                     >
-                      <FaWhatsapp
-                        size={18}
-                      />
+                      <FaWhatsapp size={18} />
                     </button>
                   </div>
                 ),
               )
             ) : (
-              <div
-                className={
-                  styles.serviceItem
-                }
-              >
-                <span
-                  className={
-                    styles.check
-                  }
-                >
-                  <CheckCircle2
-                    size={18}
-                  />
+              <div className={styles.serviceItem}>
+                <span className={styles.check}>
+                  <CheckCircle2 size={18} />
                 </span>
 
-                <span
-                  className={
-                    styles.serviceName
-                  }
-                >
+                <span className={styles.serviceName}>
                   Service details available
                   through direct enquiry.
                 </span>
@@ -417,35 +342,21 @@ function ServiceCard({
                   aria-label={`WhatsApp enquiry for ${service.title}`}
                   title={`Enquire about ${service.title}`}
                   onClick={() =>
-                    sendWhatsApp(
-                      service.title,
-                    )
+                    sendWhatsApp(service.title)
                   }
                 >
-                  <FaWhatsapp
-                    size={18}
-                  />
+                  <FaWhatsapp size={18} />
                 </button>
               </div>
             )}
           </div>
 
-          {/* CARD ACTIONS */}
-
-          <div
-            className={
-              styles.cardActions
-            }
-          >
+          <div className={styles.cardActions}>
             <button
               type="button"
-              className={
-                styles.primaryAction
-              }
+              className={styles.primaryAction}
               onClick={() =>
-                sendWhatsApp(
-                  service.title,
-                )
+                sendWhatsApp(service.title)
               }
             >
               Discuss this service
@@ -454,13 +365,9 @@ function ServiceCard({
 
             <button
               type="button"
-              className={
-                styles.whatsappAction
-              }
+              className={styles.whatsappAction}
               onClick={() =>
-                sendWhatsApp(
-                  service.title,
-                )
+                sendWhatsApp(service.title)
               }
             >
               <FaWhatsapp size={18} />
@@ -476,7 +383,6 @@ function ServiceCard({
 /* SERVICES PAGE */
 
 export default function Services() {
-  /* Normalize services exactly once. */
   const normalizedServices = useMemo(
     () => normalizeServices(services),
     [],
@@ -535,10 +441,6 @@ export default function Services() {
   const openCount =
     openServices.size;
 
-  /*
- * Every service has a guaranteed `items`
- * array now, so this is safe.
- */
   const totalItems =
     normalizedServices.reduce(
       (total, service) => {
@@ -571,18 +473,25 @@ export default function Services() {
     );
   };
 
-  /* RENDER */
-
   return (
     <div className={styles.page}>
       {/* HERO */}
 
       <section className={styles.hero}>
-        <div className={styles.heroGrid} />
+        <div
+          className={styles.heroGrid}
+          aria-hidden="true"
+        />
 
-        <div className={styles.heroGlow} />
+        <div
+          className={styles.heroGlow}
+          aria-hidden="true"
+        />
 
-        <div className={styles.heroCircuit}>
+        <div
+          className={styles.heroCircuit}
+          aria-hidden="true"
+        >
           <span />
           <span />
           <span />
@@ -593,16 +502,8 @@ export default function Services() {
           <div className={styles.heroLayout}>
             {/* LEFT HERO */}
 
-            <div
-              className={
-                styles.heroContent
-              }
-            >
-              <span
-                className={
-                  styles.eyebrow
-                }
-              >
+            <div className={styles.heroContent}>
+              <span className={styles.eyebrow}>
                 <i />
                 RAINBOW / SERVICES
               </span>
@@ -617,25 +518,20 @@ export default function Services() {
 
               <p>
                 From power backup and
-                control panels to electrical
-                installation, protection,
-                automation and maintenance
-                — Rainbow provides
+                electrical installation,
+                protection, automation and
+                maintenance — Rainbow provides
                 engineering support around
                 the complete electrical
                 lifecycle.
               </p>
 
               <div
-                className={
-                  styles.heroActions
-                }
+                className={styles.heroActions}
               >
                 <button
                   type="button"
-                  className={
-                    styles.heroPrimary
-                  }
+                  className={styles.heroPrimary}
                   onClick={() =>
                     sendWhatsApp(
                       "Electrical Services",
@@ -648,36 +544,24 @@ export default function Services() {
 
                 <a
                   href="#service-portfolio"
-                  className={
-                    styles.heroSecondary
-                  }
+                  className={styles.heroSecondary}
                 >
                   Explore services
-                  <ArrowRight
-                    size={16}
-                  />
+                  <ArrowRight size={16} />
                 </a>
               </div>
 
               <div
-                className={
-                  styles.heroMeta
-                }
+                className={styles.heroMeta}
               >
                 <span>
-                  <CheckCircle2
-                    size={16}
-                  />
-                  {
-                    normalizedServices.length
-                  }{" "}
+                  <CheckCircle2 size={16} />
+                  {normalizedServices.length}{" "}
                   service groups
                 </span>
 
                 <span>
-                  <ShieldCheck
-                    size={16}
-                  />
+                  <ShieldCheck size={16} />
                   {totalItems}+ individual
                   services
                 </span>
@@ -687,25 +571,28 @@ export default function Services() {
             {/* RIGHT HERO PANEL */}
 
             <div
-              className={
-                styles.heroPanel
-              }
+              className={styles.heroPanel}
             >
               <div
-                className={
-                  styles.panelTop
-                }
+                className={styles.panelTop}
               >
-                <div
-                  className={
-                    styles.panelIcon
-                  }
-                >
-                  <Zap size={23} />
+                <div>
+                  <div
+                    className={styles.panelIcon}
+                  >
+                    <Zap size={23} />
+                  </div>
+
+                  <span>
+                    ENGINEERING SUPPORT
+                  </span>
                 </div>
 
-                <span>
-                  ENGINEERING SUPPORT
+                <span
+                  className={styles.panelLive}
+                >
+                  <i />
+                  18 SERVICES
                 </span>
               </div>
 
@@ -722,15 +609,11 @@ export default function Services() {
               </p>
 
               <div
-                className={
-                  styles.panelStats
-                }
+                className={styles.panelStats}
               >
                 <div>
                   <strong>
-                    {
-                      normalizedServices.length
-                    }
+                    {normalizedServices.length}
                   </strong>
 
                   <span>
@@ -760,35 +643,20 @@ export default function Services() {
               </div>
 
               <div
-                className={
-                  styles.panelList
-                }
+                className={styles.panelList}
               >
                 <span>
-                  <CheckCircle2
-                    size={16}
-                  />
+                  <CheckCircle2 size={16} />
                   Power backup &amp; UPS
                 </span>
 
                 <span>
-                  <CheckCircle2
-                    size={16}
-                  />
-                  Electrical control panels
-                </span>
-
-                <span>
-                  <CheckCircle2
-                    size={16}
-                  />
+                  <CheckCircle2 size={16} />
                   Protection &amp; switching
                 </span>
 
                 <span>
-                  <CheckCircle2
-                    size={16}
-                  />
+                  <CheckCircle2 size={16} />
                   Installation &amp;
                   maintenance
                 </span>
@@ -796,9 +664,7 @@ export default function Services() {
 
               <button
                 type="button"
-                className={
-                  styles.panelButton
-                }
+                className={styles.panelButton}
                 onClick={() =>
                   sendWhatsApp(
                     "Electrical Services",
@@ -811,9 +677,8 @@ export default function Services() {
               </button>
 
               <div
-                className={
-                  styles.panelLine
-                }
+                className={styles.panelLine}
+                aria-hidden="true"
               >
                 <span />
                 <span />
@@ -841,23 +706,17 @@ export default function Services() {
 
           <div className={styles.summary}>
             <div
-              className={
-                styles.summaryCard
-              }
+              className={styles.summaryCard}
             >
               <div
-                className={
-                  styles.summaryIcon
-                }
+                className={styles.summaryIcon}
               >
                 <Zap size={20} />
               </div>
 
               <div>
                 <strong>
-                  {
-                    normalizedServices.length
-                  }
+                  {normalizedServices.length}
                 </strong>
 
                 <span>
@@ -867,18 +726,12 @@ export default function Services() {
             </div>
 
             <div
-              className={
-                styles.summaryCard
-              }
+              className={styles.summaryCard}
             >
               <div
-                className={
-                  styles.summaryIcon
-                }
+                className={styles.summaryIcon}
               >
-                <MessageCircle
-                  size={20}
-                />
+                <MessageCircle size={20} />
               </div>
 
               <div>
@@ -893,14 +746,10 @@ export default function Services() {
             </div>
 
             <div
-              className={
-                styles.summaryCard
-              }
+              className={styles.summaryCard}
             >
               <div
-                className={
-                  styles.summaryIcon
-                }
+                className={styles.summaryIcon}
               >
                 <FaWhatsapp size={20} />
               </div>
@@ -920,16 +769,12 @@ export default function Services() {
           {/* TOOLBAR */}
 
           <div
-            className={
-              styles.serviceToolbar
-            }
+            className={styles.serviceToolbar}
           >
             <div>
               <strong>
                 {openCount} of{" "}
-                {
-                  normalizedServices.length
-                }
+                {normalizedServices.length}
               </strong>
 
               <span>
@@ -958,19 +803,15 @@ export default function Services() {
                 }
               >
                 Expand all
-                <ChevronDown
-                  size={17}
-                />
+                <ChevronDown size={17} />
               </button>
             )}
           </div>
 
-          {/* INDEPENDENT COLUMNS */}
+          {/* SERVICE COLUMNS */}
 
           <div
-            className={
-              styles.serviceColumns
-            }
+            className={styles.serviceColumns}
           >
             <div
               className={
@@ -1026,14 +867,10 @@ export default function Services() {
           {/* CTA */}
 
           <section
-            className={
-              styles.bottomCta
-            }
+            className={styles.bottomCta}
           >
             <div
-              className={
-                styles.bottomIcon
-              }
+              className={styles.bottomIcon}
             >
               <FaWhatsapp size={25} />
             </div>

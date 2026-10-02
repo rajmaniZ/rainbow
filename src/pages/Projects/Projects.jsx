@@ -493,7 +493,7 @@ export default function Projects() {
 
               <p>
                 {project?.description ||
-                  "Comprehensive electrical works across North Eastern Railway stations including electrical installation, lighting, cabling, panels, appliances and commissioning."}
+                  "Comprehensive electrical works across North Eastern Railway stations including electrical installation, lighting, cabling, appliances and commissioning."}
               </p>
 
               <h3>Scope of work</h3>
@@ -695,3 +695,4 @@ export default function Projects() {
     </div>
   );
 }
+

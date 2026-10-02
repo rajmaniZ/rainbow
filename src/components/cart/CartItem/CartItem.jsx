@@ -2,8 +2,8 @@ import { Minus, Plus, Trash2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import styles from "./CartItem.module.css";
 export default function CartItem({ item, onUpdate, onRemove }) {
-  return;
-  <article className={styles.item}>
+  return (
+    <article className={styles.item}>
     <Link to={`/products/${item.slug}`} className={styles.image}>
       <img src={item.image} alt={item.name} />
     </Link>
@@ -31,5 +31,7 @@ export default function CartItem({ item, onUpdate, onRemove }) {
         </button>
       </div>
     </div>
-  </article>;
+  </article>
+  );
 }
+

@@ -11,3 +11,4 @@ export default function SectionHeader({ eyebrow, title, text, action }) {
     </div>
   );
 }
+

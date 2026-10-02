@@ -45,7 +45,7 @@ export default function Hero() {
           </h1>
 
           <p className={styles.description}>
-            UPS systems, electrical panels, automation and
+            UPS systems, automation and
             complete electrical solutions for industrial,
             commercial and infrastructure projects.
           </p>
@@ -407,8 +407,8 @@ export default function Hero() {
           </div>
 
           <div className={styles.bottomItem}>
-            <strong>Panels</strong>
-            <span>Control &amp; Distribution</span>
+            <strong>Protection</strong>
+            <span>Switching &amp; Safety</span>
           </div>
 
           <div className={styles.bottomItem}>
@@ -430,3 +430,4 @@ export default function Hero() {
     </section>
   );
 }
+

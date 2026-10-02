@@ -1,0 +1,38 @@
+/* RAINBOW UNIFIED VISUAL THEME */
+
+:root {
+  --theme-heading: #102A43;
+  --theme-text: #40566D;
+  --theme-muted: #6B8195;
+  --theme-background: #F7FBFF;
+  --theme-background-soft: #EAF4FF;
+  --theme-surface: #FFFFFF;
+  --theme-surface-soft: #F3F9FF;
+  --theme-border: #D5E4F0;
+  --theme-border-soft: #E7F0F7;
+  --theme-blue: #2563EB;
+  --theme-blue-dark: #1D4ED8;
+  --theme-cyan: #06B6D4;
+  --theme-teal: #14B8A6;
+  --theme-mint: #36D9AE;
+  --theme-green: #10B981;
+  --theme-gold: #D9B45B;
+}
+
+html,
+body {
+  background: var(--theme-background);
+  color: var(--theme-text);
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(54, 217, 174, 0.28);
+  color: #102A43;
+}

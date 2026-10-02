@@ -14,7 +14,7 @@ export default function ProductFilters({
         <input
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          placeholder="Search UPS, PLC, solar, MCB, panels..."
+          placeholder="Search UPS, PLC, solar, MCB, electrical products..."
         />
         {search && (
           <button onClick={() => setSearch("")}>
@@ -43,3 +43,4 @@ export default function ProductFilters({
     </div>
   );
 }
+

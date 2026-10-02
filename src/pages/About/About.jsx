@@ -39,8 +39,8 @@ const expertise = [
   },
   {
     icon: Network,
-    title: "Electrical Control Panels",
-    text: "Power distribution, motor control, automation and protection panels.",
+    title: "Industrial Automation",
+    text: "PLC, HMI, SCADA, VFD and instrumentation-based control solutions.",
   },
   {
     icon: Gauge,
@@ -114,7 +114,6 @@ export default function About() {
 
             <p>
               Rainbow provides power backup,
-              electrical control panels,
               industrial automation, solar and
               complete electrical solutions for
               residential, commercial, industrial
@@ -583,3 +582,4 @@ export default function About() {
     </main>
   );
 }
+
