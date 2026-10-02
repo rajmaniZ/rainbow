@@ -1,0 +1,2279 @@
+/* =========================================================
+   PROJECT HIGHLIGHT
+   Desktop: exact 100vh composition
+   Mobile: natural content height
+========================================================= */
+
+.section {
+  --ink: #102f49;
+  --ink-soft: #38566c;
+  --green: #16ae83;
+  --green-dark: #0b9871;
+  --mint: #62dfae;
+  --cyan: #43cbd0;
+  --white: #ffffff;
+  --line: #dce8e9;
+  --line-soft: #eaf1f2;
+  --muted: #78909e;
+
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 100vh;
+  padding: 24px 0;
+  overflow: hidden;
+
+  color: var(--ink);
+  background:
+    linear-gradient(
+      180deg,
+      #fbfefe 0%,
+      #f6fbfb 100%
+    );
+
+  font-family:
+    "DM Sans",
+    "Segoe UI",
+    Arial,
+    sans-serif;
+}
+
+.section *,
+.section *::before,
+.section *::after {
+  box-sizing: border-box;
+}
+
+.section a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* =========================================================
+   TECHNICAL GRID
+========================================================= */
+
+.section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(
+      to right,
+      rgba(42, 92, 110, 0.065) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(42, 92, 110, 0.065) 1px,
+      transparent 1px
+    );
+
+  background-size: 48px 48px;
+
+  opacity: 0.8;
+
+  -webkit-mask-image:
+    linear-gradient(
+      to bottom,
+      black 0%,
+      black 80%,
+      transparent 100%
+    );
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      black 0%,
+      black 80%,
+      transparent 100%
+    );
+}
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.container {
+  position: relative;
+  z-index: 2;
+
+  width:
+    min(
+      1280px,
+      calc(100% - 72px)
+    );
+
+  height: 100%;
+  margin: 0 auto;
+}
+
+/* =========================================================
+   BACKGROUND ORBIT
+========================================================= */
+
+.background {
+  position: absolute;
+  top: 110px;
+  right: -185px;
+
+  width: 600px;
+  height: 600px;
+
+  pointer-events: none;
+  opacity: 0.28;
+
+  animation:
+    orbitFloat
+    14s
+    ease-in-out
+    infinite;
+}
+
+.background::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  border:
+    1px solid
+    rgba(38, 190, 161, 0.13);
+
+  border-radius: 50%;
+
+  box-shadow:
+    0 0 0 70px
+      rgba(38, 190, 161, 0.025),
+    0 0 0 140px
+      rgba(38, 190, 161, 0.018);
+}
+
+.background::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -15%;
+
+  width: 130%;
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(33, 178, 146, 0.16),
+      transparent
+    );
+}
+
+.background span {
+  position: absolute;
+
+  width: 7px;
+  height: 7px;
+
+  border:
+    1px solid
+    rgba(20, 173, 131, 0.3);
+
+  border-radius: 50%;
+  background: #ffffff;
+}
+
+.background span:nth-child(1) {
+  top: 50%;
+  left: 0;
+  animation:
+    nodePulse
+    2.8s
+    ease-in-out
+    infinite;
+}
+
+.background span:nth-child(2) {
+  top: 0;
+  left: 50%;
+  animation:
+    nodePulse
+    2.8s
+    ease-in-out
+    0.8s
+    infinite;
+}
+
+.background span:nth-child(3) {
+  top: 50%;
+  right: 0;
+  animation:
+    nodePulse
+    2.8s
+    ease-in-out
+    1.5s
+    infinite;
+}
+
+/* =========================================================
+   MAIN COMPOSITION
+========================================================= */
+
+.project {
+  position: relative;
+
+  display: grid;
+  grid-template-columns:
+    minmax(470px, 0.95fr)
+    minmax(0, 1.05fr);
+
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+
+  overflow: hidden;
+
+  border:
+    1px solid
+    var(--line);
+
+  border-radius: 17px;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.92
+    );
+
+  box-shadow:
+    0 22px 65px
+      rgba(28, 66, 82, 0.055);
+
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+
+  animation:
+    projectReveal
+    700ms
+    cubic-bezier(0.2, 0.8, 0.2, 1)
+    both;
+
+  transition:
+    transform 350ms ease,
+    box-shadow 350ms ease;
+}
+
+.project:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 28px 75px
+      rgba(28, 66, 82, 0.075);
+}
+
+/* =========================================================
+   LEFT VISUAL
+========================================================= */
+
+.visual {
+  position: relative;
+
+  min-width: 0;
+  min-height: 0;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  border-right:
+    1px solid
+    var(--line);
+
+  background:
+    linear-gradient(
+      145deg,
+      #f5fcfb 0%,
+      #eaf8f5 100%
+    );
+}
+
+.visual::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(
+      to right,
+      rgba(30, 118, 121, 0.065) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(30, 118, 121, 0.065) 1px,
+      transparent 1px
+    );
+
+  background-size: 38px 38px;
+}
+
+.visual::after {
+  content: "";
+
+  position: absolute;
+  z-index: 0;
+
+  width: 570px;
+  height: 570px;
+
+  top: 47%;
+  left: 50%;
+
+  border:
+    1px solid
+    rgba(34, 192, 163, 0.11);
+
+  border-radius: 50%;
+
+  transform:
+    translate(-50%, -20%);
+
+  box-shadow:
+    0 0 0 65px
+      rgba(34, 192, 163, 0.024),
+    0 0 0 130px
+      rgba(34, 192, 163, 0.015);
+
+  pointer-events: none;
+
+  animation:
+    visualOrbit
+    24s
+    linear
+    infinite;
+}
+
+/* =========================================================
+   LEFT HEADER
+========================================================= */
+
+.visualHeader {
+  position: relative;
+  z-index: 6;
+
+  flex: 0 0 auto;
+
+  padding:
+    18px
+    32px
+    13px;
+
+  border-bottom:
+    1px solid
+    rgba(120, 170, 169, 0.17);
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(249, 254, 253, 0.94),
+      rgba(242, 251, 249, 0.7)
+    );
+}
+
+.visualHeaderMeta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 14px;
+
+  color:
+    #718892;
+
+  font-size: 6px;
+  font-weight: 800;
+
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.visualHeaderMeta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.visualHeaderMeta span:first-child {
+  color: var(--green);
+}
+
+.visualHeaderMeta i {
+  width: 5px;
+  height: 5px;
+  flex: 0 0 auto;
+
+  border-radius: 50%;
+  background: var(--mint);
+
+  box-shadow:
+    0 0 0 4px
+    rgba(53, 214, 170, 0.08);
+}
+
+.visualHeaderLabel {
+  margin-bottom: 7px;
+
+  color: #5e7a89;
+
+  font-size: 6.5px;
+  font-weight: 800;
+
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.visualHeader h2 {
+  max-width: 510px;
+
+  margin: 0;
+
+  color: var(--ink);
+
+  font-family:
+    "Manrope",
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  font-size:
+    clamp(
+      40px,
+      4vw,
+      58px
+    );
+
+  font-weight: 800;
+
+  line-height: 0.86;
+  letter-spacing: -0.075em;
+}
+
+.visualHeader h2 span {
+  position: relative;
+  display: block;
+
+  color: var(--green);
+}
+
+.visualHeader h2 span::after {
+  content: "";
+
+  position: absolute;
+  left: 1px;
+  bottom: -6px;
+
+  width: 110px;
+  height: 2px;
+
+  background: var(--mint);
+
+  transform-origin: left;
+
+  animation:
+    headingLine
+    850ms
+    300ms
+    cubic-bezier(0.2, 0.8, 0.2, 1)
+    both;
+}
+
+.visualHeader p {
+  max-width: 500px;
+
+  margin:
+    11px
+    0
+    0;
+
+  color: #657e8e;
+
+  font-size: 8px;
+  font-weight: 500;
+
+  line-height: 1.5;
+}
+
+/* =========================================================
+   HEADER CTA
+========================================================= */
+
+.headerButton {
+  width: fit-content;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  min-height: 31px;
+
+  margin-top: 10px;
+  padding:
+    3px
+    4px
+    3px
+    12px;
+
+  border:
+    1px solid
+    #d4e3e3;
+
+  border-radius: 22px;
+
+  color: var(--ink);
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.88
+    );
+
+  font-size: 6px;
+  font-weight: 800;
+
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+
+  box-shadow:
+    0 6px 18px
+      rgba(30, 67, 79, 0.04);
+
+  transition:
+    transform 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.headerButtonIcon {
+  width: 25px;
+  height: 25px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  color: var(--ink);
+
+  background:
+    linear-gradient(
+      135deg,
+      #6be4b1,
+      #7ee46c
+    );
+
+  transition:
+    transform 220ms ease;
+}
+
+.headerButton:hover {
+  transform: translateY(-2px);
+
+  border-color:
+    #b9ddd5;
+
+  box-shadow:
+    0 10px 24px
+      rgba(20, 130, 105, 0.09);
+}
+
+.headerButton:hover .headerButtonIcon {
+  transform:
+    rotate(-45deg)
+    scale(1.05);
+}
+
+/* =========================================================
+   PROJECT META BAR
+========================================================= */
+
+.visualTop {
+  position: relative;
+  z-index: 6;
+
+  flex: 0 0 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding:
+    0
+    32px;
+
+  border-bottom:
+    1px solid
+    rgba(120, 170, 169, 0.15);
+}
+
+.projectNo {
+  color: #7f959f;
+
+  font-family:
+    "Manrope",
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  font-size: 5.5px;
+  font-weight: 800;
+
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.live {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  color: #6f8b88;
+
+  font-size: 5.5px;
+  font-weight: 800;
+
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.live i {
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #62dfae,
+      #15af82
+    );
+
+  box-shadow:
+    0 0 0 4px
+    rgba(31, 190, 143, 0.08);
+
+  animation:
+    livePulse
+    2.2s
+    ease-in-out
+    infinite;
+}
+
+/* =========================================================
+   RAILWAY GRAPHIC
+========================================================= */
+
+.railwayGraphic {
+  position: relative;
+  z-index: 3;
+
+  flex: 1 1 auto;
+
+  min-height: 0;
+  margin: 0;
+}
+
+.track {
+  position: absolute;
+
+  top: 52%;
+  left: 50%;
+
+  width: 270px;
+  height: 125px;
+
+  transform:
+    translate(-50%, -50%);
+}
+
+.track::before,
+.track::after {
+  content: "";
+
+  position: absolute;
+
+  top: -5px;
+  bottom: -5px;
+
+  width: 2px;
+
+  background:
+    linear-gradient(
+      180deg,
+      transparent,
+      #a8c9ca 15%,
+      #a8c9ca 85%,
+      transparent
+    );
+
+  transition:
+    background 300ms ease;
+}
+
+.track::before {
+  left: 25px;
+  transform: rotate(-16deg);
+}
+
+.track::after {
+  right: 25px;
+  transform: rotate(16deg);
+}
+
+.track span {
+  position: absolute;
+
+  left: 50%;
+
+  width: 225px;
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #b7d0d2 12%,
+      #b7d0d2 88%,
+      transparent
+    );
+
+  transform:
+    translateX(-50%);
+
+  transition:
+    background 300ms ease;
+}
+
+.track span:nth-child(1) {
+  top: 8px;
+}
+
+.track span:nth-child(2) {
+  top: 42px;
+}
+
+.track span:nth-child(3) {
+  top: 76px;
+}
+
+.track span:nth-child(4) {
+  top: 110px;
+}
+
+.project:hover .track span {
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(22, 174, 131, 0.35),
+      transparent
+    );
+}
+
+/* =========================================================
+   TRAIN
+========================================================= */
+
+.train {
+  position: absolute;
+
+  top: 52%;
+  left: 50%;
+
+  width: 76px;
+  height: 76px;
+
+  display: grid;
+  place-items: center;
+
+  transform:
+    translate(-50%, -50%);
+
+  border:
+    1px solid
+    rgba(24, 171, 139, 0.28);
+
+  border-radius: 18px;
+
+  color: var(--green);
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.92
+    );
+
+  box-shadow:
+    0 18px 42px
+      rgba(17, 108, 99, 0.1),
+    inset 0 1px 0
+      rgba(255, 255, 255, 0.9);
+
+  transition:
+    transform 350ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 350ms ease;
+}
+
+.train::before {
+  content: "";
+
+  position: absolute;
+  inset: 7px;
+
+  border:
+    1px solid
+    rgba(21, 174, 132, 0.12);
+
+  border-radius: 12px;
+}
+
+.train svg {
+  position: relative;
+  z-index: 2;
+
+  transition:
+    transform 350ms ease;
+}
+
+.project:hover .train {
+  transform:
+    translate(-50%, -50%)
+    scale(1.07);
+
+  box-shadow:
+    0 25px 55px
+      rgba(17, 108, 99, 0.15);
+}
+
+.project:hover .train svg {
+  transform:
+    translateX(2px);
+}
+
+/* =========================================================
+   POWER NODE
+========================================================= */
+
+.powerNode {
+  position: absolute;
+
+  top: 17%;
+  right: 10%;
+
+  width: 35px;
+  height: 35px;
+
+  display: grid;
+  place-items: center;
+
+  border:
+    1px solid
+    rgba(25, 179, 143, 0.25);
+
+  border-radius: 10px;
+
+  color: var(--cyan);
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.9
+    );
+
+  box-shadow:
+    0 10px 24px
+      rgba(30, 94, 97, 0.07);
+
+  animation:
+    powerPulse
+    2.5s
+    ease-in-out
+    infinite;
+
+  transition:
+    transform 250ms ease;
+}
+
+.powerNode::before {
+  content: "";
+
+  position: absolute;
+  inset: -6px;
+
+  border:
+    1px solid
+    rgba(25, 179, 143, 0.07);
+
+  border-radius: 13px;
+}
+
+.project:hover .powerNode {
+  transform:
+    rotate(8deg)
+    scale(1.08);
+}
+
+/* =========================================================
+   SIGNAL
+========================================================= */
+
+.signalNode {
+  position: absolute;
+
+  left: 11%;
+  top: 30%;
+
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  padding:
+    5px
+    8px;
+
+  border:
+    1px solid
+    rgba(21, 160, 125, 0.13);
+
+  border-radius: 5px;
+
+  color: #7a9293;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.7
+    );
+
+  font-size: 5px;
+
+  letter-spacing: 0.08em;
+
+  opacity: 0.72;
+
+  transition:
+    opacity 250ms ease,
+    transform 250ms ease;
+}
+
+.signalNode span {
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+  background: var(--green);
+
+  animation:
+    nodePulse
+    1.8s
+    ease-in-out
+    infinite;
+}
+
+.project:hover .signalNode {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   STATION COUNT
+========================================================= */
+
+.stationCount {
+  position: relative;
+  z-index: 6;
+
+  flex: 0 0 auto;
+
+  display: flex;
+  align-items: flex-end;
+
+  gap: 11px;
+
+  margin-top: auto;
+
+  padding:
+    0
+    32px;
+}
+
+.stationCount strong {
+  color: var(--ink);
+
+  font-family:
+    "Manrope",
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  font-size: 68px;
+  font-weight: 800;
+
+  line-height: 0.72;
+  letter-spacing: -0.09em;
+
+  transition:
+    color 250ms ease,
+    transform 350ms ease;
+}
+
+.project:hover .stationCount strong {
+  color: var(--green);
+
+  transform:
+    translateX(3px);
+}
+
+.stationCount div {
+  padding-bottom: 3px;
+}
+
+.stationCount span,
+.stationCount b {
+  display: block;
+}
+
+.stationCount span {
+  color: #789096;
+
+  font-size: 6.5px;
+  font-weight: 600;
+
+  line-height: 1.4;
+}
+
+.stationCount b {
+  margin-top: 3px;
+
+  color: var(--green);
+
+  font-size: 8px;
+  font-weight: 800;
+
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   VISUAL FOOTER
+========================================================= */
+
+.visualFooter {
+  position: relative;
+  z-index: 6;
+
+  flex: 0 0 auto;
+
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  margin:
+    11px
+    32px
+    13px;
+
+  padding-top: 9px;
+
+  border-top:
+    1px solid
+    rgba(115, 155, 158, 0.18);
+
+  color: #7d9397;
+
+  font-size: 6px;
+  font-weight: 700;
+
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.visualFooter svg {
+  color: var(--green);
+
+  transition:
+    transform 250ms ease;
+}
+
+.project:hover .visualFooter svg {
+  transform:
+    translateY(-2px);
+}
+
+/* =========================================================
+   RIGHT CONTENT
+========================================================= */
+
+.content {
+  position: relative;
+
+  min-width: 0;
+  min-height: 0;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  padding:
+    34px
+    42px
+    25px;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.86
+    );
+}
+
+.content::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  width: 240px;
+  height: 240px;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(48, 208, 169, 0.08),
+      transparent 70%
+    );
+
+  transition:
+    transform 500ms ease;
+}
+
+.project:hover .content::before {
+  transform:
+    scale(1.2)
+    translate(-8px, 8px);
+}
+
+/* =========================================================
+   PROJECT TYPE
+========================================================= */
+
+.projectType {
+  position: relative;
+  z-index: 2;
+
+  display: inline-flex;
+  align-items: center;
+
+  width: fit-content;
+
+  color: var(--green);
+
+  font-size: 7px;
+  font-weight: 800;
+
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.projectType::before {
+  content: "";
+
+  width: 6px;
+  height: 6px;
+
+  margin-right: 7px;
+
+  border-radius: 50%;
+  background: var(--mint);
+
+  box-shadow:
+    0 0 0 5px
+    rgba(67, 213, 173, 0.09);
+}
+
+/* =========================================================
+   PROJECT TITLE
+========================================================= */
+
+.content h3 {
+  position: relative;
+  z-index: 2;
+
+  max-width: 700px;
+
+  margin:
+    8px
+    0
+    8px;
+
+  color: var(--ink);
+
+  font-family:
+    "Manrope",
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  font-size:
+    clamp(
+      30px,
+      3vw,
+      43px
+    );
+
+  font-weight: 800;
+
+  line-height: 1;
+
+  letter-spacing: -0.06em;
+
+  transition:
+    color 250ms ease;
+}
+
+.project:hover .content h3 {
+  color: #0c3d55;
+}
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.description {
+  position: relative;
+  z-index: 2;
+
+  max-width: 670px;
+
+  margin: 0;
+
+  color: #657d8d;
+
+  font-size: 9px;
+  font-weight: 500;
+
+  line-height: 1.55;
+}
+
+/* =========================================================
+   DIVIDER
+========================================================= */
+
+.divider {
+  width: 100%;
+  height: 1px;
+
+  margin:
+    20px
+    0
+    15px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--line),
+      rgba(220, 232, 233, 0.25)
+    );
+}
+
+/* =========================================================
+   SCOPE HEADER
+========================================================= */
+
+.scopeHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  margin-bottom: 10px;
+}
+
+.scopeHeader > span {
+  color: var(--ink);
+
+  font-family:
+    "Manrope",
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.scopeHeader small {
+  color: #91a1aa;
+
+  font-size: 6.5px;
+  font-weight: 700;
+
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   SCOPE ITEMS
+========================================================= */
+
+.scope {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      2,
+      minmax(0, 1fr)
+    );
+
+  gap:
+    7px
+    8px;
+}
+
+.scopeItem {
+  position: relative;
+
+  min-width: 0;
+  min-height: 38px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  padding:
+    7px
+    9px;
+
+  overflow: hidden;
+
+  border:
+    1px solid
+    var(--line-soft);
+
+  border-radius: 7px;
+
+  color: #536d7c;
+
+  background:
+    rgba(
+      248,
+      252,
+      252,
+      0.85
+    );
+
+  font-size: 7.5px;
+  font-weight: 600;
+
+  line-height: 1.4;
+
+  opacity: 0;
+
+  animation:
+    scopeReveal
+    450ms
+    var(--scope-delay)
+    cubic-bezier(0.2, 0.8, 0.2, 1)
+    forwards;
+
+  transition:
+    background 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.scopeItem::before {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+
+  width: 2px;
+
+  background: var(--mint);
+
+  opacity: 0;
+
+  transition:
+    opacity 180ms ease;
+}
+
+.scopeItem:hover {
+  border-color: #c8e1dd;
+
+  background: #f3fbf8;
+
+  transform:
+    translateX(4px);
+
+  box-shadow:
+    0 7px 18px
+      rgba(23, 125, 106, 0.06);
+}
+
+.scopeItem:hover::before {
+  opacity: 1;
+}
+
+.scopeItem svg {
+  flex: 0 0 auto;
+
+  color: var(--green);
+
+  transition:
+    transform 180ms ease;
+}
+
+.scopeItem:hover svg {
+  transform:
+    scale(1.15);
+}
+
+/* =========================================================
+   CONTENT FOOTER
+========================================================= */
+
+.contentFooter {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  margin-top: auto;
+  padding-top: 20px;
+}
+
+.primaryButton,
+.secondaryButton {
+  min-height: 38px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  border-radius: 8px;
+
+  font-size: 7px;
+  font-weight: 800;
+
+  transition:
+    color 180ms ease,
+    background 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+/* =========================================================
+   PRIMARY BUTTON
+========================================================= */
+
+.primaryButton {
+  position: relative;
+
+  overflow: hidden;
+
+  padding:
+    0
+    13px;
+
+  color: #ffffff !important;
+
+  background:
+    linear-gradient(
+      135deg,
+      #17b78a,
+      #0ea47b
+    );
+
+  border:
+    1px solid
+    #12a87e;
+
+  box-shadow:
+    0 7px 18px
+      rgba(18, 169, 128, 0.15);
+}
+
+.primaryButton::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -100%;
+
+  width: 65%;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+
+  transform: skewX(-20deg);
+
+  transition:
+    left 500ms ease;
+}
+
+.primaryButton span,
+.primaryButton svg {
+  position: relative;
+  z-index: 1;
+}
+
+.primaryButton:hover::before {
+  left: 125%;
+}
+
+.primaryButton:hover {
+  background:
+    linear-gradient(
+      135deg,
+      #0fa77d,
+      #098e6b
+    );
+
+  border-color: #098e6b;
+
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    0 11px 25px
+      rgba(18, 169, 128, 0.21);
+}
+
+.primaryButton svg {
+  transition:
+    transform 180ms ease;
+}
+
+.primaryButton:hover svg {
+  transform:
+    translateX(4px);
+}
+
+/* =========================================================
+   SECONDARY BUTTON
+========================================================= */
+
+.secondaryButton {
+  padding:
+    0
+    13px;
+
+  color: var(--ink) !important;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.8
+    );
+
+  border:
+    1px solid
+    var(--line);
+}
+
+.secondaryButton:hover {
+  color:
+    var(--green) !important;
+
+  background: #f4fbf8;
+
+  border-color: #c3dfd8;
+
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    0 8px 18px
+      rgba(24, 127, 108, 0.06);
+}
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes projectReveal {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes headingLine {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes scopeReveal {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes livePulse {
+  0%,
+  100% {
+    opacity: 0.45;
+
+    box-shadow:
+      0 0 0 4px
+      rgba(31, 190, 143, 0.06);
+  }
+
+  50% {
+    opacity: 1;
+
+    box-shadow:
+      0 0 0 7px
+      rgba(31, 190, 143, 0.11);
+  }
+}
+
+@keyframes powerPulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.06);
+  }
+}
+
+@keyframes nodePulse {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes orbitFloat {
+  0%,
+  100% {
+    transform:
+      translate3d(0, 0, 0)
+      rotate(0deg);
+  }
+
+  50% {
+    transform:
+      translate3d(-10px, 8px, 0)
+      rotate(2deg);
+  }
+}
+
+@keyframes visualOrbit {
+  from {
+    transform:
+      translate(-50%, -20%)
+      rotate(0deg);
+  }
+
+  to {
+    transform:
+      translate(-50%, -20%)
+      rotate(360deg);
+  }
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+  .section {
+    padding:
+      20px
+      0;
+  }
+
+  .container {
+    width:
+      min(
+        1180px,
+        calc(100% - 48px)
+      );
+  }
+
+  .project {
+    grid-template-columns:
+      minmax(400px, 0.9fr)
+      minmax(0, 1.1fr);
+  }
+
+  .visualHeader {
+    padding:
+      17px
+      27px
+      12px;
+  }
+
+  .visualTop {
+    padding:
+      0
+      27px;
+  }
+
+  .stationCount {
+    padding:
+      0
+      27px;
+  }
+
+  .visualFooter {
+    margin-left: 27px;
+    margin-right: 27px;
+  }
+
+  .content {
+    padding:
+      30px
+      34px
+      22px;
+  }
+}
+
+/* =========================================================
+   STACKED TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+  .section {
+    height: auto;
+    min-height: auto;
+
+    padding:
+      55px
+      0
+      78px;
+
+    overflow: hidden;
+  }
+
+  .container {
+    width:
+      min(
+        720px,
+        calc(100% - 32px)
+      );
+
+    height: auto;
+  }
+
+  .project {
+    grid-template-columns: 1fr;
+
+    width: 100%;
+    height: auto;
+    min-height: auto;
+  }
+
+  .visual {
+    height: auto;
+    min-height: 610px;
+
+    border-right: 0;
+    border-bottom:
+      1px solid
+      var(--line);
+  }
+
+  .visualHeader h2 {
+    font-size:
+      clamp(
+        48px,
+        9vw,
+        68px
+      );
+  }
+
+  .railwayGraphic {
+    min-height: 235px;
+  }
+
+  .content {
+    height: auto;
+    min-height: 440px;
+
+    padding:
+      35px
+      32px
+      32px;
+  }
+
+  .background {
+    right: -230px;
+    top: 250px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+  .section {
+    padding:
+      42px
+      0
+      60px;
+  }
+
+  .section::before {
+    background-size: 36px 36px;
+  }
+
+  .container {
+    width:
+      calc(100% - 26px);
+  }
+
+  .project {
+    border-radius: 13px;
+  }
+
+  .visual {
+    min-height: 560px;
+  }
+
+  .visualHeader {
+    padding:
+      21px
+      19px
+      18px;
+  }
+
+  .visualHeaderMeta {
+    margin-bottom: 20px;
+    font-size: 5.5px;
+  }
+
+  .visualHeaderLabel {
+    margin-bottom: 7px;
+    font-size: 6px;
+  }
+
+  .visualHeader h2 {
+    font-size:
+      clamp(
+        42px,
+        12.5vw,
+        60px
+      );
+
+    line-height: 0.91;
+  }
+
+  .visualHeader h2 span::after {
+    bottom: -5px;
+    width: 105px;
+  }
+
+  .visualHeader p {
+    margin-top: 14px;
+    font-size: 7.8px;
+  }
+
+  .headerButton {
+    min-height: 34px;
+    margin-top: 13px;
+    font-size: 6px;
+  }
+
+  .headerButtonIcon {
+    width: 27px;
+    height: 27px;
+  }
+
+  .visualTop {
+    min-height: 36px;
+    padding:
+      0
+      19px;
+  }
+
+  .projectNo,
+  .live {
+    font-size: 5.5px;
+  }
+
+  .railwayGraphic {
+    min-height: 205px;
+  }
+
+  .track {
+    width: 205px;
+    height: 95px;
+  }
+
+  .track span {
+    width: 170px;
+  }
+
+  .train {
+    width: 68px;
+    height: 68px;
+    border-radius: 16px;
+  }
+
+  .train svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  .powerNode {
+    top: 15%;
+    right: 8%;
+
+    width: 31px;
+    height: 31px;
+  }
+
+  .signalNode {
+    left: 5%;
+    font-size: 4.5px;
+  }
+
+  .stationCount {
+    gap: 11px;
+    padding:
+      0
+      19px;
+  }
+
+  .stationCount strong {
+    font-size: 61px;
+  }
+
+  .stationCount span {
+    font-size: 6.5px;
+  }
+
+  .stationCount b {
+    font-size: 7.5px;
+  }
+
+  .visualFooter {
+    margin:
+      16px
+      19px
+      19px;
+
+    padding-top: 10px;
+    font-size: 6.5px;
+  }
+
+  .content {
+    min-height: auto;
+
+    padding:
+      27px
+      20px
+      24px;
+  }
+
+  .content h3 {
+    margin-top: 9px;
+    font-size: 28px;
+  }
+
+  .description {
+    font-size: 9px;
+  }
+
+  .divider {
+    margin:
+      21px
+      0
+      16px;
+  }
+
+  .scope {
+    grid-template-columns: 1fr;
+    gap: 7px;
+  }
+
+  .scopeItem {
+    min-height: 41px;
+    font-size: 8px;
+  }
+
+  .contentFooter {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+
+    margin-top: 22px;
+    padding-top: 0;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+    min-height: 42px;
+  }
+
+  .background {
+    display: none;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+  .section {
+    padding:
+      35px
+      0
+      52px;
+  }
+
+  .container {
+    width:
+      calc(100% - 18px);
+  }
+
+  .visual {
+    min-height: 520px;
+  }
+
+  .visualHeader {
+    padding:
+      18px
+      16px
+      16px;
+  }
+
+  .visualHeaderMeta {
+    margin-bottom: 19px;
+  }
+
+  .visualHeader h2 {
+    font-size: 39px;
+  }
+
+  .visualHeader p {
+    font-size: 7.2px;
+  }
+
+  .visualTop {
+    padding:
+      0
+      16px;
+  }
+
+  .railwayGraphic {
+    min-height: 185px;
+  }
+
+  .track {
+    width: 180px;
+    height: 82px;
+  }
+
+  .track span {
+    width: 150px;
+  }
+
+  .train {
+    width: 59px;
+    height: 59px;
+    border-radius: 14px;
+  }
+
+  .train svg {
+    width: 23px;
+    height: 23px;
+  }
+
+  .stationCount {
+    padding:
+      0
+      16px;
+  }
+
+  .stationCount strong {
+    font-size: 52px;
+  }
+
+  .stationCount span {
+    font-size: 6px;
+  }
+
+  .stationCount b {
+    font-size: 7px;
+  }
+
+  .visualFooter {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+
+  .content {
+    padding:
+      22px
+      15px
+      20px;
+  }
+
+  .content h3 {
+    font-size: 23px;
+  }
+
+  .description {
+    font-size: 8.5px;
+  }
+
+  .scopeHeader > span {
+    font-size: 10px;
+  }
+
+  .scopeHeader small {
+    font-size: 6px;
+  }
+
+  .scopeItem {
+    font-size: 7.5px;
+  }
+}
+
+/* =========================================================
+   VERY SMALL
+========================================================= */
+
+@media (max-width: 350px) {
+  .visual {
+    min-height: 490px;
+  }
+
+  .visualHeader h2 {
+    font-size: 35px;
+  }
+
+  .visualHeader p {
+    font-size: 6.8px;
+  }
+
+  .railwayGraphic {
+    min-height: 165px;
+  }
+
+  .track {
+    width: 160px;
+  }
+
+  .track span {
+    width: 130px;
+  }
+
+  .train {
+    width: 53px;
+    height: 53px;
+  }
+
+  .stationCount strong {
+    font-size: 45px;
+  }
+
+  .content h3 {
+    font-size: 20px;
+  }
+}
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+.headerButton:focus-visible,
+.primaryButton:focus-visible,
+.secondaryButton:focus-visible {
+  outline:
+    2px solid
+    var(--green);
+
+  outline-offset: 4px;
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .section *,
+  .section *::before,
+  .section *::after {
+    animation-duration:
+      0.01ms !important;
+
+    animation-iteration-count:
+      1 !important;
+
+    transition-duration:
+      0.01ms !important;
+  }
+}
